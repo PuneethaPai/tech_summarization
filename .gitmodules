@@ -1,0 +1,6 @@
+[submodule "tldr_repo"]
+	path = tldr_repo
+	url = https://github.com/tldr-pages/tldr.git
+[submodule "man_pages_repo"]
+	path = man_pages_repo
+	url = https://git.kernel.org/pub/scm/docs/man-pages/man-pages.git
