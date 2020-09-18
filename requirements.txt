@@ -1,0 +1,2 @@
+pytest>=6,<7
+beautifulsoup4>=4,<5
