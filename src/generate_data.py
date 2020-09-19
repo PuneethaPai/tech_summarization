@@ -1,8 +1,6 @@
-import csv
 import re
 import subprocess as sp
 from pathlib import Path
-from subprocess import SubprocessError
 
 import requests
 from bs4 import BeautifulSoup, SoupStrainer
@@ -29,6 +27,7 @@ def get_man_page_urls(url: str = ALL_MAN_PAGE) -> list:
 
 
 def get_man_entry(command: str) -> str:
+    """Executes man command to fetch man page entry"""
     try:
         process = sp.run(
             ["man", command],
@@ -38,7 +37,7 @@ def get_man_entry(command: str) -> str:
             stderr=sp.PIPE,
         )
         return process.stdout if process.returncode == 0 else process.stderr
-    except SubprocessError as e:
+    except sp.SubprocessError as e:
         return str(e)
 
 
@@ -51,6 +50,7 @@ def generate_tech_summary_data(
     tldr_path: str = "tldr_repo/pages/common/",
     out_file: str = "data/common_summary.csv",
 ) -> None:
+    """Extracts command, tldr summary and man page entry"""
     tldr_path = Path(tldr_path)
     tldr_pages = list(tldr_path.glob("*.md"))
     summary_data = [
@@ -63,5 +63,5 @@ def generate_tech_summary_data(
 
 
 if __name__ == "__main__":
-    save_man_page_urls()
+    # save_man_page_urls()
     generate_tech_summary_data()
