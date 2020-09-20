@@ -46,20 +46,18 @@ def save_man_page_urls(path: str = "data/man_page_urls.csv") -> None:
     write_csv(path, [dict(man_page_url=url) for url in urls])
 
 
-def generate_tech_summary_data(
-    tldr_path: str = "tldr_repo/pages/common/",
-    out_file: str = "data/common_summary.csv",
-) -> None:
+def generate_tech_summary_data(path: str = "tldr_repo/pages/") -> None:
     """Extracts command, tldr summary and man page entry"""
-    tldr_path = Path(tldr_path)
-    tldr_pages = list(tldr_path.glob("*.md"))
-    summary_data = [
-        dict(command=page.name.replace(".md", ""), summary=page.read_text())
-        for page in tldr_pages
-    ]
-    for data in summary_data:
-        data["man_entry"] = get_man_entry(data["command"])
-    write_csv(out_file, summary_data)
+    path = Path(path)
+    for tldr_path in path.iterdir():
+        tldr_pages = list(tldr_path.glob("*.md"))
+        summary_data = [
+            dict(command=page.name.replace(".md", ""), summary=page.read_text())
+            for page in tldr_pages
+        ]
+        for data in summary_data:
+            data["man_entry"] = get_man_entry(data["command"])
+        write_csv(f"data/summary/{tldr_path.name}.csv", summary_data)
 
 
 if __name__ == "__main__":
