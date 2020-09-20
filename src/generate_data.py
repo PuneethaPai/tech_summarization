@@ -43,7 +43,16 @@ def get_man_entry(command: str) -> str:
 
 def save_man_page_urls(path: str = "data/man_page_urls.csv") -> None:
     urls = get_man_page_urls()
-    write_csv(path, [dict(man_page_url=url) for url in urls])
+    write_csv(
+        path,
+        [
+            dict(
+                command=re.search(r"[^/]+$", url).group().split(".")[0],
+                man_page_url=url,
+            )
+            for url in urls
+        ],
+    )
 
 
 def generate_tech_summary_data(path: str = "tldr_repo/pages/") -> None:
@@ -61,5 +70,5 @@ def generate_tech_summary_data(path: str = "tldr_repo/pages/") -> None:
 
 
 if __name__ == "__main__":
-    # save_man_page_urls()
+    save_man_page_urls()
     generate_tech_summary_data()
