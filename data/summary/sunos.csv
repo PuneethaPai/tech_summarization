@@ -1,5 +1,5 @@
-command,summary,man_entry
-svccfg,"# svccfg
+command,doc_url,man_entry,tldr_summary
+svccfg,,,"# svccfg
 
 > Import, export, and modify service configurations.
 
@@ -14,9 +14,8 @@ svccfg,"# svccfg
 - Import/update service configurations from file:
 
 `svccfg import {{smf.xml}}`
-","No manual entry for svccfg
 "
-runit,"# runit
+runit,,,"# runit
 
 > 3-stage init system.
 
@@ -27,18 +26,16 @@ runit,"# runit
 - Shut down runit:
 
 `kill --CONT {{runit_pid}}`
-","No manual entry for runit
 "
-runsvchdir,"# runsvchdir
+runsvchdir,,,"# runsvchdir
 
 > Change the directory `runsvdir` uses by default.
 
 - Switch `runsvdir` directories:
 
 `sudo runsvchdir {{/path/to/directory}}`
-","No manual entry for runsvchdir
 "
-prstat,"# prstat
+prstat,,,"# prstat
 
 > Report active process statistics.
 
@@ -61,9 +58,8 @@ prstat,"# prstat
 - Print out a list of top 5 CPU using processes every second:
 
 `prstat -c -n 5 -s cpu 1`
-","No manual entry for prstat
 "
-runsv,"# runsv
+runsv,,,"# runsv
 
 > Start and manage a runit service.
 
@@ -74,9 +70,8 @@ runsv,"# runsv
 - Start a runit service as root:
 
 `sudo runsv {{path/to/service}}`
-","No manual entry for runsv
 "
-svcs,"# svcs
+svcs,,,"# svcs
 
 > List information about running services.
 
@@ -99,9 +94,8 @@ svcs,"# svcs
 - Display end of a service log file:
 
 `tail $(svcs -L apache)`
-","No manual entry for svcs
 "
-sv,"# sv
+sv,,,"# sv
 
 > Control a running runsv service.
 
@@ -116,9 +110,8 @@ sv,"# sv
 - Get service status:
 
 `sudo sv status {{path/to/service}}`
-","No manual entry for sv
 "
-runsvdir,"# runsvdir
+runsvdir,,,"# runsvdir
 
 > Run an entire directory of services.
 
@@ -133,24 +126,8 @@ runsvdir,"# runsvdir
 - Start services in separate sessions:
 
 `runsvdir -P {{path/to/services}}`
-","No manual entry for runsvdir
 "
-dmesg,"# dmesg
-
-> Write the kernel messages to standard output.
-
-- Show kernel messages:
-
-`dmesg`
-
-- Show how much physical memory is available on this system:
-
-`dmesg | grep -i memory`
-
-- Show kernel messages 1 page at a time:
-
-`dmesg | less`
-","
+dmesg,,"
 DMESG(8)                  BSD System Manager's Manual                 DMESG(8)
 
 NNAAMMEE
@@ -170,8 +147,23 @@ HHIISSTTOORRYY
      The ddmmeessgg command appeared in 4.0BSD.
 
 4th Berkeley Distribution        June 5, 1993        4th Berkeley Distribution
+","# dmesg
+
+> Write the kernel messages to standard output.
+
+- Show kernel messages:
+
+`dmesg`
+
+- Show how much physical memory is available on this system:
+
+`dmesg | grep -i memory`
+
+- Show kernel messages 1 page at a time:
+
+`dmesg | less`
 "
-svcadm,"# svcadm
+svcadm,,,"# svcadm
 
 > Manipulate service instances.
 
@@ -194,9 +186,8 @@ svcadm,"# svcadm
 - Clear a service from maintenance state and command it to start:
 
 `svcadm clear {{service_name}}`
-","No manual entry for svcadm
 "
-snoop,"# snoop
+snoop,,,"# snoop
 
 > Network packet sniffer.
 > SunOS equivalent of tcpdump.
@@ -220,32 +211,8 @@ snoop,"# snoop
 - Capture and show an hex-dump of network packets exchanged between two IP addresses:
 
 `snoop -x0 -p4 {{ip_address_1}} {{ip_address_2}}`
-","No manual entry for snoop
 "
-stty,"# stty
-
-> Set options for a terminal device interface.
-
-- Display all settings for the current terminal:
-
-`stty -a`
-
-- Set the number of rows:
-
-`stty rows {{rows}}`
-
-- Set the number of columns:
-
-`stty cols {{cols}}`
-
-- Get the actual transfer speed of a device:
-
-`stty -f {{path/to/device_file}} speed`
-
-- Reset all modes to reasonable values for the current terminal:
-
-`stty sane`
-","
+stty,,"
 STTY(1)                   BSD General Commands Manual                  STTY(1)
 
 NNAAMMEE
@@ -705,8 +672,31 @@ SSTTAANNDDAARRDDSS
      ble.  The flags --ee and --ff are extensions to the standard.
 
 BSD                             April 18, 1994                             BSD
+","# stty
+
+> Set options for a terminal device interface.
+
+- Display all settings for the current terminal:
+
+`stty -a`
+
+- Set the number of rows:
+
+`stty rows {{rows}}`
+
+- Set the number of columns:
+
+`stty cols {{cols}}`
+
+- Get the actual transfer speed of a device:
+
+`stty -f {{path/to/device_file}} speed`
+
+- Reset all modes to reasonable values for the current terminal:
+
+`stty sane`
 "
-prctl,"# prctl
+prctl,,,"# prctl
 
 > Get or set the resource controls of running processes,.
 > Tasks, and projects.
@@ -722,9 +712,8 @@ prctl,"# prctl
 - Get specific limit for a running process:
 
 `prctl -n process.max-file-descriptor {{PID}}`
-","No manual entry for prctl
 "
-devfsadm,"# devfsadm
+devfsadm,,,"# devfsadm
 
 > Administration command for `/dev`. Maintains the `/dev` namespace.
 
@@ -739,9 +728,8 @@ devfsadm,"# devfsadm
 - Dry-run - output what would be changed but make no modifications:
 
 `devfsadm -C -v -n`
-","No manual entry for devfsadm
 "
-truss,"# truss
+truss,,,"# truss
 
 > Troubleshooting tool for tracing system calls.
 > SunOS equivalent of strace.
@@ -765,5 +753,4 @@ truss,"# truss
 - Trace a process filtering output by system call:
 
 `truss -p {{pid}} -t {{system_call_name}}`
-","No manual entry for truss
 "

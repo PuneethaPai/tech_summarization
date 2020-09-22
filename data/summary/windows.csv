@@ -1,5 +1,5 @@
-command,summary,man_entry
-attrib,"# attrib
+command,doc_url,man_entry,tldr_summary
+attrib,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/attrib,,"# attrib
 
 > Displays or changes file and directory attributes.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/attrib>.
@@ -27,9 +27,8 @@ attrib,"# attrib
 - Add the hidden attribute to a directory:
 
 `attrib +H {{path\to\directory}}`
-","No manual entry for attrib
 "
-vol,"# vol
+vol,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vol,,"# vol
 
 > Display information about volumes.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vol>.
@@ -41,9 +40,8 @@ vol,"# vol
 - Display the label and serial number for a specific volume:
 
 `vol {{D:}}`
-","No manual entry for vol
 "
-findstr,"# findstr
+findstr,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr,,"# findstr
 
 > Find specified text within one or more files.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr>.
@@ -79,29 +77,8 @@ findstr,"# findstr
 - Display only the filenames that contain a match:
 
 `findstr /m ""{{query}}"" *`
-","No manual entry for findstr
 "
-showmount,"# showmount
-
-> Display information about NFS filesystems on Windows Server.
-> More information: <https://docs.microsoft.com/windows-server/administration/windows-commands/showmount>.
-
-- Display all exported filesystems:
-
-`showmount -e`
-
-- Display all NFS clients and their mounted directories:
-
-`showmount -a`
-
-- Display all NFS mounted directories:
-
-`showmount -d`
-
-- Display all exported filesystems for a remote server:
-
-`showmount -e {{server_address}}`
-","
+showmount,https://docs.microsoft.com/windows-server/administration/windows-commands/showmount,"
 SHOWMOUNT(8)              BSD System Manager's Manual             SHOWMOUNT(8)
 
 NNAAMMEE
@@ -141,8 +118,28 @@ HHIISSTTOORRYY
      The sshhoowwmmoouunntt utility first appeared in 4.4BSD.
 
 4th Berkeley Distribution     September 26, 2010     4th Berkeley Distribution
+","# showmount
+
+> Display information about NFS filesystems on Windows Server.
+> More information: <https://docs.microsoft.com/windows-server/administration/windows-commands/showmount>.
+
+- Display all exported filesystems:
+
+`showmount -e`
+
+- Display all NFS clients and their mounted directories:
+
+`showmount -a`
+
+- Display all NFS mounted directories:
+
+`showmount -d`
+
+- Display all exported filesystems for a remote server:
+
+`showmount -e {{server_address}}`
 "
-sfc,"# sfc
+sfc,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/sfc,,"# sfc
 
 > Scans the integrity of Windows system files.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/sfc>.
@@ -174,9 +171,8 @@ sfc,"# sfc
 - When repairing offline, specify the Windows directory:
 
 `sfc /offwindir={{path/to/dir}}`
-","No manual entry for sfc
 "
-print,"# print
+print,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/print,,"# print
 
 > Print a text file to a printer.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/print>.
@@ -188,29 +184,8 @@ print,"# print
 - Print a text file to a specific printer:
 
 `print /d:{{printer}} {{path/to/file}}`
-","No manual entry for print
 "
-find,"# find
-
-> Find a specified string in one or more files.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/find>.
-
-- Find lines that contain a specified string:
-
-`find {{string}} {{path/to/file_or_directory}}`
-
-- Display lines that do not contain the specified string:
-
-`find {{string}} {{path/to/file_or_directory}} /v`
-
-- Display the count of lines that contain the specified string:
-
-`find {{string}} {{path/to/file_or_directory}} /c`
-
-- Display line numbers with the list of lines:
-
-`find {{string}} {{path/to/file_or_directory}} /n`
-","
+find,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/find,"
 FIND(1)                   BSD General Commands Manual                  FIND(1)
 
 NNAAMMEE
@@ -795,8 +770,28 @@ BBUUGGSS
      look like options.
 
 BSD                           September 28, 2011                           BSD
+","# find
+
+> Find a specified string in one or more files.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/find>.
+
+- Find lines that contain a specified string:
+
+`find {{string}} {{path/to/file_or_directory}}`
+
+- Display lines that do not contain the specified string:
+
+`find {{string}} {{path/to/file_or_directory}} /v`
+
+- Display the count of lines that contain the specified string:
+
+`find {{string}} {{path/to/file_or_directory}} /c`
+
+- Display line numbers with the list of lines:
+
+`find {{string}} {{path/to/file_or_directory}} /n`
 "
-choco-install,"# choco install
+choco-install,https://chocolatey.org/docs/commands-install,,"# choco install
 
 > Install one or more packages with Chocolatey.
 > More information: <https://chocolatey.org/docs/commands-install>.
@@ -832,9 +827,8 @@ choco-install,"# choco install
 - Provide a username and password for authentication:
 
 `choco install {{package}} --user {{username}} --password {{password}}`
-","No manual entry for choco-install
 "
-ver,"# ver
+ver,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ver,,"# ver
 
 > Display the current Windows or MS-DOS version number.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ver>.
@@ -842,9 +836,8 @@ ver,"# ver
 - Display the current version number:
 
 `ver`
-","No manual entry for ver
 "
-tasklist,"# tasklist
+tasklist,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tasklist,,"# tasklist
 
 > Display a list of currently running processes on a local or remote machine.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tasklist>.
@@ -868,9 +861,8 @@ tasklist,"# tasklist
 - Display services using each process:
 
 `tasklist /svc`
-","No manual entry for tasklist
 "
-robocopy,"# robocopy
+robocopy,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy,,"# robocopy
 
 > Robust File and Folder Copy.
 > By default files will only be copied if the source and destination have different time stamps or different file sizes.
@@ -903,9 +895,8 @@ robocopy,"# robocopy
 - Display detailed usage information:
 
 `robocopy /?`
-","No manual entry for robocopy
 "
-choco-list,"# choco list
+choco-list,https://chocolatey.org/docs/commands-list,,"# choco list
 
 > Display a list of packages with Chocolatey.
 > More information: <https://chocolatey.org/docs/commands-list>.
@@ -933,9 +924,31 @@ choco-list,"# choco list
 - Provide a username and password for authentication:
 
 `choco list --user {{username}} --password {{password}}`
-","No manual entry for choco-list
 "
-whoami,"# whoami
+whoami,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/whoami,"
+WHOAMI(1)                 BSD General Commands Manual                WHOAMI(1)
+
+NNAAMMEE
+     wwhhooaammii -- display effective user id
+
+SSYYNNOOPPSSIISS
+     wwhhooaammii
+
+DDEESSCCRRIIPPTTIIOONN
+     The wwhhooaammii utility has been obsoleted by the id(1) utility, and is equiv-
+     alent to ``iidd --uunn''.  The command ``iidd --pp'' is suggested for normal
+     interactive use.
+
+     The wwhhooaammii utility displays your effective user ID as a name.
+
+EEXXIITT SSTTAATTUUSS
+     The wwhhooaammii utility exits 0 on success, and >0 if an error occurs.
+
+SSEEEE AALLSSOO
+     id(1)
+
+BSD                              June 6, 1993                              BSD
+","# whoami
 
 > Display details about the current user.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/whoami>.
@@ -959,63 +972,8 @@ whoami,"# whoami
 - Display the logon id of the current user:
 
 `whoami /logonid`
-","
-WHOAMI(1)                 BSD General Commands Manual                WHOAMI(1)
-
-NNAAMMEE
-     wwhhooaammii -- display effective user id
-
-SSYYNNOOPPSSIISS
-     wwhhooaammii
-
-DDEESSCCRRIIPPTTIIOONN
-     The wwhhooaammii utility has been obsoleted by the id(1) utility, and is equiv-
-     alent to ``iidd --uunn''.  The command ``iidd --pp'' is suggested for normal
-     interactive use.
-
-     The wwhhooaammii utility displays your effective user ID as a name.
-
-EEXXIITT SSTTAATTUUSS
-     The wwhhooaammii utility exits 0 on success, and >0 if an error occurs.
-
-SSEEEE AALLSSOO
-     id(1)
-
-BSD                              June 6, 1993                              BSD
 "
-more,"# more
-
-> Display paginated output from `stdin` or a file.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/more>.
-
-- Display paginated output from `stdin`:
-
-`{{echo test}} | more`
-
-- Display paginated output from one or more files:
-
-`more {{path/to/file}}`
-
-- Convert tabs to the specified number of spaces:
-
-`more {{path/to/file}} /t{{spaces}}`
-
-- Clear the screen before displaying the page:
-
-`more {{path/to/file}} /c`
-
-- Display the output starting at line 5:
-
-`more {{path/to/file}} +{{5}}`
-
-- Enable extended interactive mode (see help for usage):
-
-`more {{path/to/file}} /e`
-
-- Display full usage information:
-
-`more /?`
-","LESS(1)                                                                LESS(1)
+more,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/more,"LESS(1)                                                                LESS(1)
 
 
 
@@ -2665,8 +2623,40 @@ AAUUTTHHOORR
 
 
                            Version 487: 25 Oct 2016                    LESS(1)
+","# more
+
+> Display paginated output from `stdin` or a file.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/more>.
+
+- Display paginated output from `stdin`:
+
+`{{echo test}} | more`
+
+- Display paginated output from one or more files:
+
+`more {{path/to/file}}`
+
+- Convert tabs to the specified number of spaces:
+
+`more {{path/to/file}} /t{{spaces}}`
+
+- Clear the screen before displaying the page:
+
+`more {{path/to/file}} /c`
+
+- Display the output starting at line 5:
+
+`more {{path/to/file}} +{{5}}`
+
+- Enable extended interactive mode (see help for usage):
+
+`more {{path/to/file}} /e`
+
+- Display full usage information:
+
+`more /?`
 "
-explorer,"# explorer
+explorer,,,"# explorer
 
 > The Windows File Explorer.
 
@@ -2681,9 +2671,8 @@ explorer,"# explorer
 - Open Windows Explorer in a specific directory:
 
 `explorer {{path/to/directory}}`
-","No manual entry for explorer
 "
-cipher,"# cipher
+cipher,,,"# cipher
 
 > Encrypt or decrypt files on NTFS drives.
 
@@ -2698,21 +2687,8 @@ cipher,"# cipher
 - Securely remove a file or directory:
 
 `cipher /w:{{path/to/file_or_directory}}`
-","No manual entry for cipher
 "
-mkdir,"# mkdir
-
-> Creates a directory.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mkdir>.
-
-- Create a directory:
-
-`mkdir {{directory_name}}`
-
-- Recursively create a nested directory tree:
-
-`mkdir {{path/to/sub_directory_name}}`
-","
+mkdir,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mkdir,"
 MKDIR(1)                  BSD General Commands Manual                 MKDIR(1)
 
 NNAAMMEE
@@ -2765,8 +2741,20 @@ HHIISSTTOORRYY
      A mmkkddiirr command appeared in Version 1 AT&T UNIX.
 
 BSD                            January 25, 1994                            BSD
+","# mkdir
+
+> Creates a directory.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mkdir>.
+
+- Create a directory:
+
+`mkdir {{directory_name}}`
+
+- Recursively create a nested directory tree:
+
+`mkdir {{path/to/sub_directory_name}}`
 "
-forfiles,"# forfiles
+forfiles,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/forfiles,,"# forfiles
 
 > Select one or more files to execute a specified command on.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/forfiles>.
@@ -2794,17 +2782,8 @@ forfiles,"# forfiles
 - Search for files older than 5 days:
 
 `forfiles /d {{+5}}`
-","No manual entry for forfiles
 "
-popd,"# popd
-
-> Changes the current directory to the directory stored by the `pushd` command.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/popd>.
-
-- Switch to directory at the top of the stack:
-
-`popd`
-","
+popd,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/popd,"
 BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
 
 NNAAMMEE
@@ -2971,8 +2950,183 @@ AAUUTTHHOORRSS
      This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
 
 BSD                            February 23, 2005                           BSD
+","# popd
+
+> Changes the current directory to the directory stored by the `pushd` command.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/popd>.
+
+- Switch to directory at the top of the stack:
+
+`popd`
 "
-pushd,"# pushd
+pushd,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/pushd,"
+BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
+
+NNAAMMEE
+     bbuuiillttiinn, !!, %%, .., ::, @@, {{, }}, aalliiaass, aalllloocc, bbgg, bbiinndd, bbiinnddkkeeyy, bbrreeaakk,
+     bbrreeaakkssww, bbuuiillttiinnss, ccaassee, ccdd, cchhddiirr, ccoommmmaanndd, ccoommpplleettee, ccoonnttiinnuuee, ddeeffaauulltt,
+     ddiirrss, ddoo, ddoonnee, eecchhoo, eecchhoottcc, eelliiff, eellssee, eenndd, eennddiiff, eennddssww, eessaacc, eevvaall,
+     eexxeecc, eexxiitt, eexxppoorrtt, ffaallssee, ffcc, ffgg, ffiilleetteesstt, ffii, ffoorr, ffoorreeaacchh, ggeettooppttss,
+     gglloobb, ggoottoo, hhaasshh, hhaasshhssttaatt, hhiissttoorryy, hhuupp, iiff, jjoobbiidd, jjoobbss, kkiillll, lliimmiitt,
+     llooccaall, lloogg, llooggiinn, llooggoouutt, llss--FF, nniiccee, nnoohhuupp, nnoottiiffyy, oonniinnttrr, ppooppdd,
+     pprriinntteennvv, ppuusshhdd, ppwwdd, rreeaadd, rreeaaddoonnllyy, rreehhaasshh, rreeppeeaatt, rreettuurrnn, sscchheedd, sseett,
+     sseetteennvv, sseettttcc, sseettttyy, sseettvvaarr, sshhiifftt, ssoouurrccee, ssttoopp, ssuussppeenndd, sswwiittcchh,
+     tteellllttcc, tteesstt, tthheenn, ttiimmee, ttiimmeess, ttrraapp, ttrruuee, ttyyppee, uulliimmiitt, uummaasskk,
+     uunnaalliiaass, uunnccoommpplleettee, uunnhhaasshh, uunnlliimmiitt, uunnsseett, uunnsseetteennvv, uunnttiill, wwaaiitt,
+     wwhheerree, wwhhiicchh, wwhhiillee -- shell built-in commands
+
+SSYYNNOOPPSSIISS
+     bbuuiillttiinn [--ooppttiioonnss] [_a_r_g_s _._._.]
+
+DDEESSCCRRIIPPTTIIOONN
+     Shell builtin commands are commands that can be executed within the run-
+     ning shell's process.  Note that, in the case of csh(1) builtin commands,
+     the command is executed in a subshell if it occurs as any component of a
+     pipeline except the last.
+
+     If a command specified to the shell contains a slash ``/'', the shell
+     will not execute a builtin command, even if the last component of the
+     specified command matches the name of a builtin command.  Thus, while
+     specifying ``eecchhoo'' causes a builtin command to be executed under shells
+     that support the eecchhoo builtin command, specifying ``//bbiinn//eecchhoo'' or
+     ``..//eecchhoo'' does not.
+
+     While some builtin commands may exist in more than one shell, their oper-
+     ation may be different under each shell which supports them.  Below is a
+     table which lists shell builtin commands, the standard shells that sup-
+     port them and whether they exist as standalone utilities.
+
+     Only builtin commands for the csh(1) and sh(1) shells are listed here.
+     Consult a shell's manual page for details on the operation of its builtin
+     commands.  Beware that the sh(1) manual page, at least, calls some of
+     these commands ``built-in commands'' and some of them ``reserved words''.
+     Users of other shells may need to consult an info(1) page or other
+     sources of documentation.
+
+     Commands marked ``No**'' under _E_x_t_e_r_n_a_l do exist externally, but are
+     implemented as scripts using a builtin command of the same name.
+
+           _C_o_m_m_a_n_d       _E_x_t_e_r_n_a_l    csh(1)    sh(1)
+           !             No          No        Yes
+           %%             No          Yes       No
+           .             No          No        Yes
+           :             No          Yes       Yes
+           @@             No          Yes       Yes
+           {{             No          No        Yes
+           }}             No          No        Yes
+           aalliiaass         No**        Yes       Yes
+           aalllloocc         No          Yes       No
+           bbgg            No**        Yes       Yes
+           bbiinndd          No          No        Yes
+           bbiinnddkkeeyy       No          Yes       No
+           bbrreeaakk         No          Yes       Yes
+           bbrreeaakkssww       No          Yes       No
+           bbuuiillttiinn       No          No        Yes
+           bbuuiillttiinnss      No          Yes       No
+           ccaassee          No          Yes       Yes
+           ccdd            No**        Yes       Yes
+           cchhddiirr         No          Yes       Yes
+           ccoommmmaanndd       No**        No        Yes
+           ccoommpplleettee      No          Yes       No
+           ccoonnttiinnuuee      No          Yes       Yes
+           ddeeffaauulltt       No          Yes       No
+           ddiirrss          No          Yes       No
+           ddoo            No          No        Yes
+           ddoonnee          No          No        Yes
+           eecchhoo          Yes         Yes       Yes
+           eecchhoottcc        No          Yes       No
+           eelliiff          No          No        Yes
+           eellssee          No          Yes       Yes
+           eenndd           No          Yes       No
+           eennddiiff         No          Yes       No
+           eennddssww         No          Yes       No
+           eessaacc          No          No        Yes
+           eevvaall          No          Yes       Yes
+           eexxeecc          No          Yes       Yes
+           eexxiitt          No          Yes       Yes
+           eexxppoorrtt        No          No        Yes
+           ffaallssee         Yes         No        Yes
+           ffcc            No**        No        Yes
+           ffgg            No**        Yes       Yes
+           ffiilleetteesstt      No          Yes       No
+           ffii            No          No        Yes
+           ffoorr           No          No        Yes
+           ffoorreeaacchh       No          Yes       No
+           ggeettooppttss       No**        No        Yes
+           gglloobb          No          Yes       No
+           ggoottoo          No          Yes       No
+           hhaasshh          No          No        Yes
+           hhaasshhssttaatt      No          Yes       No
+           hhiissttoorryy       No          Yes       No
+           hhuupp           No          Yes       No
+           iiff            No          Yes       Yes
+           jjoobbiidd         No          No        Yes
+           jjoobbss          No**        Yes       Yes
+           kkiillll          Yes         Yes       No
+           lliimmiitt         No          Yes       No
+           llooccaall         No          No        Yes
+           lloogg           No          Yes       No
+           llooggiinn         Yes         Yes       No
+           llooggoouutt        No          Yes       No
+           llss--FF          No          Yes       No
+           nniiccee          Yes         Yes       No
+           nnoohhuupp         Yes         Yes       No
+           nnoottiiffyy        No          Yes       No
+           oonniinnttrr        No          Yes       No
+           ppooppdd          No          Yes       No
+           pprriinntteennvv      Yes         Yes       No
+           ppuusshhdd         No          Yes       No
+           ppwwdd           Yes         No        Yes
+           rreeaadd          No**        No        Yes
+           rreeaaddoonnllyy      No          No        Yes
+           rreehhaasshh        No          Yes       No
+           rreeppeeaatt        No          Yes       No
+           rreettuurrnn        No          No        Yes
+           sscchheedd         No          Yes       No
+           sseett           No          Yes       Yes
+           sseetteennvv        No          Yes       No
+           sseettttcc         No          Yes       No
+           sseettttyy         No          Yes       No
+           sseettvvaarr        No          No        Yes
+           sshhiifftt         No          Yes       Yes
+           ssoouurrccee        No          Yes       No
+           ssttoopp          No          Yes       No
+           ssuussppeenndd       No          Yes       No
+           sswwiittcchh        No          Yes       No
+           tteellllttcc        No          Yes       No
+           tteesstt          Yes         No        Yes
+           tthheenn          No          No        Yes
+           ttiimmee          Yes         Yes       No
+           ttiimmeess         No          No        Yes
+           ttrraapp          No          No        Yes
+           ttrruuee          Yes         No        Yes
+           ttyyppee          No          No        Yes
+           uulliimmiitt        No          No        Yes
+           uummaasskk         No**        Yes       Yes
+           uunnaalliiaass       No**        Yes       Yes
+           uunnccoommpplleettee    No          Yes       No
+           uunnhhaasshh        No          Yes       No
+           uunnlliimmiitt       No          Yes       No
+           uunnsseett         No          Yes       Yes
+           uunnsseetteennvv      No          Yes       No
+           uunnttiill         No          No        Yes
+           wwaaiitt          No**        Yes       Yes
+           wwhheerree         No          Yes       No
+           wwhhiicchh         Yes         Yes       No
+           wwhhiillee         No          Yes       Yes
+
+SSEEEE AALLSSOO
+     csh(1), echo(1), false(1), info(1), kill(1), login(1), nice(1), nohup(1),
+     printenv(1), pwd(1), sh(1), test(1), time(1), true(1), which(1)
+
+HHIISSTTOORRYY
+     The bbuuiillttiinn manual page first appeared in FreeBSD 3.4.
+
+AAUUTTHHOORRSS
+     This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
+
+BSD                            February 23, 2005                           BSD
+","# pushd
 
 > Place a directory on a stack so it can be accessed later.
 > See also `popd` to switch back to original directory.
@@ -2981,175 +3135,8 @@ pushd,"# pushd
 - Switch to directory and push it on the stack:
 
 `pushd {{directory}}`
-","
-BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
-
-NNAAMMEE
-     bbuuiillttiinn, !!, %%, .., ::, @@, {{, }}, aalliiaass, aalllloocc, bbgg, bbiinndd, bbiinnddkkeeyy, bbrreeaakk,
-     bbrreeaakkssww, bbuuiillttiinnss, ccaassee, ccdd, cchhddiirr, ccoommmmaanndd, ccoommpplleettee, ccoonnttiinnuuee, ddeeffaauulltt,
-     ddiirrss, ddoo, ddoonnee, eecchhoo, eecchhoottcc, eelliiff, eellssee, eenndd, eennddiiff, eennddssww, eessaacc, eevvaall,
-     eexxeecc, eexxiitt, eexxppoorrtt, ffaallssee, ffcc, ffgg, ffiilleetteesstt, ffii, ffoorr, ffoorreeaacchh, ggeettooppttss,
-     gglloobb, ggoottoo, hhaasshh, hhaasshhssttaatt, hhiissttoorryy, hhuupp, iiff, jjoobbiidd, jjoobbss, kkiillll, lliimmiitt,
-     llooccaall, lloogg, llooggiinn, llooggoouutt, llss--FF, nniiccee, nnoohhuupp, nnoottiiffyy, oonniinnttrr, ppooppdd,
-     pprriinntteennvv, ppuusshhdd, ppwwdd, rreeaadd, rreeaaddoonnllyy, rreehhaasshh, rreeppeeaatt, rreettuurrnn, sscchheedd, sseett,
-     sseetteennvv, sseettttcc, sseettttyy, sseettvvaarr, sshhiifftt, ssoouurrccee, ssttoopp, ssuussppeenndd, sswwiittcchh,
-     tteellllttcc, tteesstt, tthheenn, ttiimmee, ttiimmeess, ttrraapp, ttrruuee, ttyyppee, uulliimmiitt, uummaasskk,
-     uunnaalliiaass, uunnccoommpplleettee, uunnhhaasshh, uunnlliimmiitt, uunnsseett, uunnsseetteennvv, uunnttiill, wwaaiitt,
-     wwhheerree, wwhhiicchh, wwhhiillee -- shell built-in commands
-
-SSYYNNOOPPSSIISS
-     bbuuiillttiinn [--ooppttiioonnss] [_a_r_g_s _._._.]
-
-DDEESSCCRRIIPPTTIIOONN
-     Shell builtin commands are commands that can be executed within the run-
-     ning shell's process.  Note that, in the case of csh(1) builtin commands,
-     the command is executed in a subshell if it occurs as any component of a
-     pipeline except the last.
-
-     If a command specified to the shell contains a slash ``/'', the shell
-     will not execute a builtin command, even if the last component of the
-     specified command matches the name of a builtin command.  Thus, while
-     specifying ``eecchhoo'' causes a builtin command to be executed under shells
-     that support the eecchhoo builtin command, specifying ``//bbiinn//eecchhoo'' or
-     ``..//eecchhoo'' does not.
-
-     While some builtin commands may exist in more than one shell, their oper-
-     ation may be different under each shell which supports them.  Below is a
-     table which lists shell builtin commands, the standard shells that sup-
-     port them and whether they exist as standalone utilities.
-
-     Only builtin commands for the csh(1) and sh(1) shells are listed here.
-     Consult a shell's manual page for details on the operation of its builtin
-     commands.  Beware that the sh(1) manual page, at least, calls some of
-     these commands ``built-in commands'' and some of them ``reserved words''.
-     Users of other shells may need to consult an info(1) page or other
-     sources of documentation.
-
-     Commands marked ``No**'' under _E_x_t_e_r_n_a_l do exist externally, but are
-     implemented as scripts using a builtin command of the same name.
-
-           _C_o_m_m_a_n_d       _E_x_t_e_r_n_a_l    csh(1)    sh(1)
-           !             No          No        Yes
-           %%             No          Yes       No
-           .             No          No        Yes
-           :             No          Yes       Yes
-           @@             No          Yes       Yes
-           {{             No          No        Yes
-           }}             No          No        Yes
-           aalliiaass         No**        Yes       Yes
-           aalllloocc         No          Yes       No
-           bbgg            No**        Yes       Yes
-           bbiinndd          No          No        Yes
-           bbiinnddkkeeyy       No          Yes       No
-           bbrreeaakk         No          Yes       Yes
-           bbrreeaakkssww       No          Yes       No
-           bbuuiillttiinn       No          No        Yes
-           bbuuiillttiinnss      No          Yes       No
-           ccaassee          No          Yes       Yes
-           ccdd            No**        Yes       Yes
-           cchhddiirr         No          Yes       Yes
-           ccoommmmaanndd       No**        No        Yes
-           ccoommpplleettee      No          Yes       No
-           ccoonnttiinnuuee      No          Yes       Yes
-           ddeeffaauulltt       No          Yes       No
-           ddiirrss          No          Yes       No
-           ddoo            No          No        Yes
-           ddoonnee          No          No        Yes
-           eecchhoo          Yes         Yes       Yes
-           eecchhoottcc        No          Yes       No
-           eelliiff          No          No        Yes
-           eellssee          No          Yes       Yes
-           eenndd           No          Yes       No
-           eennddiiff         No          Yes       No
-           eennddssww         No          Yes       No
-           eessaacc          No          No        Yes
-           eevvaall          No          Yes       Yes
-           eexxeecc          No          Yes       Yes
-           eexxiitt          No          Yes       Yes
-           eexxppoorrtt        No          No        Yes
-           ffaallssee         Yes         No        Yes
-           ffcc            No**        No        Yes
-           ffgg            No**        Yes       Yes
-           ffiilleetteesstt      No          Yes       No
-           ffii            No          No        Yes
-           ffoorr           No          No        Yes
-           ffoorreeaacchh       No          Yes       No
-           ggeettooppttss       No**        No        Yes
-           gglloobb          No          Yes       No
-           ggoottoo          No          Yes       No
-           hhaasshh          No          No        Yes
-           hhaasshhssttaatt      No          Yes       No
-           hhiissttoorryy       No          Yes       No
-           hhuupp           No          Yes       No
-           iiff            No          Yes       Yes
-           jjoobbiidd         No          No        Yes
-           jjoobbss          No**        Yes       Yes
-           kkiillll          Yes         Yes       No
-           lliimmiitt         No          Yes       No
-           llooccaall         No          No        Yes
-           lloogg           No          Yes       No
-           llooggiinn         Yes         Yes       No
-           llooggoouutt        No          Yes       No
-           llss--FF          No          Yes       No
-           nniiccee          Yes         Yes       No
-           nnoohhuupp         Yes         Yes       No
-           nnoottiiffyy        No          Yes       No
-           oonniinnttrr        No          Yes       No
-           ppooppdd          No          Yes       No
-           pprriinntteennvv      Yes         Yes       No
-           ppuusshhdd         No          Yes       No
-           ppwwdd           Yes         No        Yes
-           rreeaadd          No**        No        Yes
-           rreeaaddoonnllyy      No          No        Yes
-           rreehhaasshh        No          Yes       No
-           rreeppeeaatt        No          Yes       No
-           rreettuurrnn        No          No        Yes
-           sscchheedd         No          Yes       No
-           sseett           No          Yes       Yes
-           sseetteennvv        No          Yes       No
-           sseettttcc         No          Yes       No
-           sseettttyy         No          Yes       No
-           sseettvvaarr        No          No        Yes
-           sshhiifftt         No          Yes       Yes
-           ssoouurrccee        No          Yes       No
-           ssttoopp          No          Yes       No
-           ssuussppeenndd       No          Yes       No
-           sswwiittcchh        No          Yes       No
-           tteellllttcc        No          Yes       No
-           tteesstt          Yes         No        Yes
-           tthheenn          No          No        Yes
-           ttiimmee          Yes         Yes       No
-           ttiimmeess         No          No        Yes
-           ttrraapp          No          No        Yes
-           ttrruuee          Yes         No        Yes
-           ttyyppee          No          No        Yes
-           uulliimmiitt        No          No        Yes
-           uummaasskk         No**        Yes       Yes
-           uunnaalliiaass       No**        Yes       Yes
-           uunnccoommpplleettee    No          Yes       No
-           uunnhhaasshh        No          Yes       No
-           uunnlliimmiitt       No          Yes       No
-           uunnsseett         No          Yes       Yes
-           uunnsseetteennvv      No          Yes       No
-           uunnttiill         No          No        Yes
-           wwaaiitt          No**        Yes       Yes
-           wwhheerree         No          Yes       No
-           wwhhiicchh         Yes         Yes       No
-           wwhhiillee         No          Yes       Yes
-
-SSEEEE AALLSSOO
-     csh(1), echo(1), false(1), info(1), kill(1), login(1), nice(1), nohup(1),
-     printenv(1), pwd(1), sh(1), test(1), time(1), true(1), which(1)
-
-HHIISSTTOORRYY
-     The bbuuiillttiinn manual page first appeared in FreeBSD 3.4.
-
-AAUUTTHHOORRSS
-     This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
-
-BSD                            February 23, 2005                           BSD
 "
-assoc,"# assoc
+assoc,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/assoc,,"# assoc
 
 > Display or modify file extension associations.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/assoc>.
@@ -3165,9 +3152,8 @@ assoc,"# assoc
 - Modify the associated filetype for a specific extension:
 
 `assoc {{.txt}}={{txtfile}}`
-","No manual entry for assoc
 "
-doskey,"# doskey
+doskey,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/doskey,,"# doskey
 
 > Manage macros, windows commands and command lines.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/doskey>.
@@ -3199,9 +3185,8 @@ doskey,"# doskey
 - Load macros from a file:
 
 `doskey /macrofile = {{macinit}}`
-","No manual entry for doskey
 "
-reg-load,"# reg load
+reg-load,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-load,,"# reg load
 
 > Load saved sub keys into a different sub key in the registry.
 > This is intended for troubleshooting and temporary keys.
@@ -3210,9 +3195,8 @@ reg-load,"# reg load
 - Load a backup file into the specified key:
 
 `reg load {{key_name}} {{path/to/file}}`
-","No manual entry for reg-load
 "
-choco-pack,"# choco pack
+choco-pack,https://chocolatey.org/docs/commands-pack,,"# choco pack
 
 > Package a NuGet specification into a nupkg file.
 > More information: <https://chocolatey.org/docs/commands-pack>.
@@ -3228,9 +3212,8 @@ choco-pack,"# choco pack
 - Package a NuGet specification to a specific directory:
 
 `choco pack {{path/to/specification}} --output-directory {{path/to/output_directory}}`
-","No manual entry for choco-pack
 "
-reg-delete,"# reg delete
+reg-delete,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-delete,,"# reg delete
 
 > Delete keys or their values from the registry.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-delete>.
@@ -3250,9 +3233,8 @@ reg-delete,"# reg delete
 - Forcefully delete all values recursively under a key without a prompt:
 
 `reg delete {{key_name}} /f /va`
-","No manual entry for reg-delete
 "
-virtualboxvm,"# virtualboxvm
+virtualboxvm,https://www.virtualbox.org,,"# virtualboxvm
 
 > The VirtualBox virtual machine management CLI.
 > More information: <https://www.virtualbox.org>.
@@ -3276,9 +3258,8 @@ virtualboxvm,"# virtualboxvm
 - Start a virtual machine in a paused state:
 
 `virtualboxvm --startvm {{name|uuid}} --start-paused`
-","No manual entry for virtualboxvm
 "
-reg,"# reg
+reg,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg,,"# reg
 
 > A command line interface for managing keys and their values in the Windows registry.
 > See `reg-query`, `reg-add` and other pages for additional information.
@@ -3295,9 +3276,8 @@ reg,"# reg
 - Call help on a specific command:
 
 `reg {{command}} /?`
-","No manual entry for reg
 "
-mklink,"# mklink
+mklink,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mklink,,"# mklink
 
 > Create symbolic links.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mklink>.
@@ -3317,9 +3297,8 @@ mklink,"# mklink
 - Create a directory junction:
 
 `mklink /j {{path/to/link}} {{path/to/source_file}}`
-","No manual entry for mklink
 "
-scoop,"# scoop
+scoop,https://scoop.sh,,"# scoop
 
 > A command-line installer for Windows.
 > More information: <https://scoop.sh>.
@@ -3355,9 +3334,8 @@ scoop,"# scoop
 - Add a bucket by its alias or a Git repository URL:
 
 `scoop bucket add {{bucket}}`
-","No manual entry for scoop
 "
-choco-new,"# choco new
+choco-new,https://chocolatey.org/docs/commands-new,,"# choco new
 
 > Generate new package specification files with Chocolatey.
 > More information: <https://chocolatey.org/docs/commands-new>.
@@ -3381,9 +3359,8 @@ choco-new,"# choco new
 - Create a new package with specific 32-bit and 64-bit installer urls:
 
 `choco new {{package_name}} url=""{{url}}"" url64=""{{url}}""`
-","No manual entry for choco-new
 "
-reg-import,"# reg import
+reg-import,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-import,,"# reg import
 
 > Import all available keys, subkeys, and values from a file.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-import>.
@@ -3391,9 +3368,8 @@ reg-import,"# reg import
 - Import all keys, subkeys and values from a file:
 
 `reg import {{path/to/file.reg}}`
-","No manual entry for reg-import
 "
-reg-export,"# reg export
+reg-export,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-export,,"# reg export
 
 > Export the specified sub keys and values into a file.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-export>.
@@ -3405,33 +3381,8 @@ reg-export,"# reg export
 - Force overwriting of an existing file without prompt:
 
 `reg export {{key_name}} {{path/to/file.reg}} /y`
-","No manual entry for reg-export
 "
-expand,"# expand
-
-> Uncompress one or more Windows Cabinet files.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/expand>.
-
-- Uncompress a single-file Cabinet file to the specified directory:
-
-`expand {{path/to/file.cab}} {{path/to/directory}}`
-
-- Display the list of files in a source Cabinet file:
-
-`expand {{path/to/file.cab}} {{path/to/directory}} -d`
-
-- Uncompress all files from the Cabinet file:
-
-`expand {{path/to/file.cab}} {{path/to/directory}} -f:*`
-
-- Uncompress a specific file from a Cabinet file:
-
-`expand {{path/to/file.cab}} {{path/to/directory}} -f:{{file}}`
-
-- Ignore the directory structure when uncompressing, and add them to a single directory:
-
-`expand {{path/to/file.cab}} {{path/to/directory}} -i`
-","
+expand,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/expand,"
 EXPAND(1)                 BSD General Commands Manual                EXPAND(1)
 
 NNAAMMEE
@@ -3480,8 +3431,32 @@ HHIISSTTOORRYY
      The eexxppaanndd command appeared in 3.0BSD.
 
 BSD                            October 13, 2006                            BSD
+","# expand
+
+> Uncompress one or more Windows Cabinet files.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/expand>.
+
+- Uncompress a single-file Cabinet file to the specified directory:
+
+`expand {{path/to/file.cab}} {{path/to/directory}}`
+
+- Display the list of files in a source Cabinet file:
+
+`expand {{path/to/file.cab}} {{path/to/directory}} -d`
+
+- Uncompress all files from the Cabinet file:
+
+`expand {{path/to/file.cab}} {{path/to/directory}} -f:*`
+
+- Uncompress a specific file from a Cabinet file:
+
+`expand {{path/to/file.cab}} {{path/to/directory}} -f:{{file}}`
+
+- Ignore the directory structure when uncompressing, and add them to a single directory:
+
+`expand {{path/to/file.cab}} {{path/to/directory}} -i`
 "
-iscc,"# iscc
+iscc,,,"# iscc
 
 > Compiler for Inno Setup installers.
 > It compiles an Inno Setup scripts into an Windows installer executable.
@@ -3497,9 +3472,8 @@ iscc,"# iscc
 - Compile a signed Inno Setup installer:
 
 `iscc /S={{name}}={{command}} {{path/to/file.iss}}`
-","No manual entry for iscc
 "
-octo,"# octo
+octo,https://octopus.com/docs/octopus-rest-api/octo.exe-command-line,,"# octo
 
 > Command line tools for Octopus Deploy.
 > More information: <https://octopus.com/docs/octopus-rest-api/octo.exe-command-line>.
@@ -3519,44 +3493,8 @@ octo,"# octo
 - Deploy a release:
 
 `octo deploy-release --project={{project_name}} --packageversion={{version}} --deployto={{environment_name}} --tenant={{deployment_target}}`
-","No manual entry for octo
 "
-ftp,"# ftp
-
-> Interactively transfer files between a local and remote FTP server.
-
-- Connect to a remote FTP server interactively:
-
-`ftp {{host}}`
-
-- Log in as an anonymous user:
-
-`ftp -A {{host}}`
-
-- Disable automatic login upon initial connection:
-
-`ftp -n {{host}}`
-
-- Run a file containing a list of FTP commands:
-
-`ftp -s:{{path/to/file}} {{host}}`
-
-- Download multiple files (glob expression):
-
-`mget {{*.png}}`
-
-- Upload multiple files (glob expression):
-
-`mput {{*.zip}}`
-
-- Delete multiple files on the remote server:
-
-`mdelete {{*.txt}}`
-
-- Display detailed help:
-
-`ftp --help`
-","ftp(n)                            ftp client                            ftp(n)
+ftp,,"ftp(n)                            ftp client                            ftp(n)
 
 
 
@@ -3959,8 +3897,43 @@ CCAATTEEGGOORRYY
 
 
 ftp                                  2.4.9                              ftp(n)
+","# ftp
+
+> Interactively transfer files between a local and remote FTP server.
+
+- Connect to a remote FTP server interactively:
+
+`ftp {{host}}`
+
+- Log in as an anonymous user:
+
+`ftp -A {{host}}`
+
+- Disable automatic login upon initial connection:
+
+`ftp -n {{host}}`
+
+- Run a file containing a list of FTP commands:
+
+`ftp -s:{{path/to/file}} {{host}}`
+
+- Download multiple files (glob expression):
+
+`mget {{*.png}}`
+
+- Upload multiple files (glob expression):
+
+`mput {{*.zip}}`
+
+- Delete multiple files on the remote server:
+
+`mdelete {{*.txt}}`
+
+- Display detailed help:
+
+`ftp --help`
 "
-path,"# path
+path,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/path,,"# path
 
 > Display or set the search path for executable files.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/path>.
@@ -3980,9 +3953,8 @@ path,"# path
 - Set command prompt to only search the current directory for executables:
 
 `path ;`
-","No manual entry for path
 "
-tskill,"# tskill
+tskill,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tskill,,"# tskill
 
 > Ends a process running in a session on a Remote Desktop Session Host.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tskill>.
@@ -3994,30 +3966,8 @@ tskill,"# tskill
 - Terminate a process by its name:
 
 `tskill {{process_name}}`
-","No manual entry for tskill
 "
-finger,"# finger
-
-> Return information about one or more users on a specified system.
-> The remote system must be running the Finger service.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/finger>.
-
-- Display information about a specific user:
-
-`finger {{user}}@{{host}}`
-
-- Display information about all users on the specified host:
-
-`finger @{{host}}`
-
-- Display information in a longer format:
-
-`finger {{user}}@{{host}} -l`
-
-- Display help information:
-
-`finger /?`
-","
+finger,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/finger,"
 FINGER(1)                 BSD General Commands Manual                FINGER(1)
 
 NNAAMMEE
@@ -4153,28 +4103,29 @@ BBUUGGSS
      The ffiinnggeerr utility does not recognize multibyte characters.
 
 BSD                              July 17, 2004                             BSD
+","# finger
+
+> Return information about one or more users on a specified system.
+> The remote system must be running the Finger service.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/finger>.
+
+- Display information about a specific user:
+
+`finger {{user}}@{{host}}`
+
+- Display information about all users on the specified host:
+
+`finger @{{host}}`
+
+- Display information in a longer format:
+
+`finger {{user}}@{{host}} -l`
+
+- Display help information:
+
+`finger /?`
 "
-cd,"# cd
-
-> Displays the name of or changes the current working directory.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cd>.
-
-- Go to a directory in the same drive:
-
-`cd {{path/to/directory}}`
-
-- Display the name of the current directory:
-
-`cd`
-
-- Go up to the parent of the current directory:
-
-`cd ..`
-
-- Go to a directory in a different drive:
-
-`cd {{path/to/directory}} /d`
-","
+cd,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cd,"
 BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
 
 NNAAMMEE
@@ -4341,8 +4292,28 @@ AAUUTTHHOORRSS
      This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
 
 BSD                            February 23, 2005                           BSD
+","# cd
+
+> Displays the name of or changes the current working directory.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cd>.
+
+- Go to a directory in the same drive:
+
+`cd {{path/to/directory}}`
+
+- Display the name of the current directory:
+
+`cd`
+
+- Go up to the parent of the current directory:
+
+`cd ..`
+
+- Go to a directory in a different drive:
+
+`cd {{path/to/directory}} /d`
 "
-reg-unload,"# reg unload
+reg-unload,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-unload,,"# reg unload
 
 > Remove data from the registry that was loaded using the `reg load` command.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-unload>.
@@ -4350,9 +4321,8 @@ reg-unload,"# reg unload
 - Remove data from the registry for a specified key:
 
 `reg unload {{key_name}}`
-","No manual entry for reg-unload
 "
-title,"# title
+title,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/title,,"# title
 
 > Set the title of the command prompt window.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/title>.
@@ -4360,9 +4330,8 @@ title,"# title
 - Set the title of the current command prompt window:
 
 `title {{new_title}}`
-","No manual entry for title
 "
-choco-uninstall,"# choco uninstall
+choco-uninstall,https://chocolatey.org/docs/commands-uninstall,,"# choco uninstall
 
 > Uninstall one or more packages with Chocolatey.
 > More information: <https://chocolatey.org/docs/commands-uninstall>.
@@ -4386,9 +4355,8 @@ choco-uninstall,"# choco uninstall
 - Uninstall all packages:
 
 `choco uninstall all`
-","No manual entry for choco-uninstall
 "
-pathping,"# pathping
+pathping,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/pathping,,"# pathping
 
 > A trace route tool combining features of `ping` and `tracert`.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/pathping>.
@@ -4424,9 +4392,8 @@ pathping,"# pathping
 - Display detailed usage information:
 
 `pathping /?`
-","No manual entry for pathping
 "
-tzutil,"# tzutil
+tzutil,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tzutil,,"# tzutil
 
 > A tool for displaying or configuring the system time zone.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tzutil>.
@@ -4442,29 +4409,8 @@ tzutil,"# tzutil
 - Set the system time zone to the specific value:
 
 `tzutil /s {{timezone_id}}`
-","No manual entry for tzutil
 "
-rpcinfo,"# rpcinfo
-
-> List programs via RPC on remote computers.
-> More information: <https://docs.microsoft.com/windows-server/administration/windows-commands/rpcinfo>.
-
-- List all programs registered on the local computer:
-
-`rpcinfo`
-
-- List all programs registered on a remote computer:
-
-`rpcinfo /p {{computer_name}}`
-
-- Call a specific program on a remote computer using TCP:
-
-`rpcinfo /t {{computer_name}} {{program_name}}`
-
-- Call a specific program on a remote computer using UDP:
-
-`rpcinfo /u {{computer_name}} {{program_name}}`
-","
+rpcinfo,https://docs.microsoft.com/windows-server/administration/windows-commands/rpcinfo,"
 RPCINFO(8)                BSD System Manager's Manual               RPCINFO(8)
 
 NNAAMMEE
@@ -4678,40 +4624,28 @@ BBUUGGSS
      calls to the NFS server on hosts running such releases.
 
 BSD                            November 14, 2012                           BSD
+","# rpcinfo
+
+> List programs via RPC on remote computers.
+> More information: <https://docs.microsoft.com/windows-server/administration/windows-commands/rpcinfo>.
+
+- List all programs registered on the local computer:
+
+`rpcinfo`
+
+- List all programs registered on a remote computer:
+
+`rpcinfo /p {{computer_name}}`
+
+- Call a specific program on a remote computer using TCP:
+
+`rpcinfo /t {{computer_name}} {{program_name}}`
+
+- Call a specific program on a remote computer using UDP:
+
+`rpcinfo /u {{computer_name}} {{program_name}}`
 "
-mount,"# mount
-
-> Mount Network File System (NFS) network shares.
-> More information: <https://docs.microsoft.com/windows-server/administration/windows-commands/mount>.
-
-- Mount a share to the ""Z"" drive letter:
-
-`mount \\{{computer_name}}\{{share_name}} {{Z:}}`
-
-- Mount a share to the next available drive letter:
-
-`mount \\{{computer_name}}\{{share_name}} *`
-
-- Mount a share with a read timeout in seconds (defaults to 0.8, can be 0.9 or 1 to 60):
-
-`mount -o timeout={{seconds}} \\{{computer_name}}\{{share_name}} {{Z:}}`
-
-- Mount a share and retry up to 10 times if it fails:
-
-`mount -o retry={{retries}} \\{{computer_name}}\{{share_name}} {{Z:}}`
-
-- Mount a share with forced case sensitivity:
-
-`mount -o casesensitive \\{{computer_name}}\{{share_name}} {{Z:}}`
-
-- Mount a share as an anonymous user:
-
-`mount -o anon \\{{computer_name}}\{{share_name}} {{Z:}}`
-
-- Mount a share using a specific mount type:
-
-`mount -o mtype={{soft|hard}} \\{{computer_name}}\{{share_name}} {{Z:}}`
-","
+mount,https://docs.microsoft.com/windows-server/administration/windows-commands/mount,"
 MOUNT(8)                  BSD System Manager's Manual                 MOUNT(8)
 
 NNAAMMEE
@@ -4880,8 +4814,40 @@ HHIISSTTOORRYY
      A mmoouunntt command appeared in Version 6 AT&T UNIX.
 
 4th Berkeley Distribution        June 16, 1994       4th Berkeley Distribution
+","# mount
+
+> Mount Network File System (NFS) network shares.
+> More information: <https://docs.microsoft.com/windows-server/administration/windows-commands/mount>.
+
+- Mount a share to the ""Z"" drive letter:
+
+`mount \\{{computer_name}}\{{share_name}} {{Z:}}`
+
+- Mount a share to the next available drive letter:
+
+`mount \\{{computer_name}}\{{share_name}} *`
+
+- Mount a share with a read timeout in seconds (defaults to 0.8, can be 0.9 or 1 to 60):
+
+`mount -o timeout={{seconds}} \\{{computer_name}}\{{share_name}} {{Z:}}`
+
+- Mount a share and retry up to 10 times if it fails:
+
+`mount -o retry={{retries}} \\{{computer_name}}\{{share_name}} {{Z:}}`
+
+- Mount a share with forced case sensitivity:
+
+`mount -o casesensitive \\{{computer_name}}\{{share_name}} {{Z:}}`
+
+- Mount a share as an anonymous user:
+
+`mount -o anon \\{{computer_name}}\{{share_name}} {{Z:}}`
+
+- Mount a share using a specific mount type:
+
+`mount -o mtype={{soft|hard}} \\{{computer_name}}\{{share_name}} {{Z:}}`
 "
-msg,"# msg
+msg,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/msg,,"# msg
 
 > Send a message to a specific user or session.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/msg>.
@@ -4905,9 +4871,8 @@ msg,"# msg
 - Set a delay in seconds for a message:
 
 `msg /time:{{seconds}}`
-","No manual entry for msg
 "
-takeown,"# takeown
+takeown,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/takeown,,"# takeown
 
 > Take ownership of a file or directory.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/takeown>.
@@ -4927,29 +4892,8 @@ takeown,"# takeown
 - Change ownership to the Administrator group instead of the current user:
 
 `takeown /a /f {{path/to/file}}`
-","No manual entry for takeown
 "
-set,"# set
-
-> Display or set environment variables for the current instance of CMD.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/set>.
-
-- List all current environment variables:
-
-`set`
-
-- Set an environment variable to a specific value:
-
-`set {{name}}={{value}}`
-
-- List environment variables starting with the specified string:
-
-`set {{name}}`
-
-- Prompt the user for a value for the specified variable:
-
-`set /p {{name}}={{prompt_string}}`
-","
+set,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/set,"
 BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
 
 NNAAMMEE
@@ -5116,8 +5060,28 @@ AAUUTTHHOORRSS
      This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
 
 BSD                            February 23, 2005                           BSD
+","# set
+
+> Display or set environment variables for the current instance of CMD.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/set>.
+
+- List all current environment variables:
+
+`set`
+
+- Set an environment variable to a specific value:
+
+`set {{name}}={{value}}`
+
+- List environment variables starting with the specified string:
+
+`set {{name}}`
+
+- Prompt the user for a value for the specified variable:
+
+`set /p {{name}}={{prompt_string}}`
 "
-eventcreate,"# eventcreate
+eventcreate,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/eventcreate,,"# eventcreate
 
 > Create custom entries in the event log.
 > Event IDs can be any number between 1 and 1000.
@@ -5138,9 +5102,8 @@ eventcreate,"# eventcreate
 - Create an event in a remote machine's event log:
 
 `eventcreate /s {{hostname}} /u {{username}} /p {{password}} /t {{type}} /id {{id}} /d ""{{message""}}`
-","No manual entry for eventcreate
 "
-clip,"# clip
+clip,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/clip,,"# clip
 
 > Copy input content to the Windows clipboard.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/clip>.
@@ -5160,25 +5123,8 @@ clip,"# clip
 - Copy text without a trailing newline to the Windows clipboard:
 
 `echo | set /p=""some text"" | clip`
-","No manual entry for clip
 "
-subst,"# subst
-
-> Associates a path with a virtual drive letter.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/subst>.
-
-- List active associations:
-
-`subst`
-
-- Add an association:
-
-`subst {{Z:}} {{C:\Python2.7}}`
-
-- Remove an association:
-
-`subst {{Z:}} /d`
-","subst(n)                     Tcl Built-In Commands                    subst(n)
+subst,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/subst,"subst(n)                     Tcl Built-In Commands                    subst(n)
 
 
 
@@ -5274,24 +5220,24 @@ KKEEYYWWOORRDDSS
 
 
 Tcl                                   7.4                             subst(n)
+","# subst
+
+> Associates a path with a virtual drive letter.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/subst>.
+
+- List active associations:
+
+`subst`
+
+- Add an association:
+
+`subst {{Z:}} {{C:\Python2.7}}`
+
+- Remove an association:
+
+`subst {{Z:}} /d`
 "
-exit,"# exit
-
-> Quit the current CMD instance or the current batch file.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/exit>.
-
-- Quit the current CMD instance:
-
-`exit`
-
-- Quit the current batch script:
-
-`exit /b`
-
-- Quit using a specific exit code:
-
-`exit {{exit_code}}`
-","
+exit,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/exit,"
 BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
 
 NNAAMMEE
@@ -5458,8 +5404,24 @@ AAUUTTHHOORRSS
      This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
 
 BSD                            February 23, 2005                           BSD
+","# exit
+
+> Quit the current CMD instance or the current batch file.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/exit>.
+
+- Quit the current CMD instance:
+
+`exit`
+
+- Quit the current batch script:
+
+`exit /b`
+
+- Quit using a specific exit code:
+
+`exit {{exit_code}}`
 "
-reg-add,"# reg add
+reg-add,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-add,,"# reg add
 
 > Add new keys and their values to the registry.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-add>.
@@ -5483,9 +5445,8 @@ reg-add,"# reg add
 - Forcefully overwrite the existing registry value without a prompt:
 
 `reg add {{key_name}} /f`
-","No manual entry for reg-add
 "
-choco-outdated,"# choco outdated
+choco-outdated,https://chocolatey.org/docs/commands-outdated,,"# choco outdated
 
 > Check for outdated packages with Chocolatey.
 > More information: <https://chocolatey.org/docs/commands-outdated>.
@@ -5505,29 +5466,8 @@ choco-outdated,"# choco outdated
 - Provide a username and password for authentication:
 
 `choco outdated --user {{username}} --password {{password}}`
-","No manual entry for choco-outdated
 "
-dir,"# dir
-
-> List directory contents.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/dir>.
-
-- Show the contents of the current directory:
-
-`dir`
-
-- Show the contents of a given directory:
-
-`dir {{path/to/directory}}`
-
-- Show the contents of the current directory, including hidden ones:
-
-`dir /A`
-
-- Show the contents of a given directory, including hidden ones:
-
-`dir {{path/to/directory}} /A`
-","
+dir,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/dir,"
 DIR(5)                      BSD File Formats Manual                     DIR(5)
 
 NNAAMMEE
@@ -5659,31 +5599,28 @@ HHIISSTTOORRYY
      A ddiirr file format appeared in Version 7 AT&T UNIX.
 
 4.2 Berkeley Distribution       April 19, 1994       4.2 Berkeley Distribution
+","# dir
+
+> List directory contents.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/dir>.
+
+- Show the contents of the current directory:
+
+`dir`
+
+- Show the contents of a given directory:
+
+`dir {{path/to/directory}}`
+
+- Show the contents of the current directory, including hidden ones:
+
+`dir /A`
+
+- Show the contents of a given directory, including hidden ones:
+
+`dir {{path/to/directory}} /A`
 "
-units,"# units
-
-> Provide the conversion between two units of measure.
-
-- Run in interactive mode:
-
-`units`
-
-- Show the conversion between two simple units:
-
-`units {{quarts}} {{tablespoons}}`
-
-- Convert between units with quantities:
-
-`units {{15 pounds}} {{kilograms}}`
-
-- Show the conversion between two compound units:
-
-`units {{""meters / second""}} {{""inches / hour""}}`
-
-- Show the conversion between units with different dimensions:
-
-`units {{""acres""}} {{""ft^2""}}`
-","
+units,,"
 UNITS(1)                  BSD General Commands Manual                 UNITS(1)
 
 NNAAMMEE
@@ -5823,8 +5760,31 @@ BBUUGGSS
      take so long to load the units list and check for duplication.
 
 BSD                              July 14, 1993                             BSD
+","# units
+
+> Provide the conversion between two units of measure.
+
+- Run in interactive mode:
+
+`units`
+
+- Show the conversion between two simple units:
+
+`units {{quarts}} {{tablespoons}}`
+
+- Convert between units with quantities:
+
+`units {{15 pounds}} {{kilograms}}`
+
+- Show the conversion between two compound units:
+
+`units {{""meters / second""}} {{""inches / hour""}}`
+
+- Show the conversion between units with different dimensions:
+
+`units {{""acres""}} {{""ft^2""}}`
 "
-choco-pin,"# choco pin
+choco-pin,https://chocolatey.org/docs/commands-pin,,"# choco pin
 
 > Pin a package at a specific version with Chocolatey.
 > Pinned packages are skipped automatically when upgrading.
@@ -5845,9 +5805,8 @@ choco-pin,"# choco pin
 - Remove a pin for a specific package:
 
 `choco pin remove --name {{package}}`
-","No manual entry for choco-pin
 "
-reg-copy,"# reg copy
+reg-copy,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-copy,,"# reg copy
 
 > Copy keys and their values in the registry.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-copy>.
@@ -5863,9 +5822,8 @@ reg-copy,"# reg copy
 - Forcefully copy a registry key without a prompt:
 
 `reg copy {{old_key_name}} {{new_key_name}} /f`
-","No manual entry for reg-copy
 "
-color,"# color
+color,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/color,,"# color
 
 > Set the console foreground and background colors.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/color>.
@@ -5881,9 +5839,8 @@ color,"# color
 - Set the console foreground and background to a specific color:
 
 `color {{foreground_code}}{{background_code}}`
-","No manual entry for color
 "
-cmd,"# cmd
+cmd,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd,,"# cmd
 
 > The Windows command interpreter.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd>.
@@ -5919,42 +5876,8 @@ cmd,"# cmd
 - Force output to use unicode encoding:
 
 `cmd /u`
-","No manual entry for cmd
 "
-fc,"# fc
-
-> Compare the differences between two files or sets of files.
-> Use wildcards (*) to compare sets of files.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/fc>.
-
-- Compare 2 specified files:
-
-`fc {{path/to/file_1}} {{path/to/file_2}}`
-
-- Perform a case-insensitive comparison:
-
-`fc /c {{path/to/file_1}} {{path/to/file_2}}`
-
-- Compare files as Unicode text:
-
-`fc /u {{path/to/file_1}} {{path/to/file_2}}`
-
-- Compare files as ASCII text:
-
-`fc /l {{path/to/file_1}} {{path/to/file_2}}`
-
-- Compare files as binary:
-
-`fc /b {{path/to/file_1}} {{path/to/file_2}}`
-
-- Disable tab-to-space expansion:
-
-`fc /t {{path/to/file_1}} {{path/to/file_2}}`
-
-- Compress whitespace (tabs and spaces) for comparisons:
-
-`fc /w {{path/to/file_1}} {{path/to/file_2}}`
-","
+fc,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/fc,"
 BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
 
 NNAAMMEE
@@ -6121,8 +6044,41 @@ AAUUTTHHOORRSS
      This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
 
 BSD                            February 23, 2005                           BSD
+","# fc
+
+> Compare the differences between two files or sets of files.
+> Use wildcards (*) to compare sets of files.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/fc>.
+
+- Compare 2 specified files:
+
+`fc {{path/to/file_1}} {{path/to/file_2}}`
+
+- Perform a case-insensitive comparison:
+
+`fc /c {{path/to/file_1}} {{path/to/file_2}}`
+
+- Compare files as Unicode text:
+
+`fc /u {{path/to/file_1}} {{path/to/file_2}}`
+
+- Compare files as ASCII text:
+
+`fc /l {{path/to/file_1}} {{path/to/file_2}}`
+
+- Compare files as binary:
+
+`fc /b {{path/to/file_1}} {{path/to/file_2}}`
+
+- Disable tab-to-space expansion:
+
+`fc /t {{path/to/file_1}} {{path/to/file_2}}`
+
+- Compress whitespace (tabs and spaces) for comparisons:
+
+`fc /w {{path/to/file_1}} {{path/to/file_2}}`
 "
-reg-restore,"# reg restore
+reg-restore,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-restore,,"# reg restore
 
 > Restore a key and its values from a backup file.
 > See `reg-save` for more information.
@@ -6131,9 +6087,8 @@ reg-restore,"# reg restore
 - Overwrite a specified key with data from a backup file:
 
 `reg restore {{key_name}} {{path/to/file}}`
-","No manual entry for reg-restore
 "
-xcopy,"# xcopy
+xcopy,,,"# xcopy
 
 > Copy files and directory trees.
 
@@ -6168,9 +6123,8 @@ xcopy,"# xcopy
 - Display detailed usage information:
 
 `xcopy /?`
-","No manual entry for xcopy
 "
-reg-compare,"# reg compare
+reg-compare,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-compare,,"# reg compare
 
 > Compare keys and their values in the registry.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-compare>.
@@ -6194,9 +6148,8 @@ reg-compare,"# reg compare
 - Output the differences and matches between the specified keys:
 
 `reg compare {{first_key_name}} {{second_key_name}} /oa`
-","No manual entry for reg-compare
 "
-choco-search,"# choco search
+choco-search,https://chocolatey.org/docs/commands-search,,"# choco search
 
 > Search for a local or remote package with Chocolatey.
 > More information: <https://chocolatey.org/docs/commands-search>.
@@ -6224,9 +6177,8 @@ choco-search,"# choco search
 - Provide a username and password for authentication:
 
 `choco search {{query}} --user {{username}} --password {{password}}`
-","No manual entry for choco-search
 "
-rdpsign,"# rdpsign
+rdpsign,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/rdpsign,,"# rdpsign
 
 > A tool for signing Remote Desktop Protocol (RDP) files.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/rdpsign>.
@@ -6250,9 +6202,8 @@ rdpsign,"# rdpsign
 - Test the signing by displaying the output to `stdout` without updating the file:
 
 `rdpsign {{path/to/file.rdp}} /l`
-","No manual entry for rdpsign
 "
-reg-query,"# reg query
+reg-query,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-query,,"# reg query
 
 > Display the values of keys and sub keys in the registry.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-query>.
@@ -6276,21 +6227,8 @@ reg-query,"# reg query
 - Display a value of a key matching a specified data type:
 
 `reg query {{key_name}} /t {{type}}`
-","No manual entry for reg-query
 "
-nfsstat,"# nfsstat
-
-> Display or reset the number of calls made to the NFS server.
-> More information: <https://docs.microsoft.com/windows-server/administration/windows-commands/nfsstat>.
-
-- Display the recorded number of calls made to the NFS server:
-
-`nfsstat`
-
-- Reset the recorded number of calls made to the NFS server:
-
-`nfsstat -z`
-","
+nfsstat,https://docs.microsoft.com/windows-server/administration/windows-commands/nfsstat,"
 NFSSTAT(1)                BSD General Commands Manual               NFSSTAT(1)
 
 NNAAMMEE
@@ -6470,8 +6408,20 @@ HHIISSTTOORRYY
      The nnffssssttaatt command appears in 4.4BSD.
 
 4.4BSD                         January 11, 2011                         4.4BSD
+","# nfsstat
+
+> Display or reset the number of calls made to the NFS server.
+> More information: <https://docs.microsoft.com/windows-server/administration/windows-commands/nfsstat>.
+
+- Display the recorded number of calls made to the NFS server:
+
+`nfsstat`
+
+- Reset the recorded number of calls made to the NFS server:
+
+`nfsstat -z`
 "
-choco-feature,"# choco feature
+choco-feature,https://chocolatey.org/docs/commands-feature,,"# choco feature
 
 > Interact with features with Chocolatey.
 > More information: <https://chocolatey.org/docs/commands-feature>.
@@ -6487,9 +6437,8 @@ choco-feature,"# choco feature
 - Disable a feature:
 
 `choco feature disable --name {{name}}`
-","No manual entry for choco-feature
 "
-taskkill,"# taskkill
+taskkill,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/taskkill,,"# taskkill
 
 > Terminate a process by its process id or name.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/taskkill>.
@@ -6517,9 +6466,8 @@ taskkill,"# taskkill
 - Display information about the usage of the command:
 
 `taskkill /?`
-","No manual entry for taskkill
 "
-choco-upgrade,"# choco upgrade
+choco-upgrade,https://chocolatey.org/docs/commands-upgrade,,"# choco upgrade
 
 > Upgrade one or more packages with Chocolatey.
 > More information: <https://chocolatey.org/docs/commands-upgrade>.
@@ -6551,9 +6499,8 @@ choco-upgrade,"# choco upgrade
 - Provide a username and password for authentication:
 
 `choco upgrade {{package}} --user {{username}} --password {{password}}`
-","No manual entry for choco-upgrade
 "
-repair-bde,"# repair-bde
+repair-bde,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/repair-bde,,"# repair-bde
 
 > Attempt to repair or decrypt a damaged BitLocker-encrypted volume.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/repair-bde>.
@@ -6589,9 +6536,8 @@ repair-bde,"# repair-bde
 - Display all available options:
 
 `repair-bde /?`
-","No manual entry for repair-bde
 "
-comp,"# comp
+comp,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/comp,,"# comp
 
 > Compare the contents of two files or sets of files.
 > Use wildcards (*) to compare sets of files.
@@ -6628,9 +6574,8 @@ comp,"# comp
 - Compare only the first 5 lines of each file:
 
 `comp /n={{5}} {{path/to/file_1}} {{path/to/file_2}}`
-","No manual entry for comp
 "
-del,"# del
+del,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/del,,"# del
 
 > Delete one or more files.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/del>.
@@ -6662,9 +6607,8 @@ del,"# del
 - Delete files based on specified attributes:
 
 `del {{file_pattern}} /a {{attribute}}`
-","No manual entry for del
 "
-fondue,"# fondue
+fondue,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/fondue,,"# fondue
 
 > A command line installer for optional Windows features.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/fondue>.
@@ -6680,29 +6624,8 @@ fondue,"# fondue
 - Specify a caller process name for error reporting:
 
 `fondue /enable-feature:{{feature}} /caller-name:{{name}}`
-","No manual entry for fondue
 "
-tree,"# tree
-
-> Display a graphical tree of the directory structure for a path.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tree>.
-
-- Display the tree for the current directory:
-
-`tree`
-
-- Display the tree for a specific directory:
-
-`tree {{path/to/directory}}`
-
-- Display the tree for a directory including files:
-
-`tree {{path/to/directory}} /f`
-
-- Display the tree using ASCII characters instead of extended characters:
-
-`tree {{path/to/directory}} /a`
-","TREE(1)                                                                TREE(1)
+tree,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tree,"TREE(1)                                                                TREE(1)
 
 
 
@@ -7051,8 +6974,28 @@ SSEEEE AALLSSOO
 
 
 Tree 1.8.0                                                             TREE(1)
+","# tree
+
+> Display a graphical tree of the directory structure for a path.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tree>.
+
+- Display the tree for the current directory:
+
+`tree`
+
+- Display the tree for a specific directory:
+
+`tree {{path/to/directory}}`
+
+- Display the tree for a directory including files:
+
+`tree {{path/to/directory}} /f`
+
+- Display the tree using ASCII characters instead of extended characters:
+
+`tree {{path/to/directory}} /a`
 "
-choco-source,"# choco source
+choco-source,https://chocolatey.org/docs/commands-source,,"# choco source
 
 > Manage sources for packages with Chocolatey.
 > More information: <https://chocolatey.org/docs/commands-source>.
@@ -7084,9 +7027,8 @@ choco-source,"# choco source
 - Remove a package source:
 
 `choco source remove --name {{name}}`
-","No manual entry for choco-source
 "
-systeminfo,"# systeminfo
+systeminfo,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/systeminfo,,"# systeminfo
 
 > Display operating system configuration for a local or remote machine.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/systeminfo>.
@@ -7106,25 +7048,8 @@ systeminfo,"# systeminfo
 - Display detailed usage information:
 
 `systeminfo /?`
-","No manual entry for systeminfo
 "
-rmdir,"# rmdir
-
-> Remove a directory and its contents.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/rmdir>.
-
-- Remove an empty directory:
-
-`rmdir {{path/to/directory}}`
-
-- Remove a directory and its contents recursively:
-
-`rmdir {{path/to/directory}} /s`
-
-- Remove a directory and its contents recursively without prompting:
-
-`rmdir {{path/to/directory}} /s /q`
-","
+rmdir,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/rmdir,"
 RMDIR(1)                  BSD General Commands Manual                 RMDIR(1)
 
 NNAAMMEE
@@ -7167,8 +7092,24 @@ HHIISSTTOORRYY
      A rrmmddiirr command appeared in Version 1 AT&T UNIX.
 
 BSD                              May 31, 1993                              BSD
+","# rmdir
+
+> Remove a directory and its contents.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/rmdir>.
+
+- Remove an empty directory:
+
+`rmdir {{path/to/directory}}`
+
+- Remove a directory and its contents recursively:
+
+`rmdir {{path/to/directory}} /s`
+
+- Remove a directory and its contents recursively without prompting:
+
+`rmdir {{path/to/directory}} /s /q`
 "
-choco-apikey,"# choco-apikey
+choco-apikey,https://chocolatey.org/docs/commands-apikey,,"# choco-apikey
 
 > Manage API keys for Chocolatey sources.
 > More information: <https://chocolatey.org/docs/commands-apikey>.
@@ -7188,49 +7129,8 @@ choco-apikey,"# choco-apikey
 - Remove an API key for a source:
 
 `choco apikey --source ""{{source_url}}"" --remove`
-","No manual entry for choco-apikey
 "
-shutdown,"# shutdown
-
-> A tool for shutting down, restarting or logging off a machine.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/shutdown>.
-
-- Shutdown the current machine:
-
-`shutdown /s`
-
-- Shutdown the current machine force-closing all apps:
-
-`shutdown /s /f`
-
-- Restart the current machine:
-
-`shutdown /r`
-
-- Hibernate the current machine:
-
-`shutdown /h`
-
-- Log off the current machine:
-
-`shutdown /l`
-
-- Specify a timeout in seconds to wait before shutting down:
-
-`shutdown /s /t {{seconds}}`
-
-- Specify a comment for the shutdown reason:
-
-`shutdown /s /c ""{{reason}}""`
-
-- Abort a shutdown sequence whose timeout is yet to expire:
-
-`shutdown /a`
-
-- Shutdown a remote machine:
-
-`shutdown /m {{\\hostname}}`
-","
+shutdown,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/shutdown,"
 SHUTDOWN(8)               BSD System Manager's Manual              SHUTDOWN(8)
 
 NNAAMMEE
@@ -7318,8 +7218,48 @@ HHIISSTTOORRYY
      The sshhuuttddoowwnn utility appeared in 4.0BSD.
 
 BSD                            December 11, 1998                           BSD
+","# shutdown
+
+> A tool for shutting down, restarting or logging off a machine.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/shutdown>.
+
+- Shutdown the current machine:
+
+`shutdown /s`
+
+- Shutdown the current machine force-closing all apps:
+
+`shutdown /s /f`
+
+- Restart the current machine:
+
+`shutdown /r`
+
+- Hibernate the current machine:
+
+`shutdown /h`
+
+- Log off the current machine:
+
+`shutdown /l`
+
+- Specify a timeout in seconds to wait before shutting down:
+
+`shutdown /s /t {{seconds}}`
+
+- Specify a comment for the shutdown reason:
+
+`shutdown /s /c ""{{reason}}""`
+
+- Abort a shutdown sequence whose timeout is yet to expire:
+
+`shutdown /a`
+
+- Shutdown a remote machine:
+
+`shutdown /m {{\\hostname}}`
 "
-driverquery,"# driverquery
+driverquery,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/driverquery,,"# driverquery
 
 > Display information about installed device drivers.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/driverquery>.
@@ -7351,9 +7291,8 @@ driverquery,"# driverquery
 - Display detailed usage information:
 
 `driverquery /?`
-","No manual entry for driverquery
 "
-logoff,"# logoff
+logoff,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/logoff,,"# logoff
 
 > Terminate a login session.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/logoff>.
@@ -7369,9 +7308,8 @@ logoff,"# logoff
 - Terminate a session on a specific server connected through RDP:
 
 `logoff {{session_name|session_id}} /server:{{servername}}`
-","No manual entry for logoff
 "
-ftype,"# ftype
+ftype,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ftype,,"# ftype
 
 > Display or modify file types used for file extension association.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ftype>.
@@ -7387,9 +7325,8 @@ ftype,"# ftype
 - Set the associated program for a specific file type:
 
 `ftype {{file_type}}=""{{path/to/executable_command}}""`
-","No manual entry for ftype
 "
-choco,"# choco
+choco,https://chocolatey.org,,"# choco
 
 > A command line interface for the Chocolatey package manager.
 > See `choco install`, `choco upgrade` and other pages for additional information.
@@ -7410,9 +7347,8 @@ choco,"# choco
 - Check the Chocolatey version:
 
 `choco --version`
-","No manual entry for choco
 "
-reg-flags,"# reg flags
+reg-flags,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-flags,,"# reg flags
 
 > Display or set flags on registry keys.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-flags>.
@@ -7432,17 +7368,8 @@ reg-flags,"# reg flags
 - Set specified flags for a specific key and its sub keys:
 
 `reg flags {{key_name}} set {{flag_names}} /s`
-","No manual entry for reg-flags
 "
-type,"# type
-
-> Display the contents of a file.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/type>.
-
-- Display the contents of a specific file:
-
-`type {{path/to/file}}`
-","
+type,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/type,"
 BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
 
 NNAAMMEE
@@ -7609,8 +7536,16 @@ AAUUTTHHOORRSS
      This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
 
 BSD                            February 23, 2005                           BSD
+","# type
+
+> Display the contents of a file.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/type>.
+
+- Display the contents of a specific file:
+
+`type {{path/to/file}}`
 "
-getmac,"# getmac
+getmac,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/getmac,,"# getmac
 
 > Display the MAC addresses of a system.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/getmac>.
@@ -7638,9 +7573,8 @@ getmac,"# getmac
 - Display detailed usage information:
 
 `getmac /?`
-","No manual entry for getmac
 "
-reg-save,"# reg save
+reg-save,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-save,,"# reg save
 
 > Save a registry key, its sub keys and values to a file.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg-save>.
@@ -7652,18 +7586,16 @@ reg-save,"# reg save
 - Forcefully overwrite an existing file without a prompt:
 
 `reg save {{key_name}} {{path/to/file}} /y`
-","No manual entry for reg-save
 "
-sigverif,"# sigverif
+sigverif,,,"# sigverif
 
 > A GUI signature verification tool for checking system files.
 
 - Open the File Signature Verification interface:
 
 `sigverif`
-","No manual entry for sigverif
 "
-wsl,"# wsl
+wsl,https://docs.microsoft.com/en-us/windows/wsl/reference,,"# wsl
 
 > Manage the Windows Subsystem for Linux from the command line.
 > More information: <https://docs.microsoft.com/en-us/windows/wsl/reference>.
@@ -7695,9 +7627,8 @@ wsl,"# wsl
 - Shut down Windows Subsystem for Linux:
 
 `wsl --shutdown`
-","No manual entry for wsl
 "
-cls,"# cls
+cls,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cls,,"# cls
 
 > Clears the screen.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cls>.
@@ -7705,9 +7636,8 @@ cls,"# cls
 - Clear the screen:
 
 `cls`
-","No manual entry for cls
 "
-choco-info,"# choco info
+choco-info,https://chocolatey.org/docs/commands-info,,"# choco info
 
 > Display detailed information about a package with Chocolatey.
 > More information: <https://chocolatey.org/docs/commands-info>.
@@ -7727,9 +7657,8 @@ choco-info,"# choco info
 - Provide a username and password for authentication:
 
 `choco info {{package}} --user {{username}} --password {{password}}`
-","No manual entry for choco-info
 "
-pwlauncher,"# pwlauncher
+pwlauncher,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/pwlauncher,,"# pwlauncher
 
 > A command line tool for managing the Windows To Go startup options.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/pwlauncher>.
@@ -7741,30 +7670,8 @@ pwlauncher,"# pwlauncher
 - Enable or disable the Windows To Go startup options:
 
 `pwlauncher /{{enable|disable}}`
-","No manual entry for pwlauncher
 "
-where,"# where
-
-> Display the location of files that match the search pattern.
-> Defaults to current work directory and paths in the PATH environment variable.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where>.
-
-- Display the location of file pattern:
-
-`where {{file_pattern}}`
-
-- Display the location of file pattern including file size and date:
-
-`where /T {{file_pattern}}`
-
-- Recursively search for file pattern at specified path:
-
-`where /R {{path/to/directory}} {{file_pattern}}`
-
-- Display only the error code for the location of file pattern:
-
-`where /Q {{file_pattern}}`
-","
+where,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where,"
 BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
 
 NNAAMMEE
@@ -7931,32 +7838,29 @@ AAUUTTHHOORRSS
      This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
 
 BSD                            February 23, 2005                           BSD
+","# where
+
+> Display the location of files that match the search pattern.
+> Defaults to current work directory and paths in the PATH environment variable.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where>.
+
+- Display the location of file pattern:
+
+`where {{file_pattern}}`
+
+- Display the location of file pattern including file size and date:
+
+`where /T {{file_pattern}}`
+
+- Recursively search for file pattern at specified path:
+
+`where /R {{path/to/directory}} {{file_pattern}}`
+
+- Display only the error code for the location of file pattern:
+
+`where /Q {{file_pattern}}`
 "
-ipconfig,"# ipconfig
-
-> Display and manage the network configuration of Windows.
-> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig>.
-
-- Show a list of network adapters:
-
-`ipconfig`
-
-- Show a detailed list of network adapters:
-
-`ipconfig /all`
-
-- Renew the IP addresses for a network adapter:
-
-`ipconfig /renew {{adapter}}`
-
-- Free up the IP addresses for a network adapter:
-
-`ipconfig /release {{adapter}}`
-
-- Remove all data from the DNS cache:
-
-`ipconfig /flushdns`
-","
+ipconfig,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig,"
 IPCONFIG(8)               BSD System Manager's Manual              IPCONFIG(8)
 
 NNAAMMEE
@@ -8140,8 +8044,32 @@ HHIISSTTOORRYY
      The iippccoonnffiigg command first appeared in Mac OS X Version 10.0 Public Beta.
 
 Mac OS X                        March 27, 2013                        Mac OS X
+","# ipconfig
+
+> Display and manage the network configuration of Windows.
+> More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig>.
+
+- Show a list of network adapters:
+
+`ipconfig`
+
+- Show a detailed list of network adapters:
+
+`ipconfig /all`
+
+- Renew the IP addresses for a network adapter:
+
+`ipconfig /renew {{adapter}}`
+
+- Free up the IP addresses for a network adapter:
+
+`ipconfig /release {{adapter}}`
+
+- Remove all data from the DNS cache:
+
+`ipconfig /flushdns`
 "
-cmstp,"# cmstp
+cmstp,https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmstp,,"# cmstp
 
 > A command line tool for managing connection service profiles.
 > More information: <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmstp>.
@@ -8177,5 +8105,4 @@ cmstp,"# cmstp
 - Uninstall silently without a confirmation prompt:
 
 `cmstp /u /s ""{{path/to/profile}}""`
-","No manual entry for cmstp
 "

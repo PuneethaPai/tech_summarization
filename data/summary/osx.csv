@@ -1,16 +1,5 @@
-command,summary,man_entry
-head,"# head
-
-> Output the first part of files.
-
-- Output the first few lines of a file:
-
-`head -n {{count_of_lines}} {{filename}}`
-
-- Output the first few bytes of a file:
-
-`head -c {{number_in_bytes}} {{filename}}`
-","
+command,doc_url,man_entry,tldr_summary
+head,,"
 HEAD(1)                   BSD General Commands Manual                  HEAD(1)
 
 NNAAMMEE
@@ -38,19 +27,19 @@ HHIISSTTOORRYY
      The hheeaadd command appeared in PWB UNIX.
 
 BSD                              June 6, 1993                              BSD
+","# head
+
+> Output the first part of files.
+
+- Output the first few lines of a file:
+
+`head -n {{count_of_lines}} {{filename}}`
+
+- Output the first few bytes of a file:
+
+`head -c {{number_in_bytes}} {{filename}}`
 "
-reboot,"# reboot
-
-> Reboot the system.
-
-- Reboot immediately:
-
-`sudo reboot`
-
-- Reboot immediately without gracefully shutting down:
-
-`sudo reboot -q`
-","
+reboot,,"
 REBOOT(8)                 BSD System Manager's Manual                REBOOT(8)
 
 NNAAMMEE
@@ -107,23 +96,19 @@ HHIISSTTOORRYY
      A rreebboooott utility appeared in Version 6 AT&T UNIX.
 
 BSD                              June 9, 1993                              BSD
+","# reboot
+
+> Reboot the system.
+
+- Reboot immediately:
+
+`sudo reboot`
+
+- Reboot immediately without gracefully shutting down:
+
+`sudo reboot -q`
 "
-system_profiler,"# system_profiler
-
-> Report system hardware and software configuration.
-
-- Display a full system profiler report which can be opened by System Profiler.app:
-
-`system_profiler -xml > MyReport.spx`
-
-- Display a hardware overview (Model, CPU, Memory, Serial, etc):
-
-`system_profiler SPHardwareDataType`
-
-- Print the system serial number:
-
-`system_profiler SPHardwareDataType|grep ""Serial Number (system)"" |awk '{print $4}'`
-","
+system_profiler,,"
 SYSTEM_PROFILER(8)        BSD System Manager's Manual       SYSTEM_PROFILER(8)
 
 NNAAMMEE
@@ -189,36 +174,23 @@ AAUUTTHHOORRSS
      Apple Computer, Inc.
 
 Darwin                           June 30, 2003                          Darwin
+","# system_profiler
+
+> Report system hardware and software configuration.
+
+- Display a full system profiler report which can be opened by System Profiler.app:
+
+`system_profiler -xml > MyReport.spx`
+
+- Display a hardware overview (Model, CPU, Memory, Serial, etc):
+
+`system_profiler SPHardwareDataType`
+
+- Print the system serial number:
+
+`system_profiler SPHardwareDataType|grep ""Serial Number (system)"" |awk '{print $4}'`
 "
-pmset,"# pmset
-
-> Configure macOS power management settings, as one might do in System Preferences > Energy Saver.
-> Commands that modify settings must begin with `sudo`.
-
-- Display the current power management settings:
-
-`pmset -g`
-
-- Display the current power source and battery levels:
-
-`pmset -g batt`
-
-- Set display to never sleep when on charger power:
-
-`sudo pmset -c displaysleep 0`
-
-- Set display to sleep after 15 minutes when on battery power:
-
-`sudo pmset -b displaysleep 15`
-
-- Schedule computer to automatically wake up every weekday at 9 AM:
-
-`sudo pmset repeat wake MTWRF 09:00:00`
-
-- Restore to system defaults:
-
-`sudo pmset -a displaysleep 10 disksleep 10 sleep 30 womp 1`
-","
+pmset,,"
 PMSET(1)                  BSD General Commands Manual                 PMSET(1)
 
 NNAAMMEE
@@ -543,35 +515,36 @@ FFIILLEESS
      fies.
 
 Darwin                         November 9, 2012                         Darwin
+","# pmset
+
+> Configure macOS power management settings, as one might do in System Preferences > Energy Saver.
+> Commands that modify settings must begin with `sudo`.
+
+- Display the current power management settings:
+
+`pmset -g`
+
+- Display the current power source and battery levels:
+
+`pmset -g batt`
+
+- Set display to never sleep when on charger power:
+
+`sudo pmset -c displaysleep 0`
+
+- Set display to sleep after 15 minutes when on battery power:
+
+`sudo pmset -b displaysleep 15`
+
+- Schedule computer to automatically wake up every weekday at 9 AM:
+
+`sudo pmset repeat wake MTWRF 09:00:00`
+
+- Restore to system defaults:
+
+`sudo pmset -a displaysleep 10 disksleep 10 sleep 30 womp 1`
 "
-open,"# open
-
-> Opens files, directories and applications.
-
-- Open a file with the associated application:
-
-`open {{file.ext}}`
-
-- Run a graphical macOS application:
-
-`open -a {{Application}}`
-
-- Run a graphical macOS app based on the bundle identifier (refer to `osascript` for an easy way to get this):
-
-`open -b {{com.domain.application}}`
-
-- Open the current directory in Finder:
-
-`open .`
-
-- Reveal a file in Finder:
-
-`open -R {{path/to/file}}`
-
-- Open all the files of a given extension in the current directory with the associated application:
-
-`open {{*.ext}}`
-","
+open,,"
 OPEN(1)                   BSD General Commands Manual                  OPEN(1)
 
 NNAAMMEE
@@ -688,31 +661,35 @@ HHIISSTTOORRYY
      First appeared in NextStep.
 
 macOS                           April 14, 2017                           macOS
+","# open
+
+> Opens files, directories and applications.
+
+- Open a file with the associated application:
+
+`open {{file.ext}}`
+
+- Run a graphical macOS application:
+
+`open -a {{Application}}`
+
+- Run a graphical macOS app based on the bundle identifier (refer to `osascript` for an easy way to get this):
+
+`open -b {{com.domain.application}}`
+
+- Open the current directory in Finder:
+
+`open .`
+
+- Reveal a file in Finder:
+
+`open -R {{path/to/file}}`
+
+- Open all the files of a given extension in the current directory with the associated application:
+
+`open {{*.ext}}`
 "
-stat,"# stat
-
-> Display file status.
-
-- Show file properties such as size, permissions, creation and access dates among others:
-
-`stat {{file}}`
-
-- Same as above but verbose (more similar to linux's `stat`):
-
-`stat -x {{file}}`
-
-- Show only octal file permissions:
-
-`stat -f %Mp%Lp {{file}}`
-
-- Show owner and group of the file:
-
-`stat -f ""%Su %Sg"" {{file}}`
-
-- Show the size of the file in bytes:
-
-`stat -f ""%z %N"" {{file}}`
-","
+stat,,"
 STAT(1)                   BSD General Commands Manual                  STAT(1)
 
 NNAAMMEE
@@ -985,8 +962,31 @@ AAUUTTHHOORRSS
      man page was written by Jan Schaumann <jschauma@NetBSD.org>.
 
 BSD                               May 8, 2003                              BSD
+","# stat
+
+> Display file status.
+
+- Show file properties such as size, permissions, creation and access dates among others:
+
+`stat {{file}}`
+
+- Same as above but verbose (more similar to linux's `stat`):
+
+`stat -x {{file}}`
+
+- Show only octal file permissions:
+
+`stat -f %Mp%Lp {{file}}`
+
+- Show owner and group of the file:
+
+`stat -f ""%Su %Sg"" {{file}}`
+
+- Show the size of the file in bytes:
+
+`stat -f ""%z %N"" {{file}}`
 "
-runit,"# runit
+runit,,,"# runit
 
 > 3-stage init system.
 
@@ -997,28 +997,8 @@ runit,"# runit
 - Shut down runit:
 
 `kill --CONT {{runit_pid}}`
-","No manual entry for runit
 "
-nm,"# nm
-
-> List symbol names in object files.
-
-- List global (extern) functions in a file (prefixed with T):
-
-`nm -g {{file.o}}`
-
-- List only undefined symbols in a file:
-
-`nm -u {{file.o}}`
-
-- List all symbols, even debugging symbols:
-
-`nm -a {{file.o}}`
-
-- Demangle C++ symbols (make them readable):
-
-`nm -demangle {{file.o}}`
-","NM(1)                                                                    NM(1)
+nm,,"NM(1)                                                                    NM(1)
 
 
 
@@ -1156,31 +1136,27 @@ BBUUGGSS
 
 
 Apple, Inc.                      May 23, 2017                            NM(1)
+","# nm
+
+> List symbol names in object files.
+
+- List global (extern) functions in a file (prefixed with T):
+
+`nm -g {{file.o}}`
+
+- List only undefined symbols in a file:
+
+`nm -u {{file.o}}`
+
+- List all symbols, even debugging symbols:
+
+`nm -a {{file.o}}`
+
+- Demangle C++ symbols (make them readable):
+
+`nm -demangle {{file.o}}`
 "
-defaults,"# defaults
-
-> Read and write macOS user configuration for applications.
-
-- Read system defaults for an application option:
-
-`defaults read {{application}} {{option}}`
-
-- Read default values for an application option:
-
-`defaults read -app {{application}} {{option}}`
-
-- Write the default value of an application option:
-
-`defaults write {{application}} {{option}} {{-type}} {{value}}`
-
-- Speed up Mission Control animations:
-
-`defaults write com.apple.Dock expose-animation-duration -float 0.1`
-
-- Delete all defaults of an application:
-
-`defaults delete {{application}}`
-","
+defaults,,"
 DEFAULTS(1)               BSD General Commands Manual              DEFAULTS(1)
 
 NNAAMMEE
@@ -1397,40 +1373,39 @@ HHIISSTTOORRYY
      First appeared in NeXTStep.
 
 Mac OS X                          Nov 3, 2003                         Mac OS X
+","# defaults
+
+> Read and write macOS user configuration for applications.
+
+- Read system defaults for an application option:
+
+`defaults read {{application}} {{option}}`
+
+- Read default values for an application option:
+
+`defaults read -app {{application}} {{option}}`
+
+- Write the default value of an application option:
+
+`defaults write {{application}} {{option}} {{-type}} {{value}}`
+
+- Speed up Mission Control animations:
+
+`defaults write com.apple.Dock expose-animation-duration -float 0.1`
+
+- Delete all defaults of an application:
+
+`defaults delete {{application}}`
 "
-runsvchdir,"# runsvchdir
+runsvchdir,,,"# runsvchdir
 
 > Change the directory `runsvdir` uses by default.
 
 - Switch `runsvdir` directories:
 
 `sudo runsvchdir {{/path/to/directory}}`
-","No manual entry for runsvchdir
 "
-textutil,"# textutil
-
-> Used to manipulate text files of various formats.
-
-- Display information about foo.rtf:
-
-`textutil -info {{foo.rtf}}`
-
-- Convert foo.rtf into foo.html:
-
-`textutil -convert {{html}} {{foo.rtf}}`
-
-- Convert rich text to normal text:
-
-`textutil {{foo.rtf}} -convert {{txt}}`
-
-- Convert foo.txt into foo.rtf, using Times 10 for the font:
-
-`textutil -convert {{rtf}} -font {{Times}} -fontsize {{10}} {{foo.txt}}`
-
-- Load all RTF files in the current directory, concatenates their contents, and writes the result out as index.html with the HTML title set to ""Several Files"":
-
-`textutil -cat {{html}} -title ""Several Files"" -output {{index.html}} *.rtf`
-","
+textutil,,"
 TEXTUTIL(1)               BSD General Commands Manual              TEXTUTIL(1)
 
 NNAAMMEE
@@ -1582,31 +1557,31 @@ HHIISSTTOORRYY
      The tteexxttuuttiill command first appeared in Mac OS X 10.4.
 
 macOS                          September 9, 2004                         macOS
+","# textutil
+
+> Used to manipulate text files of various formats.
+
+- Display information about foo.rtf:
+
+`textutil -info {{foo.rtf}}`
+
+- Convert foo.rtf into foo.html:
+
+`textutil -convert {{html}} {{foo.rtf}}`
+
+- Convert rich text to normal text:
+
+`textutil {{foo.rtf}} -convert {{txt}}`
+
+- Convert foo.txt into foo.rtf, using Times 10 for the font:
+
+`textutil -convert {{rtf}} -font {{Times}} -fontsize {{10}} {{foo.txt}}`
+
+- Load all RTF files in the current directory, concatenates their contents, and writes the result out as index.html with the HTML title set to ""Several Files"":
+
+`textutil -cat {{html}} -title ""Several Files"" -output {{index.html}} *.rtf`
 "
-xattr,"# xattr
-
-> Utility to work with extended filesystem attributes.
-
-- List key:value extended attributes for a given file:
-
-`xattr -l {{file}}`
-
-- Write an attribute for a given file:
-
-`xattr -w {{attribute_key}} {{attribute_value}} {{file}}`
-
-- Delete an attribute from a given file:
-
-`xattr -d {{com.apple.quarantine}} {{file}}`
-
-- Delete all extended attributes from a given file:
-
-`xattr -c {{file}}`
-
-- Recursively delete an attribute in a given directory:
-
-`xattr -rd {{attribute_key}} {{directory}}`
-","
+xattr,,"
 XATTR(1)                  BSD General Commands Manual                 XATTR(1)
 
 NNAAMMEE
@@ -1716,23 +1691,31 @@ SSEEEE AALLSSOO
      ls(1), xxd(1), getxattr(2), listxattr(2), removexattr(2), setxattr(2)
 
 BSD                              Nov 29, 2010                              BSD
+","# xattr
+
+> Utility to work with extended filesystem attributes.
+
+- List key:value extended attributes for a given file:
+
+`xattr -l {{file}}`
+
+- Write an attribute for a given file:
+
+`xattr -w {{attribute_key}} {{attribute_value}} {{file}}`
+
+- Delete an attribute from a given file:
+
+`xattr -d {{com.apple.quarantine}} {{file}}`
+
+- Delete all extended attributes from a given file:
+
+`xattr -c {{file}}`
+
+- Recursively delete an attribute in a given directory:
+
+`xattr -rd {{attribute_key}} {{directory}}`
 "
-mdfind,"# mdfind
-
-> List files matching a given query.
-
-- Find a file by its name:
-
-`mdfind -name {{file}}`
-
-- Find a file by its content:
-
-`mdfind {{query}}`
-
-- Find a file containing a string, in a given directory:
-
-`mdfind -onlyin {{directory}} {{query}}`
-","
+mdfind,,"
 mdfind(1)                 BSD General Commands Manual                mdfind(1)
 
 NNAAMMEE
@@ -1801,28 +1784,23 @@ SSEEEE AALLSSOO
      mdimport(1), mdls(1), mdutil(1), xargs(1)
 
 Mac OS X                         June 10, 2004                        Mac OS X
+","# mdfind
+
+> List files matching a given query.
+
+- Find a file by its name:
+
+`mdfind -name {{file}}`
+
+- Find a file by its content:
+
+`mdfind {{query}}`
+
+- Find a file containing a string, in a given directory:
+
+`mdfind -onlyin {{directory}} {{query}}`
 "
-as,"# as
-
-> Portable GNU assembler.
-> Primarily intended to assemble output from `gcc` to be used by `ld`.
-
-- Assemble a file, writing the output to a.out:
-
-`as {{file.s}}`
-
-- Assemble the output to a given file:
-
-`as {{file.s}} -o {{out.o}}`
-
-- Generate output faster by skipping whitespace and comment preprocessing. (Should only be used for trusted compilers):
-
-`as -f {{file.s}}`
-
-- Include a given path to the list of directories to search for files specified in .include directives:
-
-`as -I {{path/to/directory}} {{file.s}}`
-","AS(1)                                                                    AS(1)
+as,,"AS(1)                                                                    AS(1)
 
 
 
@@ -1981,8 +1959,28 @@ SSEEEE AALLSSOO
 
 
 Apple Inc.                     February 12, 2015                         AS(1)
+","# as
+
+> Portable GNU assembler.
+> Primarily intended to assemble output from `gcc` to be used by `ld`.
+
+- Assemble a file, writing the output to a.out:
+
+`as {{file.s}}`
+
+- Assemble the output to a given file:
+
+`as {{file.s}} -o {{out.o}}`
+
+- Generate output faster by skipping whitespace and comment preprocessing. (Should only be used for trusted compilers):
+
+`as -f {{file.s}}`
+
+- Include a given path to the list of directories to search for files specified in .include directives:
+
+`as -I {{path/to/directory}} {{file.s}}`
 "
-runsv,"# runsv
+runsv,,,"# runsv
 
 > Start and manage a runit service.
 
@@ -1993,24 +1991,8 @@ runsv,"# runsv
 - Start a runit service as root:
 
 `sudo runsv {{path/to/service}}`
-","No manual entry for runsv
 "
-popd,"# popd
-
-> Remove a directory placed on the directory stack via the pushd shell built-in.
-
-- Remove the top directory from the stack and cd to it:
-
-`popd`
-
-- Remove the Nth directory (starting from zero to the left from the list printed with `dirs`):
-
-`popd +N`
-
-- Remove the Nth directory (starting from zero to the right from the list printed with `dirs`):
-
-`popd -N`
-","
+popd,,"
 BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
 
 NNAAMMEE
@@ -2177,8 +2159,190 @@ AAUUTTHHOORRSS
      This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
 
 BSD                            February 23, 2005                           BSD
+","# popd
+
+> Remove a directory placed on the directory stack via the pushd shell built-in.
+
+- Remove the top directory from the stack and cd to it:
+
+`popd`
+
+- Remove the Nth directory (starting from zero to the left from the list printed with `dirs`):
+
+`popd +N`
+
+- Remove the Nth directory (starting from zero to the right from the list printed with `dirs`):
+
+`popd -N`
 "
-pushd,"# pushd
+pushd,,"
+BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
+
+NNAAMMEE
+     bbuuiillttiinn, !!, %%, .., ::, @@, {{, }}, aalliiaass, aalllloocc, bbgg, bbiinndd, bbiinnddkkeeyy, bbrreeaakk,
+     bbrreeaakkssww, bbuuiillttiinnss, ccaassee, ccdd, cchhddiirr, ccoommmmaanndd, ccoommpplleettee, ccoonnttiinnuuee, ddeeffaauulltt,
+     ddiirrss, ddoo, ddoonnee, eecchhoo, eecchhoottcc, eelliiff, eellssee, eenndd, eennddiiff, eennddssww, eessaacc, eevvaall,
+     eexxeecc, eexxiitt, eexxppoorrtt, ffaallssee, ffcc, ffgg, ffiilleetteesstt, ffii, ffoorr, ffoorreeaacchh, ggeettooppttss,
+     gglloobb, ggoottoo, hhaasshh, hhaasshhssttaatt, hhiissttoorryy, hhuupp, iiff, jjoobbiidd, jjoobbss, kkiillll, lliimmiitt,
+     llooccaall, lloogg, llooggiinn, llooggoouutt, llss--FF, nniiccee, nnoohhuupp, nnoottiiffyy, oonniinnttrr, ppooppdd,
+     pprriinntteennvv, ppuusshhdd, ppwwdd, rreeaadd, rreeaaddoonnllyy, rreehhaasshh, rreeppeeaatt, rreettuurrnn, sscchheedd, sseett,
+     sseetteennvv, sseettttcc, sseettttyy, sseettvvaarr, sshhiifftt, ssoouurrccee, ssttoopp, ssuussppeenndd, sswwiittcchh,
+     tteellllttcc, tteesstt, tthheenn, ttiimmee, ttiimmeess, ttrraapp, ttrruuee, ttyyppee, uulliimmiitt, uummaasskk,
+     uunnaalliiaass, uunnccoommpplleettee, uunnhhaasshh, uunnlliimmiitt, uunnsseett, uunnsseetteennvv, uunnttiill, wwaaiitt,
+     wwhheerree, wwhhiicchh, wwhhiillee -- shell built-in commands
+
+SSYYNNOOPPSSIISS
+     bbuuiillttiinn [--ooppttiioonnss] [_a_r_g_s _._._.]
+
+DDEESSCCRRIIPPTTIIOONN
+     Shell builtin commands are commands that can be executed within the run-
+     ning shell's process.  Note that, in the case of csh(1) builtin commands,
+     the command is executed in a subshell if it occurs as any component of a
+     pipeline except the last.
+
+     If a command specified to the shell contains a slash ``/'', the shell
+     will not execute a builtin command, even if the last component of the
+     specified command matches the name of a builtin command.  Thus, while
+     specifying ``eecchhoo'' causes a builtin command to be executed under shells
+     that support the eecchhoo builtin command, specifying ``//bbiinn//eecchhoo'' or
+     ``..//eecchhoo'' does not.
+
+     While some builtin commands may exist in more than one shell, their oper-
+     ation may be different under each shell which supports them.  Below is a
+     table which lists shell builtin commands, the standard shells that sup-
+     port them and whether they exist as standalone utilities.
+
+     Only builtin commands for the csh(1) and sh(1) shells are listed here.
+     Consult a shell's manual page for details on the operation of its builtin
+     commands.  Beware that the sh(1) manual page, at least, calls some of
+     these commands ``built-in commands'' and some of them ``reserved words''.
+     Users of other shells may need to consult an info(1) page or other
+     sources of documentation.
+
+     Commands marked ``No**'' under _E_x_t_e_r_n_a_l do exist externally, but are
+     implemented as scripts using a builtin command of the same name.
+
+           _C_o_m_m_a_n_d       _E_x_t_e_r_n_a_l    csh(1)    sh(1)
+           !             No          No        Yes
+           %%             No          Yes       No
+           .             No          No        Yes
+           :             No          Yes       Yes
+           @@             No          Yes       Yes
+           {{             No          No        Yes
+           }}             No          No        Yes
+           aalliiaass         No**        Yes       Yes
+           aalllloocc         No          Yes       No
+           bbgg            No**        Yes       Yes
+           bbiinndd          No          No        Yes
+           bbiinnddkkeeyy       No          Yes       No
+           bbrreeaakk         No          Yes       Yes
+           bbrreeaakkssww       No          Yes       No
+           bbuuiillttiinn       No          No        Yes
+           bbuuiillttiinnss      No          Yes       No
+           ccaassee          No          Yes       Yes
+           ccdd            No**        Yes       Yes
+           cchhddiirr         No          Yes       Yes
+           ccoommmmaanndd       No**        No        Yes
+           ccoommpplleettee      No          Yes       No
+           ccoonnttiinnuuee      No          Yes       Yes
+           ddeeffaauulltt       No          Yes       No
+           ddiirrss          No          Yes       No
+           ddoo            No          No        Yes
+           ddoonnee          No          No        Yes
+           eecchhoo          Yes         Yes       Yes
+           eecchhoottcc        No          Yes       No
+           eelliiff          No          No        Yes
+           eellssee          No          Yes       Yes
+           eenndd           No          Yes       No
+           eennddiiff         No          Yes       No
+           eennddssww         No          Yes       No
+           eessaacc          No          No        Yes
+           eevvaall          No          Yes       Yes
+           eexxeecc          No          Yes       Yes
+           eexxiitt          No          Yes       Yes
+           eexxppoorrtt        No          No        Yes
+           ffaallssee         Yes         No        Yes
+           ffcc            No**        No        Yes
+           ffgg            No**        Yes       Yes
+           ffiilleetteesstt      No          Yes       No
+           ffii            No          No        Yes
+           ffoorr           No          No        Yes
+           ffoorreeaacchh       No          Yes       No
+           ggeettooppttss       No**        No        Yes
+           gglloobb          No          Yes       No
+           ggoottoo          No          Yes       No
+           hhaasshh          No          No        Yes
+           hhaasshhssttaatt      No          Yes       No
+           hhiissttoorryy       No          Yes       No
+           hhuupp           No          Yes       No
+           iiff            No          Yes       Yes
+           jjoobbiidd         No          No        Yes
+           jjoobbss          No**        Yes       Yes
+           kkiillll          Yes         Yes       No
+           lliimmiitt         No          Yes       No
+           llooccaall         No          No        Yes
+           lloogg           No          Yes       No
+           llooggiinn         Yes         Yes       No
+           llooggoouutt        No          Yes       No
+           llss--FF          No          Yes       No
+           nniiccee          Yes         Yes       No
+           nnoohhuupp         Yes         Yes       No
+           nnoottiiffyy        No          Yes       No
+           oonniinnttrr        No          Yes       No
+           ppooppdd          No          Yes       No
+           pprriinntteennvv      Yes         Yes       No
+           ppuusshhdd         No          Yes       No
+           ppwwdd           Yes         No        Yes
+           rreeaadd          No**        No        Yes
+           rreeaaddoonnllyy      No          No        Yes
+           rreehhaasshh        No          Yes       No
+           rreeppeeaatt        No          Yes       No
+           rreettuurrnn        No          No        Yes
+           sscchheedd         No          Yes       No
+           sseett           No          Yes       Yes
+           sseetteennvv        No          Yes       No
+           sseettttcc         No          Yes       No
+           sseettttyy         No          Yes       No
+           sseettvvaarr        No          No        Yes
+           sshhiifftt         No          Yes       Yes
+           ssoouurrccee        No          Yes       No
+           ssttoopp          No          Yes       No
+           ssuussppeenndd       No          Yes       No
+           sswwiittcchh        No          Yes       No
+           tteellllttcc        No          Yes       No
+           tteesstt          Yes         No        Yes
+           tthheenn          No          No        Yes
+           ttiimmee          Yes         Yes       No
+           ttiimmeess         No          No        Yes
+           ttrraapp          No          No        Yes
+           ttrruuee          Yes         No        Yes
+           ttyyppee          No          No        Yes
+           uulliimmiitt        No          No        Yes
+           uummaasskk         No**        Yes       Yes
+           uunnaalliiaass       No**        Yes       Yes
+           uunnccoommpplleettee    No          Yes       No
+           uunnhhaasshh        No          Yes       No
+           uunnlliimmiitt       No          Yes       No
+           uunnsseett         No          Yes       Yes
+           uunnsseetteennvv      No          Yes       No
+           uunnttiill         No          No        Yes
+           wwaaiitt          No**        Yes       Yes
+           wwhheerree         No          Yes       No
+           wwhhiicchh         Yes         Yes       No
+           wwhhiillee         No          Yes       Yes
+
+SSEEEE AALLSSOO
+     csh(1), echo(1), false(1), info(1), kill(1), login(1), nice(1), nohup(1),
+     printenv(1), pwd(1), sh(1), test(1), time(1), true(1), which(1)
+
+HHIISSTTOORRYY
+     The bbuuiillttiinn manual page first appeared in FreeBSD 3.4.
+
+AAUUTTHHOORRSS
+     This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
+
+BSD                            February 23, 2005                           BSD
+","# pushd
 
 > Place a directory on a stack so it can be accessed later.
 > See also `popd` to switch back to original directory.
@@ -2194,194 +2358,8 @@ pushd,"# pushd
 - Rotate stack by making the 5th element the top of the stack:
 
 `pushd +4`
-","
-BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
-
-NNAAMMEE
-     bbuuiillttiinn, !!, %%, .., ::, @@, {{, }}, aalliiaass, aalllloocc, bbgg, bbiinndd, bbiinnddkkeeyy, bbrreeaakk,
-     bbrreeaakkssww, bbuuiillttiinnss, ccaassee, ccdd, cchhddiirr, ccoommmmaanndd, ccoommpplleettee, ccoonnttiinnuuee, ddeeffaauulltt,
-     ddiirrss, ddoo, ddoonnee, eecchhoo, eecchhoottcc, eelliiff, eellssee, eenndd, eennddiiff, eennddssww, eessaacc, eevvaall,
-     eexxeecc, eexxiitt, eexxppoorrtt, ffaallssee, ffcc, ffgg, ffiilleetteesstt, ffii, ffoorr, ffoorreeaacchh, ggeettooppttss,
-     gglloobb, ggoottoo, hhaasshh, hhaasshhssttaatt, hhiissttoorryy, hhuupp, iiff, jjoobbiidd, jjoobbss, kkiillll, lliimmiitt,
-     llooccaall, lloogg, llooggiinn, llooggoouutt, llss--FF, nniiccee, nnoohhuupp, nnoottiiffyy, oonniinnttrr, ppooppdd,
-     pprriinntteennvv, ppuusshhdd, ppwwdd, rreeaadd, rreeaaddoonnllyy, rreehhaasshh, rreeppeeaatt, rreettuurrnn, sscchheedd, sseett,
-     sseetteennvv, sseettttcc, sseettttyy, sseettvvaarr, sshhiifftt, ssoouurrccee, ssttoopp, ssuussppeenndd, sswwiittcchh,
-     tteellllttcc, tteesstt, tthheenn, ttiimmee, ttiimmeess, ttrraapp, ttrruuee, ttyyppee, uulliimmiitt, uummaasskk,
-     uunnaalliiaass, uunnccoommpplleettee, uunnhhaasshh, uunnlliimmiitt, uunnsseett, uunnsseetteennvv, uunnttiill, wwaaiitt,
-     wwhheerree, wwhhiicchh, wwhhiillee -- shell built-in commands
-
-SSYYNNOOPPSSIISS
-     bbuuiillttiinn [--ooppttiioonnss] [_a_r_g_s _._._.]
-
-DDEESSCCRRIIPPTTIIOONN
-     Shell builtin commands are commands that can be executed within the run-
-     ning shell's process.  Note that, in the case of csh(1) builtin commands,
-     the command is executed in a subshell if it occurs as any component of a
-     pipeline except the last.
-
-     If a command specified to the shell contains a slash ``/'', the shell
-     will not execute a builtin command, even if the last component of the
-     specified command matches the name of a builtin command.  Thus, while
-     specifying ``eecchhoo'' causes a builtin command to be executed under shells
-     that support the eecchhoo builtin command, specifying ``//bbiinn//eecchhoo'' or
-     ``..//eecchhoo'' does not.
-
-     While some builtin commands may exist in more than one shell, their oper-
-     ation may be different under each shell which supports them.  Below is a
-     table which lists shell builtin commands, the standard shells that sup-
-     port them and whether they exist as standalone utilities.
-
-     Only builtin commands for the csh(1) and sh(1) shells are listed here.
-     Consult a shell's manual page for details on the operation of its builtin
-     commands.  Beware that the sh(1) manual page, at least, calls some of
-     these commands ``built-in commands'' and some of them ``reserved words''.
-     Users of other shells may need to consult an info(1) page or other
-     sources of documentation.
-
-     Commands marked ``No**'' under _E_x_t_e_r_n_a_l do exist externally, but are
-     implemented as scripts using a builtin command of the same name.
-
-           _C_o_m_m_a_n_d       _E_x_t_e_r_n_a_l    csh(1)    sh(1)
-           !             No          No        Yes
-           %%             No          Yes       No
-           .             No          No        Yes
-           :             No          Yes       Yes
-           @@             No          Yes       Yes
-           {{             No          No        Yes
-           }}             No          No        Yes
-           aalliiaass         No**        Yes       Yes
-           aalllloocc         No          Yes       No
-           bbgg            No**        Yes       Yes
-           bbiinndd          No          No        Yes
-           bbiinnddkkeeyy       No          Yes       No
-           bbrreeaakk         No          Yes       Yes
-           bbrreeaakkssww       No          Yes       No
-           bbuuiillttiinn       No          No        Yes
-           bbuuiillttiinnss      No          Yes       No
-           ccaassee          No          Yes       Yes
-           ccdd            No**        Yes       Yes
-           cchhddiirr         No          Yes       Yes
-           ccoommmmaanndd       No**        No        Yes
-           ccoommpplleettee      No          Yes       No
-           ccoonnttiinnuuee      No          Yes       Yes
-           ddeeffaauulltt       No          Yes       No
-           ddiirrss          No          Yes       No
-           ddoo            No          No        Yes
-           ddoonnee          No          No        Yes
-           eecchhoo          Yes         Yes       Yes
-           eecchhoottcc        No          Yes       No
-           eelliiff          No          No        Yes
-           eellssee          No          Yes       Yes
-           eenndd           No          Yes       No
-           eennddiiff         No          Yes       No
-           eennddssww         No          Yes       No
-           eessaacc          No          No        Yes
-           eevvaall          No          Yes       Yes
-           eexxeecc          No          Yes       Yes
-           eexxiitt          No          Yes       Yes
-           eexxppoorrtt        No          No        Yes
-           ffaallssee         Yes         No        Yes
-           ffcc            No**        No        Yes
-           ffgg            No**        Yes       Yes
-           ffiilleetteesstt      No          Yes       No
-           ffii            No          No        Yes
-           ffoorr           No          No        Yes
-           ffoorreeaacchh       No          Yes       No
-           ggeettooppttss       No**        No        Yes
-           gglloobb          No          Yes       No
-           ggoottoo          No          Yes       No
-           hhaasshh          No          No        Yes
-           hhaasshhssttaatt      No          Yes       No
-           hhiissttoorryy       No          Yes       No
-           hhuupp           No          Yes       No
-           iiff            No          Yes       Yes
-           jjoobbiidd         No          No        Yes
-           jjoobbss          No**        Yes       Yes
-           kkiillll          Yes         Yes       No
-           lliimmiitt         No          Yes       No
-           llooccaall         No          No        Yes
-           lloogg           No          Yes       No
-           llooggiinn         Yes         Yes       No
-           llooggoouutt        No          Yes       No
-           llss--FF          No          Yes       No
-           nniiccee          Yes         Yes       No
-           nnoohhuupp         Yes         Yes       No
-           nnoottiiffyy        No          Yes       No
-           oonniinnttrr        No          Yes       No
-           ppooppdd          No          Yes       No
-           pprriinntteennvv      Yes         Yes       No
-           ppuusshhdd         No          Yes       No
-           ppwwdd           Yes         No        Yes
-           rreeaadd          No**        No        Yes
-           rreeaaddoonnllyy      No          No        Yes
-           rreehhaasshh        No          Yes       No
-           rreeppeeaatt        No          Yes       No
-           rreettuurrnn        No          No        Yes
-           sscchheedd         No          Yes       No
-           sseett           No          Yes       Yes
-           sseetteennvv        No          Yes       No
-           sseettttcc         No          Yes       No
-           sseettttyy         No          Yes       No
-           sseettvvaarr        No          No        Yes
-           sshhiifftt         No          Yes       Yes
-           ssoouurrccee        No          Yes       No
-           ssttoopp          No          Yes       No
-           ssuussppeenndd       No          Yes       No
-           sswwiittcchh        No          Yes       No
-           tteellllttcc        No          Yes       No
-           tteesstt          Yes         No        Yes
-           tthheenn          No          No        Yes
-           ttiimmee          Yes         Yes       No
-           ttiimmeess         No          No        Yes
-           ttrraapp          No          No        Yes
-           ttrruuee          Yes         No        Yes
-           ttyyppee          No          No        Yes
-           uulliimmiitt        No          No        Yes
-           uummaasskk         No**        Yes       Yes
-           uunnaalliiaass       No**        Yes       Yes
-           uunnccoommpplleettee    No          Yes       No
-           uunnhhaasshh        No          Yes       No
-           uunnlliimmiitt       No          Yes       No
-           uunnsseett         No          Yes       Yes
-           uunnsseetteennvv      No          Yes       No
-           uunnttiill         No          No        Yes
-           wwaaiitt          No**        Yes       Yes
-           wwhheerree         No          Yes       No
-           wwhhiicchh         Yes         Yes       No
-           wwhhiillee         No          Yes       Yes
-
-SSEEEE AALLSSOO
-     csh(1), echo(1), false(1), info(1), kill(1), login(1), nice(1), nohup(1),
-     printenv(1), pwd(1), sh(1), test(1), time(1), true(1), which(1)
-
-HHIISSTTOORRYY
-     The bbuuiillttiinn manual page first appeared in FreeBSD 3.4.
-
-AAUUTTHHOORRSS
-     This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
-
-BSD                            February 23, 2005                           BSD
 "
-chflags,"# chflags
-
-> Change file or directory flags.
-
-- Set the `hidden` flag for a file:
-
-`chflags {{hidden}} {{path/to/file}}`
-
-- Unset the `hidden` flag for a file:
-
-`chflags {{nohidden}} {{path/to/file}}`
-
-- Recursively set the `uchg` flag for a directory:
-
-`chflags -R {{uchg}} {{path/to/directory}}`
-
-- Recursively unset the `uchg` flag for a directory:
-
-`chflags -R {{nouchg}} {{path/to/directory}}`
-","
+chflags,,"
 CHFLAGS(1)                BSD General Commands Manual               CHFLAGS(1)
 
 NNAAMMEE
@@ -2474,20 +2452,27 @@ BBUUGGSS
      utility.
 
 BSD                              March 3, 2006                             BSD
+","# chflags
+
+> Change file or directory flags.
+
+- Set the `hidden` flag for a file:
+
+`chflags {{hidden}} {{path/to/file}}`
+
+- Unset the `hidden` flag for a file:
+
+`chflags {{nohidden}} {{path/to/file}}`
+
+- Recursively set the `uchg` flag for a directory:
+
+`chflags -R {{uchg}} {{path/to/directory}}`
+
+- Recursively unset the `uchg` flag for a directory:
+
+`chflags -R {{nouchg}} {{path/to/directory}}`
 "
-whatis,"# whatis
-
-> Tool that searches a set of database files containing short descriptions of system commands for keywords.
-> More information: <http://www.linfo.org/whatis.html>.
-
-- Search for informations about keyword:
-
-`whatis {{keyword}}`
-
-- Search for information about multiple keywords:
-
-`whatis {{first_keyword}} {{second_keyword}}`
-","whatis(1)                                                            whatis(1)
+whatis,http://www.linfo.org/whatis.html,"whatis(1)                                                            whatis(1)
 
 
 
@@ -2517,23 +2502,20 @@ SSEEEE AALLSSOO
 
 
                               September 19, 2005                     whatis(1)
+","# whatis
+
+> Tool that searches a set of database files containing short descriptions of system commands for keywords.
+> More information: <http://www.linfo.org/whatis.html>.
+
+- Search for informations about keyword:
+
+`whatis {{keyword}}`
+
+- Search for information about multiple keywords:
+
+`whatis {{first_keyword}} {{second_keyword}}`
 "
-split,"# split
-
-> Split a file into pieces.
-
-- Split a file, each split having 10 lines (except the last split):
-
-`split -l {{10}} {{filename}}`
-
-- Split a file by a regular expression. The matching line will be the first line of the next output file:
-
-`split -p {{cat|^[dh]og}} {{filename}}`
-
-- Split a file with 512 bytes in each split (except the last split; use 512k for kilobytes and 512m for megabytes):
-
-`split -b {{512}} {{filename}}`
-","
+split,,"
 SPLIT(1)                  BSD General Commands Manual                 SPLIT(1)
 
 NNAAMMEE
@@ -2599,27 +2581,23 @@ BBUUGGSS
      The maximum line length for matching patterns is 65536.
 
 BSD                             August 21, 2005                            BSD
+","# split
+
+> Split a file into pieces.
+
+- Split a file, each split having 10 lines (except the last split):
+
+`split -l {{10}} {{filename}}`
+
+- Split a file by a regular expression. The matching line will be the first line of the next output file:
+
+`split -p {{cat|^[dh]og}} {{filename}}`
+
+- Split a file with 512 bytes in each split (except the last split; use 512k for kilobytes and 512m for megabytes):
+
+`split -b {{512}} {{filename}}`
 "
-diskutil,"# diskutil
-
-> Utility to manage local disks and volumes.
-
-- List all currently available disks, partitions and mounted volumes:
-
-`diskutil list`
-
-- Repair the file system data structures of a volume:
-
-`diskutil repairVolume {{/dev/diskX}}`
-
-- Unmount a volume:
-
-`diskutil unmountDisk {{/dev/diskX}}`
-
-- Eject a CD/DVD (unmount first):
-
-`diskutil eject {{/dev/disk1}}`
-","
+diskutil,,"
 
 DISKUTIL(8)               BSD System Manager's Manual              DISKUTIL(8)
 
@@ -4772,8 +4750,27 @@ HHIISSTTOORRYY
      such as cameras. Free-space requests will not be aligned.
 
 macOS                            14 June 2018                            macOS
+","# diskutil
+
+> Utility to manage local disks and volumes.
+
+- List all currently available disks, partitions and mounted volumes:
+
+`diskutil list`
+
+- Repair the file system data structures of a volume:
+
+`diskutil repairVolume {{/dev/diskX}}`
+
+- Unmount a volume:
+
+`diskutil unmountDisk {{/dev/diskX}}`
+
+- Eject a CD/DVD (unmount first):
+
+`diskutil eject {{/dev/disk1}}`
 "
-rubocop,"# rubocop
+rubocop,,,"# rubocop
 
 > Lint Ruby files.
 
@@ -4804,9 +4801,8 @@ rubocop,"# rubocop
 - Auto-correct files (experimental):
 
 `rubocop --auto-correct`
-","No manual entry for rubocop
 "
-sv,"# sv
+sv,,,"# sv
 
 > Control a running runsv service.
 
@@ -4821,32 +4817,8 @@ sv,"# sv
 - Get service status:
 
 `sudo sv status {{path/to/service}}`
-","No manual entry for sv
 "
-netstat,"# netstat
-
-> Displays network-related information such as open connections, open socket ports, etc.
-
-- List all ports:
-
-`netstat -a`
-
-- List all listening ports:
-
-`netstat -l`
-
-- List listening TCP ports:
-
-`netstat -t`
-
-- Display PID and program names for a specific protocol:
-
-`netstat -p {{protocol}}`
-
-- Print the routing table:
-
-`netstat -nr`
-","
+netstat,,"
 NETSTAT(1)                BSD General Commands Manual               NETSTAT(1)
 
 NNAAMMEE
@@ -5119,8 +5091,31 @@ BBUUGGSS
      The notion of errors is ill-defined.
 
 Darwin                           June 15, 2001                          Darwin
+","# netstat
+
+> Displays network-related information such as open connections, open socket ports, etc.
+
+- List all ports:
+
+`netstat -a`
+
+- List all listening ports:
+
+`netstat -l`
+
+- List listening TCP ports:
+
+`netstat -t`
+
+- Display PID and program names for a specific protocol:
+
+`netstat -p {{protocol}}`
+
+- Print the routing table:
+
+`netstat -nr`
 "
-oathtool,"# oathtool
+oathtool,,,"# oathtool
 
 > OATH one-time password tool.
 
@@ -5135,29 +5130,8 @@ oathtool,"# oathtool
 - Validate a TOTP token:
 
 `oathtool --totp --base32 {{secret}} {{token}}`
-","No manual entry for oathtool
 "
-trap,"# trap
-
-> Automatically execute commands after receiving signals by processes or the operating system.
-> Can be used to perform cleanups for interruptions by the user or other actions.
-
-- List available signals to set traps for:
-
-`trap -l`
-
-- List active traps for the current shell:
-
-`trap -p`
-
-- Set a trap to execute commands when one or more signals are detected:
-
-`trap 'echo ""Caught signal {{SIGHUP}}""' {{SIGHUP}}`
-
-- Remove active traps:
-
-`trap - {{SIGHUP}} {{SIGINT}}`
-","
+trap,,"
 BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
 
 NNAAMMEE
@@ -5324,8 +5298,44 @@ AAUUTTHHOORRSS
      This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
 
 BSD                            February 23, 2005                           BSD
+","# trap
+
+> Automatically execute commands after receiving signals by processes or the operating system.
+> Can be used to perform cleanups for interruptions by the user or other actions.
+
+- List available signals to set traps for:
+
+`trap -l`
+
+- List active traps for the current shell:
+
+`trap -p`
+
+- Set a trap to execute commands when one or more signals are detected:
+
+`trap 'echo ""Caught signal {{SIGHUP}}""' {{SIGHUP}}`
+
+- Remove active traps:
+
+`trap - {{SIGHUP}} {{SIGINT}}`
 "
-afplay,"# afplay
+afplay,,"
+AFPLAY(1)                 BSD General Commands Manual                AFPLAY(1)
+
+NNAAMMEE
+     aaffppllaayy -- Audio File Play
+
+SSYYNNOOPPSSIISS
+     aaffppllaayy [--hh] _a_u_d_i_o_f_i_l_e
+
+DDEESSCCRRIIPPTTIIOONN
+     Audio File Play plays an audio file to the default audio output
+
+OOPPTTIIOONNSS
+     --hh       print help text
+
+Darwin                         February 13, 2007                        Darwin
+","# afplay
 
 > Command-line audio player.
 
@@ -5344,47 +5354,8 @@ afplay,"# afplay
 - Play the first N seconds of a sound file:
 
 `afplay --time {{seconds}} {{path/to/file}}`
-","
-AFPLAY(1)                 BSD General Commands Manual                AFPLAY(1)
-
-NNAAMMEE
-     aaffppllaayy -- Audio File Play
-
-SSYYNNOOPPSSIISS
-     aaffppllaayy [--hh] _a_u_d_i_o_f_i_l_e
-
-DDEESSCCRRIIPPTTIIOONN
-     Audio File Play plays an audio file to the default audio output
-
-OOPPTTIIOONNSS
-     --hh       print help text
-
-Darwin                         February 13, 2007                        Darwin
 "
-file,"# file
-
-> Determine file type.
-
-- Give a description of the type of the specified file. Works fine for files with no file extension:
-
-`file {{filename}}`
-
-- Look inside a zipped file and determine the file type(s) inside:
-
-`file -z {{foo.zip}}`
-
-- Allow file to work with special or device files:
-
-`file -s {{filename}}`
-
-- Don't stop at first file type match; keep going until the end of the file:
-
-`file -k {{filename}}`
-
-- Determine the mime encoding type of a file:
-
-`file -I {{filename}}`
-","
+file,,"
 FILE(1)                   BSD General Commands Manual                  FILE(1)
 
 NNAAMMEE
@@ -5843,8 +5814,31 @@ AAVVAAIILLAABBIILLIITTYY
      _f_t_p_._a_s_t_r_o_n_._c_o_m in the directory _/_p_u_b_/_f_i_l_e_/_f_i_l_e_-_X_._Y_Z_._t_a_r_._g_z.
 
 BSD                            October 19, 2016                            BSD
+","# file
+
+> Determine file type.
+
+- Give a description of the type of the specified file. Works fine for files with no file extension:
+
+`file {{filename}}`
+
+- Look inside a zipped file and determine the file type(s) inside:
+
+`file -z {{foo.zip}}`
+
+- Allow file to work with special or device files:
+
+`file -s {{filename}}`
+
+- Don't stop at first file type match; keep going until the end of the file:
+
+`file -k {{filename}}`
+
+- Determine the mime encoding type of a file:
+
+`file -I {{filename}}`
 "
-sshuttle,"# sshuttle
+sshuttle,https://github.com/sshuttle/sshuttle,,"# sshuttle
 
 > Transparent proxy server that tunnels traffic over an SSH connection.
 > Doesn't require admin, or any special setup on the remote SSH server.
@@ -5861,16 +5855,8 @@ sshuttle,"# sshuttle
 - Use the tproxy method to forward all IPv4 and IPv6 traffic:
 
 `sudo sshuttle --method=tproxy --remote={{username}}@{{sshserver}} {{0.0.0.0/0}} {{::/0}} --exclude={{your_local_ip_address}} --exclude={{ssh_server_ip_address}}`
-","No manual entry for sshuttle
 "
-uptime,"# uptime
-
-> Tell how long the system has been running and other information.
-
-- Print current time, uptime, number of logged-in users and other information:
-
-`uptime`
-","
+uptime,,"
 UPTIME(1)                 BSD General Commands Manual                UPTIME(1)
 
 NNAAMMEE
@@ -5891,8 +5877,15 @@ HHIISSTTOORRYY
      The uuppttiimmee command appeared in 3.0BSD.
 
 BSD                             April 18, 1994                             BSD
+","# uptime
+
+> Tell how long the system has been running and other information.
+
+- Print current time, uptime, number of logged-in users and other information:
+
+`uptime`
 "
-wacaw,"# wacaw
+wacaw,http://webcam-tools.sourceforge.net,,"# wacaw
 
 > A little command-line tool for macOS that allows you to capture both still pictures and video from an attached camera.
 > More information: <http://webcam-tools.sourceforge.net>.
@@ -5916,28 +5909,8 @@ wacaw,"# wacaw
 - List the devices available:
 
 `wacaw -L`
-","No manual entry for wacaw
 "
-date,"# date
-
-> Set or display the system date.
-
-- Display the current date using the default locale's format:
-
-`date +""%c""`
-
-- Display the current date in UTC and ISO 8601 format:
-
-`date -u +""%Y-%m-%dT%H:%M:%S%Z""`
-
-- Display the current date as a Unix timestamp (seconds since the Unix epoch):
-
-`date +%s`
-
-- Display a specific date (represented as a Unix timestamp) using the default format:
-
-`date -r 1473305798`
-","
+date,,"
 DATE(1)                   BSD General Commands Manual                  DATE(1)
 
 NNAAMMEE
@@ -6210,8 +6183,27 @@ HHIISSTTOORRYY
      A ddaattee command appeared in Version 1 AT&T UNIX.
 
 BSD                               May 7, 2015                              BSD
+","# date
+
+> Set or display the system date.
+
+- Display the current date using the default locale's format:
+
+`date +""%c""`
+
+- Display the current date in UTC and ISO 8601 format:
+
+`date -u +""%Y-%m-%dT%H:%M:%S%Z""`
+
+- Display the current date as a Unix timestamp (seconds since the Unix epoch):
+
+`date +%s`
+
+- Display a specific date (represented as a Unix timestamp) using the default format:
+
+`date -r 1473305798`
 "
-archey,"# archey
+archey,,,"# archey
 
 > Simple tool for stylishly displaying system information.
 
@@ -6230,36 +6222,8 @@ archey,"# archey
 - Show system information without IP address check:
 
 `archey --offline`
-","No manual entry for archey
 "
-ping,"# ping
-
-> Send ICMP ECHO_REQUEST packets to network hosts.
-
-- Ping the specified host:
-
-`ping {{host}}`
-
-- Ping a host a specific number of times:
-
-`ping -c {{count}} {{host}}`
-
-- Ping `host`, specifying the interval in `seconds` between requests (default is 1 second):
-
-`ping -i {{seconds}} {{host}}`
-
-- Ping `host` without trying to lookup symbolic names for addresses:
-
-`ping -n {{host}}`
-
-- Ping `host` and ring the bell when a packet is received (if your terminal supports it):
-
-`ping -a {{host}}`
-
-- Ping `host` and prints the time a packet was received (this option is an Apple addition):
-
-`ping --apple-time {{host}}`
-","
+ping,,"
 PING(8)                   BSD System Manager's Manual                  PING(8)
 
 NNAAMMEE
@@ -6584,40 +6548,35 @@ BBUUGGSS
      The --vv option is not worth much on busy hosts.
 
 BSD                             March 29, 2013                             BSD
+","# ping
+
+> Send ICMP ECHO_REQUEST packets to network hosts.
+
+- Ping the specified host:
+
+`ping {{host}}`
+
+- Ping a host a specific number of times:
+
+`ping -c {{count}} {{host}}`
+
+- Ping `host`, specifying the interval in `seconds` between requests (default is 1 second):
+
+`ping -i {{seconds}} {{host}}`
+
+- Ping `host` without trying to lookup symbolic names for addresses:
+
+`ping -n {{host}}`
+
+- Ping `host` and ring the bell when a packet is received (if your terminal supports it):
+
+`ping -a {{host}}`
+
+- Ping `host` and prints the time a packet was received (this option is an Apple addition):
+
+`ping --apple-time {{host}}`
 "
-launchctl,"# launchctl
-
-> A command-line interface to Apple's `launchd` manager for launch daemons (system-wide services) and launch agents (per-user programs).
-> `launchd` loads XML-based `*.plist` files placed in the appropriate locations, and runs the corresponding commands according to their defined schedule.
-
-- Activate a user-specific agent to be loaded into `launchd` whenever the user logs in:
-
-`launchctl load ~/Library/LaunchAgents/{{my_script}}.plist`
-
-- Activate an agent which requires root privileges to run and/or should be loaded whenever any user logs in (note the absence of `~` in the path):
-
-`sudo launchctl load /Library/LaunchAgents/{{root_script}}.plist`
-
-- Activate a system-wide daemon to be loaded whenever the system boots up (even if no user logs in):
-
-`sudo launchctl load /Library/LaunchDaemons/{{system_daemon}}.plist`
-
-- Show all loaded agents/daemons, with the PID if the process they specify is currently running, and the exit code returned the last time they ran:
-
-`launchctl list`
-
-- Unload a currently loaded agent, e.g. to make changes (note: the plist file is automatically loaded into `launchd` after a reboot and/or logging in):
-
-`launchctl unload ~/Library/LaunchAgents/{{my_script}}.plist`
-
-- Manually run a known (loaded) agent/daemon, even if it is not the right time (note: this command uses the agent's label, rather than the filename):
-
-`launchctl start {{my_script}}`
-
-- Manually kill the process associated with a known agent/daemon, if it is running:
-
-`launchctl stop {{my_script}}`
-","
+launchctl,,"
 launchctl(1)              BSD General Commands Manual             launchctl(1)
 
 NNAAMMEE
@@ -7223,36 +7182,40 @@ SSEEEE AALLSSOO
      launchd.plist(5), launchd(8), audit(8), setaudit_addr(2)
 
 Darwin                          1 October, 2014                         Darwin
+","# launchctl
+
+> A command-line interface to Apple's `launchd` manager for launch daemons (system-wide services) and launch agents (per-user programs).
+> `launchd` loads XML-based `*.plist` files placed in the appropriate locations, and runs the corresponding commands according to their defined schedule.
+
+- Activate a user-specific agent to be loaded into `launchd` whenever the user logs in:
+
+`launchctl load ~/Library/LaunchAgents/{{my_script}}.plist`
+
+- Activate an agent which requires root privileges to run and/or should be loaded whenever any user logs in (note the absence of `~` in the path):
+
+`sudo launchctl load /Library/LaunchAgents/{{root_script}}.plist`
+
+- Activate a system-wide daemon to be loaded whenever the system boots up (even if no user logs in):
+
+`sudo launchctl load /Library/LaunchDaemons/{{system_daemon}}.plist`
+
+- Show all loaded agents/daemons, with the PID if the process they specify is currently running, and the exit code returned the last time they ran:
+
+`launchctl list`
+
+- Unload a currently loaded agent, e.g. to make changes (note: the plist file is automatically loaded into `launchd` after a reboot and/or logging in):
+
+`launchctl unload ~/Library/LaunchAgents/{{my_script}}.plist`
+
+- Manually run a known (loaded) agent/daemon, even if it is not the right time (note: this command uses the agent's label, rather than the filename):
+
+`launchctl start {{my_script}}`
+
+- Manually kill the process associated with a known agent/daemon, if it is running:
+
+`launchctl stop {{my_script}}`
 "
-sips,"# sips
-
-> Apple Scriptable Image Processing System.
-> Raster/Query images and ColorSync ICC Profiles.
-
-- Specify an output directory so that originals do not get modified:
-
-`sips --out {{path/to/out_dir}}`
-
-- Resample image at specified size, Image aspect ratio may be altered:
-
-`sips -z {{1920}} {{300}} {{image.ext}}`
-
-- Resample image so height and width aren't greater than specified size (notice the capital Z):
-
-`sips -Z {{1920}} {{300}} {{image.ext}}`
-
-- Resample all images in a directory to fit a width of 960px (honoring aspect ratio):
-
-`sips --resampleWidth {{960}} {{path/to/images}}`
-
-- Convert an image from CMYK to RGB:
-
-`sips --matchTo '/System/Library/ColorSync/Profiles/Generic RGB Profile.icc' {{path/to/image.ext}} {{path/to/out_dir}}`
-
-- Remove ColorSync ICC profile from an image:
-
-`sips -d profile --deleteColorManagementProperties {{path/to/image.ext}}`
-","
+sips,,"
 sips(1)                   BSD General Commands Manual                  sips(1)
 
 NNAAMMEE
@@ -7438,28 +7401,37 @@ OOPPTTIIOONNSS
      copyright           string
      md5                 string (read-only)
 
-Darwin                        September 20, 2020                        Darwin
+Darwin                        September 22, 2020                        Darwin
+","# sips
+
+> Apple Scriptable Image Processing System.
+> Raster/Query images and ColorSync ICC Profiles.
+
+- Specify an output directory so that originals do not get modified:
+
+`sips --out {{path/to/out_dir}}`
+
+- Resample image at specified size, Image aspect ratio may be altered:
+
+`sips -z {{1920}} {{300}} {{image.ext}}`
+
+- Resample image so height and width aren't greater than specified size (notice the capital Z):
+
+`sips -Z {{1920}} {{300}} {{image.ext}}`
+
+- Resample all images in a directory to fit a width of 960px (honoring aspect ratio):
+
+`sips --resampleWidth {{960}} {{path/to/images}}`
+
+- Convert an image from CMYK to RGB:
+
+`sips --matchTo '/System/Library/ColorSync/Profiles/Generic RGB Profile.icc' {{path/to/image.ext}} {{path/to/out_dir}}`
+
+- Remove ColorSync ICC profile from an image:
+
+`sips -d profile --deleteColorManagementProperties {{path/to/image.ext}}`
 "
-md5,"# md5
-
-> Calculate MD5 cryptographic checksums.
-
-- Calculate the MD5 checksum for a file:
-
-`md5 {{filename}}`
-
-- Calculate MD5 checksums for multiple files:
-
-`md5 {{filename1}} {{filename2}}`
-
-- Output only the md5 checksum (no filename):
-
-`md5 -q {{filename}}`
-
-- Print a checksum of the given string:
-
-`md5 -s {{string}}`
-","
+md5,,"
 MD5(1)                    BSD General Commands Manual                   MD5(1)
 
 NNAAMMEE
@@ -7518,19 +7490,27 @@ AACCKKNNOOWWLLEEDDGGMMEENNTTSS
      Data Security.
 
 BSD                              June 6, 2004                              BSD
+","# md5
+
+> Calculate MD5 cryptographic checksums.
+
+- Calculate the MD5 checksum for a file:
+
+`md5 {{filename}}`
+
+- Calculate MD5 checksums for multiple files:
+
+`md5 {{filename1}} {{filename2}}`
+
+- Output only the md5 checksum (no filename):
+
+`md5 -q {{filename}}`
+
+- Print a checksum of the given string:
+
+`md5 -s {{string}}`
 "
-hostname,"# hostname
-
-> Show or set the system's host name.
-
-- Show current host name:
-
-`hostname`
-
-- Set current host name:
-
-`hostname {{new_hostname}}`
-","
+hostname,,"
 HOSTNAME(1)               BSD General Commands Manual              HOSTNAME(1)
 
 NNAAMMEE
@@ -7558,27 +7538,19 @@ HHIISSTTOORRYY
      The hhoossttnnaammee command appeared in 4.2BSD.
 
 BSD                            December 7, 2006                            BSD
+","# hostname
+
+> Show or set the system's host name.
+
+- Show current host name:
+
+`hostname`
+
+- Set current host name:
+
+`hostname {{new_hostname}}`
 "
-opensnoop,"# opensnoop
-
-> Tool that tracks file opens on your system.
-
-- Print all file opens as they occur:
-
-`sudo opensnoop`
-
-- Track all file opens by a process by name:
-
-`sudo opensnoop -n {{process_name}}`
-
-- Track all file opens by a process by PID:
-
-`sudo opensnoop -p {{PID}}`
-
-- Track which processes open a specified file:
-
-`sudo opensnoop -f {{path/to/file}}`
-","opensnoop(1m)                    USER COMMANDS                   opensnoop(1m)
+opensnoop,,"opensnoop(1m)                    USER COMMANDS                   opensnoop(1m)
 
 
 
@@ -7702,48 +7674,27 @@ SSEEEE AALLSSOO
 
 
 version 1.60                     Jan 12, 2006                    opensnoop(1m)
+","# opensnoop
+
+> Tool that tracks file opens on your system.
+
+- Print all file opens as they occur:
+
+`sudo opensnoop`
+
+- Track all file opens by a process by name:
+
+`sudo opensnoop -n {{process_name}}`
+
+- Track all file opens by a process by PID:
+
+`sudo opensnoop -p {{PID}}`
+
+- Track which processes open a specified file:
+
+`sudo opensnoop -f {{path/to/file}}`
 "
-brew,"# brew
-
-> Package manager for macOS.
-> More information: <https://brew.sh>.
-
-- Search for available formulas and casks:
-
-`brew search {{text}}`
-
-- Install the latest stable version of a formula (use `--devel` for development versions):
-
-`brew install {{formula}}`
-
-- List all installed formulae:
-
-`brew list`
-
-- List installed formulae that are not dependencies of another installed formula:
-
-`brew leaves`
-
-- Upgrade an installed formula (if no formula name is given, all installed formulae are upgraded):
-
-`brew upgrade {{formula}}`
-
-- Fetch the newest version of Homebrew and of all formulae from GitHub:
-
-`brew update`
-
-- Remove old versions of installed formulae (if no formula name is given, all installed formulae are processed):
-
-`brew cleanup {{formula}}`
-
-- Display information about a formula (version, installation path, dependencies, etc.):
-
-`brew info {{formula}}`
-
-- Check the local Homebrew installation for potential problems:
-
-`brew doctor`
-","BREW(1)                              brew                              BREW(1)
+brew,https://brew.sh,"BREW(1)                              brew                              BREW(1)
 
 
 
@@ -10041,8 +9992,48 @@ BBUUGGSS
 
 
 Homebrew                        September 2020                         BREW(1)
+","# brew
+
+> Package manager for macOS.
+> More information: <https://brew.sh>.
+
+- Search for available formulas and casks:
+
+`brew search {{text}}`
+
+- Install the latest stable version of a formula (use `--devel` for development versions):
+
+`brew install {{formula}}`
+
+- List all installed formulae:
+
+`brew list`
+
+- List installed formulae that are not dependencies of another installed formula:
+
+`brew leaves`
+
+- Upgrade an installed formula (if no formula name is given, all installed formulae are upgraded):
+
+`brew upgrade {{formula}}`
+
+- Fetch the newest version of Homebrew and of all formulae from GitHub:
+
+`brew update`
+
+- Remove old versions of installed formulae (if no formula name is given, all installed formulae are processed):
+
+`brew cleanup {{formula}}`
+
+- Display information about a formula (version, installation path, dependencies, etc.):
+
+`brew info {{formula}}`
+
+- Check the local Homebrew installation for potential problems:
+
+`brew doctor`
 "
-compgen,"# compgen
+compgen,,,"# compgen
 
 > A built-in command for auto-completion in bash, which is called on pressing TAB key twice.
 
@@ -10065,20 +10056,8 @@ compgen,"# compgen
 - See all available commands/aliases starting with 'ls':
 
 `compgen -ac {{ls}}`
-","No manual entry for compgen
 "
-eval,"# eval
-
-> Execute arguments as a single command in the current shell and return its result.
-
-- Call `echo` with the ""foo"" argument:
-
-`eval ""{{echo foo}}""`
-
-- Set a variable in the current shell:
-
-`eval ""{{foo=bar}}""`
-","
+eval,,"
 BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
 
 NNAAMMEE
@@ -10245,8 +10224,19 @@ AAUUTTHHOORRSS
      This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
 
 BSD                            February 23, 2005                           BSD
+","# eval
+
+> Execute arguments as a single command in the current shell and return its result.
+
+- Call `echo` with the ""foo"" argument:
+
+`eval ""{{echo foo}}""`
+
+- Set a variable in the current shell:
+
+`eval ""{{foo=bar}}""`
 "
-m,"# m
+m,,,"# m
 
 > Swiss Army Knife for macOS.
 
@@ -10269,32 +10259,8 @@ m,"# m
 - Disable the firewall:
 
 `m firewall disable`
-","No manual entry for m
 "
-systemsetup,"# systemsetup
-
-> Configure System Preferences machine settings.
-
-- Enable remote login (SSH):
-
-`systemsetup -setremotelogin on`
-
-- Specify TimeZone, NTP Server and enable network time:
-
-`systemsetup -settimezone {{US/Pacific}} -setnetworktimeserver {{us.pool.ntp.org}} -setusingnetworktime on`
-
-- Make the machine never sleep and automatically restart on power failure or kernel panic:
-
-`systemsetup -setsleep off -setrestartpowerfailure on -setrestartfreeze on`
-
-- List valid startup disks:
-
-`systemsetup -liststartupdisks`
-
-- Specify a new startup disk:
-
-`systemsetup -setstartupdisk {{path}}`
-","
+systemsetup,,"
 SYSTEMSETUP(8)            BSD System Manager's Manual           SYSTEMSETUP(8)
 
 NNAAMMEE
@@ -10528,28 +10494,31 @@ SSEEEE AALLSSOO
      networksetup(8)
 
 Mac OS X                        April 15, 2002                        Mac OS X
+","# systemsetup
+
+> Configure System Preferences machine settings.
+
+- Enable remote login (SSH):
+
+`systemsetup -setremotelogin on`
+
+- Specify TimeZone, NTP Server and enable network time:
+
+`systemsetup -settimezone {{US/Pacific}} -setnetworktimeserver {{us.pool.ntp.org}} -setusingnetworktime on`
+
+- Make the machine never sleep and automatically restart on power failure or kernel panic:
+
+`systemsetup -setsleep off -setrestartpowerfailure on -setrestartfreeze on`
+
+- List valid startup disks:
+
+`systemsetup -liststartupdisks`
+
+- Specify a new startup disk:
+
+`systemsetup -setstartupdisk {{path}}`
 "
-fsck,"# fsck
-
-> Check the integrity of a filesystem or repair it. The filesystem should be unmounted at the time the command is run.
-> It is a wrapper that calls `fsck_hfs`, `fsck_apfs`, `fsck_msdos`, `fsck_exfat`, and `fsck_udf` as needed.
-
-- Check filesystem /dev/sda, reporting any damaged blocks:
-
-`fsck {{/dev/sda}}`
-
-- Check filesystem /dev/sda only if it is clean, reporting any damaged blocks and interactively letting the user choose to repair each one:
-
-`fsck -f {{/dev/sda}}`
-
-- Check filesystem /dev/sda only if it is clean, reporting any damaged blocks and automatically repairing them:
-
-`fsck -fy {{/dev/sda}}`
-
-- Check filesystem /dev/sda, reporting whether it has been cleanly unmounted:
-
-`fsck -q {{/dev/sda}}`
-","
+fsck,,"
 FSCK(8)                   BSD System Manager's Manual                  FSCK(8)
 
 NNAAMMEE
@@ -10639,31 +10608,28 @@ SSEEEE AALLSSOO
      reboot(8)
 
 4th Berkeley Distribution        May 18, 2010        4th Berkeley Distribution
+","# fsck
+
+> Check the integrity of a filesystem or repair it. The filesystem should be unmounted at the time the command is run.
+> It is a wrapper that calls `fsck_hfs`, `fsck_apfs`, `fsck_msdos`, `fsck_exfat`, and `fsck_udf` as needed.
+
+- Check filesystem /dev/sda, reporting any damaged blocks:
+
+`fsck {{/dev/sda}}`
+
+- Check filesystem /dev/sda only if it is clean, reporting any damaged blocks and interactively letting the user choose to repair each one:
+
+`fsck -f {{/dev/sda}}`
+
+- Check filesystem /dev/sda only if it is clean, reporting any damaged blocks and automatically repairing them:
+
+`fsck -fy {{/dev/sda}}`
+
+- Check filesystem /dev/sda, reporting whether it has been cleanly unmounted:
+
+`fsck -q {{/dev/sda}}`
 "
-sysctl,"# sysctl
-
-> Access kernel state information.
-
-- Show all available variables and their values:
-
-`sysctl -a`
-
-- Show Apple model identifier:
-
-`sysctl -n hw.model`
-
-- Show CPU model:
-
-`sysctl -n machdep.cpu.brand_string`
-
-- Show available CPU features (MMX, SSE, SSE2, SSE3, AES, etc):
-
-`sysctl -n machdep.cpu.features`
-
-- Set a changeable kernel state variable:
-
-`sysctl -w {{section.tunable}}={{value}}`
-","
+sysctl,,"
 SYSCTL(8)                 BSD System Manager's Manual                SYSCTL(8)
 
 NNAAMMEE
@@ -10949,8 +10915,31 @@ HHIISSTTOORRYY
      In FreeBSD 2.2, ssyyssccttll was significantly remodeled.
 
 BSD                            January 17, 2011                            BSD
+","# sysctl
+
+> Access kernel state information.
+
+- Show all available variables and their values:
+
+`sysctl -a`
+
+- Show Apple model identifier:
+
+`sysctl -n hw.model`
+
+- Show CPU model:
+
+`sysctl -n machdep.cpu.brand_string`
+
+- Show available CPU features (MMX, SSE, SSE2, SSE3, AES, etc):
+
+`sysctl -n machdep.cpu.features`
+
+- Set a changeable kernel state variable:
+
+`sysctl -w {{section.tunable}}={{value}}`
 "
-carthage,"# carthage
+carthage,,,"# carthage
 
 > A dependency management tool for Cocoa applications.
 
@@ -10973,9 +10962,8 @@ carthage,"# carthage
 - Rebuild a specific dependency:
 
 `carthage build {{dependency}}`
-","No manual entry for carthage
 "
-feh,"# feh
+feh,,,"# feh
 
 > Lightweight image viewing utility.
 
@@ -11002,37 +10990,8 @@ feh,"# feh
 - Set your wallpaper (centered, filled, maximized, scaled or tiled):
 
 `feh --bg-{{center|fill|max|scale|tile}} {{path/to/image}}`
-","No manual entry for feh
 "
-scutil,"# scutil
-
-> Manage system configuration parameters.
-> Necessitates to be root when setting configuration.
-
-- Display DNS Configuration:
-
-`scutil --dns`
-
-- Display proxy configuration:
-
-`scutil --proxy`
-
-- Get computer name:
-
-`scutil --get ComputerName`
-
-- Set computer name:
-
-`sudo scutil --set ComputerName {{computer_name}}`
-
-- Get hostname:
-
-`scutil --get HostName`
-
-- Set hostname:
-
-`scutil --set HostName {{hostname}}`
-","
+scutil,,"
 SCUTIL(8)                 BSD System Manager's Manual                SCUTIL(8)
 
 NNAAMMEE
@@ -11182,8 +11141,36 @@ HHIISSTTOORRYY
      The ssccuuttiill command appeared in Mac OS X Public Beta.
 
 Mac OS X                       January 23, 2008                       Mac OS X
+","# scutil
+
+> Manage system configuration parameters.
+> Necessitates to be root when setting configuration.
+
+- Display DNS Configuration:
+
+`scutil --dns`
+
+- Display proxy configuration:
+
+`scutil --proxy`
+
+- Get computer name:
+
+`scutil --get ComputerName`
+
+- Set computer name:
+
+`sudo scutil --set ComputerName {{computer_name}}`
+
+- Get hostname:
+
+`scutil --get HostName`
+
+- Set hostname:
+
+`scutil --set HostName {{hostname}}`
 "
-spotify,"# spotify
+spotify,https://github.com/hnarayanan/shpotify,,"# spotify
 
 > A command-line interface to Spotify.
 > More information: <https://github.com/hnarayanan/shpotify>.
@@ -11211,24 +11198,8 @@ spotify,"# spotify
 - Show the playback status and song details:
 
 `spotify status`
-","No manual entry for spotify
 "
-hexdump,"# hexdump
-
-> An ASCII, decimal, hexadecimal, octal dump.
-
-- Print the hexadecimal representation of a file:
-
-`hexdump {{file}}`
-
-- Display the input offset in hexadecimal and its ASCII representation in two columns:
-
-`hexdump -C {{file}}`
-
-- Display the hexadecimal representation of a file, but interpret only n bytes of the input:
-
-`hexdump -C -n{{number_of_bytes}} {{file}}`
-","
+hexdump,,"
 HEXDUMP(1)                BSD General Commands Manual               HEXDUMP(1)
 
 NNAAMMEE
@@ -11445,8 +11416,23 @@ SSEEEE AALLSSOO
      gdb(1), od(1)
 
 BSD                              July 10, 2004                             BSD
+","# hexdump
+
+> An ASCII, decimal, hexadecimal, octal dump.
+
+- Print the hexadecimal representation of a file:
+
+`hexdump {{file}}`
+
+- Display the input offset in hexadecimal and its ASCII representation in two columns:
+
+`hexdump -C {{file}}`
+
+- Display the hexadecimal representation of a file, but interpret only n bytes of the input:
+
+`hexdump -C -n{{number_of_bytes}} {{file}}`
 "
-brew-cask,"# brew cask
+brew-cask,https://github.com/Homebrew/homebrew-cask,,"# brew cask
 
 > Package manager for macOS applications distributed as binaries.
 > More information: <https://github.com/Homebrew/homebrew-cask>.
@@ -11482,9 +11468,8 @@ brew-cask,"# brew cask
 - Display information about a given cask:
 
 `brew cask info {{cask_name}}`
-","No manual entry for brew-cask
 "
-whence,"# whence
+whence,,,"# whence
 
 > A zsh builtin to indicate how a given command would be interpreted.
 
@@ -11507,9 +11492,8 @@ whence,"# whence
 - Search only the `PATH` for {{command}}, ignoring builtins, aliases or shell functions (equivalent to the `where` command):
 
 `whence -p {{command}}`
-","No manual entry for whence
 "
-imgcat,"# imgcat
+imgcat,,,"# imgcat
 
 > A utility to display images directly on the command line.
 > Requires a compatible terminal such as iTerm2.
@@ -11517,24 +11501,8 @@ imgcat,"# imgcat
 - Display an image on the command line:
 
 `imgcat {{filename}}`
-","No manual entry for imgcat
 "
-lldb,"# lldb
-
-> The LLVM Low-Level Debugger.
-
-- Debug an executable:
-
-`lldb {{executable}}`
-
-- Attach `lldb` to a running process with a given PID:
-
-`lldb -p {{pid}}`
-
-- Wait for a new process to launch with a given name, and attach to it:
-
-`lldb -w -n {{process_name}}`
-","
+lldb,,"
 LLDB(1)                   BSD General Commands Manual                  LLDB(1)
 
 NNAAMMEE
@@ -11647,27 +11615,23 @@ AAUUTTHHOORR
      Maintained by the LLDB Team, http://lldb.llvm.org/
 
 BSD                            December 16, 2015                           BSD
+","# lldb
+
+> The LLVM Low-Level Debugger.
+
+- Debug an executable:
+
+`lldb {{executable}}`
+
+- Attach `lldb` to a running process with a given PID:
+
+`lldb -p {{pid}}`
+
+- Wait for a new process to launch with a given name, and attach to it:
+
+`lldb -w -n {{process_name}}`
 "
-hdiutil,"# hdiutil
-
-> Utility to create and manage disk images.
-
-- Mount an image:
-
-`hdiutil attach {{path/to/image_file}}`
-
-- Unmount an image:
-
-`hdiutil detach /Volumes/{{volume_name}}`
-
-- List mounted images:
-
-`hdiutil info`
-
-- Create an ISO image from the contents of a directory:
-
-`hdiutil makehybrid -o {{path/to/output_file}} {{path/to/directory}}`
-","
+hdiutil,,"
 HDIUTIL(1)                BSD General Commands Manual               HDIUTIL(1)
 
 NNAAMMEE
@@ -13389,36 +13353,27 @@ SSEEEE AALLSSOO
      exfat.util(8), authopen(1), ditto(8), drutil(1), diskarbitrationd(8).
 
 macOS                             01 Sep 2016                            macOS
+","# hdiutil
+
+> Utility to create and manage disk images.
+
+- Mount an image:
+
+`hdiutil attach {{path/to/image_file}}`
+
+- Unmount an image:
+
+`hdiutil detach /Volumes/{{volume_name}}`
+
+- List mounted images:
+
+`hdiutil info`
+
+- Create an ISO image from the contents of a directory:
+
+`hdiutil makehybrid -o {{path/to/output_file}} {{path/to/directory}}`
 "
-ssh-add,"# ssh-add
-
-> Manage loaded ssh keys in the ssh-agent.
-> Ensure that ssh-agent is up and running for the keys to be loaded in it.
-
-- Add the default ssh keys in ""~/.ssh"" to the ssh-agent:
-
-`ssh-add`
-
-- Add a specific key to the ssh-agent:
-
-`ssh-add {{path/to/private_key}}`
-
-- List fingerprints of currently loaded keys:
-
-`ssh-add -l`
-
-- Delete a key from the ssh-agent:
-
-`ssh-add -d {{path/to/private_key}}`
-
-- Delete all currently loaded keys from the ssh-agent:
-
-`ssh-add -D`
-
-- Add a key to the ssh-agent and the keychain:
-
-`ssh-add -K {{path/to/private_key}}`
-","
+ssh-add,,"
 SSH-ADD(1)                BSD General Commands Manual               SSH-ADD(1)
 
 NNAAMMEE
@@ -13547,24 +13502,37 @@ AAUUTTHHOORRSS
      ated OpenSSH.  Markus Friedl contributed the support for SSH protocol
      versions 1.5 and 2.0.
 
-BSD                           September 20, 2020                           BSD
+BSD                           September 22, 2020                           BSD
+","# ssh-add
+
+> Manage loaded ssh keys in the ssh-agent.
+> Ensure that ssh-agent is up and running for the keys to be loaded in it.
+
+- Add the default ssh keys in ""~/.ssh"" to the ssh-agent:
+
+`ssh-add`
+
+- Add a specific key to the ssh-agent:
+
+`ssh-add {{path/to/private_key}}`
+
+- List fingerprints of currently loaded keys:
+
+`ssh-add -l`
+
+- Delete a key from the ssh-agent:
+
+`ssh-add -d {{path/to/private_key}}`
+
+- Delete all currently loaded keys from the ssh-agent:
+
+`ssh-add -D`
+
+- Add a key to the ssh-agent and the keychain:
+
+`ssh-add -K {{path/to/private_key}}`
 "
-apachectl,"# apachectl
-
-> Apache HTTP Server control interface for macOS.
-
-- Start the org.apache.httpd launchd job:
-
-`apachectl start`
-
-- Stop the launchd job:
-
-`apachectl stop`
-
-- Stop, then start launchd job:
-
-`apachectl restart`
-","APACHECTL(8)                       apachectl                      APACHECTL(8)
+apachectl,,"APACHECTL(8)                       apachectl                      APACHECTL(8)
 
 
 
@@ -13659,8 +13627,23 @@ OOPPTTIIOONNSS
 
 
 Apache HTTP Server                2018-07-06                      APACHECTL(8)
+","# apachectl
+
+> Apache HTTP Server control interface for macOS.
+
+- Start the org.apache.httpd launchd job:
+
+`apachectl start`
+
+- Stop the launchd job:
+
+`apachectl stop`
+
+- Stop, then start launchd job:
+
+`apachectl restart`
 "
-runsvdir,"# runsvdir
+runsvdir,,,"# runsvdir
 
 > Run an entire directory of services.
 
@@ -13675,9 +13658,8 @@ runsvdir,"# runsvdir
 - Start services in separate sessions:
 
 `runsvdir -P {{path/to/services}}`
-","No manual entry for runsvdir
 "
-brightness,"# brightness
+brightness,,,"# brightness
 
 > Get and set the brightness level of all internal and certain external displays.
 
@@ -13692,28 +13674,8 @@ brightness,"# brightness
 - Set the brightness to 50%::
 
 `brightness {{0.5}}`
-","No manual entry for brightness
 "
-dd,"# dd
-
-> Convert and copy a file.
-
-- Make a bootable usb drive from an isohybrid file (such like archlinux-xxx.iso):
-
-`dd if={{file.iso}} of=/dev/{{usb_drive}}`
-
-- Clone a drive to another drive with 4MB block and ignore error:
-
-`dd if=/dev/{{source_drive}} of=/dev/{{dest_drive}} bs=4m conv=noerror`
-
-- Generate a file of 100 random bytes by using kernel random driver:
-
-`dd if=/dev/urandom of={{random_file}} bs=100 count=1`
-
-- Benchmark the write performance of a disk:
-
-`dd if=/dev/zero of={{file_1GB}} bs=1024 count=1000000`
-","
+dd,,"
 DD(1)                     BSD General Commands Manual                    DD(1)
 
 NNAAMMEE
@@ -13910,8 +13872,27 @@ SSTTAANNDDAARRDDSS
      dard.
 
 BSD                            January 13, 1994                            BSD
+","# dd
+
+> Convert and copy a file.
+
+- Make a bootable usb drive from an isohybrid file (such like archlinux-xxx.iso):
+
+`dd if={{file.iso}} of=/dev/{{usb_drive}}`
+
+- Clone a drive to another drive with 4MB block and ignore error:
+
+`dd if=/dev/{{source_drive}} of=/dev/{{dest_drive}} bs=4m conv=noerror`
+
+- Generate a file of 100 random bytes by using kernel random driver:
+
+`dd if=/dev/urandom of={{random_file}} bs=100 count=1`
+
+- Benchmark the write performance of a disk:
+
+`dd if=/dev/zero of={{file_1GB}} bs=1024 count=1000000`
 "
-n,"# n
+n,,,"# n
 
 > Tool to manage multiple node versions.
 
@@ -13934,24 +13915,8 @@ n,"# n
 - Output binary path for a version:
 
 `n bin {{version}}`
-","No manual entry for n
 "
-dmesg,"# dmesg
-
-> Write the kernel messages to standard output.
-
-- Show kernel messages:
-
-`dmesg`
-
-- Show how much physical memory is available on this system:
-
-`dmesg | grep -i memory`
-
-- Show kernel messages 1 page at a time:
-
-`dmesg | less`
-","
+dmesg,,"
 DMESG(8)                  BSD System Manager's Manual                 DMESG(8)
 
 NNAAMMEE
@@ -13971,35 +13936,23 @@ HHIISSTTOORRYY
      The ddmmeessgg command appeared in 4.0BSD.
 
 4th Berkeley Distribution        June 5, 1993        4th Berkeley Distribution
+","# dmesg
+
+> Write the kernel messages to standard output.
+
+- Show kernel messages:
+
+`dmesg`
+
+- Show how much physical memory is available on this system:
+
+`dmesg | grep -i memory`
+
+- Show kernel messages 1 page at a time:
+
+`dmesg | less`
 "
-units,"# units
-
-> Provide the conversion between two units of measure.
-
-- Run in interactive mode:
-
-`units`
-
-- Show the conversion between two simple units:
-
-`units {{quarts}} {{tablespoons}}`
-
-- Convert between units with quantities:
-
-`units {{""15 pounds""}} {{kilograms}}`
-
-- Show the conversion between two compound units:
-
-`units {{""meters / second""}} {{""inches / hour""}}`
-
-- Show the conversion between units with different dimensions:
-
-`units {{""acres""}} {{""ft^2""}}`
-
-- Show the conversion of byte multipliers:
-
-`units {{""15 megabytes""}} {{bytes}}`
-","
+units,,"
 UNITS(1)                  BSD General Commands Manual                 UNITS(1)
 
 NNAAMMEE
@@ -14139,23 +14092,35 @@ BBUUGGSS
      take so long to load the units list and check for duplication.
 
 BSD                              July 14, 1993                             BSD
+","# units
+
+> Provide the conversion between two units of measure.
+
+- Run in interactive mode:
+
+`units`
+
+- Show the conversion between two simple units:
+
+`units {{quarts}} {{tablespoons}}`
+
+- Convert between units with quantities:
+
+`units {{""15 pounds""}} {{kilograms}}`
+
+- Show the conversion between two compound units:
+
+`units {{""meters / second""}} {{""inches / hour""}}`
+
+- Show the conversion between units with different dimensions:
+
+`units {{""acres""}} {{""ft^2""}}`
+
+- Show the conversion of byte multipliers:
+
+`units {{""15 megabytes""}} {{bytes}}`
 "
-qlmanage,"# qlmanage
-
-> QuickLook server tool.
-
-- Display QuickLook for one or multiple files:
-
-`qlmanage -p {{filename}} {{filename2}}`
-
-- Compute 300px wide PNG thumbnails of all JPEGs in the current directory and put them in a directory:
-
-`qlmanage {{*.jpg}} -t -s {{300}} {{path/to/directory}}`
-
-- Reset Quicklook:
-
-`qlmanage -r`
-","
+qlmanage,,"
 qlmanage(1)               BSD General Commands Manual              qlmanage(1)
 
 NNAAMMEE
@@ -14195,27 +14160,23 @@ DDEESSCCRRIIPPTTIIOONN
      5.       qqllmmaannaaggee --hh displays extensive help.
 
 Mac OS X                        March 29, 2007                        Mac OS X
+","# qlmanage
+
+> QuickLook server tool.
+
+- Display QuickLook for one or multiple files:
+
+`qlmanage -p {{filename}} {{filename2}}`
+
+- Compute 300px wide PNG thumbnails of all JPEGs in the current directory and put them in a directory:
+
+`qlmanage {{*.jpg}} -t -s {{300}} {{path/to/directory}}`
+
+- Reset Quicklook:
+
+`qlmanage -r`
 "
-base64,"# base64
-
-> Encode and decode using Base64 representation.
-
-- Encode a file:
-
-`base64 -i {{plain_file}}`
-
-- Decode a file:
-
-`base64 -D -i {{base64_file}}`
-
-- Encode from `stdin`:
-
-`echo -n {{plain_text}} | base64`
-
-- Decode from `stdin`:
-
-`echo -n {{base64_text}} | base64 -D`
-","
+base64,,"
 base64(1)                 BSD General Commands Manual                base64(1)
 
 NNAAMMEE
@@ -14255,8 +14216,27 @@ SSEEEE AALLSSOO
      44664488 <http://tools.ietf.org/html/rfc4648>
 
 Mac OS X 10.7                  February 8, 2011                  Mac OS X 10.7
+","# base64
+
+> Encode and decode using Base64 representation.
+
+- Encode a file:
+
+`base64 -i {{plain_file}}`
+
+- Decode a file:
+
+`base64 -D -i {{base64_file}}`
+
+- Encode from `stdin`:
+
+`echo -n {{plain_text}} | base64`
+
+- Decode from `stdin`:
+
+`echo -n {{base64_text}} | base64 -D`
 "
-yabai,"# yabai
+yabai,https://github.com/koekeishiya/yabai,,"# yabai
 
 > A tiling window manager for macOS based on binary space partitioning.
 > More information: <https://github.com/koekeishiya/yabai>.
@@ -14280,24 +14260,8 @@ yabai,"# yabai
 - Enable status bar:
 
 `yabai -m config status_bar on`
-","No manual entry for yabai
 "
-caffeinate,"# caffeinate
-
-> Prevent mac from sleeping.
-
-- Prevent from sleeping for 1 hour (3600 seconds):
-
-`caffeinate -u -t {{3600}}`
-
-- Prevent from sleeping until a command completes:
-
-`caffeinate -s {{command}}`
-
-- Prevent from sleeping until you type Ctrl-C:
-
-`caffeinate -i`
-","
+caffeinate,,"
 CAFFEINATE(8)             BSD System Manager's Manual            CAFFEINATE(8)
 
 NNAAMMEE
@@ -14352,19 +14316,23 @@ LLOOCCAATTIIOONN
      _/_u_s_r_/_b_i_n_/_c_a_f_f_e_i_n_a_t_e
 
 Darwin                         November 9, 2012                         Darwin
+","# caffeinate
+
+> Prevent mac from sleeping.
+
+- Prevent from sleeping for 1 hour (3600 seconds):
+
+`caffeinate -u -t {{3600}}`
+
+- Prevent from sleeping until a command completes:
+
+`caffeinate -s {{command}}`
+
+- Prevent from sleeping until you type Ctrl-C:
+
+`caffeinate -i`
 "
-pbcopy,"# pbcopy
-
-> Place standard output in the clipboard.
-
-- Place the contents of a file in the clipboard:
-
-`pbcopy < {{file}}`
-
-- Place the results of a command in the clipboard:
-
-`find . -type t -name ""*.png"" | pbcopy`
-","PBCOPY(1)                                                            PBCOPY(1)
+pbcopy,,"PBCOPY(1)                                                            PBCOPY(1)
 
 
 
@@ -14434,15 +14402,19 @@ BBUUGGSS
 
 
 Apple Computer, Inc.           January 12, 2005                      PBCOPY(1)
+","# pbcopy
+
+> Place standard output in the clipboard.
+
+- Place the contents of a file in the clipboard:
+
+`pbcopy < {{file}}`
+
+- Place the results of a command in the clipboard:
+
+`find . -type t -name ""*.png"" | pbcopy`
 "
-command,"# command
-
-> Command forces the shell to execute the program and ignore any functions, builtins and aliases with the same name.
-
-- Execute the ls program literally, even if an ls alias exists:
-
-`command {{ls}}`
-","
+command,,"
 BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
 
 NNAAMMEE
@@ -14609,19 +14581,15 @@ AAUUTTHHOORRSS
      This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
 
 BSD                            February 23, 2005                           BSD
+","# command
+
+> Command forces the shell to execute the program and ignore any functions, builtins and aliases with the same name.
+
+- Execute the ls program literally, even if an ls alias exists:
+
+`command {{ls}}`
 "
-xsltproc,"# xsltproc
-
-> Transform XML with XSLT to produce output (usually HTML or XML).
-
-- Transform an XML file with a specific XSLT stylesheet:
-
-`xsltproc --output {{output.html}} {{stylesheet.xslt}} {{xmlfile.xml}}`
-
-- Pass a value to a parameter in the stylesheet:
-
-`xsltproc --output {{output.html}} --stringparam {{name}} {{value}} {{stylesheet.xslt}} {{xmlfile.xml}}`
-","XSLTPROC(1)                     xsltproc Manual                    XSLTPROC(1)
+xsltproc,,"XSLTPROC(1)                     xsltproc Manual                    XSLTPROC(1)
 
 
 
@@ -14841,23 +14809,19 @@ CCOOPPYYRRIIGGHHTT
 
 
 libxslt      $Date: 2008-04-21 16:28:56 +0200 (Mon, 21 Apr 2008) $ XSLTPROC(1)
+","# xsltproc
+
+> Transform XML with XSLT to produce output (usually HTML or XML).
+
+- Transform an XML file with a specific XSLT stylesheet:
+
+`xsltproc --output {{output.html}} {{stylesheet.xslt}} {{xmlfile.xml}}`
+
+- Pass a value to a parameter in the stylesheet:
+
+`xsltproc --output {{output.html}} --stringparam {{name}} {{value}} {{stylesheet.xslt}} {{xmlfile.xml}}`
 "
-fc,"# fc
-
-> Open the most recent command and edit it.
-
-- Open in the default system editor:
-
-`fc`
-
-- Specify an editor to open with:
-
-`fc -e {{'emacs'}}`
-
-- List recent commands from history:
-
-`fc -l`
-","
+fc,,"
 BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
 
 NNAAMMEE
@@ -15024,8 +14988,23 @@ AAUUTTHHOORRSS
      This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
 
 BSD                            February 23, 2005                           BSD
+","# fc
+
+> Open the most recent command and edit it.
+
+- Open in the default system editor:
+
+`fc`
+
+- Specify an editor to open with:
+
+`fc -e {{'emacs'}}`
+
+- List recent commands from history:
+
+`fc -l`
 "
-xed,"# xed
+xed,,,"# xed
 
 > Opens files for editing in XCode.
 
@@ -15040,24 +15019,8 @@ xed,"# xed
 - Open a file in XCode and jump to line number 75:
 
 `xed -l 75 {{filename}}`
-","No manual entry for xed
 "
-ditto,"# ditto
-
-> Copy files and directories.
-
-- Overwrite contents of destination directory with contents of source directory:
-
-`ditto {{path/to/source}} {{path/to/destination}}`
-
-- Print a line to the Terminal window for every file that's being copied:
-
-`ditto -V {{path/to/source}} {{path/to/destination}}`
-
-- Copy a given file or directory, while retaining the original file permissions:
-
-`ditto -rsrc {{path/to/source}} {{path/to/destination}}`
-","
+ditto,,"
 
 
 DITTO(1)                  BSD General Commands Manual                 DITTO(1)
@@ -15306,8 +15269,36 @@ SSEEEE AALLSSOO
      bom(5), lsbom(8), mkbom(8), cpio(1), zip(1), gzip(1), bzip2(1), tar(1).
 
 Mac OS X                       December 19, 2008                      Mac OS X
+","# ditto
+
+> Copy files and directories.
+
+- Overwrite contents of destination directory with contents of source directory:
+
+`ditto {{path/to/source}} {{path/to/destination}}`
+
+- Print a line to the Terminal window for every file that's being copied:
+
+`ditto -V {{path/to/source}} {{path/to/destination}}`
+
+- Copy a given file or directory, while retaining the original file permissions:
+
+`ditto -rsrc {{path/to/source}} {{path/to/destination}}`
 "
-afinfo,"# afinfo
+afinfo,,"
+AFINFO(1)                 BSD General Commands Manual                AFINFO(1)
+
+NNAAMMEE
+     aaffiinnffoo -- Audio File Info
+
+SSYYNNOOPPSSIISS
+     aaffiinnffoo _a_u_d_i_o_f_i_l_e
+
+DDEESSCCRRIIPPTTIIOONN
+     Audio File Info prints out information about an audio file to stdout
+
+Darwin                         February 13, 2007                        Darwin
+","# afinfo
 
 > Audio file metadata parser for OS X.
 > Built-in command of OS X.
@@ -15335,21 +15326,8 @@ afinfo,"# afinfo
 - Display help for full usage:
 
 `afinfo -h`
-","
-AFINFO(1)                 BSD General Commands Manual                AFINFO(1)
-
-NNAAMMEE
-     aaffiinnffoo -- Audio File Info
-
-SSYYNNOOPPSSIISS
-     aaffiinnffoo _a_u_d_i_o_f_i_l_e
-
-DDEESSCCRRIIPPTTIIOONN
-     Audio File Info prints out information about an audio file to stdout
-
-Darwin                         February 13, 2007                        Darwin
 "
-wifi-password,"# wifi-password
+wifi-password,https://github.com/rauchg/wifi-password,,"# wifi-password
 
 > Get the password of the wifi.
 > More information: <https://github.com/rauchg/wifi-password>.
@@ -15365,32 +15343,8 @@ wifi-password,"# wifi-password
 - Print only the password as output:
 
 `wifi-password -q`
-","No manual entry for wifi-password
 "
-stty,"# stty
-
-> Set options for a terminal device interface.
-
-- Display all settings for the current terminal:
-
-`stty -a`
-
-- Set the number of rows:
-
-`stty rows {{rows}}`
-
-- Set the number of columns:
-
-`stty cols {{cols}}`
-
-- Get the actual transfer speed of a device:
-
-`stty -f {{path/to/device_file}} speed`
-
-- Reset all modes to reasonable values for the current terminal:
-
-`stty sane`
-","
+stty,,"
 STTY(1)                   BSD General Commands Manual                  STTY(1)
 
 NNAAMMEE
@@ -15850,27 +15804,31 @@ SSTTAANNDDAARRDDSS
      ble.  The flags --ee and --ff are extensions to the standard.
 
 BSD                             April 18, 1994                             BSD
+","# stty
+
+> Set options for a terminal device interface.
+
+- Display all settings for the current terminal:
+
+`stty -a`
+
+- Set the number of rows:
+
+`stty rows {{rows}}`
+
+- Set the number of columns:
+
+`stty cols {{cols}}`
+
+- Get the actual transfer speed of a device:
+
+`stty -f {{path/to/device_file}} speed`
+
+- Reset all modes to reasonable values for the current terminal:
+
+`stty sane`
 "
-softwareupdate,"# softwareupdate
-
-> A tool for updating MacOS App Store apps via the command line.
-
-- List all available updates:
-
-`softwareupdate -l`
-
-- Download and install all updates:
-
-`softwareupdate -ia`
-
-- Download and install all recommended updates:
-
-`softwareupdate -ir`
-
-- Download and install a specific app:
-
-`softwareupdate -i {{update_name}}`
-","
+softwareupdate,,"
 softwareupdate(8)         BSD System Manager's Manual        softwareupdate(8)
 
 NNAAMMEE
@@ -15984,23 +15942,27 @@ EEXXAAMMPPLLEESS
            Automatic check is on
 
 Mac OS                        September 11, 2012                        Mac OS
+","# softwareupdate
+
+> A tool for updating MacOS App Store apps via the command line.
+
+- List all available updates:
+
+`softwareupdate -l`
+
+- Download and install all updates:
+
+`softwareupdate -ia`
+
+- Download and install all recommended updates:
+
+`softwareupdate -ir`
+
+- Download and install a specific app:
+
+`softwareupdate -i {{update_name}}`
 "
-mkfile,"# mkfile
-
-> Create one or more empty files of any size.
-
-- Create an empty file of 15 kilobytes:
-
-`mkfile -n {{15k}} {{filename}}`
-
-- Create a file of a given size and unit (bytes, KB, MB, GB):
-
-`mkfile -n {{size}}{{b|k|m|g}} {{filename}}`
-
-- Create two files of 4 megabytes each:
-
-`mkfile -n {{4m}} {{first_filename}} {{second_filename}}`
-","MKFILE(8)                                                            MKFILE(8)
+mkfile,,"MKFILE(8)                                                            MKFILE(8)
 
 
 
@@ -16035,8 +15997,23 @@ SSEEEE AALLSSOO
 
 
                                1 September 1997                      MKFILE(8)
+","# mkfile
+
+> Create one or more empty files of any size.
+
+- Create an empty file of 15 kilobytes:
+
+`mkfile -n {{15k}} {{filename}}`
+
+- Create a file of a given size and unit (bytes, KB, MB, GB):
+
+`mkfile -n {{size}}{{b|k|m|g}} {{filename}}`
+
+- Create two files of 4 megabytes each:
+
+`mkfile -n {{4m}} {{first_filename}} {{second_filename}}`
 "
-pdfgrep,"# pdfgrep
+pdfgrep,,,"# pdfgrep
 
 > Search text in PDF files.
 
@@ -16059,28 +16036,8 @@ pdfgrep,"# pdfgrep
 - Find pattern on files that match a specific glob in the current directory recursively:
 
 `pdfgrep --recursive --include {{'*book.pdf'}} {{pattern}}`
-","No manual entry for pdfgrep
 "
-pkgutil,"# pkgutil
-
-> Query and manipulate Mac OS X Installer packages and receipts.
-
-- List package IDs for all installed packages:
-
-`pkgutil --pkgs`
-
-- Verify cryptographic signatures of a package file:
-
-`pkgutil --check-signature {{path/to/filename.pkg}}`
-
-- List all the files for an installed package given its ID:
-
-`pkgutil --files {{com.microsoft.Word}}`
-
-- Extract the contents of a package file into a directory:
-
-`pkgutil  --expand-full {{path/to/filename.pkg}} {{path/to/directory}}`
-","
+pkgutil,,"
 pkgutil(1)                BSD General Commands Manual               pkgutil(1)
 
 NNAAMMEE
@@ -16232,8 +16189,27 @@ SSEEEE AALLSSOO
      productbuild(1)
 
 Mac OS                           March 2, 2011                          Mac OS
+","# pkgutil
+
+> Query and manipulate Mac OS X Installer packages and receipts.
+
+- List package IDs for all installed packages:
+
+`pkgutil --pkgs`
+
+- Verify cryptographic signatures of a package file:
+
+`pkgutil --check-signature {{path/to/filename.pkg}}`
+
+- List all the files for an installed package given its ID:
+
+`pkgutil --files {{com.microsoft.Word}}`
+
+- Extract the contents of a package file into a directory:
+
+`pkgutil  --expand-full {{path/to/filename.pkg}} {{path/to/directory}}`
 "
-port,"# port
+port,,,"# port
 
 > Package manager for macOS.
 
@@ -16260,24 +16236,8 @@ port,"# port
 - Remove old versions of installed packages:
 
 `sudo port uninstall inactive`
-","No manual entry for port
 "
-sw_vers,"# sw_vers
-
-> Print macOS operating system version information.
-
-- Print all available information (OS name, version number, and build):
-
-`sw_vers`
-
-- Print only the version number of the operating system:
-
-`sw_vers -productVersion`
-
-- Print only the build identifier:
-
-`sw_vers -buildVersion`
-","
+sw_vers,,"
 SW_VERS(1)                BSD General Commands Manual               SW_VERS(1)
 
 NNAAMMEE
@@ -16332,19 +16292,23 @@ FFIILLEESS
      /System/Library/CoreServices/ServerVersion.plist
 
 Mac OS X                        March 10, 2003                        Mac OS X
+","# sw_vers
+
+> Print macOS operating system version information.
+
+- Print all available information (OS name, version number, and build):
+
+`sw_vers`
+
+- Print only the version number of the operating system:
+
+`sw_vers -productVersion`
+
+- Print only the build identifier:
+
+`sw_vers -buildVersion`
 "
-pbpaste,"# pbpaste
-
-> Send the contents of the clipboard to standard output.
-
-- Write the contents of the clipboard to a file:
-
-`pbpaste > {{file}}`
-
-- Use the contents of the clipboard as input to a command:
-
-`pbpaste | grep foo`
-","PBCOPY(1)                                                            PBCOPY(1)
+pbpaste,,"PBCOPY(1)                                                            PBCOPY(1)
 
 
 
@@ -16414,27 +16378,19 @@ BBUUGGSS
 
 
 Apple Computer, Inc.           January 12, 2005                      PBCOPY(1)
+","# pbpaste
+
+> Send the contents of the clipboard to standard output.
+
+- Write the contents of the clipboard to a file:
+
+`pbpaste > {{file}}`
+
+- Use the contents of the clipboard as input to a command:
+
+`pbpaste | grep foo`
 "
-whereis,"# whereis
-
-> Locate the binary, source, and manual page files for a command.
-
-- Locate binary, source and man pages for ssh:
-
-`whereis {{ssh}}`
-
-- Locate binary and man pages for ls:
-
-`whereis -bm {{ls}}`
-
-- Locate source of gcc and man pages for git:
-
-`whereis -s {{gcc}} -m {{git}}`
-
-- Locate binaries for gcc in /usr/bin/ only:
-
-`whereis -b -B {{/usr/bin/}} -f {{gcc}}`
-","
+whereis,,"
 WHEREIS(1)                BSD General Commands Manual               WHEREIS(1)
 
 NNAAMMEE
@@ -16461,28 +16417,27 @@ HHIISSTTOORRYY
      The wwhheerreeiiss command appeared in 3.0BSD.
 
 BSD                             April 27, 1995                             BSD
+","# whereis
+
+> Locate the binary, source, and manual page files for a command.
+
+- Locate binary, source and man pages for ssh:
+
+`whereis {{ssh}}`
+
+- Locate binary and man pages for ls:
+
+`whereis -bm {{ls}}`
+
+- Locate source of gcc and man pages for git:
+
+`whereis -s {{gcc}} -m {{git}}`
+
+- Locate binaries for gcc in /usr/bin/ only:
+
+`whereis -b -B {{/usr/bin/}} -f {{gcc}}`
 "
-uname,"# uname
-
-> Print details about the current machine and the operating system running on it.
-> Note: for additional information about the operating system, try the `sw_vers` command.
-
-- Print hardware-related information: machine and processor:
-
-`uname -mp`
-
-- Print software-related information: operating system, release number, and version:
-
-`uname -srv`
-
-- Print the nodename (hostname) of the system:
-
-`uname -n`
-
-- Print all available system information (hardware, software, nodename):
-
-`uname -a`
-","
+uname,,"
 UNAME(1)                  BSD General Commands Manual                 UNAME(1)
 
 NNAAMMEE
@@ -16523,8 +16478,28 @@ SSTTAANNDDAARRDDSS
      option is an extension to the standard.
 
 BSD                            November 9, 1998                            BSD
+","# uname
+
+> Print details about the current machine and the operating system running on it.
+> Note: for additional information about the operating system, try the `sw_vers` command.
+
+- Print hardware-related information: machine and processor:
+
+`uname -mp`
+
+- Print software-related information: operating system, release number, and version:
+
+`uname -srv`
+
+- Print the nodename (hostname) of the system:
+
+`uname -n`
+
+- Print all available system information (hardware, software, nodename):
+
+`uname -a`
 "
-xctool,"# xctool
+xctool,https://github.com/facebook/xctool,,"# xctool
 
 > Tool for building Xcode projects.
 > More information: <https://github.com/facebook/xctool>.
@@ -16540,9 +16515,8 @@ xctool,"# xctool
 - Clean, build and execute all the tests:
 
 `xctool -workspace {{YourWorkspace.xcworkspace}} -scheme {{YourScheme}} clean build test`
-","No manual entry for xctool
 "
-pwgen,"# pwgen
+pwgen,,,"# pwgen
 
 > Generate pronounceable passwords.
 
@@ -16557,25 +16531,8 @@ pwgen,"# pwgen
 - Generate password with at least one capital letter in them:
 
 `pwgen -c {{length}}`
-","No manual entry for pwgen
 "
-w,"# w
-
-> Show who is logged on and what they are doing.
-> Print user login, TTY, remote host, login time, idle time, current process.
-
-- Show logged-in users info:
-
-`w`
-
-- Show logged-in users info without a header:
-
-`w -h`
-
-- Show info about logged-in users, sorted by their idle time:
-
-`w -i`
-","
+w,,"
 W(1)                      BSD General Commands Manual                     W(1)
 
 NNAAMMEE
@@ -16643,44 +16600,24 @@ BBUUGGSS
      utility will display full hostnames.
 
 BSD                              June 6, 1993                              BSD
+","# w
+
+> Show who is logged on and what they are doing.
+> Print user login, TTY, remote host, login time, idle time, current process.
+
+- Show logged-in users info:
+
+`w`
+
+- Show logged-in users info without a header:
+
+`w -h`
+
+- Show info about logged-in users, sorted by their idle time:
+
+`w -i`
 "
-tree,"# tree
-
-> Show the contents of the current directory as a tree.
-> More information: <http://mama.indstate.edu/users/ice/tree/>.
-
-- Print files and directories up to 'num' levels of depth (where 1 means the current directory):
-
-`tree -L {{num}}`
-
-- Print directories only:
-
-`tree -d`
-
-- Print hidden files too with colorization on:
-
-`tree -a -C`
-
-- Print the tree without indentation lines, showing the full path instead (use `-N` to not escape whitespace and special characters):
-
-`tree -i -f`
-
-- Print the size of each node next to it, in human-readable format, with directories displaying their cumulative size (as in the `du` command):
-
-`tree -s -h --du`
-
-- Print files within the tree hierarchy, using a wildcard (glob) pattern, and pruning out directories that don't contain matching files:
-
-`tree -P '{{*.txt}}' --prune`
-
-- Print directories within the tree hierarchy, using the wildcard (glob) pattern, and pruning out directories that aren't ancestors of the wanted one:
-
-`tree -P {{directory_name}} --matchdirs --prune`
-
-- Print the tree ignoring the given directories:
-
-`tree -I '{{directory_name1|directory_name2}}'`
-","TREE(1)                                                                TREE(1)
+tree,http://mama.indstate.edu/users/ice/tree/,"TREE(1)                                                                TREE(1)
 
 
 
@@ -17029,8 +16966,44 @@ SSEEEE AALLSSOO
 
 
 Tree 1.8.0                                                             TREE(1)
+","# tree
+
+> Show the contents of the current directory as a tree.
+> More information: <http://mama.indstate.edu/users/ice/tree/>.
+
+- Print files and directories up to 'num' levels of depth (where 1 means the current directory):
+
+`tree -L {{num}}`
+
+- Print directories only:
+
+`tree -d`
+
+- Print hidden files too with colorization on:
+
+`tree -a -C`
+
+- Print the tree without indentation lines, showing the full path instead (use `-N` to not escape whitespace and special characters):
+
+`tree -i -f`
+
+- Print the size of each node next to it, in human-readable format, with directories displaying their cumulative size (as in the `du` command):
+
+`tree -s -h --du`
+
+- Print files within the tree hierarchy, using a wildcard (glob) pattern, and pruning out directories that don't contain matching files:
+
+`tree -P '{{*.txt}}' --prune`
+
+- Print directories within the tree hierarchy, using the wildcard (glob) pattern, and pruning out directories that aren't ancestors of the wanted one:
+
+`tree -P {{directory_name}} --matchdirs --prune`
+
+- Print the tree ignoring the given directories:
+
+`tree -I '{{directory_name1|directory_name2}}'`
 "
-yank,"# yank
+yank,,,"# yank
 
 > Read input from `stdin` and display a selection interface that allows a field to be selected and copied to the clipboard.
 
@@ -17049,9 +17022,8 @@ yank,"# yank
 - Only yank fields matching a specific pattern:
 
 `{{ps ux}} | yank -g {{""[0-9]+""}}`
-","No manual entry for yank
 "
-istats,"# istats
+istats,https://github.com/Chris911/iStats,,"# istats
 
 > CLI tool that shows statistics such as CPU temperature, fan speeds and battery status.
 > More information: <https://github.com/Chris911/iStats>.
@@ -17071,36 +17043,8 @@ istats,"# istats
 - Scan and print temperatures:
 
 `istats scan`
-","No manual entry for istats
 "
-shutdown,"# shutdown
-
-> Shutdown and reboot the system.
-
-- Power off (halt) immediately:
-
-`shutdown -h now`
-
-- Sleep immediately:
-
-`shutdown -s now`
-
-- Reboot immediately:
-
-`shutdown -r now`
-
-- Reboot in 5 minutes:
-
-`shutdown -r +{{5}}`
-
-- Power off (halt) at 1:00 pm (Uses 24h clock):
-
-`shutdown -h {{1300}}`
-
-- Reboot on May 10th 2042 at 11:30 am (Input format: YYMMDDHHMM):
-
-`shutdown -r {{4205101130}}`
-","
+shutdown,,"
 SHUTDOWN(8)               BSD System Manager's Manual              SHUTDOWN(8)
 
 NNAAMMEE
@@ -17188,8 +17132,35 @@ HHIISSTTOORRYY
      The sshhuuttddoowwnn utility appeared in 4.0BSD.
 
 BSD                            December 11, 1998                           BSD
+","# shutdown
+
+> Shutdown and reboot the system.
+
+- Power off (halt) immediately:
+
+`shutdown -h now`
+
+- Sleep immediately:
+
+`shutdown -s now`
+
+- Reboot immediately:
+
+`shutdown -r now`
+
+- Reboot in 5 minutes:
+
+`shutdown -r +{{5}}`
+
+- Power off (halt) at 1:00 pm (Uses 24h clock):
+
+`shutdown -h {{1300}}`
+
+- Reboot on May 10th 2042 at 11:30 am (Input format: YYMMDDHHMM):
+
+`shutdown -r {{4205101130}}`
 "
-mas,"# mas
+mas,https://github.com/mas-cli/mas,,"# mas
 
 > Command line interface for the Mac App Store.
 > More information: <https://github.com/mas-cli/mas>.
@@ -17213,9 +17184,8 @@ mas,"# mas
 - Install all pending updates:
 
 `mas upgrade`
-","No manual entry for mas
 "
-pod,"# pod
+pod,,,"# pod
 
 > Dependency manager for Swift and Objective-C Cocoa projects.
 
@@ -17246,33 +17216,8 @@ pod,"# pod
 - Remove CocoaPods from a Xcode project:
 
 `pod deintegrate {{xcode_project}}`
-","No manual entry for pod
 "
-xcode-select,"# xcode-select
-
-> Switch between different versions of Xcode and the included developer tools.
-> Also used to update the path to Xcode if it is moved after installation.
-
-- Install Xcode's command-line tools:
-
-`xcode-select --install`
-
-- Select a given path as the active developer directory:
-
-`xcode-select -s {{path/to/Xcode.app/Contents/Developer}}`
-
-- Select a given Xcode instance and use its developer directory as the active one:
-
-`xcode-select -s {{path/to/Xcode.app}}`
-
-- Print the currently selected developer directory:
-
-`xcode-select -p`
-
-- Discard any user-specified developer directory so that it will be found via the default search mechanism:
-
-`sudo xcode-select -r`
-","XCODE-SELECT(1)           BSD General Commands Manual          XCODE-SELECT(1)
+xcode-select,,"XCODE-SELECT(1)           BSD General Commands Manual          XCODE-SELECT(1)
 
 
 
@@ -17421,35 +17366,32 @@ HHIISSTTOORRYY
 
 
 Mac OS X                        March 08, 2016                 XCODE-SELECT(1)
+","# xcode-select
+
+> Switch between different versions of Xcode and the included developer tools.
+> Also used to update the path to Xcode if it is moved after installation.
+
+- Install Xcode's command-line tools:
+
+`xcode-select --install`
+
+- Select a given path as the active developer directory:
+
+`xcode-select -s {{path/to/Xcode.app/Contents/Developer}}`
+
+- Select a given Xcode instance and use its developer directory as the active one:
+
+`xcode-select -s {{path/to/Xcode.app}}`
+
+- Print the currently selected developer directory:
+
+`xcode-select -p`
+
+- Discard any user-specified developer directory so that it will be found via the default search mechanism:
+
+`sudo xcode-select -r`
 "
-screencapture,"# screencapture
-
-> Utility to take screenshots and screen recordings.
-
-- Take a screenshot and save it to a file:
-
-`screencapture {{path/to/file.png}}`
-
-- Take a screenshot including the mouse cursor:
-
-`screencapture -C {{path/to/file.png}}`
-
-- Take a screenshot and open it in Preview, instead of saving:
-
-`screencapture -P`
-
-- Take a screenshot of a selected rectangular area:
-
-`screencapture -i {{path/to/file.png}}`
-
-- Take a screenshot after a delay:
-
-`screencapture -T {{seconds}} {{path/to/file.png}}`
-
-- Make a screen recording and save it to a file:
-
-`screencapture -v {{path/to/file.mp4}}`
-","
+screencapture,,"
 SCREENCAPTURE(1)          BSD General Commands Manual         SCREENCAPTURE(1)
 
 NNAAMMEE
@@ -17555,35 +17497,35 @@ HHIISSTTOORRYY
      A ssccrreeeennccaappttuurree utility first appeared in Mac OS X v10.2.
 
 Mac OS                           June 16, 2004                          Mac OS
+","# screencapture
+
+> Utility to take screenshots and screen recordings.
+
+- Take a screenshot and save it to a file:
+
+`screencapture {{path/to/file.png}}`
+
+- Take a screenshot including the mouse cursor:
+
+`screencapture -C {{path/to/file.png}}`
+
+- Take a screenshot and open it in Preview, instead of saving:
+
+`screencapture -P`
+
+- Take a screenshot of a selected rectangular area:
+
+`screencapture -i {{path/to/file.png}}`
+
+- Take a screenshot after a delay:
+
+`screencapture -T {{seconds}} {{path/to/file.png}}`
+
+- Make a screen recording and save it to a file:
+
+`screencapture -v {{path/to/file.mp4}}`
 "
-du,"# du
-
-> Disk usage: estimate and summarize file and directory space usage.
-
-- List the sizes of a directory and any subdirectories, in the given unit (KB/MB/GB):
-
-`du -{{k|m|g}} {{path/to/directory}}`
-
-- List the sizes of a directory and any subdirectories, in human-readable form (i.e. auto-selecting the appropriate unit for each size):
-
-`du -h {{path/to/directory}}`
-
-- Show the size of a single directory, in human readable units:
-
-`du -sh {{path/to/directory}}`
-
-- List the human-readable sizes of a directory and of all the files and directories within it:
-
-`du -ah {{path/to/directory}}`
-
-- List the human-readable sizes of a directory and any subdirectories, up to N levels deep:
-
-`du -h -d {{N}} {{path/to/directory}}`
-
-- List the human-readable size of all .jpg files in subdirectories of the current directory, and show a cumulative total at the end:
-
-`du -ch */*.jpg`
-","
+du,,"
 DU(1)                     BSD General Commands Manual                    DU(1)
 
 NNAAMMEE
@@ -17670,27 +17612,35 @@ HHIISSTTOORRYY
      A dduu command appeared in Version 1 AT&T UNIX.
 
 BSD                              June 2, 2004                              BSD
+","# du
+
+> Disk usage: estimate and summarize file and directory space usage.
+
+- List the sizes of a directory and any subdirectories, in the given unit (KB/MB/GB):
+
+`du -{{k|m|g}} {{path/to/directory}}`
+
+- List the sizes of a directory and any subdirectories, in human-readable form (i.e. auto-selecting the appropriate unit for each size):
+
+`du -h {{path/to/directory}}`
+
+- Show the size of a single directory, in human readable units:
+
+`du -sh {{path/to/directory}}`
+
+- List the human-readable sizes of a directory and of all the files and directories within it:
+
+`du -ah {{path/to/directory}}`
+
+- List the human-readable sizes of a directory and any subdirectories, up to N levels deep:
+
+`du -h -d {{N}} {{path/to/directory}}`
+
+- List the human-readable size of all .jpg files in subdirectories of the current directory, and show a cumulative total at the end:
+
+`du -ch */*.jpg`
 "
-networksetup,"# networksetup
-
-> Configuration tool for Network System Preferences.
-
-- List available network service providers (Ethernet, Wi-Fi, Bluetooth, etc):
-
-`networksetup -listallnetworkservices`
-
-- Show network settings for a particular networking device:
-
-`networksetup -getinfo {{""Wi-Fi""}}`
-
-- Get currently connected Wi-Fi network name (Wi-Fi device usually en0 or en1):
-
-`networksetup -getairportnetwork {{en0}}`
-
-- Connect to a particular Wi-Fi network:
-
-`networksetup -setairportnetwork {{en0}} {{""Airport Network SSID""}} {{password}}`
-","
+networksetup,,"
 NETWORKSETUP(8)           BSD System Manager's Manual          NETWORKSETUP(8)
 
 NNAAMMEE
@@ -18335,31 +18285,27 @@ SSEEEE AALLSSOO
      systemsetup(8)
 
 Mac OS X                        April 16, 2002                        Mac OS X
+","# networksetup
+
+> Configuration tool for Network System Preferences.
+
+- List available network service providers (Ethernet, Wi-Fi, Bluetooth, etc):
+
+`networksetup -listallnetworkservices`
+
+- Show network settings for a particular networking device:
+
+`networksetup -getinfo {{""Wi-Fi""}}`
+
+- Get currently connected Wi-Fi network name (Wi-Fi device usually en0 or en1):
+
+`networksetup -getairportnetwork {{en0}}`
+
+- Connect to a particular Wi-Fi network:
+
+`networksetup -setairportnetwork {{en0}} {{""Airport Network SSID""}} {{password}}`
 "
-logger,"# logger
-
-> Add messages to syslog (/var/log/syslog).
-
-- Log a message to syslog:
-
-`logger {{message}}`
-
-- Take input from `stdin` and log to syslog:
-
-`echo {{log_entry}} | logger`
-
-- Send the output to a remote syslog server running at a given port. Default port is 514:
-
-`echo {{log_entry}} | logger -h {{hostname}} -P {{port}}`
-
-- Use a specific tag for every line logged. Default is the name of logged in user:
-
-`echo {{log_entry}} | logger -t {{tag}}`
-
-- Log messages with a given priority. Default is `user.notice`. See `man logger` for all priority options:
-
-`echo {{log_entry}} | logger -p {{user.warning}}`
-","
+logger,,"
 LOGGER(1)                 BSD General Commands Manual                LOGGER(1)
 
 NNAAMMEE
@@ -18404,31 +18350,31 @@ SSTTAANNDDAARRDDSS
      The llooggggeerr utility conforms to IEEE Std 1003.2-1992 (``POSIX.2'').
 
 4.3 Berkeley Distribution        June 6, 1993        4.3 Berkeley Distribution
+","# logger
+
+> Add messages to syslog (/var/log/syslog).
+
+- Log a message to syslog:
+
+`logger {{message}}`
+
+- Take input from `stdin` and log to syslog:
+
+`echo {{log_entry}} | logger`
+
+- Send the output to a remote syslog server running at a given port. Default port is 514:
+
+`echo {{log_entry}} | logger -h {{hostname}} -P {{port}}`
+
+- Use a specific tag for every line logged. Default is the name of logged in user:
+
+`echo {{log_entry}} | logger -t {{tag}}`
+
+- Log messages with a given priority. Default is `user.notice`. See `man logger` for all priority options:
+
+`echo {{log_entry}} | logger -p {{user.warning}}`
 "
-top,"# top
-
-> Display dynamic real-time information about running processes.
-
-- Start top, all options are available in the interface:
-
-`top`
-
-- Start top sorting processes by internal memory size (default order - process ID):
-
-`top -o mem`
-
-- Start top sorting processes first by CPU, then by running time:
-
-`top -o cpu -O time`
-
-- Start top displaying only processes owned by given user:
-
-`top -user {{user_name}}`
-
-- Get help about interactive commands:
-
-`?`
-","
+top,,"
 TOP(1)                    BSD General Commands Manual                   TOP(1)
 
 NNAAMMEE
@@ -18773,23 +18719,31 @@ SSEEEE AALLSSOO
      kill(2), vm_stat(1), signal(3), vmmap(1)
 
 Darwin                           13 March 2017                          Darwin
+","# top
+
+> Display dynamic real-time information about running processes.
+
+- Start top, all options are available in the interface:
+
+`top`
+
+- Start top sorting processes by internal memory size (default order - process ID):
+
+`top -o mem`
+
+- Start top sorting processes first by CPU, then by running time:
+
+`top -o cpu -O time`
+
+- Start top displaying only processes owned by given user:
+
+`top -user {{user_name}}`
+
+- Get help about interactive commands:
+
+`?`
 "
-export,"# export
-
-> Command to mark shell variables in the current environment to be exported with any newly forked child processes.
-
-- Set a new environment variable:
-
-`export {{VARIABLE}}={{value}}`
-
-- Remove an environment variable:
-
-`export -n {{VARIABLE}}`
-
-- Append something to the PATH variable:
-
-`export PATH=$PATH:{{path/to/append}}`
-","
+export,,"
 BUILTIN(1)                BSD General Commands Manual               BUILTIN(1)
 
 NNAAMMEE
@@ -18956,8 +18910,23 @@ AAUUTTHHOORRSS
      This manual page was written by Sheldon Hearn <sheldonh@FreeBSD.org>.
 
 BSD                            February 23, 2005                           BSD
+","# export
+
+> Command to mark shell variables in the current environment to be exported with any newly forked child processes.
+
+- Set a new environment variable:
+
+`export {{VARIABLE}}={{value}}`
+
+- Remove an environment variable:
+
+`export -n {{VARIABLE}}`
+
+- Append something to the PATH variable:
+
+`export PATH=$PATH:{{path/to/append}}`
 "
-csshX,"# csshX
+csshX,https://github.com/brockgr/csshx,,"# csshX
 
 > Cluster SSH tool for MacOS.
 > More information: <https://github.com/brockgr/csshx>.
@@ -18973,29 +18942,8 @@ csshX,"# csshX
 - Connect to a pre-defined cluster from /etc/clusters:
 
 `csshX cluster1`
-","No manual entry for csshX
 "
-asr,"# asr
-
-> Restore (copy) a disk image onto a volume.
-> The command name stands for Apple Software Restore.
-
-- Restore a disk image to a target volume:
-
-`sudo asr restore --source {{image_name}}.dmg --target {{path/to/volume}}`
-
-- Erase the target volume before restoring:
-
-`sudo asr restore --source {{image_name}}.dmg --target {{path/to/volume}} --erase`
-
-- Skip verification after restoring:
-
-`sudo asr restore --source {{image_name}}.dmg --target {{path/to/volume}} --noverify`
-
-- Clone volumes without the use of an intermediate disk image:
-
-`sudo asr restore --source {{path/to/volume}} --target {{path/to/cloned_volume}}`
-","
+asr,,"
 
 ASR(8)                    BSD System Manager's Manual                   ASR(8)
 
@@ -19595,23 +19543,28 @@ SSEEEE AALLSSOO
      hdiutil(1), df(1), bless(8), ditto(1), and what(1)
 
 Mac OS X                        23 October 2012                       Mac OS X
+","# asr
+
+> Restore (copy) a disk image onto a volume.
+> The command name stands for Apple Software Restore.
+
+- Restore a disk image to a target volume:
+
+`sudo asr restore --source {{image_name}}.dmg --target {{path/to/volume}}`
+
+- Erase the target volume before restoring:
+
+`sudo asr restore --source {{image_name}}.dmg --target {{path/to/volume}} --erase`
+
+- Skip verification after restoring:
+
+`sudo asr restore --source {{image_name}}.dmg --target {{path/to/volume}} --noverify`
+
+- Clone volumes without the use of an intermediate disk image:
+
+`sudo asr restore --source {{path/to/volume}} --target {{path/to/cloned_volume}}`
 "
-mdutil,"# mdutil
-
-> Manage the metadata stores used by Spotlight for indexing.
-
-- Show the indexing status of the startup volume:
-
-`mdutil -s {{/}}`
-
-- Turn on/off the Spotlight indexing for a given volume:
-
-`mdutil -i {{on|off}} {{path/to/volume}}`
-
-- Erase the metadata stores and restart the indexing process:
-
-`mdutil -E {{path/to/volume}}`
-","
+mdutil,,"
 mdutil(1)                 BSD General Commands Manual                mdutil(1)
 
 NNAAMMEE
@@ -19650,8 +19603,23 @@ SSEEEE AALLSSOO
      mdfind(1), mds(8), mdimport(1)
 
 Mac OS X                       September 1, 2005                      Mac OS X
+","# mdutil
+
+> Manage the metadata stores used by Spotlight for indexing.
+
+- Show the indexing status of the startup volume:
+
+`mdutil -s {{/}}`
+
+- Turn on/off the Spotlight indexing for a given volume:
+
+`mdutil -i {{on|off}} {{path/to/volume}}`
+
+- Erase the metadata stores and restart the indexing process:
+
+`mdutil -E {{path/to/volume}}`
 "
-xcodebuild,"# xcodebuild
+xcodebuild,,,"# xcodebuild
 
 > Build Xcode projects.
 
@@ -19666,32 +19634,8 @@ xcodebuild,"# xcodebuild
 - Show SDKs:
 
 `xcodebuild -showsdks`
-","No manual entry for xcodebuild
 "
-fdesetup,"# fdesetup
-
-> Set and retrieve FileVault related information.
-
-- List current FileVault enabled users:
-
-`sudo fdesetup list`
-
-- Get current FileVault status:
-
-`fdesetup status`
-
-- Add FileVault enabled user:
-
-`sudo fdesetup add -usertoadd user1`
-
-- Enable FileVault:
-
-`sudo fdesetup enable`
-
-- Disable FileVault:
-
-`sudo fdesetup disable`
-","
+fdesetup,,"
 fdesetup(8)               BSD System Manager's Manual              fdesetup(8)
 
 NNAAMMEE
@@ -20270,8 +20214,44 @@ SSEEEE AALLSSOO
      security(1), diskutil(8), base64(1), pmset(1), shutdown(8)
 
 macOS                            July 08, 2018                           macOS
+","# fdesetup
+
+> Set and retrieve FileVault related information.
+
+- List current FileVault enabled users:
+
+`sudo fdesetup list`
+
+- Get current FileVault status:
+
+`fdesetup status`
+
+- Add FileVault enabled user:
+
+`sudo fdesetup add -usertoadd user1`
+
+- Enable FileVault:
+
+`sudo fdesetup enable`
+
+- Disable FileVault:
+
+`sudo fdesetup disable`
 "
-airport,"# airport
+airport,,"
+airport(8)                BSD System Manager's Manual               airport(8)
+
+NNAAMMEE
+     aaiirrppoorrtt -- get information for 802.11 interface
+
+SSYYNNOOPPSSIISS
+     aaiirrppoorrtt
+
+DDEESSCCRRIIPPTTIIOONN
+     aaiirrppoorrtt manages 802.11 interfaces.  aaiirrppoorrtt more information needed here.
+
+BSD                           September 22, 2020                           BSD
+","# airport
 
 > Wireless network configuration utility.
 
@@ -20290,21 +20270,8 @@ airport,"# airport
 - Disassociate from current airport network:
 
 `sudo airport -z`
-","
-airport(8)                BSD System Manager's Manual               airport(8)
-
-NNAAMMEE
-     aaiirrppoorrtt -- get information for 802.11 interface
-
-SSYYNNOOPPSSIISS
-     aaiirrppoorrtt
-
-DDEESSCCRRIIPPTTIIOONN
-     aaiirrppoorrtt manages 802.11 interfaces.  aaiirrppoorrtt more information needed here.
-
-BSD                           September 20, 2020                           BSD
 "
-brew-bundle,"# brew bundle
+brew-bundle,https://github.com/Homebrew/homebrew-bundle,,"# brew bundle
 
 > Bundler for Homebrew, Homebrew Cask and the Mac App Store.
 > More information: <https://github.com/Homebrew/homebrew-bundle>.
@@ -20332,28 +20299,8 @@ brew-bundle,"# brew bundle
 - Output a list of all entries in the Brewfile:
 
 `brew bundle list --all`
-","No manual entry for brew-bundle
 "
-GetFileInfo,"# GetFileInfo
-
-> Get information about a file in an HFS+ directory.
-
-- Display infomation about a given file:
-
-`GetFileInfo {{path/to/filename}}`
-
-- Display the date and time a given file was created:
-
-`GetFileInfo -d {{path/to/filename}}`
-
-- Display the date and time a given file was last modified:
-
-`GetFileInfo -m {{path/to/filename}}`
-
-- Display the creator of a given file:
-
-`GetFileInfo -c {{path/to/filename}}`
-","
+GetFileInfo,,"
 GETFILEINFO(1)            BSD General Commands Manual           GETFILEINFO(1)
 
 NNAAMMEE
@@ -20454,39 +20401,27 @@ EEXXAAMMPPLLEESS
      /Developer/Tools/GetFileInfo -m myFile
 
 Mac OS X                      September 27, 2005                      Mac OS X
+","# GetFileInfo
+
+> Get information about a file in an HFS+ directory.
+
+- Display infomation about a given file:
+
+`GetFileInfo {{path/to/filename}}`
+
+- Display the date and time a given file was created:
+
+`GetFileInfo -d {{path/to/filename}}`
+
+- Display the date and time a given file was last modified:
+
+`GetFileInfo -m {{path/to/filename}}`
+
+- Display the creator of a given file:
+
+`GetFileInfo -c {{path/to/filename}}`
 "
-cal,"# cal
-
-> Prints calendar information.
-
-- Display a calendar for the current month:
-
-`cal`
-
-- Display previous, current and next month:
-
-`cal -3`
-
-- Display a calendar for a specific month (1-12 or name):
-
-`cal -m {{month}}`
-
-- Display a calendar for the current year:
-
-`cal -y`
-
-- Display a calendar for a specific year (4 digits):
-
-`cal {{year}}`
-
-- Display a calendar for a specific month and year:
-
-`cal {{month}} {{year}}`
-
-- Display date of Easter (Western Christian churches) in a given year:
-
-`ncal -e {{year}}`
-","
+cal,,"
 CAL(1)                    BSD General Commands Manual                   CAL(1)
 
 NNAAMMEE
@@ -20595,8 +20530,39 @@ BBUUGGSS
      give varying results.
 
 BSD                             March 14, 2009                             BSD
+","# cal
+
+> Prints calendar information.
+
+- Display a calendar for the current month:
+
+`cal`
+
+- Display previous, current and next month:
+
+`cal -3`
+
+- Display a calendar for a specific month (1-12 or name):
+
+`cal -m {{month}}`
+
+- Display a calendar for the current year:
+
+`cal -y`
+
+- Display a calendar for a specific year (4 digits):
+
+`cal {{year}}`
+
+- Display a calendar for a specific month and year:
+
+`cal {{month}} {{year}}`
+
+- Display date of Easter (Western Christian churches) in a given year:
+
+`ncal -e {{year}}`
 "
-icalbuddy,"# icalBuddy
+icalbuddy,https://hasseg.org/icalBuddy/,,"# icalBuddy
 
 > Command-line utility for printing events and tasks from the macOS calendar database.
 > More information: <https://hasseg.org/icalBuddy/>.
@@ -20620,9 +20586,8 @@ icalbuddy,"# icalBuddy
 - Show events in a time range:
 
 `icalBuddy eventsFrom:'{{start date}}' to:'{{end date}}'`
-","No manual entry for icalbuddy
 "
-shuf,"# shuf
+shuf,,,"# shuf
 
 > Generate random permutations.
 
@@ -20641,40 +20606,8 @@ shuf,"# shuf
 - Generate random numbers in range 1-10:
 
 `shuf -i {{1-10}}`
-","No manual entry for shuf
 "
-sed,"# sed
-
-> Edit text in a scriptable manner.
-
-- Replace the first occurrence of a string in a file, and print the result:
-
-`sed 's/{{find}}/{{replace}}/' {{filename}}`
-
-- Replace all occurrences of an extended regular expression in a file:
-
-`sed -E 's/{{regex}}/{{replace}}/g' {{filename}}`
-
-- Replace all occurrences of a string in a file, overwriting the file (i.e. in-place):
-
-`sed --in-place='' 's/{{find}}/{{replace}}/g' {{filename}}`
-
-- Replace only on lines matching the line pattern:
-
-`sed '/{{line_pattern}}/s/{{find}}/{{replace}}/' {{filename}}`
-
-- Print only text between n-th line till the next empty line:
-
-`sed -n '{{line_number}},/^$/p' {{filename}}`
-
-- Apply multiple find-replace expressions to a file:
-
-`sed -e 's/{{find}}/{{replace}}/' -e 's/{{find}}/{{replace}}/' {{filename}}`
-
-- Replace separator / by any other character not used in the find or replace patterns, e.g., #:
-
-`sed 's#{{find}}#{{replace}}#' {{filename}}`
-","
+sed,,"
 SED(1)                    BSD General Commands Manual                   SED(1)
 
 NNAAMMEE
@@ -21035,8 +20968,39 @@ BBUUGGSS
      delimiters with the ``s'' and ``y'' commands.
 
 BSD                              May 10, 2005                              BSD
+","# sed
+
+> Edit text in a scriptable manner.
+
+- Replace the first occurrence of a string in a file, and print the result:
+
+`sed 's/{{find}}/{{replace}}/' {{filename}}`
+
+- Replace all occurrences of an extended regular expression in a file:
+
+`sed -E 's/{{regex}}/{{replace}}/g' {{filename}}`
+
+- Replace all occurrences of a string in a file, overwriting the file (i.e. in-place):
+
+`sed --in-place='' 's/{{find}}/{{replace}}/g' {{filename}}`
+
+- Replace only on lines matching the line pattern:
+
+`sed '/{{line_pattern}}/s/{{find}}/{{replace}}/' {{filename}}`
+
+- Print only text between n-th line till the next empty line:
+
+`sed -n '{{line_number}},/^$/p' {{filename}}`
+
+- Apply multiple find-replace expressions to a file:
+
+`sed -e 's/{{find}}/{{replace}}/' -e 's/{{find}}/{{replace}}/' {{filename}}`
+
+- Replace separator / by any other character not used in the find or replace patterns, e.g., #:
+
+`sed 's#{{find}}#{{replace}}#' {{filename}}`
 "
-valet,"# valet
+valet,https://laravel.com/docs/5.8/valet,,"# valet
 
 > A Laravel development environment that allows hosting sites via local tunnels on `http://<example>.test`.
 > More information: <https://laravel.com/docs/5.8/valet>.
@@ -21060,20 +21024,8 @@ valet,"# valet
 - Share a project via an Ngrok tunnel:
 
 `valet share`
-","No manual entry for valet
 "
-look,"# look
-
-> Look for lines in sorted file.
-
-- Look for lines which begins with the given prefix:
-
-`look {{prefix}} {{file}}`
-
-- Look for lines ignoring case:
-
-`look -f {{prefix}} {{file}}`
-","
+look,,"
 LOOK(1)                   BSD General Commands Manual                  LOOK(1)
 
 NNAAMMEE
@@ -21129,19 +21081,19 @@ BBUUGGSS
      Input files must be sorted with LC_COLLATE set to `C'.
 
 BSD                              July 17, 2004                             BSD
+","# look
+
+> Look for lines in sorted file.
+
+- Look for lines which begins with the given prefix:
+
+`look {{prefix}} {{file}}`
+
+- Look for lines ignoring case:
+
+`look -f {{prefix}} {{file}}`
 "
-drutil,"# drutil
-
-> Interact with DVD burners.
-
-- Eject a disk from the drive:
-
-`drutil eject`
-
-- Burn a directory as an ISO9660 filesystem onto a DVD. Don't verify and eject when complete:
-
-`drutil burn -noverify -eject -iso9660`
-","
+drutil,,"
 
 DRUTIL(1)                 BSD General Commands Manual                DRUTIL(1)
 
@@ -21428,19 +21380,19 @@ SSEEEE AALLSSOO
      diskutil(1), hdiutil(1), /usr/sbin/disktool (run with no args for usage).
 
 Mac OS X                         May 18, 2004                         Mac OS X
+","# drutil
+
+> Interact with DVD burners.
+
+- Eject a disk from the drive:
+
+`drutil eject`
+
+- Burn a directory as an ISO9660 filesystem onto a DVD. Don't verify and eject when complete:
+
+`drutil burn -noverify -eject -iso9660`
 "
-codesign,"# codesign
-
-> Create and manipulate code signatures for macOS.
-
-- Sign an application with a certificate:
-
-`codesign -s {{""My Company Name""}} {{/path/to/App.app}}`
-
-- Verify the certificate of an application:
-
-`codesign -v {{/path/to/App.app}}`
-","
+codesign,,"
 CODESIGN(1)               BSD General Commands Manual              CODESIGN(1)
 
 NNAAMMEE
@@ -22024,36 +21976,19 @@ NNOOTTEESS
      interminably curious are referred to the published source code.
 
 BSD                               May 7, 2011                              BSD
+","# codesign
+
+> Create and manipulate code signatures for macOS.
+
+- Sign an application with a certificate:
+
+`codesign -s {{""My Company Name""}} {{/path/to/App.app}}`
+
+- Verify the certificate of an application:
+
+`codesign -v {{/path/to/App.app}}`
 "
-route,"# route
-
-> Manually manipulate the routing tables.
-> Necessitates to be root.
-
-- Add a route to a destination through a gateway:
-
-`sudo route add {{dest_ip_address}} {{gateway_address}}`
-
-- Add a route to a /24 subnet through a gateway:
-
-`sudo route add {{subnet_ip_address}}/24 {{gateway_address}}`
-
-- Run in test mode (does not do anything, just print):
-
-`sudo route -t add {{dest_ip_address}}/24 {{gateway_address}}`
-
-- Remove all routes:
-
-`sudo route flush`
-
-- Delete a specific route:
-
-`sudo route delete {{dest_ip_address}}/24`
-
-- Lookup and display the route for a destination (hostname or IP address):
-
-`sudo route get {{destination}}`
-","
+route,,"
 ROUTE(8)                  BSD System Manager's Manual                 ROUTE(8)
 
 NNAAMMEE
@@ -22255,24 +22190,36 @@ BBUUGGSS
      The first paragraph may have slightly exaggerated routed(8)'s abilities.
 
 4.4BSD                           June 8, 2001                           4.4BSD
+","# route
+
+> Manually manipulate the routing tables.
+> Necessitates to be root.
+
+- Add a route to a destination through a gateway:
+
+`sudo route add {{dest_ip_address}} {{gateway_address}}`
+
+- Add a route to a /24 subnet through a gateway:
+
+`sudo route add {{subnet_ip_address}}/24 {{gateway_address}}`
+
+- Run in test mode (does not do anything, just print):
+
+`sudo route -t add {{dest_ip_address}}/24 {{gateway_address}}`
+
+- Remove all routes:
+
+`sudo route flush`
+
+- Delete a specific route:
+
+`sudo route delete {{dest_ip_address}}/24`
+
+- Lookup and display the route for a destination (hostname or IP address):
+
+`sudo route get {{destination}}`
 "
-xar,"# xar
-
-> Manage .xar archives.
-> More information: <https://linux.die.net/man/1/xar>.
-
-- Create a xar archive of all files in a given directory:
-
-`xar -cf {{archive.xar}} {{path/to/directory}}`
-
-- Lis[t] the contents of a given xar archive:
-
-`xar -tf {{archive.xar}}`
-
-- Extract the contents of a given xar archive to the current directory:
-
-`xar -xf {{archive.xar}}`
-","XAR(1)                           User Commands                          XAR(1)
+xar,https://linux.die.net/man/1/xar,"XAR(1)                           User Commands                          XAR(1)
 
 
 
@@ -22455,23 +22402,24 @@ AAUUTTHHOORRSS
 
 
 version 1.8                      June 4, 2015                           XAR(1)
+","# xar
+
+> Manage .xar archives.
+> More information: <https://linux.die.net/man/1/xar>.
+
+- Create a xar archive of all files in a given directory:
+
+`xar -cf {{archive.xar}} {{path/to/directory}}`
+
+- Lis[t] the contents of a given xar archive:
+
+`xar -tf {{archive.xar}}`
+
+- Extract the contents of a given xar archive to the current directory:
+
+`xar -xf {{archive.xar}}`
 "
-locate,"# locate
-
-> Find filenames quickly.
-
-- Look for pattern in the database. Note: the database is recomputed periodically (usually weekly or daily):
-
-`locate {{pattern}}`
-
-- Look for a file by its exact filename (a pattern containing no globbing characters is interpreted as `*pattern*`):
-
-`locate */{{filename}}`
-
-- Recompute the database. You need to do it if you want to find recently added files:
-
-`sudo /usr/libexec/locate.updatedb`
-","
+locate,,"
 LOCATE(1)                 BSD General Commands Manual                LOCATE(1)
 
 NNAAMMEE
@@ -22606,8 +22554,23 @@ BBUUGGSS
      The llooccaattee utility does not recognize multibyte characters.
 
 BSD                             August 17, 2006                            BSD
+","# locate
+
+> Find filenames quickly.
+
+- Look for pattern in the database. Note: the database is recomputed periodically (usually weekly or daily):
+
+`locate {{pattern}}`
+
+- Look for a file by its exact filename (a pattern containing no globbing characters is interpreted as `*pattern*`):
+
+`locate */{{filename}}`
+
+- Recompute the database. You need to do it if you want to find recently added files:
+
+`sudo /usr/libexec/locate.updatedb`
 "
-duti,"# duti
+duti,,,"# duti
 
 > Set default applications for document types and URL schemes on macOS.
 
@@ -22634,36 +22597,8 @@ duti,"# duti
 - Display all handlers of a given UTI:
 
 `duti -l {{uti}}`
-","No manual entry for duti
 "
-osascript,"# osascript
-
-> Run AppleScript or JavaScript for Automation (JXA) from the command line.
-
-- Run an AppleScript command:
-
-`osascript -e '{{say ""Hello world""}}'`
-
-- Run multiple AppleScript commands:
-
-`osascript -e '{{say ""Hello""}}' -e '{{say ""world""}}'`
-
-- Run a compiled (`*.scpt`), bundled (`*.scptd`), or plaintext (`*.applescript`) AppleScript file:
-
-`osascript {{path/to/apple.scpt}}`
-
-- Get the bundle identifier of an application (useful for `open -b`):
-
-`osascript -e 'id of app ""{{Application}}""'`
-
-- Run a JavaScript command:
-
-`osascript -l JavaScript -e '{{console.log(""Hello world"");}}'`
-
-- Run a JavaScript file:
-
-`osascript -l JavaScript {{path/to/script.js}}`
-","
+osascript,,"
 OSASCRIPT(1)              BSD General Commands Manual             OSASCRIPT(1)
 
 NNAAMMEE
@@ -22765,31 +22700,35 @@ HHIISSTTOORRYY
      script.
 
 Mac OS X                        April 24, 2014                        Mac OS X
+","# osascript
+
+> Run AppleScript or JavaScript for Automation (JXA) from the command line.
+
+- Run an AppleScript command:
+
+`osascript -e '{{say ""Hello world""}}'`
+
+- Run multiple AppleScript commands:
+
+`osascript -e '{{say ""Hello""}}' -e '{{say ""world""}}'`
+
+- Run a compiled (`*.scpt`), bundled (`*.scptd`), or plaintext (`*.applescript`) AppleScript file:
+
+`osascript {{path/to/apple.scpt}}`
+
+- Get the bundle identifier of an application (useful for `open -b`):
+
+`osascript -e 'id of app ""{{Application}}""'`
+
+- Run a JavaScript command:
+
+`osascript -l JavaScript -e '{{console.log(""Hello world"");}}'`
+
+- Run a JavaScript file:
+
+`osascript -l JavaScript {{path/to/script.js}}`
 "
-say,"# say
-
-> Converts text to speech.
-
-- Say a phrase aloud:
-
-`say {{""I like to ride my bike.""}}`
-
-- Read a file aloud:
-
-`say -f {{filename.txt}}`
-
-- Say a phrase with a custom voice and speech rate:
-
-`say -v {{voice}} -r {{words_per_minute}} {{""I'm sorry Dave, I can't let you do that.""}}`
-
-- List the available voices:
-
-`say -v ""?""`
-
-- Create an audio file of the spoken text:
-
-`say -o {{filename.aiff}} {{""Here's to the Crazy Ones.""}}`
-","SAY(1)                     Speech Synthesis Manager                     SAY(1)
+say,,"SAY(1)                     Speech Synthesis Manager                     SAY(1)
 
 
 
@@ -22937,4 +22876,27 @@ SSEEEE AALLSSOO
 
 
 1.0                               2017-12-21                            SAY(1)
+","# say
+
+> Converts text to speech.
+
+- Say a phrase aloud:
+
+`say {{""I like to ride my bike.""}}`
+
+- Read a file aloud:
+
+`say -f {{filename.txt}}`
+
+- Say a phrase with a custom voice and speech rate:
+
+`say -v {{voice}} -r {{words_per_minute}} {{""I'm sorry Dave, I can't let you do that.""}}`
+
+- List the available voices:
+
+`say -v ""?""`
+
+- Create an audio file of the spoken text:
+
+`say -o {{filename.aiff}} {{""Here's to the Crazy Ones.""}}`
 "
