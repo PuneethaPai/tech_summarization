@@ -63,22 +63,23 @@ def get_man_entry(command: str) -> str:
         return None
 
 
+def parse_single_tldr(page: Path) -> dict:
+    command = page.name.replace(".md", "")
+    man_entry = get_man_entry(command)
+    tldr_summary = page.read_text()
+    doc_url = get_doc_url(tldr_summary)
+    # doc_text = parse_page(doc_url).text if doc_url else None
+    return dict(
+        command=command,
+        doc_url=doc_url,
+        # doc_text=doc_text,
+        man_entry=man_entry,
+        tldr_summary=tldr_summary,
+    )
+
+
 def generate_tech_summary_data(path: str = "tldr_repo/pages/") -> None:
     """Extracts command, tldr summary and man page entry"""
-
-    def parse_single_tldr(page: Path) -> dict:
-        command = page.name.replace(".md", "")
-        man_entry = get_man_entry(command)
-        tldr_summary = page.read_text()
-        doc_url = get_doc_url(tldr_summary)
-        # doc_text = parse_page(doc_url).text if doc_url else None
-        return dict(
-            command=command,
-            doc_url=doc_url,
-            # doc_text=doc_text,
-            man_entry=man_entry,
-            tldr_summary=tldr_summary,
-        )
 
     path = Path(path)
     for tldr_path in path.iterdir():
