@@ -50,15 +50,20 @@ def save_man_page_urls(path: str = "data/man_page_urls.csv") -> None:
 
 def get_man_entry(command: str) -> str:
     """Executes man command to fetch man page entry"""
+    if not command: return None
     try:
-        process = sp.run(
+        man_entry = sp.check_output(
             ["man", command],
             timeout=5,
             text=True,
-            stdout=sp.PIPE,
-            stderr=sp.PIPE,
         )
-        return process.stdout if process.returncode == 0 else None
+        filter_output = sp.check_output(
+            ["col", "-b"],
+            input=man_entry,
+            timeout=5,
+            text=True,
+        )
+        return filter_output
     except sp.SubprocessError as e:
         return None
 

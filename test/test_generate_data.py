@@ -1,7 +1,8 @@
+from pathlib import Path
+
 import pytest
 
-from src.generate_data import get_doc_url, parse_single_tldr
-from pathlib import Path
+from src.generate_data import get_doc_url, get_man_entry, parse_single_tldr
 
 
 @pytest.mark.parametrize(
@@ -38,3 +39,12 @@ def test_parse_single_man_page(path, cmd, url):
     assert result["doc_url"] == url
     assert result["man_entry"] == None or cmd in result["man_entry"]
     assert cmd in result["tldr_summary"]
+
+
+@pytest.mark.parametrize(
+    "cmd, expected",
+    [(None, None), ("asdf", None), ("git", "git"), ("alias", "alias")],
+)
+def test_get_man_entry(cmd, expected):
+    result = get_man_entry(cmd)
+    assert result == expected or expected in result
