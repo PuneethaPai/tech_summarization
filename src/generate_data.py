@@ -21,7 +21,7 @@ def parse_web_page(url: str, filter_tag: str = None) -> BeautifulSoup:
         response = requests.get(url, timeout=(5, 6))
         html = response.text
     except Exception as e:
-        logging.error(f"Request to page {url} failed with error: {e.args}")
+        logging.debug(f"Request to page {url} failed with error: {e.args}")
         html = ""
     return BeautifulSoup(html, "lxml", parse_only=SoupStrainer(filter_tag))
 
@@ -50,7 +50,8 @@ def save_man_page_urls(path: str = "data/man_page_urls.csv") -> None:
 
 def get_man_entry(command: str) -> str:
     """Executes man command to fetch man page entry"""
-    if not command: return None
+    if not command:
+        return None
     try:
         man_entry = sp.check_output(
             ["man", command],
@@ -65,6 +66,7 @@ def get_man_entry(command: str) -> str:
         )
         return filter_output
     except sp.SubprocessError as e:
+        logging.debug(f"Failed to get man page for {command} with error: {e.args}")
         return None
 
 
