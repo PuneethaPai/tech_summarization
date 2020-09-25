@@ -1,5 +1,5 @@
-command,doc_url,man_entry,tldr_summary
-head,,"
+command,doc_url,doc_text,man_entry,tldr_summary
+head,,,"
 HEAD(1) 		  BSD General Commands Manual		       HEAD(1)
 
 NAME
@@ -39,7 +39,7 @@ BSD				 June 6, 1993				   BSD
 
 `head -c {{number_in_bytes}} {{filename}}`
 "
-reboot,,"
+reboot,,,"
 REBOOT(8)		  BSD System Manager's Manual		     REBOOT(8)
 
 NAME
@@ -108,7 +108,7 @@ BSD				 June 9, 1993				   BSD
 
 `sudo reboot -q`
 "
-system_profiler,,"
+system_profiler,,,"
 SYSTEM_PROFILER(8)	  BSD System Manager's Manual	    SYSTEM_PROFILER(8)
 
 NAME
@@ -190,7 +190,7 @@ Darwin				 June 30, 2003				Darwin
 
 `system_profiler SPHardwareDataType|grep ""Serial Number (system)"" |awk '{print $4}'`
 "
-pmset,,"
+pmset,,,"
 PMSET(1)		  BSD General Commands Manual		      PMSET(1)
 
 NAME
@@ -544,7 +544,7 @@ Darwin			       November 9, 2012 			Darwin
 
 `sudo pmset -a displaysleep 10 disksleep 10 sleep 30 womp 1`
 "
-open,,"
+open,,,"
 OPEN(1) 		  BSD General Commands Manual		       OPEN(1)
 
 NAME
@@ -689,7 +689,7 @@ macOS				April 14, 2017				 macOS
 
 `open {{*.ext}}`
 "
-stat,,"
+stat,,,"
 STAT(1) 		  BSD General Commands Manual		       STAT(1)
 
 NAME
@@ -986,7 +986,7 @@ BSD				  May 8, 2003				   BSD
 
 `stat -f ""%z %N"" {{file}}`
 "
-runit,,,"# runit
+runit,,,,"# runit
 
 > 3-stage init system.
 
@@ -998,7 +998,7 @@ runit,,,"# runit
 
 `kill --CONT {{runit_pid}}`
 "
-nm,,"NM(1)									 NM(1)
+nm,,,"NM(1)									 NM(1)
 
 
 
@@ -1156,7 +1156,7 @@ Apple, Inc.			 May 23, 2017				 NM(1)
 
 `nm -demangle {{file.o}}`
 "
-defaults,,"
+defaults,,,"
 DEFAULTS(1)		  BSD General Commands Manual		   DEFAULTS(1)
 
 NAME
@@ -1397,7 +1397,7 @@ Mac OS X			  Nov 3, 2003			      Mac OS X
 
 `defaults delete {{application}}`
 "
-runsvchdir,,,"# runsvchdir
+runsvchdir,,,,"# runsvchdir
 
 > Change the directory `runsvdir` uses by default.
 
@@ -1405,7 +1405,7 @@ runsvchdir,,,"# runsvchdir
 
 `sudo runsvchdir {{/path/to/directory}}`
 "
-textutil,,"
+textutil,,,"
 TEXTUTIL(1)		  BSD General Commands Manual		   TEXTUTIL(1)
 
 NAME
@@ -1581,7 +1581,7 @@ macOS			       September 9, 2004			 macOS
 
 `textutil -cat {{html}} -title ""Several Files"" -output {{index.html}} *.rtf`
 "
-xattr,,"
+xattr,,,"
 XATTR(1)		  BSD General Commands Manual		      XATTR(1)
 
 NAME
@@ -1715,7 +1715,7 @@ BSD				 Nov 29, 2010				   BSD
 
 `xattr -rd {{attribute_key}} {{directory}}`
 "
-mdfind,,"
+mdfind,,,"
 mdfind(1)		  BSD General Commands Manual		     mdfind(1)
 
 NAME
@@ -1800,7 +1800,7 @@ Mac OS X			 June 10, 2004			      Mac OS X
 
 `mdfind -onlyin {{directory}} {{query}}`
 "
-as,,"AS(1)									 AS(1)
+as,,,"AS(1)									 AS(1)
 
 
 
@@ -1980,7 +1980,7 @@ Apple Inc.		       February 12, 2015			 AS(1)
 
 `as -I {{path/to/directory}} {{file.s}}`
 "
-runsv,,,"# runsv
+runsv,,,,"# runsv
 
 > Start and manage a runit service.
 
@@ -1992,7 +1992,7 @@ runsv,,,"# runsv
 
 `sudo runsv {{path/to/service}}`
 "
-popd,,"
+popd,,,"
 BUILTIN(1)		  BSD General Commands Manual		    BUILTIN(1)
 
 NAME
@@ -2175,7 +2175,7 @@ BSD			       February 23, 2005			   BSD
 
 `popd -N`
 "
-pushd,,"
+pushd,,,"
 BUILTIN(1)		  BSD General Commands Manual		    BUILTIN(1)
 
 NAME
@@ -2359,7 +2359,7 @@ BSD			       February 23, 2005			   BSD
 
 `pushd +4`
 "
-chflags,,"
+chflags,,,"
 CHFLAGS(1)		  BSD General Commands Manual		    CHFLAGS(1)
 
 NAME
@@ -2472,7 +2472,95 @@ BSD				 March 3, 2006				   BSD
 
 `chflags -R {{nouchg}} {{path/to/directory}}`
 "
-whatis,http://www.linfo.org/whatis.html,"whatis(1)							     whatis(1)
+whatis,http://www.linfo.org/whatis.html,"
+
+
+How to use the whatis Command -- by The Linux Information Project (LINFO)
+
+LINFO
+The whatis Command
+
+
+The whatis command provides very brief descriptions of command line programs (i.e., all-text mode programs) and other topics related to Linux and other Unix-like operating systems.
+
+
+It accomplishes this by searching the short descriptions in the whatis database for each keyword provided to it as an argument (i.e., input data). This database contains just the title, section number and description from the NAME section of each page in the man manual that is built into most Unix-like systems.
+
+
+The syntax for whatis is:
+
+
+
+whatis keyword(s)
+
+
+
+For example, the following provides a single line summary of the head command (which by default displays the first ten lines of each file that is provided to it as an argument):
+
+
+
+whatis head
+
+
+
+whatis can be used to simultaneously search for information about multiple topics. For example, the following would provide information about both head and tail (which by default reads the final ten lines of files):
+
+
+
+whatis head tail
+
+
+
+The output of whatis is limited by the fact that it provides only a single line for each keyword found in the database; thus it supplies incomplete information about even moderately complex commands. For example, the following use of whatis to obtain information about the cat command generates the output ""concatenate files and print on the standard output"":
+
+
+
+whatis cat
+
+
+
+However, this omits some important information about cat, particularly the facts that it is very convenient to use for reading files and that it is also used to create and write to files. 
+
+
+whatis is similar to the apropos command. However, apropos is more powerful in that its arguments are not limited to complete words but can also be strings (i.e., any finite sequences of characters) which comprise parts of words. Both commands are unusual in that they have no options. 
+
+
+The man command (which is used to read the built-in manual pages), when used with its -f option, produces the same output as whatis. Thus, for example,
+
+
+
+man -f cat
+
+
+
+is equivalent to
+
+
+
+whatis cat
+
+
+
+The whatis database is a plain text (i.e., human-readable characters) file that is generated automatically by the makewhatis program. Its location varies according to the particular system; in the case of Red Hat Linux 9, for example, its full path is /var/cache/man/whatis.
+
+
+If desired, the database can be viewed using a command such as the following: 
+
+
+
+cat /var/cache/man/whatis | less
+
+
+
+In this command the output of cat /var/cache/man/whatis is piped (i.e., sent) to the less command in order to make it easier to read by displaying only a single page at a time rather than scrolling down the screen at high speed. 
+
+
+
+
+
+Created May 18, 2005. Updated May 7, 2007.
+Copyright © 2005 The Linux Information Project. All Rights Reserved.
+","whatis(1)							     whatis(1)
 
 
 
@@ -2515,7 +2603,7 @@ SEE ALSO
 
 `whatis {{first_keyword}} {{second_keyword}}`
 "
-split,,"
+split,,,"
 SPLIT(1)		  BSD General Commands Manual		      SPLIT(1)
 
 NAME
@@ -2597,7 +2685,7 @@ BSD				August 21, 2005 			   BSD
 
 `split -b {{512}} {{filename}}`
 "
-diskutil,,"
+diskutil,,,"
 
 DISKUTIL(8)		  BSD System Manager's Manual		   DISKUTIL(8)
 
@@ -4770,7 +4858,7 @@ macOS				 14 June 2018				 macOS
 
 `diskutil eject {{/dev/disk1}}`
 "
-rubocop,,,"# rubocop
+rubocop,,,,"# rubocop
 
 > Lint Ruby files.
 
@@ -4802,7 +4890,7 @@ rubocop,,,"# rubocop
 
 `rubocop --auto-correct`
 "
-sv,,,"# sv
+sv,,,,"# sv
 
 > Control a running runsv service.
 
@@ -4818,7 +4906,7 @@ sv,,,"# sv
 
 `sudo sv status {{path/to/service}}`
 "
-netstat,,"
+netstat,,,"
 NETSTAT(1)		  BSD General Commands Manual		    NETSTAT(1)
 
 NAME
@@ -5115,7 +5203,7 @@ Darwin				 June 15, 2001				Darwin
 
 `netstat -nr`
 "
-oathtool,,,"# oathtool
+oathtool,,,,"# oathtool
 
 > OATH one-time password tool.
 
@@ -5131,7 +5219,7 @@ oathtool,,,"# oathtool
 
 `oathtool --totp --base32 {{secret}} {{token}}`
 "
-trap,,"
+trap,,,"
 BUILTIN(1)		  BSD General Commands Manual		    BUILTIN(1)
 
 NAME
@@ -5319,7 +5407,7 @@ BSD			       February 23, 2005			   BSD
 
 `trap - {{SIGHUP}} {{SIGINT}}`
 "
-afplay,,"
+afplay,,,"
 AFPLAY(1)		  BSD General Commands Manual		     AFPLAY(1)
 
 NAME
@@ -5355,7 +5443,7 @@ Darwin			       February 13, 2007			Darwin
 
 `afplay --time {{seconds}} {{path/to/file}}`
 "
-file,,"
+file,,,"
 FILE(1) 		  BSD General Commands Manual		       FILE(1)
 
 NAME
@@ -5838,7 +5926,1318 @@ BSD			       October 19, 2016 			   BSD
 
 `file -I {{filename}}`
 "
-sshuttle,https://github.com/sshuttle/sshuttle,,"# sshuttle
+sshuttle,https://github.com/sshuttle/sshuttle,"
+
+
+
+
+
+
+
+
+
+
+
+
+
+GitHub - sshuttle/sshuttle: Transparent proxy server that works as a poor man's VPN.  Forwards over ssh.  Doesn't require admin.  Works with Linux and MacOS.  Supports DNS tunneling.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Sign up
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Why GitHub?
+                    
+
+
+
+
+Features →
+
+Code review
+Project management
+Integrations
+Actions
+Packages
+Security
+Team management
+Hosting
+Mobile
+
+
+Customer stories →
+Security →
+
+
+
+
+
+Team
+
+
+Enterprise
+
+
+
+
+                    Explore
+                    
+
+
+
+
+
+Explore GitHub →
+
+Learn & contribute
+
+Topics
+Collections
+Trending
+Learning Lab
+Open source guides
+
+Connect with others
+
+Events
+Community forum
+GitHub Education
+GitHub Stars program
+
+
+
+
+
+Marketplace
+
+
+
+
+                    Pricing
+                    
+
+
+
+
+Plans →
+
+Compare plans
+Contact Sales
+
+
+Nonprofit →
+Education →
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+No suggested jump to results
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+ 
+
+
+
+          Sign in
+        
+
+              Sign up
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sshuttle
+
+/
+
+sshuttle
+
+
+
+
+
+
+
+    Watch
+ 
+      125
+    
+
+
+
+
+      Star
+
+
+      5.8k
+    
+
+
+
+
+          Fork
+
+
+        400
+      
+
+
+
+
+
+        Transparent proxy server that works as a poor man's VPN. Forwards over ssh. Doesn't require admin. Works with Linux and MacOS. Supports DNS tunneling.
+      
+
+
+
+            LGPL-2.1 License
+        
+
+
+
+
+5.8k
+        stars
+ 
+
+400
+        forks
+ 
+
+
+
+
+      Star
+
+
+
+
+
+    Watch
+
+
+
+
+
+
+
+
+
+Code
+
+ 
+
+
+
+Issues
+84
+ 
+
+
+
+Pull requests
+4
+ 
+
+
+
+Actions
+
+ 
+
+
+
+Projects
+0
+ 
+
+
+
+Wiki
+
+ 
+
+
+
+Security
+
+ 
+
+
+
+Insights
+
+ 
+ 
+
+
+
+
+More
+
+ 
+
+
+
+
+                    Code
+ 
+
+
+                    Issues
+ 
+
+
+                    Pull requests
+ 
+
+
+                    Actions
+ 
+
+
+                    Projects
+ 
+
+
+                    Wiki
+ 
+
+
+                    Security
+ 
+
+
+                    Insights
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+          Dismiss
+        
+Join GitHub today
+GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
+Sign up
+
+
+
+
+
+
+
+
+
+
+master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8
+branches
+
+
+
+46
+tags
+
+
+
+
+    Go to file
+
+
+
+
+
+
+      Code
+      
+ 
+
+
+
+
+
+
+
+
+  Clone
+
+
+
+
+
+
+            HTTPS
+ 
+            GitHub CLI
+ 
+
+
+
+
+
+
+
+
+
+      Use Git or checkout with SVN using the web URL.
+    
+
+
+
+
+
+
+
+
+
+      Work fast with our official CLI.
+      Learn more.
+    
+
+
+
+
+
+
+
+                Open with GitHub Desktop
+ 
+
+
+
+                Download ZIP
+ 
+
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching Xcode
+If nothing happens, download Xcode and try again.
+Go back
+
+
+Launching Visual Studio
+If nothing happens, download the GitHub extension for Visual Studio and try again.
+Go back
+
+
+
+
+
+
+
+
+
+Latest commit
+
+
+
+
+
+
+ 
+
+
+
+
+brianmay
+
+Merge pull request #522 from sshuttle/dependabot/pip/pytest-6.0.2
+
+
+
+…
+
+
+
+299854d
+
+Sep 14, 2020
+
+
+
+
+
+Merge pull request #522 from sshuttle/dependabot/pip/pytest-6.0.2
+
+Bump pytest from 6.0.1 to 6.0.2
+
+299854d
+
+
+
+Git stats
+
+
+
+
+
+696
+commits
+
+
+
+
+
+
+
+Files
+Permalink
+
+
+  
+    Failed to load latest commit information.
+
+ 
+
+
+Type
+Name
+Latest commit message
+Commit time
+
+
+
+
+
+
+.github/workflows
+
+
+
+Create github workflow
+
+
+
+May 20, 2020
+
+
+
+
+
+
+
+bin
+
+
+
+Auto sudoers file (#269)
+
+
+
+Dec 12, 2019
+
+
+
+
+
+
+
+docs
+
+
+
+Add missing package in OpenWRT documentation
+
+
+
+Aug 10, 2020
+
+
+
+
+
+
+
+sshuttle
+
+
+
+remove unneeded blank line
+
+
+
+Sep 7, 2020
+
+
+
+
+
+
+
+tests
+
+
+
+Fix parse_hostport to always return string for host
+
+
+
+Aug 12, 2020
+
+
+
+
+
+
+
+.gitignore
+
+
+
+Add entries to .gitignore
+
+
+
+Mar 16, 2018
+
+
+
+
+
+
+
+.prospector.yml
+
+
+
+Fixes some style issues and minor bugs
+
+
+
+Nov 13, 2017
+
+
+
+
+
+
+
+CHANGES.rst
+
+
+
+Fixed typo.
+
+
+
+Aug 27, 2020
+
+
+
+
+
+
+
+LICENSE
+
+
+
+Change license text to LGPL-2.1
+
+
+
+Aug 26, 2020
+
+
+
+
+
+
+
+MANIFEST.in
+
+
+
+Fix error in requirements.rst
+
+
+
+Jul 8, 2017
+
+
+
+
+
+
+
+README.rst
+
+
+
+README: add Ubuntu
+
+
+
+Jul 24, 2020
+
+
+
+
+
+
+
+bandit.yml
+
+
+
+updated bandit config
+
+
+
+Oct 17, 2018
+
+
+
+
+
+
+
+requirements-tests.txt
+
+
+
+Bump pytest from 6.0.1 to 6.0.2
+
+
+
+Sep 14, 2020
+
+
+
+
+
+
+
+requirements.txt
+
+
+
+Fix #494 sshuttle caught in infinite select() loop.
+
+
+
+Sep 7, 2020
+
+
+
+
+
+
+
+run
+
+
+
+Updated supported Python versions
+
+
+
+May 28, 2020
+
+
+
+
+
+
+
+setup.cfg
+
+
+
+Fix/pep8 (#277)
+
+
+
+Feb 10, 2019
+
+
+
+
+
+
+
+setup.py
+
+
+
+Ask setuptools to require Python 3.5 and above
+
+
+
+Jun 18, 2020
+
+
+
+
+
+
+
+tox.ini
+
+
+
+Updated supported Python versions
+
+
+
+May 28, 2020
+
+
+
+
+
+        View code
+      
+
+
+
+
+
+
+        README.rst
+      
+
+
+sshuttle: where transparent proxy meets VPN meets ssh
+As far as I know, sshuttle is the only program that solves the following
+common case:
+
+Your client machine (or router) is Linux, FreeBSD, or MacOS.
+You have access to a remote network via ssh.
+You don't necessarily have admin access on the remote network.
+The remote network has no VPN, or only stupid/complex VPN
+protocols (IPsec, PPTP, etc). Or maybe you are the
+admin and you just got frustrated with the awful state of
+VPN tools.
+You don't want to create an ssh port forward for every
+single host/port on the remote network.
+You hate openssh's port forwarding because it's randomly
+slow and/or stupid.
+You can't use openssh's PermitTunnel feature because
+it's disabled by default on openssh servers; plus it does
+TCP-over-TCP, which has terrible performance.
+
+
+Obtaining sshuttle
+
+Ubuntu 16.04 or later:
+apt-get install sshuttle
+
+
+Debian stretch or later:
+apt-get install sshuttle
+
+
+Arch Linux:
+pacman -S sshuttle
+
+
+Fedora:
+dnf install sshuttle
+
+
+NixOS:
+nix-env -iA nixos.sshuttle
+
+
+From PyPI:
+sudo pip install sshuttle
+
+
+Clone:
+git clone https://github.com/sshuttle/sshuttle.git
+cd sshuttle
+sudo ./setup.py install
+
+
+FreeBSD:
+# ports
+cd /usr/ports/net/py-sshuttle && make install clean
+# pkg
+pkg install py36-sshuttle
+
+
+
+It is also possible to install into a virtualenv as a non-root user.
+
+From PyPI:
+virtualenv -p python3 /tmp/sshuttle
+. /tmp/sshuttle/bin/activate
+pip install sshuttle
+
+
+Clone:
+virtualenv -p python3 /tmp/sshuttle
+. /tmp/sshuttle/bin/activate
+git clone https://github.com/sshuttle/sshuttle.git
+cd sshuttle
+./setup.py install
+
+
+Homebrew:
+brew install sshuttle
+
+
+Nix:
+nix-env -iA nixpkgs.sshuttle
+
+
+
+
+Documentation
+The documentation for the stable version is available at:
+https://sshuttle.readthedocs.org/
+The documentation for the latest development version is available at:
+https://sshuttle.readthedocs.org/en/latest/
+
+Running as a service
+Sshuttle can also be run as a service and configured using a config management system:
+https://medium.com/@mike.reider/using-sshuttle-as-a-service-bec2684a65fe
+
+
+
+
+
+
+
+
+About
+
+      Transparent proxy server that works as a poor man's VPN. Forwards over ssh. Doesn't require admin. Works with Linux and MacOS. Supports DNS tunneling.
+    
+Resources
+
+
+
+      Readme
+ 
+License
+
+
+
+        LGPL-2.1 License
+    
+
+
+
+
+
+
+
+    Releases
+
+
+
+46
+tags
+
+
+
+
+
+
+
+    Packages 0
+
+
+        No packages published 
+
+
+
+
+
+
+
+        Used by 67
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            + 59
+          
+
+
+
+
+
+
+
+    Contributors 99
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      + 88 contributors
+
+
+
+
+
+Languages
+
+
+
+
+
+
+
+
+
+Python
+99.1%
+
+
+
+
+
+Shell
+0.9%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+
+
+
+
+
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+
+
+
+
+
+
+
+
+
+
+    You can’t perform that action at this time.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+
+
+
+
+
+
+
+",,"# sshuttle
 
 > Transparent proxy server that tunnels traffic over an SSH connection.
 > Doesn't require admin, or any special setup on the remote SSH server.
@@ -5856,7 +7255,7 @@ sshuttle,https://github.com/sshuttle/sshuttle,,"# sshuttle
 
 `sudo sshuttle --method=tproxy --remote={{username}}@{{sshserver}} {{0.0.0.0/0}} {{::/0}} --exclude={{your_local_ip_address}} --exclude={{ssh_server_ip_address}}`
 "
-uptime,,"
+uptime,,,"
 UPTIME(1)		  BSD General Commands Manual		     UPTIME(1)
 
 NAME
@@ -5885,7 +7284,105 @@ BSD				April 18, 1994				   BSD
 
 `uptime`
 "
-wacaw,http://webcam-tools.sourceforge.net,,"# wacaw
+wacaw,http://webcam-tools.sourceforge.net,"
+
+wacaw
+
+
+
+wacaw - webcam tools for Mac OS X
+
+
+
+What is wacaw?
+Download
+Features
+Parameters
+SourceForge.net Project site
+
+
+
+What is wacaw?
+
+
+		wacaw is a little command-line tool for Mac OS X that allows you 
+		to capture both still pictures and video from an attached camera.
+		It is a very simple and small program that follows the UNIXish
+		philosophy of doing only one thing, but thoroughly. :-)
+		
+
+		That's what makes wacaw an ideal tool for system administrators
+		and Uberusers, it's flexibility allows it to be integrated in
+		shell scripts, Automator actions, AppleScript projects etc.
+		
+
+		The video recording feature allows the user to create videos of
+		pre-defined length, a useful feature for e.g. a surveillance 
+		application that captures a video if motion is detected.
+		
+
+		wacaw is a spare-time project, with currently only two developers
+		working on it. However, that doesn't mean we can't get the 
+		feature you need in! So, don't hesitate to report bugs
+		and request new features, we'll get'em done eventually. :)
+		
+Download
+
+
+		Download binaries & source code from
+		
+
+Features
+
+
+captures still images and video (with and without audio)
+can copy to clipboard, supporting both TIFF format as well as a
+			Base64 encoded string (can be pasted directly to textfield, e.g. phpMyAdmin)
+supported formats: BMP, JPEG, TIFF, PNG, GIF
+command-line tool w/o GUI
+can be integrated in shell scripts of all kinds, 
+			Automator actions and the like
+very small binary (approx. 28KB)
+
+Parameters
+
+See the basic usage help below for more details on wacaw's
+		parameters:
+
+
+Usage: ./wacaw [-h] [options] [filename]
+  -h / --help        : print this help message
+       --usage       : print this help message
+  -v / --version     : prints out version information
+       --verbose     : more messages about what is going on
+       --brief       : fewer messages about what is going on (default)
+       --video       : record a video
+       --no-audio    : do not record audio
+  -D / --duration : specify the duration of the video (default: 15 sec.)
+       --to-clipboard: copy image just taken to clipboard
+       --jpeg        : save image in JPEG format (default)
+       --tiff        : save image in TIFF format
+       --png         : save image in PNG format
+       --gif         : save image in GIF format
+       --bmp         : save image in BMP format
+  -x / --width    : specify the width of the image / video 
+  -y / --height   : specify the height of the image / video 
+       --SVGA        : the image / video should have 'SVGA'  size (800x600)
+       --VGA         : the image / video should have 'VGA'   size (640x480)
+       --CIF         : the image / video should have 'CIF'   size (352x288)
+       --SIF         : the image / video should have 'SIF'   size (320x240)
+       --QCIF        : the image / video should have 'QCIF'  size (176x144)
+       --QSIF        : the image / video should have 'QSIF'  size (160x120)
+       --SQSIF       : the image / video should have 'SQSIF' size (160x96)
+  -L / --list-devices  : list the devices available
+  -d / --video-device   : specify which device should be used
+       filename      : needed unless only listing available devices (-L)
+or using help (-h)
+			
+
+
+
+",,"# wacaw
 
 > A little command-line tool for macOS that allows you to capture both still pictures and video from an attached camera.
 > More information: <http://webcam-tools.sourceforge.net>.
@@ -5910,7 +7407,7 @@ wacaw,http://webcam-tools.sourceforge.net,,"# wacaw
 
 `wacaw -L`
 "
-date,,"
+date,,,"
 DATE(1) 		  BSD General Commands Manual		       DATE(1)
 
 NAME
@@ -6203,7 +7700,7 @@ BSD				  May 7, 2015				   BSD
 
 `date -r 1473305798`
 "
-archey,,,"# archey
+archey,,,,"# archey
 
 > Simple tool for stylishly displaying system information.
 
@@ -6223,7 +7720,7 @@ archey,,,"# archey
 
 `archey --offline`
 "
-ping,,"
+ping,,,"
 PING(8) 		  BSD System Manager's Manual		       PING(8)
 
 NAME
@@ -6576,7 +8073,7 @@ BSD				March 29, 2013				   BSD
 
 `ping --apple-time {{host}}`
 "
-launchctl,,"
+launchctl,,,"
 launchctl(1)		  BSD General Commands Manual		  launchctl(1)
 
 NAME
@@ -7215,7 +8712,7 @@ Darwin				1 October, 2014 			Darwin
 
 `launchctl stop {{my_script}}`
 "
-sips,,"
+sips,,,"
 sips(1) 		  BSD General Commands Manual		       sips(1)
 
 NAME
@@ -7401,7 +8898,7 @@ OPTIONS
      copyright		 string
      md5		 string (read-only)
 
-Darwin			      September 23, 2020			Darwin
+Darwin			      September 25, 2020			Darwin
 ","# sips
 
 > Apple Scriptable Image Processing System.
@@ -7431,7 +8928,7 @@ Darwin			      September 23, 2020			Darwin
 
 `sips -d profile --deleteColorManagementProperties {{path/to/image.ext}}`
 "
-md5,,"
+md5,,,"
 MD5(1)			  BSD General Commands Manual			MD5(1)
 
 NAME
@@ -7510,7 +9007,7 @@ BSD				 June 6, 2004				   BSD
 
 `md5 -s {{string}}`
 "
-hostname,,"
+hostname,,,"
 HOSTNAME(1)		  BSD General Commands Manual		   HOSTNAME(1)
 
 NAME
@@ -7550,7 +9047,7 @@ BSD			       December 7, 2006 			   BSD
 
 `hostname {{new_hostname}}`
 "
-opensnoop,,"opensnoop(1m)			 USER COMMANDS			 opensnoop(1m)
+opensnoop,,,"opensnoop(1m)			 USER COMMANDS			 opensnoop(1m)
 
 
 
@@ -7694,7 +9191,297 @@ version 1.60			 Jan 12, 2006			 opensnoop(1m)
 
 `sudo opensnoop -f {{path/to/file}}`
 "
-brew,https://brew.sh,"BREW(1) 			     brew			       BREW(1)
+brew,https://brew.sh,"
+
+
+The Missing Package Manager for macOS (or Linux) — Homebrew
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Homebrew
+The Missing Package Manager for macOS (or Linux)
+
+
+
+
+العربية
+Azərbaycanca
+Беларуская
+Български
+Català
+Čeština
+Dansk
+Deutsch
+Ελληνικά
+English
+Español
+فارسی
+Suomi
+Français
+Galego
+עברית
+Italiano
+日本語
+한국어
+Norsk bokmål
+Nederlands
+Norsk nynorsk
+Polski
+Português Brasileiro
+Română
+Русский
+Српски
+Svenska
+ไทย
+Türkçe
+Українська
+Tiếng Việt
+简体中文
+繁體中文
+
+
+
+
+
+
+Install Homebrew
+
+/bin/bash -c ""$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)""
+
+Paste that in a macOS Terminal or Linux shell prompt.
+
+
+The script explains what it will do and then pauses before it does it. Read about other installation options.
+
+
+
+
+
+What Does Homebrew Do?
+
+
+Homebrew installs the stuff you need that Apple (or your Linux system) didn’t.
+
+
+$ brew install wget
+
+
+
+
+
+
+Homebrew installs packages to their own directory and then symlinks their files into /usr/local.
+
+
+$ cd /usr/local
+$ find Cellar
+Cellar/wget/1.16.1
+Cellar/wget/1.16.1/bin/wget
+Cellar/wget/1.16.1/share/man/man1/wget.1
+
+$ ls -l bin
+bin/wget -> ../Cellar/wget/1.16.1/bin/wget
+
+
+
+
+
+
+Homebrew won’t install files outside its prefix and you can place a Homebrew installation wherever you like.
+
+
+
+
+
+
+Trivially create your own Homebrew packages.
+
+
+$ brew create https://foo.com/bar-1.0.tgz
+Created /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/bar.rb
+
+
+
+
+
+
+It's all Git and Ruby underneath, so hack away with the knowledge that you can easily revert your modifications and merge upstream updates.
+
+
+$ brew edit wget # opens in $EDITOR!
+
+
+
+
+
+
+Homebrew formulae are simple Ruby scripts:
+
+
+class Wget < Formula
+  homepage ""https://www.gnu.org/software/wget/""
+  url ""https://ftp.gnu.org/gnu/wget/wget-1.15.tar.gz""
+  sha256 ""52126be8cf1bddd7536886e74c053ad7d0ed2aa89b4b630f76785bac21695fcd""
+
+  def install
+    system ""./configure"", ""--prefix=#{prefix}""
+    system ""make"", ""install""
+  end
+end
+
+
+
+
+
+
+Homebrew complements macOS (or your Linux system). Install your RubyGems with gem and their dependencies with brew.
+
+
+
+
+
+
+""To install, drag this icon..."" no more. brew cask installs macOS apps, fonts and plugins and other non-open source software.
+
+
+$ brew cask install firefox
+
+
+
+
+
+
+Making a cask is as simple as creating a formula.
+
+
+$ brew cask create foo
+Editing /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask/Casks/foo.rb
+
+
+
+
+
+Further Documentation
+
+docs.brew.sh
+
+
+
+
+
+Donate to Homebrew
+
+Homebrew/brew#donations
+
+
+
+
+
+Community Discussion
+
+Homebrew/discussions
+
+
+
+
+
+Homebrew Blog
+
+brew.sh/blog
+
+
+
+
+
+Homebrew Packages
+
+formulae.brew.sh
+
+
+
+
+
+Analytics Data
+
+formulae.brew.sh/analytics
+
+
+
+
+
+Homebrew was created by Max Howell. Website by Rémi Prévost, Mike McQuaid and Danielle Lalonde.
+
+
+
+
+
+
+
+
+
+
+","BREW(1) 			     brew			       BREW(1)
 
 
 
@@ -10033,7 +11820,7 @@ Homebrew			September 2020			       BREW(1)
 
 `brew doctor`
 "
-compgen,,,"# compgen
+compgen,,,,"# compgen
 
 > A built-in command for auto-completion in bash, which is called on pressing TAB key twice.
 
@@ -10057,7 +11844,7 @@ compgen,,,"# compgen
 
 `compgen -ac {{ls}}`
 "
-eval,,"
+eval,,,"
 BUILTIN(1)		  BSD General Commands Manual		    BUILTIN(1)
 
 NAME
@@ -10236,7 +12023,7 @@ BSD			       February 23, 2005			   BSD
 
 `eval ""{{foo=bar}}""`
 "
-m,,,"# m
+m,,,,"# m
 
 > Swiss Army Knife for macOS.
 
@@ -10260,7 +12047,7 @@ m,,,"# m
 
 `m firewall disable`
 "
-systemsetup,,"
+systemsetup,,,"
 SYSTEMSETUP(8)		  BSD System Manager's Manual		SYSTEMSETUP(8)
 
 NAME
@@ -10518,7 +12305,7 @@ Mac OS X			April 15, 2002			      Mac OS X
 
 `systemsetup -setstartupdisk {{path}}`
 "
-fsck,,"
+fsck,,,"
 FSCK(8) 		  BSD System Manager's Manual		       FSCK(8)
 
 NAME
@@ -10629,7 +12416,7 @@ SEE ALSO
 
 `fsck -q {{/dev/sda}}`
 "
-sysctl,,"
+sysctl,,,"
 SYSCTL(8)		  BSD System Manager's Manual		     SYSCTL(8)
 
 NAME
@@ -10939,7 +12726,7 @@ BSD			       January 17, 2011 			   BSD
 
 `sysctl -w {{section.tunable}}={{value}}`
 "
-carthage,,,"# carthage
+carthage,,,,"# carthage
 
 > A dependency management tool for Cocoa applications.
 
@@ -10963,7 +12750,7 @@ carthage,,,"# carthage
 
 `carthage build {{dependency}}`
 "
-feh,,,"# feh
+feh,,,,"# feh
 
 > Lightweight image viewing utility.
 
@@ -10991,7 +12778,7 @@ feh,,,"# feh
 
 `feh --bg-{{center|fill|max|scale|tile}} {{path/to/image}}`
 "
-scutil,,"
+scutil,,,"
 SCUTIL(8)		  BSD System Manager's Manual		     SCUTIL(8)
 
 NAME
@@ -11170,7 +12957,1070 @@ Mac OS X		       January 23, 2008 		      Mac OS X
 
 `scutil --set HostName {{hostname}}`
 "
-spotify,https://github.com/hnarayanan/shpotify,,"# spotify
+spotify,https://github.com/hnarayanan/shpotify,"
+
+
+
+
+
+
+
+
+
+
+
+
+
+GitHub - hnarayanan/shpotify: A command-line interface to Spotify
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Sign up
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Why GitHub?
+                    
+
+
+
+
+Features →
+
+Code review
+Project management
+Integrations
+Actions
+Packages
+Security
+Team management
+Hosting
+Mobile
+
+
+Customer stories →
+Security →
+
+
+
+
+
+Team
+
+
+Enterprise
+
+
+
+
+                    Explore
+                    
+
+
+
+
+
+Explore GitHub →
+
+Learn & contribute
+
+Topics
+Collections
+Trending
+Learning Lab
+Open source guides
+
+Connect with others
+
+Events
+Community forum
+GitHub Education
+GitHub Stars program
+
+
+
+
+
+Marketplace
+
+
+
+
+                    Pricing
+                    
+
+
+
+
+Plans →
+
+Compare plans
+Contact Sales
+
+
+Nonprofit →
+Education →
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+No suggested jump to results
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+ 
+
+
+
+          Sign in
+        
+
+              Sign up
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+hnarayanan
+
+/
+
+shpotify
+
+
+
+
+
+
+
+    Watch
+ 
+      21
+    
+
+
+
+
+      Star
+
+
+      1.6k
+    
+
+
+
+
+          Fork
+
+
+        143
+      
+
+
+
+
+
+        A command-line interface to Spotify
+      
+
+
+
+harishnarayanan.org/projects/
+
+
+
+
+
+1.6k
+        stars
+ 
+
+143
+        forks
+ 
+
+
+
+
+      Star
+
+
+
+
+
+    Watch
+
+
+
+
+
+
+
+
+
+Code
+
+ 
+
+
+
+Issues
+21
+ 
+
+
+
+Pull requests
+17
+ 
+
+
+
+Actions
+
+ 
+
+
+
+Security
+
+ 
+
+
+
+Insights
+
+ 
+ 
+
+
+
+
+More
+
+ 
+
+
+
+
+                    Code
+ 
+
+
+                    Issues
+ 
+
+
+                    Pull requests
+ 
+
+
+                    Actions
+ 
+
+
+                    Security
+ 
+
+
+                    Insights
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+          Dismiss
+        
+Join GitHub today
+GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
+Sign up
+
+
+
+
+
+
+
+
+
+
+master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2
+branches
+
+
+
+8
+tags
+
+
+
+
+    Go to file
+
+
+
+
+
+
+      Code
+      
+ 
+
+
+
+
+
+
+
+
+  Clone
+
+
+
+
+
+
+            HTTPS
+ 
+            GitHub CLI
+ 
+
+
+
+
+
+
+
+
+
+      Use Git or checkout with SVN using the web URL.
+    
+
+
+
+
+
+
+
+
+
+      Work fast with our official CLI.
+      Learn more.
+    
+
+
+
+
+
+
+
+                Open with GitHub Desktop
+ 
+
+
+
+                Download ZIP
+ 
+
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching Xcode
+If nothing happens, download Xcode and try again.
+Go back
+
+
+Launching Visual Studio
+If nothing happens, download the GitHub extension for Visual Studio and try again.
+Go back
+
+
+
+
+
+
+
+
+
+Latest commit
+
+
+
+
+
+
+ 
+
+
+
+
+hnarayanan
+
+Merge pull request #130 from willhaslett/constantize-vol-increment
+
+
+
+…
+
+
+
+fdfc962
+
+May 3, 2020
+
+
+
+
+
+Merge pull request #130 from willhaslett/constantize-vol-increment
+
+Added constant that defines percent change for vol
+
+fdfc962
+
+
+
+Git stats
+
+
+
+
+
+185
+commits
+
+
+
+
+
+
+
+Files
+Permalink
+
+
+  
+    Failed to load latest commit information.
+
+ 
+
+
+Type
+Name
+Latest commit message
+Commit time
+
+
+
+
+
+
+README.md
+
+
+
+Update copyright year
+
+
+
+Mar 4, 2020
+
+
+
+
+
+
+
+spotify
+
+
+
+Added constant that defines percent change for vol
+
+
+
+May 2, 2020
+
+
+
+
+
+        View code
+      
+
+
+
+
+
+
+        README.md
+      
+
+
+shpotify
+shpotify is a simple Bash/Apple script to control
+Spotify from the command line on a Mac.
+If you find this interesting, you should follow me on
+Twitter to learn about the other
+things I do.
+Installation
+Download and install the Spotify
+desktop application if you haven’t already.
+With Homebrew
+The easiest way to install shpotify is by using the Homebrew package
+manager:
+brew install shpotify
+
+Manual installation
+If you don’t use Homebrew, you can install the script manually by
+following a few simple steps:
+
+
+Fetch a copy of this repository, either with git or download the
+zip archive.
+
+
+Navigate to the folder where you fetched the repository (unzip if
+needed) and make sure the file called spotify is executable:
+cd shpotify
+chmod +x spotify
+
+
+
+Copy the file spotify to a convenient location in your PATH, or
+set your PATH to include the folder where the file is located.
+
+
+Connecting to Spotify’s API
+shpotify needs to connect to Spotify’s API in order to find music by
+name. It is very likely you want this feature!
+To get this to work, you first need to sign up (or into) Spotify’s
+developer site and create an Application. Once you’ve
+done so, you can find its Client ID and Client Secret values and
+enter them into your shpotify config file at ${HOME}/.shpotify.cfg.
+Be sure to quote your values and don’t add any extra spaces. When
+done, it should look like the following (but with your own values):
+CLIENT_ID=""abc01de2fghijk345lmnop""
+CLIENT_SECRET=""qr6stu789vwxyz""
+
+Usage
+With shpotify you can control Spotify with the following commands:
+spotify play                       Resumes playback where Spotify last left off.
+spotify play <song name>           Finds a song by name and plays it.
+spotify play album <album name>    Finds an album by name and plays it.
+spotify play artist <artist name>  Finds an artist by name and plays it.
+spotify play list <playlist name>  Finds a playlist by name and plays it.
+spotify play uri <uri>             Play songs from specific uri.
+
+spotify next                       Skips to the next song in a playlist.
+spotify prev                       Returns to the previous song in a playlist.
+spotify replay                     Replays the current track from the beginning.
+spotify pos <time>                 Jump to a specific time (in seconds) in the current song.
+spotify pause                      Pauses (or resumes) Spotify playback.
+spotify stop                       Stops playback.
+spotify quit                       Stops playback and quits Spotify.
+
+spotify vol up                     Increases the volume by 10%.
+spotify vol down                   Decreases the volume by 10%.
+spotify vol <amount>               Sets the volume to an amount between 0 and 100.
+spotify vol [show]                 Shows the current volume.
+
+spotify status                     Shows the play status, including the current song details.
+spotify status artist              Shows the currently playing artist.
+spotify status album               Shows the currently playing album.
+spotify status track               Shows the currently playing track.
+
+spotify share                      Displays the current song's Spotify URL and URI.
+spotify share url                  Displays the current song's Spotify URL and copies it to the clipboard.
+spotify share uri                  Displays the current song's Spotify URI and copies it to the clipboard.
+
+spotify toggle shuffle             Toggles shuffle playback mode.
+spotify toggle repeat              Toggles repeat playback mode.
+
+Authors and contributing
+shpotify is primarily written and maintained by Harish
+Narayanan.
+Since it’s an open source project, it contains numerous contributions
+from many helpful people, including:
+
+Jorge Colindres
+Thomas Pritchard
+iLan Epstein
+Gabriele Bonetti
+Sean Heller
+Eric Martin
+Peter Fonseca
+
+If you’re interested in contributing too, please consider addressing
+some of the issues people have previously
+reported and
+submitting a pull
+request. Thank
+you!
+Copyright and license
+Copyright (c) 2012–2020 Harish Narayanan.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the ""Software""), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED ""AS IS"", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+
+
+
+
+
+
+
+About
+
+      A command-line interface to Spotify
+    
+
+
+
+harishnarayanan.org/projects/
+
+
+Topics
+
+
+
+  applescript
+
+
+  bash
+
+
+  spotify
+
+
+  shell
+
+
+  utility
+
+
+  music
+
+
+  command-line
+
+
+  macos
+
+
+
+Resources
+
+
+
+      Readme
+ 
+
+
+
+
+
+
+    Releases
+      8
+
+
+
+
+
+2.1: Merge pull request #116 from dmofot/playlist_fix
+
+          Latest
+ 
+Apr 29, 2019
+
+ 
+
+        + 7 releases
+
+
+
+
+
+
+
+    Packages 0
+
+
+        No packages published 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Contributors 24
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+      + 13 contributors
+
+
+
+
+
+Languages
+
+
+
+
+
+
+
+
+Shell
+100.0%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+
+
+
+
+
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+
+
+
+
+
+
+
+
+
+
+    You can’t perform that action at this time.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+
+
+
+
+
+
+
+",,"# spotify
 
 > A command-line interface to Spotify.
 > More information: <https://github.com/hnarayanan/shpotify>.
@@ -11199,7 +14049,7 @@ spotify,https://github.com/hnarayanan/shpotify,,"# spotify
 
 `spotify status`
 "
-hexdump,,"
+hexdump,,,"
 HEXDUMP(1)		  BSD General Commands Manual		    HEXDUMP(1)
 
 NAME
@@ -11432,7 +14282,1235 @@ BSD				 July 10, 2004				   BSD
 
 `hexdump -C -n{{number_of_bytes}} {{file}}`
 "
-brew-cask,https://github.com/Homebrew/homebrew-cask,,"# brew cask
+brew-cask,https://github.com/Homebrew/homebrew-cask,"
+
+
+
+
+
+
+
+
+
+
+
+
+
+GitHub - Homebrew/homebrew-cask: 🍻 A CLI workflow for the administration of macOS applications distributed as binaries
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Sign up
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Why GitHub?
+                    
+
+
+
+
+Features →
+
+Code review
+Project management
+Integrations
+Actions
+Packages
+Security
+Team management
+Hosting
+Mobile
+
+
+Customer stories →
+Security →
+
+
+
+
+
+Team
+
+
+Enterprise
+
+
+
+
+                    Explore
+                    
+
+
+
+
+
+Explore GitHub →
+
+Learn & contribute
+
+Topics
+Collections
+Trending
+Learning Lab
+Open source guides
+
+Connect with others
+
+Events
+Community forum
+GitHub Education
+GitHub Stars program
+
+
+
+
+
+Marketplace
+
+
+
+
+                    Pricing
+                    
+
+
+
+
+Plans →
+
+Compare plans
+Contact Sales
+
+
+Nonprofit →
+Education →
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+No suggested jump to results
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+ 
+
+
+
+          Sign in
+        
+
+              Sign up
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Homebrew
+
+/
+
+homebrew-cask
+
+
+
+
+
+
+
+
+          Sponsor
+        
+
+
+
+
+
+
+              Sponsor Homebrew/homebrew-cask
+            
+
+
+
+
+
+
+
+
+
+
+
+
+    Watch
+ 
+      302
+    
+
+
+
+
+      Star
+
+
+      17.5k
+    
+
+
+
+
+          Fork
+
+
+        8.6k
+      
+
+
+
+
+
+🍻 A CLI workflow for the administration of macOS applications distributed as binaries
+      
+
+
+
+brew.sh
+
+
+
+
+
+            BSD-2-Clause License
+        
+
+
+
+
+17.5k
+        stars
+ 
+
+8.6k
+        forks
+ 
+
+
+
+
+      Star
+
+
+
+
+
+    Watch
+
+
+
+
+
+
+
+
+
+Code
+
+ 
+
+
+
+Issues
+33
+ 
+
+
+
+Pull requests
+11
+ 
+
+
+
+Actions
+
+ 
+
+
+
+Security
+
+ 
+
+
+
+Insights
+
+ 
+ 
+
+
+
+
+More
+
+ 
+
+
+
+
+                    Code
+ 
+
+
+                    Issues
+ 
+
+
+                    Pull requests
+ 
+
+
+                    Actions
+ 
+
+
+                    Security
+ 
+
+
+                    Insights
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+          Dismiss
+        
+Join GitHub today
+GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
+Sign up
+
+
+
+
+
+
+
+
+
+
+master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2
+branches
+
+
+
+114
+tags
+
+
+
+
+    Go to file
+
+
+
+
+
+
+      Code
+      
+ 
+
+
+
+
+
+
+
+
+  Clone
+
+
+
+
+
+
+            HTTPS
+ 
+            GitHub CLI
+ 
+
+
+
+
+
+
+
+
+
+      Use Git or checkout with SVN using the web URL.
+    
+
+
+
+
+
+
+
+
+
+      Work fast with our official CLI.
+      Learn more.
+    
+
+
+
+
+
+
+
+                Open with GitHub Desktop
+ 
+
+
+
+                Download ZIP
+ 
+
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching Xcode
+If nothing happens, download Xcode and try again.
+Go back
+
+
+Launching Visual Studio
+If nothing happens, download the GitHub extension for Visual Studio and try again.
+Go back
+
+
+
+
+
+
+
+
+
+Latest commit
+
+
+
+ 
+ 
+Git stats
+
+
+
+
+
+116,668
+commits
+
+
+
+
+
+
+
+Files
+Permalink
+
+
+  
+    Failed to load latest commit information.
+
+ 
+
+
+Type
+Name
+Latest commit message
+Commit time
+
+
+
+
+
+
+.github
+
+
+
+Add missing quotes. (#89856)
+
+
+
+Sep 24, 2020
+
+
+
+
+
+
+
+Casks
+
+
+
+Update calibre from 4.23.0 to 5.0.0 (#89865)
+
+
+
+Sep 25, 2020
+
+
+
+
+
+
+
+cmd
+
+
+
+Run `brew style` instead of `brew cask style`. (#89816)
+
+
+
+Sep 24, 2020
+
+
+
+
+
+
+
+developer
+
+
+
+Run `brew style` instead of `brew cask style`. (#89816)
+
+
+
+Sep 24, 2020
+
+
+
+
+
+
+
+doc
+
+
+
+adding_a_cask.md: remove alehouse reference (#89644)
+
+
+
+Sep 22, 2020
+
+
+
+
+
+
+
+.editorconfig
+
+
+
+add .editorconfig file
+
+
+
+Sep 8, 2015
+
+
+
+
+
+
+
+.gitattributes
+
+
+
+Create .gitattributes
+
+
+
+Sep 21, 2015
+
+
+
+
+
+
+
+.gitignore
+
+
+
+Ignore vendored bundler dependencies
+
+
+
+Aug 3, 2016
+
+
+
+
+
+
+
+CONTRIBUTING.md
+
+
+
+brew bump-cask-pr above cask-repair (#89077)
+
+
+
+Sep 11, 2020
+
+
+
+
+
+
+
+LICENSE
+
+
+
+LICENSE: 2013 (#42767)
+
+
+
+Jan 15, 2018
+
+
+
+
+
+
+
+README.md
+
+
+
+README.md: change wording on cask requests (#78719)
+
+
+
+Mar 15, 2020
+
+
+
+
+
+
+
+USAGE.md
+
+
+
+USAGE.md: remove note on being safe to let an app update itself (#72166)
+
+
+
+Nov 7, 2019
+
+
+
+
+
+
+
+tap_migrations.json
+
+
+
+Move `java` to homebrew/core. (#72284)
+
+
+
+Sep 15, 2020
+
+
+
+
+
+        View code
+      
+
+
+
+
+
+
+        README.md
+      
+
+
+
+
+
+
+
+
+Homebrew Cask
+“To install, drag this icon…” no more!
+Homebrew Cask extends Homebrew and brings its elegance, simplicity, and speed to the installation and management of GUI macOS applications such as Atom and Google Chrome.
+We do this by providing a friendly CLI workflow for the administration of macOS applications distributed as binaries.
+
+Let’s try it!
+To start using Homebrew Cask, you just need Homebrew installed.
+
+Slower, now:
+$ brew cask install atom
+==> Satisfying dependencies
+==> Downloading https://github.com/atom/atom/releases/download/v1.35.1/atom-mac.zip
+==> Downloading from https://github-production-release-asset-2e65be.s3.amazonaws.co
+######################################################################## 100.0%
+==> Verifying SHA-256 checksum for Cask 'atom'.
+==> Installing Cask atom
+==> Moving App 'Atom.app' to '/Applications/Atom.app'.
+==> Linking Binary 'apm' to '/usr/local/bin/apm'.
+==> Linking Binary 'atom.sh' to '/usr/local/bin/atom'.
+🍺  atom was successfully installed!
+
+And there we have it. Atom installed with one quick command: no clicking, no dragging, no dropping.
+Learn More
+
+Find basic documentation on using Homebrew Cask in USAGE.md
+Want to contribute a Cask? Awesome! See CONTRIBUTING.md
+Want to hack on our code? Also awesome! See hacking.md
+More project-related details and discussion are available in the documentation
+
+Reporting bugs
+If you ignore this guide, your issue may be closed without review.
+Before reporting a bug, run brew update-reset && brew update and try your command again. This is a fix-all that will reset the state of all your taps, ensuring the problem isn’t an outdated setup on your side.
+If your issue persists, search for it before opening a new one. If you find an open issue and have any new information, add it in a comment. If you find a closed issue, try the solutions there.
+If the issue is still not solved, see the guides for common problems:
+
+Examples of common errors and their solutions
+curl error
+Permission denied error
+Checksum does not match error
+source is not there error
+wrong number of arguments error
+The app can’t be opened because it is from an unidentified developer
+My problem isn’t listed
+
+Requests
+
+Issues requesting new casks will be closed. If you want a cask added to the main repositories, submit a pull request.
+For a feature request, use this template.
+
+Questions? Wanna chat?
+We’re really rather friendly! Here are the best places to talk about the project:
+
+Open an issue.
+Join us on discourse.brew.sh (forum)
+
+License
+Code is under the BSD 2 Clause (NetBSD) license
+
+
+
+
+
+
+
+
+About
+
+🍻 A CLI workflow for the administration of macOS applications distributed as binaries
+    
+
+
+
+brew.sh
+
+
+Topics
+
+
+
+  homebrew
+
+
+  cask
+
+
+
+Resources
+
+
+
+      Readme
+ 
+License
+
+
+
+        BSD-2-Clause License
+    
+
+
+
+
+
+
+
+    Releases
+      114
+
+
+
+
+
+v0.60.1
+
+          Latest
+ 
+Jan 11, 2016
+
+ 
+
+        + 113 releases
+
+
+
+
+
+Sponsor this project
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+patreon.com/homebrew
+
+
+
+
+
+
+
+https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V6ZE57MJRYC8L
+
+
+
+
+
+
+
+https://github.com/homebrew/brew/#donations
+
+
+
+
+  Learn more about GitHub Sponsors
+
+
+
+
+
+
+
+    Packages 0
+
+
+        No packages published 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Contributors 5,000+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+      + 6,410 contributors
+
+
+
+
+
+Languages
+
+
+
+
+
+
+
+
+
+
+Ruby
+98.4%
+
+
+
+
+
+Shell
+1.4%
+
+
+
+
+
+Other
+0.2%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+
+
+
+
+
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+
+
+
+
+
+
+
+
+
+
+    You can’t perform that action at this time.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+
+
+
+
+
+
+
+",,"# brew cask
 
 > Package manager for macOS applications distributed as binaries.
 > More information: <https://github.com/Homebrew/homebrew-cask>.
@@ -11469,7 +15547,7 @@ brew-cask,https://github.com/Homebrew/homebrew-cask,,"# brew cask
 
 `brew cask info {{cask_name}}`
 "
-whence,,,"# whence
+whence,,,,"# whence
 
 > A zsh builtin to indicate how a given command would be interpreted.
 
@@ -11493,7 +15571,7 @@ whence,,,"# whence
 
 `whence -p {{command}}`
 "
-imgcat,,,"# imgcat
+imgcat,,,,"# imgcat
 
 > A utility to display images directly on the command line.
 > Requires a compatible terminal such as iTerm2.
@@ -11502,7 +15580,7 @@ imgcat,,,"# imgcat
 
 `imgcat {{filename}}`
 "
-lldb,,"
+lldb,,,"
 LLDB(1) 		  BSD General Commands Manual		       LLDB(1)
 
 NAME
@@ -11631,7 +15709,7 @@ BSD			       December 16, 2015			   BSD
 
 `lldb -w -n {{process_name}}`
 "
-hdiutil,,"
+hdiutil,,,"
 HDIUTIL(1)		  BSD General Commands Manual		    HDIUTIL(1)
 
 NAME
@@ -13373,7 +17451,7 @@ macOS				  01 Sep 2016				 macOS
 
 `hdiutil makehybrid -o {{path/to/output_file}} {{path/to/directory}}`
 "
-ssh-add,,"
+ssh-add,,,"
 SSH-ADD(1)		  BSD General Commands Manual		    SSH-ADD(1)
 
 NAME
@@ -13502,7 +17580,7 @@ AUTHORS
      ated OpenSSH.  Markus Friedl contributed the support for SSH protocol
      versions 1.5 and 2.0.
 
-BSD			      September 23, 2020			   BSD
+BSD			      September 25, 2020			   BSD
 ","# ssh-add
 
 > Manage loaded ssh keys in the ssh-agent.
@@ -13532,7 +17610,7 @@ BSD			      September 23, 2020			   BSD
 
 `ssh-add -K {{path/to/private_key}}`
 "
-apachectl,,"APACHECTL(8)			   apachectl			  APACHECTL(8)
+apachectl,,,"APACHECTL(8)			   apachectl			  APACHECTL(8)
 
 
 
@@ -13643,7 +17721,7 @@ Apache HTTP Server		  2018-07-06			  APACHECTL(8)
 
 `apachectl restart`
 "
-runsvdir,,,"# runsvdir
+runsvdir,,,,"# runsvdir
 
 > Run an entire directory of services.
 
@@ -13659,7 +17737,7 @@ runsvdir,,,"# runsvdir
 
 `runsvdir -P {{path/to/services}}`
 "
-brightness,,,"# brightness
+brightness,,,,"# brightness
 
 > Get and set the brightness level of all internal and certain external displays.
 
@@ -13675,7 +17753,7 @@ brightness,,,"# brightness
 
 `brightness {{0.5}}`
 "
-dd,,"
+dd,,,"
 DD(1)			  BSD General Commands Manual			 DD(1)
 
 NAME
@@ -13892,7 +17970,7 @@ BSD			       January 13, 1994 			   BSD
 
 `dd if=/dev/zero of={{file_1GB}} bs=1024 count=1000000`
 "
-n,,,"# n
+n,,,,"# n
 
 > Tool to manage multiple node versions.
 
@@ -13916,7 +17994,7 @@ n,,,"# n
 
 `n bin {{version}}`
 "
-dmesg,,"
+dmesg,,,"
 DMESG(8)		  BSD System Manager's Manual		      DMESG(8)
 
 NAME
@@ -13952,7 +18030,7 @@ HISTORY
 
 `dmesg | less`
 "
-units,,"
+units,,,"
 UNITS(1)		  BSD General Commands Manual		      UNITS(1)
 
 NAME
@@ -14120,7 +18198,7 @@ BSD				 July 14, 1993				   BSD
 
 `units {{""15 megabytes""}} {{bytes}}`
 "
-qlmanage,,"
+qlmanage,,,"
 qlmanage(1)		  BSD General Commands Manual		   qlmanage(1)
 
 NAME
@@ -14176,7 +18254,7 @@ Mac OS X			March 29, 2007			      Mac OS X
 
 `qlmanage -r`
 "
-base64,,"
+base64,,,"
 base64(1)		  BSD General Commands Manual		     base64(1)
 
 NAME
@@ -14236,7 +18314,1208 @@ Mac OS X 10.7		       February 8, 2011 		 Mac OS X 10.7
 
 `echo -n {{base64_text}} | base64 -D`
 "
-yabai,https://github.com/koekeishiya/yabai,,"# yabai
+yabai,https://github.com/koekeishiya/yabai,"
+
+
+
+
+
+
+
+
+
+
+
+
+
+GitHub - koekeishiya/yabai: A tiling window manager for macOS based on binary space partitioning
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Sign up
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Why GitHub?
+                    
+
+
+
+
+Features →
+
+Code review
+Project management
+Integrations
+Actions
+Packages
+Security
+Team management
+Hosting
+Mobile
+
+
+Customer stories →
+Security →
+
+
+
+
+
+Team
+
+
+Enterprise
+
+
+
+
+                    Explore
+                    
+
+
+
+
+
+Explore GitHub →
+
+Learn & contribute
+
+Topics
+Collections
+Trending
+Learning Lab
+Open source guides
+
+Connect with others
+
+Events
+Community forum
+GitHub Education
+GitHub Stars program
+
+
+
+
+
+Marketplace
+
+
+
+
+                    Pricing
+                    
+
+
+
+
+Plans →
+
+Compare plans
+Contact Sales
+
+
+Nonprofit →
+Education →
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+No suggested jump to results
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+ 
+
+
+
+          Sign in
+        
+
+              Sign up
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+koekeishiya
+
+/
+
+yabai
+
+
+
+
+
+
+
+
+          Sponsor
+        
+
+
+
+
+
+
+              Sponsor koekeishiya/yabai
+            
+
+
+
+
+
+
+
+
+
+
+
+
+    Watch
+ 
+      59
+    
+
+
+
+
+      Star
+
+
+      4.7k
+    
+
+
+
+
+          Fork
+
+
+        209
+      
+
+
+
+
+
+        A tiling window manager for macOS based on binary space partitioning
+      
+
+
+
+            MIT License
+        
+
+
+
+
+4.7k
+        stars
+ 
+
+209
+        forks
+ 
+
+
+
+
+      Star
+
+
+
+
+
+    Watch
+
+
+
+
+
+
+
+
+
+Code
+
+ 
+
+
+
+Issues
+54
+ 
+
+
+
+Pull requests
+6
+ 
+
+
+
+Actions
+
+ 
+
+
+
+Projects
+0
+ 
+
+
+
+Wiki
+
+ 
+
+
+
+Security
+
+ 
+
+
+
+Insights
+
+ 
+ 
+
+
+
+
+More
+
+ 
+
+
+
+
+                    Code
+ 
+
+
+                    Issues
+ 
+
+
+                    Pull requests
+ 
+
+
+                    Actions
+ 
+
+
+                    Projects
+ 
+
+
+                    Wiki
+ 
+
+
+                    Security
+ 
+
+
+                    Insights
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+          Dismiss
+        
+Join GitHub today
+GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
+Sign up
+
+
+
+
+
+
+
+
+
+
+master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4
+branches
+
+
+
+34
+tags
+
+
+
+
+    Go to file
+
+
+
+
+
+
+      Code
+      
+ 
+
+
+
+
+
+
+
+
+  Clone
+
+
+
+
+
+
+            HTTPS
+ 
+            GitHub CLI
+ 
+
+
+
+
+
+
+
+
+
+      Use Git or checkout with SVN using the web URL.
+    
+
+
+
+
+
+
+
+
+
+      Work fast with our official CLI.
+      Learn more.
+    
+
+
+
+
+
+
+
+                Open with GitHub Desktop
+ 
+
+
+
+                Download ZIP
+ 
+
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching Xcode
+If nothing happens, download Xcode and try again.
+Go back
+
+
+Launching Visual Studio
+If nothing happens, download the GitHub extension for Visual Studio and try again.
+Go back
+
+
+
+
+
+
+
+
+
+Latest commit
+
+
+
+ 
+ 
+Git stats
+
+
+
+
+
+900
+commits
+
+
+
+
+
+
+
+Files
+Permalink
+
+
+  
+    Failed to load latest commit information.
+
+ 
+
+
+Type
+Name
+Latest commit message
+Commit time
+
+
+
+
+
+
+.github
+
+
+
+Enable github sponsors due to requests
+
+
+
+Mar 15, 2020
+
+
+
+
+
+
+
+assets
+
+
+
+update screenshot
+
+
+
+Jun 10, 2020
+
+
+
+
+
+
+
+doc
+
+
+
+#644 extend *SPACE_SEL* and *DISPLAY_SEL* to include selector *mouse*
+
+
+
+Aug 26, 2020
+
+
+
+
+
+
+
+examples
+
+
+
+#203 option to specify whether a mouse drop should perform a swap or …
+
+
+
+Jun 29, 2020
+
+
+
+
+
+
+
+scripts
+
+
+
+Allow matching certificate by name
+
+
+
+Nov 9, 2019
+
+
+
+
+
+
+
+src
+
+
+
+#589 revert Big Sur osax test-changes on master branch
+
+
+
+Sep 23, 2020
+
+
+
+
+
+
+
+.gitignore
+
+
+
+Generate sa_loader/payload arrays during build
+
+
+
+Jun 17, 2020
+
+
+
+
+
+
+
+.travis.yml
+
+
+
+..
+
+
+
+Jun 6, 2020
+
+
+
+
+
+
+
+CHANGELOG.md
+
+
+
+#589 support macOS Big Sur Build 20A5364e
+
+
+
+Sep 5, 2020
+
+
+
+
+
+
+
+LICENSE.txt
+
+
+
+MIT License
+
+
+
+May 12, 2019
+
+
+
+
+
+
+
+README.md
+
+
+
+..
+
+
+
+Feb 3, 2020
+
+
+
+
+
+
+
+makefile
+
+
+
+Generate sa_loader/payload arrays during build
+
+
+
+Jun 17, 2020
+
+
+
+
+
+        View code
+      
+
+
+
+
+
+
+        README.md
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tiling window management for the Mac.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About
+
+yabai is a window management utility that is designed to work as an extension to the built-in window manager of macOS.
+yabai allows you to control your windows, spaces and displays freely using an intuitive command line interface and optionally set user-defined keyboard shortcuts using ↗ skhd and other third-party software.
+The primary function of yabai is tiling window management; automatically modifying your window layout using a binary space partitioning algorithm to allow you to focus on the content of your windows without distractions.
+Additional features of yabai include focus-follows-mouse, disabling animations for switching spaces, creating spaces past the limit of 16 spaces, and much more.
+Installation and Configuration
+
+The ↗ yabai wiki has both brief and detailed installation instructions for multiple installation methods, and also explains how to uninstall yabai completely.
+Sample configuration files can be found in the ↗ examples directory. Refer to the ↗ documentation or the wiki for further information.
+Keyboard shortcuts can be defined with ↗ skhd or any other suitable software you may prefer.
+
+Requirements and Caveats
+Please read the below requirements carefully.
+Make sure you fulfil all of them before filing an issue.
+
+
+
+Requirement
+Note
+
+
+
+
+Operating System
+macOS High Sierra 10.13.6, Mojave 10.14.4+ and Catalina 10.15.0+ is supported.
+
+
+Accessibility API
+yabai must be given permission to utilize the Accessibility API and will request access upon launch. The application must be restarted after access has been granted.
+
+
+Mission Control
+In the Mission Control preferences pane in System Preferences, the setting ""Displays have separate Spaces"" must be enabled.
+
+
+
+Please also take note of the following caveats.
+
+
+
+Caveat
+Note
+
+
+
+
+System Integrity Protection
+System Integrity Protection needs to be (partially) disabled for yabai to inject a scripting addition into Dock.app for controlling windows with functions that require elevated privileges. This enables control of the window server, which is the sole owner of all window connections, and enables additional features of yabai. If you are running on macOS High Sierra 10.13.6, you can reenable SIP after the scripting addition has been installed.
+
+
+Code Signing
+When building from source (or installing from HEAD), it is recommended to codesign the binary so it retains its accessibility and automation privileges when updated or rebuilt.
+
+
+Mission Control
+In the Mission Control preferences pane in System Preferences, the setting ""Automatically rearrange Spaces based on most recent use"" should be disabled for commands that rely on the ordering of spaces to work reliably.
+
+
+
+License and Attribution
+yabai is licensed under the ↗ MIT License, a short and simple permissive license with conditions only requiring preservation of copyright and license notices.
+Licensed works, modifications, and larger works may be distributed under different terms and without source code.
+Thanks to @fools-mate for creating a logo and banner for this project and making them available for free.
+Thanks to @dominiklohmann for contributing great documentation, support, and more, for free.
+Disclaimer
+Use at your own discretion.
+I take no responsibility if anything should happen to your machine while trying to install, test or otherwise use this software in any form.
+You acknowledge that you understand the potential risk that may come from disabling ↗ System Integrity Protection on your system, and I make no recommendation as to whether you should or should not disable System Integrity Protection.
+
+
+
+
+
+
+
+
+About
+
+      A tiling window manager for macOS based on binary space partitioning
+    
+Resources
+
+
+
+      Readme
+ 
+License
+
+
+
+        MIT License
+    
+
+
+
+
+
+
+
+    Releases
+      34
+
+
+
+
+
+v3.3.0
+
+          Latest
+ 
+Sep 3, 2020
+
+ 
+
+        + 33 releases
+
+
+
+
+
+Sponsor this project
+
+
+
+ 
+
+
+
+
+
+patreon.com/aasvi
+
+
+
+
+  Learn more about GitHub Sponsors
+
+
+
+
+
+
+
+    Packages 0
+
+
+        No packages published 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Contributors 3
+
+
+
+
+
+ 
+
+koekeishiya
+Åsmund Vikane
+ 
+
+
+
+
+ 
+
+dominiklohmann
+Dominik Lohmann
+ 
+
+
+
+
+ 
+
+tsujp
+Jordan Coppard
+ 
+
+
+
+
+
+
+Languages
+
+
+
+
+
+
+
+
+
+
+C
+81.3%
+
+
+
+
+
+Objective-C
+17.7%
+
+
+
+
+
+Other
+1.0%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+
+
+
+
+
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+
+
+
+
+
+
+
+
+
+
+    You can’t perform that action at this time.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+
+
+
+
+
+
+
+",,"# yabai
 
 > A tiling window manager for macOS based on binary space partitioning.
 > More information: <https://github.com/koekeishiya/yabai>.
@@ -14261,7 +19540,7 @@ yabai,https://github.com/koekeishiya/yabai,,"# yabai
 
 `yabai -m config status_bar on`
 "
-caffeinate,,"
+caffeinate,,,"
 CAFFEINATE(8)		  BSD System Manager's Manual		 CAFFEINATE(8)
 
 NAME
@@ -14332,7 +19611,7 @@ Darwin			       November 9, 2012 			Darwin
 
 `caffeinate -i`
 "
-pbcopy,,"PBCOPY(1)							     PBCOPY(1)
+pbcopy,,,"PBCOPY(1)							     PBCOPY(1)
 
 
 
@@ -14414,7 +19693,7 @@ Apple Computer, Inc.	       January 12, 2005 		     PBCOPY(1)
 
 `find . -type t -name ""*.png"" | pbcopy`
 "
-command,,"
+command,,,"
 BUILTIN(1)		  BSD General Commands Manual		    BUILTIN(1)
 
 NAME
@@ -14589,7 +19868,7 @@ BSD			       February 23, 2005			   BSD
 
 `command {{ls}}`
 "
-xsltproc,,"XSLTPROC(1)			xsltproc Manual 		   XSLTPROC(1)
+xsltproc,,,"XSLTPROC(1)			xsltproc Manual 		   XSLTPROC(1)
 
 
 
@@ -14821,7 +20100,7 @@ libxslt      $Date: 2008-04-21 16:28:56 +0200 (Mon, 21 Apr 2008) $ XSLTPROC(1)
 
 `xsltproc --output {{output.html}} --stringparam {{name}} {{value}} {{stylesheet.xslt}} {{xmlfile.xml}}`
 "
-fc,,"
+fc,,,"
 BUILTIN(1)		  BSD General Commands Manual		    BUILTIN(1)
 
 NAME
@@ -15004,7 +20283,7 @@ BSD			       February 23, 2005			   BSD
 
 `fc -l`
 "
-xed,,,"# xed
+xed,,,,"# xed
 
 > Opens files for editing in XCode.
 
@@ -15020,7 +20299,7 @@ xed,,,"# xed
 
 `xed -l 75 {{filename}}`
 "
-ditto,,"
+ditto,,,"
 
 
 DITTO(1)		  BSD General Commands Manual		      DITTO(1)
@@ -15285,7 +20564,7 @@ Mac OS X		       December 19, 2008		      Mac OS X
 
 `ditto -rsrc {{path/to/source}} {{path/to/destination}}`
 "
-afinfo,,"
+afinfo,,,"
 AFINFO(1)		  BSD General Commands Manual		     AFINFO(1)
 
 NAME
@@ -15327,7 +20606,980 @@ Darwin			       February 13, 2007			Darwin
 
 `afinfo -h`
 "
-wifi-password,https://github.com/rauchg/wifi-password,,"# wifi-password
+wifi-password,https://github.com/rauchg/wifi-password,"
+
+
+
+
+
+
+
+
+
+
+
+
+
+GitHub - rauchg/wifi-password: Get the password of the wifi you're on (bash)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Sign up
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Why GitHub?
+                    
+
+
+
+
+Features →
+
+Code review
+Project management
+Integrations
+Actions
+Packages
+Security
+Team management
+Hosting
+Mobile
+
+
+Customer stories →
+Security →
+
+
+
+
+
+Team
+
+
+Enterprise
+
+
+
+
+                    Explore
+                    
+
+
+
+
+
+Explore GitHub →
+
+Learn & contribute
+
+Topics
+Collections
+Trending
+Learning Lab
+Open source guides
+
+Connect with others
+
+Events
+Community forum
+GitHub Education
+GitHub Stars program
+
+
+
+
+
+Marketplace
+
+
+
+
+                    Pricing
+                    
+
+
+
+
+Plans →
+
+Compare plans
+Contact Sales
+
+
+Nonprofit →
+Education →
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+No suggested jump to results
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+ 
+
+
+
+          Sign in
+        
+
+              Sign up
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rauchg
+
+/
+
+wifi-password
+
+
+
+
+
+
+
+    Watch
+ 
+      52
+    
+
+
+
+
+      Star
+
+
+      3.4k
+    
+
+
+
+
+          Fork
+
+
+        185
+      
+
+
+
+
+
+        Get the password of the wifi you're on (bash)
+      
+
+
+
+3.4k
+        stars
+ 
+
+185
+        forks
+ 
+
+
+
+
+      Star
+
+
+
+
+
+    Watch
+
+
+
+
+
+
+
+
+
+Code
+
+ 
+
+
+
+Issues
+8
+ 
+
+
+
+Pull requests
+5
+ 
+
+
+
+Actions
+
+ 
+
+
+
+Projects
+0
+ 
+
+
+
+Security
+
+ 
+
+
+
+Insights
+
+ 
+ 
+
+
+
+
+More
+
+ 
+
+
+
+
+                    Code
+ 
+
+
+                    Issues
+ 
+
+
+                    Pull requests
+ 
+
+
+                    Actions
+ 
+
+
+                    Projects
+ 
+
+
+                    Security
+ 
+
+
+                    Insights
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+          Dismiss
+        
+Join GitHub today
+GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
+Sign up
+
+
+
+
+
+
+
+
+
+
+master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+branch
+
+
+
+2
+tags
+
+
+
+
+    Go to file
+
+
+
+
+
+
+      Code
+      
+ 
+
+
+
+
+
+
+
+
+  Clone
+
+
+
+
+
+
+            HTTPS
+ 
+            GitHub CLI
+ 
+
+
+
+
+
+
+
+
+
+      Use Git or checkout with SVN using the web URL.
+    
+
+
+
+
+
+
+
+
+
+      Work fast with our official CLI.
+      Learn more.
+    
+
+
+
+
+
+
+
+                Open with GitHub Desktop
+ 
+
+
+
+                Download ZIP
+ 
+
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching Xcode
+If nothing happens, download Xcode and try again.
+Go back
+
+
+Launching Visual Studio
+If nothing happens, download the GitHub extension for Visual Studio and try again.
+Go back
+
+
+
+
+
+
+
+
+
+Latest commit
+
+
+
+
+
+
+ 
+
+
+
+
+rauchg
+
+OSX -> macOS
+
+
+
+…
+
+
+
+
+          3
+        
+
+d17a0dd
+
+Jul 17, 2016
+
+
+
+
+
+OSX -> macOS
+
+
+d17a0dd
+
+
+          3
+        
+
+
+
+Git stats
+
+
+
+
+
+20
+commits
+
+
+
+
+
+
+
+Files
+Permalink
+
+
+  
+    Failed to load latest commit information.
+
+ 
+
+
+Type
+Name
+Latest commit message
+Commit time
+
+
+
+
+
+
+History.md
+
+
+
+Release 0.1.0
+
+
+
+Feb 16, 2015
+
+
+
+
+
+
+
+Readme.md
+
+
+
+OSX -> macOS
+
+
+
+Jul 17, 2016
+
+
+
+
+
+
+
+package.json
+
+
+
+make bpkg friendly
+
+
+
+Feb 15, 2015
+
+
+
+
+
+
+
+wifi-password.plugin.zsh
+
+
+
+Prepend ourself to `$PATH` instead of appending
+
+
+
+Jul 12, 2016
+
+
+
+
+
+
+
+wifi-password.sh
+
+
+
+Make sure you get the wifi password
+
+
+
+Feb 17, 2015
+
+
+
+
+
+        View code
+      
+
+
+
+
+
+
+        Readme.md
+      
+
+
+wifi-password
+People ask you for the Wi-Fi password. Answer quickly. macOS only.
+Windows version.
+
+How to use
+1. Install it
+With bpkg:
+$ bpkg install rauchg/wifi-password
+
+With Homebrew:
+$ brew install wifi-password
+
+With Antigen:
+Add antigen bundle rauchg/wifi-password to your .zshrc with your other antigen commands
+With Zgen
+Add zgen load rauchg/wifi-password to your .zshrc with your other zgen commands
+or with curl:
+curl -L https://raw.github.com/rauchg/wifi-password/master/wifi-password.sh -o ~/bin/wifi-password && chmod +x ~/bin/wifi-password
+
+If you don't have ~/bin in your $PATH, replace it with /usr/local/bin or
+similar.
+2. Use it:
+To get the password for the WiFi you're currently logged onto:
+$ wifi-password
+
+To get it for a specific SSID:
+$ wifi-password <ssid>
+
+To put it straight in your clipboard for pasting elsewhere (OS X only):
+$ wifi-password | pbcopy
+
+License
+MIT
+
+
+
+
+
+
+
+
+About
+
+      Get the password of the wifi you're on (bash)
+    
+Resources
+
+
+
+      Readme
+ 
+
+
+
+
+
+
+    Releases
+
+
+
+2
+tags
+
+
+
+
+
+
+
+    Packages 0
+
+
+        No packages published 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Contributors 7
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+Languages
+
+
+
+
+
+
+
+
+Shell
+100.0%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+
+
+
+
+
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+
+
+
+
+
+
+
+
+
+
+    You can’t perform that action at this time.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+
+
+
+
+
+
+
+",,"# wifi-password
 
 > Get the password of the wifi.
 > More information: <https://github.com/rauchg/wifi-password>.
@@ -15344,7 +21596,7 @@ wifi-password,https://github.com/rauchg/wifi-password,,"# wifi-password
 
 `wifi-password -q`
 "
-stty,,"
+stty,,,"
 STTY(1) 		  BSD General Commands Manual		       STTY(1)
 
 NAME
@@ -15828,7 +22080,7 @@ BSD				April 18, 1994				   BSD
 
 `stty sane`
 "
-softwareupdate,,"
+softwareupdate,,,"
 softwareupdate(8)	  BSD System Manager's Manual	     softwareupdate(8)
 
 NAME
@@ -15962,7 +22214,7 @@ Mac OS			      September 11, 2012			Mac OS
 
 `softwareupdate -i {{update_name}}`
 "
-mkfile,,"MKFILE(8)							     MKFILE(8)
+mkfile,,,"MKFILE(8)							     MKFILE(8)
 
 
 
@@ -16013,7 +22265,7 @@ SEE ALSO
 
 `mkfile -n {{4m}} {{first_filename}} {{second_filename}}`
 "
-pdfgrep,,,"# pdfgrep
+pdfgrep,,,,"# pdfgrep
 
 > Search text in PDF files.
 
@@ -16037,7 +22289,7 @@ pdfgrep,,,"# pdfgrep
 
 `pdfgrep --recursive --include {{'*book.pdf'}} {{pattern}}`
 "
-pkgutil,,"
+pkgutil,,,"
 pkgutil(1)		  BSD General Commands Manual		    pkgutil(1)
 
 NAME
@@ -16209,7 +22461,7 @@ Mac OS				 March 2, 2011				Mac OS
 
 `pkgutil  --expand-full {{path/to/filename.pkg}} {{path/to/directory}}`
 "
-port,,,"# port
+port,,,,"# port
 
 > Package manager for macOS.
 
@@ -16237,7 +22489,7 @@ port,,,"# port
 
 `sudo port uninstall inactive`
 "
-sw_vers,,"
+sw_vers,,,"
 SW_VERS(1)		  BSD General Commands Manual		    SW_VERS(1)
 
 NAME
@@ -16308,7 +22560,7 @@ Mac OS X			March 10, 2003			      Mac OS X
 
 `sw_vers -buildVersion`
 "
-pbpaste,,"PBCOPY(1)							     PBCOPY(1)
+pbpaste,,,"PBCOPY(1)							     PBCOPY(1)
 
 
 
@@ -16390,7 +22642,7 @@ Apple Computer, Inc.	       January 12, 2005 		     PBCOPY(1)
 
 `pbpaste | grep foo`
 "
-whereis,,"
+whereis,,,"
 WHEREIS(1)		  BSD General Commands Manual		    WHEREIS(1)
 
 NAME
@@ -16437,7 +22689,7 @@ BSD				April 27, 1995				   BSD
 
 `whereis -b -B {{/usr/bin/}} -f {{gcc}}`
 "
-uname,,"
+uname,,,"
 UNAME(1)		  BSD General Commands Manual		      UNAME(1)
 
 NAME
@@ -16499,7 +22751,1614 @@ BSD			       November 9, 1998 			   BSD
 
 `uname -a`
 "
-xctool,https://github.com/facebook/xctool,,"# xctool
+xctool,https://github.com/facebook/xctool,"
+
+
+
+
+
+
+
+
+
+
+
+
+
+GitHub - facebook/xctool: An extension for Apple's xcodebuild that makes it easier to test iOS and macOS apps.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Sign up
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Why GitHub?
+                    
+
+
+
+
+Features →
+
+Code review
+Project management
+Integrations
+Actions
+Packages
+Security
+Team management
+Hosting
+Mobile
+
+
+Customer stories →
+Security →
+
+
+
+
+
+Team
+
+
+Enterprise
+
+
+
+
+                    Explore
+                    
+
+
+
+
+
+Explore GitHub →
+
+Learn & contribute
+
+Topics
+Collections
+Trending
+Learning Lab
+Open source guides
+
+Connect with others
+
+Events
+Community forum
+GitHub Education
+GitHub Stars program
+
+
+
+
+
+Marketplace
+
+
+
+
+                    Pricing
+                    
+
+
+
+
+Plans →
+
+Compare plans
+Contact Sales
+
+
+Nonprofit →
+Education →
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+No suggested jump to results
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+ 
+
+
+
+          Sign in
+        
+
+              Sign up
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+facebook
+
+/
+
+xctool
+
+
+
+
+
+
+
+    Watch
+ 
+      283
+    
+
+
+
+
+      Star
+
+
+      7k
+    
+
+
+
+
+          Fork
+
+
+        782
+      
+
+
+
+
+
+        An extension for Apple's xcodebuild that makes it easier to test iOS and macOS apps.
+      
+
+
+
+            Apache-2.0 License
+        
+
+
+
+
+7k
+        stars
+ 
+
+782
+        forks
+ 
+
+
+
+
+      Star
+
+
+
+
+
+    Watch
+
+
+
+
+
+
+
+
+
+Code
+
+ 
+
+
+
+Issues
+9
+ 
+
+
+
+Pull requests
+0
+ 
+
+
+
+Actions
+
+ 
+
+
+
+Projects
+0
+ 
+
+
+
+Wiki
+
+ 
+
+
+
+Security
+
+ 
+
+
+
+Insights
+
+ 
+ 
+
+
+
+
+More
+
+ 
+
+
+
+
+                    Code
+ 
+
+
+                    Issues
+ 
+
+
+                    Pull requests
+ 
+
+
+                    Actions
+ 
+
+
+                    Projects
+ 
+
+
+                    Wiki
+ 
+
+
+                    Security
+ 
+
+
+                    Insights
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+          Dismiss
+        
+Join GitHub today
+GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
+Sign up
+
+
+
+
+
+
+
+
+
+
+master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+branch
+
+
+
+35
+tags
+
+
+
+
+    Go to file
+
+
+
+
+
+
+      Code
+      
+ 
+
+
+
+
+
+
+
+
+  Clone
+
+
+
+
+
+
+            HTTPS
+ 
+            GitHub CLI
+ 
+
+
+
+
+
+
+
+
+
+      Use Git or checkout with SVN using the web URL.
+    
+
+
+
+
+
+
+
+
+
+      Work fast with our official CLI.
+      Learn more.
+    
+
+
+
+
+
+
+
+                Open with GitHub Desktop
+ 
+
+
+
+                Download ZIP
+ 
+
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching Xcode
+If nothing happens, download Xcode and try again.
+Go back
+
+
+Launching Visual Studio
+If nothing happens, download the GitHub extension for Visual Studio and try again.
+Go back
+
+
+
+
+
+
+
+
+
+Latest commit
+
+
+
+ 
+ 
+Git stats
+
+
+
+
+
+1,228
+commits
+
+
+
+
+
+
+
+Files
+
+Permalink
+
+
+  
+    Failed to load latest commit information.
+
+ 
+
+
+Type
+Name
+Latest commit message
+Commit time
+
+
+
+
+
+
+Common
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+Configurations
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+Vendor
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+otest-query
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+otest-shim
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+reporters
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+scripts
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+xcodebuild-shim
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+xctool.xcworkspace
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+xctool
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+.buckconfig
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+.buckversion
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+.gitignore
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+.travis.yml
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+.watchmanconfig
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+BUCK
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+CODE_OF_CONDUCT.md
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+CONTRIBUTING.md
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+LICENSE
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+README.md
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+xctool.sh
+
+
+ 
+
+
+ 
+
+
+
+
+
+        View code
+      
+
+
+
+
+
+
+
+        README.md
+      
+
+
+
+
+
+
+
+
+xctool
+xctool is an extension for Apple's xcodebuild which makes it
+easier to test iOS and Mac products.  It's especially helpful
+for continuous integration.
+
+[ Features • Requirements • Usage
+• Continuous Integration
+• Reporters •
+Configuration •
+Contributing • Known Issues & Tips • License ]
+Features
+xctool is drop-in replacement for xcodebuild test that adds a few
+extra features:
+
+
+Faster, parallelized test runs.
+xctool can optionally run all of your test bundles in parallel,
+speeding up your test runs significantly.  At Facebook, we've seen 2x
+and 3x speed ups by parallelizing our runs.
+Use the -parallelize option with run-tests or test to enable.
+See Parallelizing Test Runs for more info.
+
+
+Structured output of test results.
+xctool captures all test results as structured JSON objects.  If
+you're building a continuous integration system, this means you don't
+have to regex parse xcodebuild output anymore.
+Try one of the Reporters to customize the output or get
+the full event stream with the -reporter json-stream option.
+
+
+Human-friendly, ANSI-colored output.
+xcodebuild is incredibly verbose, printing the full compile command
+and output for every source file.  By default, xctool is only verbose
+if something goes wrong, making it much easier to identify where the
+problems are.
+Example:
+
+
+
+Written in Objective-C.
+xctool is written in Objective-C. Mac OS X and iOS developers can
+easily submit new features and fix any bugs they may encounter without
+learning a new language. We very much welcome pull requests!
+
+
+Note: Support for building projects with xctool is deprecated and will
+not be updated to support future versions of Xcode. We suggest moving to
+xcodebuild (with xcpretty) for
+simple needs, or xcbuild for more
+involved requirements. xctool will continue to support testing (see above).
+Requirements
+
+Xcode 7 or higher
+You'll need Xcode's Command Line Tools installed.  From Xcode, install
+via Xcode → Preferences → Downloads.
+
+Installation
+xctool can be installed from homebrew via
+brew install xctool
+or can be downloaded and run via the xctool.sh command.
+Usage
+xctool's commands and options are mostly a superset of xcodebuild's.  In
+most cases, you can just swap xcodebuild with xctool and things will
+run as expected but with more attractive output.
+You can always get help and a full list of options with:
+path/to/xctool.sh -help
+Testing
+xctool has a run-tests action which knows how to run the
+tests in your scheme.  You can optionally limit what tests are run
+or change the SDK they're run against.
+To run all tests in your scheme, you would use:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  run-tests
+To run just the tests in a specific target, use the -only option:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  run-tests -only SomeTestTarget
+You can go further and just run a specific test class:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  run-tests -only SomeTestTarget:SomeTestClass
+Or, even further and run just a single test method:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  run-tests -only SomeTestTarget:SomeTestClass/testSomeMethod
+You can also specify prefix matching for classes or test methods:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  run-tests -only SomeTestTarget:SomeTestClassPrefix*,SomeTestClass/testSomeMethodPrefix*
+Alternatively, you can omit a specific item by prefix matching for classes or test methods:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  run-tests -omit SomeTestTarget:SomeTestClass/testSomeMethodPrefix*
+You can also run tests against a different SDK:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  run-tests -test-sdk iphonesimulator5.1
+Optionally you can specify -testTimeout when running tests. When an individual
+test hits this timeout, it is considered a failure rather than waiting indefinitely.
+This can prevent your test run from deadlocking forever due to misbehaving tests.
+By default application tests will wait at most 30 seconds for the simulator
+to launch. If you need to change this timeout, use the -launch-timeout option.
+Building Tests
+Before running tests you need to build them. You can use xcodebuild,  xcbuild or Buck to do that.
+For example:
+xcodebuild \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  build-for-testing
+Xcode 7
+If you are using Xcode 7 for building you can continue using xctool to build tests using
+build-tests or just use test actions to run tests.
+For example:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  build-tests
+You can optionally just build a single test target with the -only option:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  build-tests -only SomeTestTarget
+Parallelizing Test Runs
+xctool can optionally run unit tests in parallel, making better use of
+otherwise idle CPU cores.  At Facebook, we've seen 2x and 3x gains by
+parallelizing our test runs.
+To allow test bundles to run concurrently, use the -parallelize
+option:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  run-tests -parallelize
+The above gives you parallelism, but you're bounded by your slowest test
+bundle.  For example, if you had two test bundles ('A' and 'B'), but 'B'
+took 10 times as long to run because it contained 10 times as many
+tests, then the above parallelism won't help much.
+You can get further gains by breaking your test execution into buckets
+using the -logicTestBucketSize option:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  run-tests -parallelize -logicTestBucketSize 20
+The above will break your test execution into buckets of 20 test
+cases each, and those bundles will be run concurrently.  If some of your
+test bundles are much larger than others, this will help even things out
+and speed up the overall test run.
+Building (Xcode 7 only)
+Note: Support for building projects with xctool is deprecated and isn't
+supported in Xcode 8 and later. We suggest moving to xcodebuild (with
+xcpretty) for
+simple needs, or xcbuild for more
+involved requirements. Alternatively, you can use Buck.
+Building products with xctool is the same as building them with
+xcodebuild.
+If you use workspaces and schemes:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  build
+If you use projects and schemes:
+path/to/xctool.sh \
+  -project YourProject.xcodeproj \
+  -scheme YourScheme \
+  build
+All of the common options like -configuration, -sdk, -arch work
+just as they do with xcodebuild.
+NOTE: xctool doesn't support directly building targets using
+-target; you must use schemes.
+Continuous Integration
+xctool is an excellent choice for running your tests under a continuous
+integration server such as Travis CI or Jenkins.
+To run tests within a continuous integration environment,
+you must create Shared Schemes for your application target and ensure that all dependencies (such as CocoaPods) are added explicitly to the Scheme. To do so:
+
+Open up the Manage Schemes sheet by selecting the Product menu > Schemes > Manage Schemes...
+Locate your application target in the list. Ensure that the Shared checkbox in far right hand column of the sheet is checked.
+If your application or test targets include cross-project dependencies such as CocoaPods, then you will need to ensure that they have been
+configured as explicit dependencies. To do so:
+
+Highlight your application target and hit the Edit... button to open the Scheme editing sheet.
+Click the Build tab in the left-hand panel of the Scheme editor.
+Click the + button and add each dependency to the project. CocoaPods will appear as a static library named Pods.
+Drag the dependency above your application target so that it is built first.
+
+
+
+You will now have a new file in the xcshareddata/xcschemes directory underneath your Xcode project. This is the
+shared Scheme that you just configured. Check this file into your repository and xctool will be able to find and execute
+your tests on the next CI build.
+Example Travis CI Configuration
+Travis CI is a very popular continuous
+integration system offered for free to Open Source projects.  It
+integrates well with Github, and it now uses xctool as the default
+build and test tool for Objective-C projects.  Once you have set up your
+shared Scheme for use with xctool, you will need to configure a
+.travis.yml file.
+If you're using workspaces, your .travis.yml might be:
+language: objective-c
+xcode_workspace: path/to/YourApp.xcworkspace
+xcode_scheme: YourApp
+If you're using projects, your .travis.yml might be:
+language: objective-c
+xcode_project: path/to/YourApp.xcodeproj
+xcode_scheme: YourApp
+For more flexibility, you can also control how Travis installs and
+invokes xctool:
+language: objective-c
+before_install:
+    - brew update
+    - brew install xctool
+script: xctool -workspace MyApp.xcworkspace -scheme MyApp test
+You can learn more about the Travis CI environment for iOS and OS X
+application by referring to the About OS X Travis CI
+Environment
+document and find in-depth documentation for configuring your project by
+consulting the Getting
+Started page.
+Reporters
+xctool has reporters that output build and test results in different
+formats.  If you do not specify any reporters yourself, xctool uses
+the pretty and user-notifications reporters by default. xctool also
+has these special rules:
+
+Overwrite is disabled on the pretty reporter when xctool does not
+detect a TTY. This can be overridden by setting XCTOOL_FORCE_TTY in
+the environment.
+The user-notifications reporter will not be used
+if xctool detects that the build is being run by Travis CI, CircleCI, TeamCity,
+or Jenkins (i.e. TRAVIS=true, CIRCLECI=true, TEAMCITY_VERSION, or
+JENKINS_URL in the environment).
+
+You can choose your own reporters with the -reporter option:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  -reporter plain \
+  build
+By default, reporters output to standard out, but you can also direct
+the output to a file by adding :OUTPUT_PATH after the reporter name:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  -reporter plain:/path/to/plain-output.txt \
+  build
+You can use as many reporters as you like; just use the -reporter
+option multiple times.
+Included Reporters
+
+pretty: a text-based reporter that uses ANSI colors and unicode
+symbols for pretty output (the default).
+plain: like pretty, but with no colors or unicode.
+phabricator: outputs a JSON array of build/test results which can
+be fed into the Phabricator code-review tool.
+junit: produces a JUnit/xUnit compatible XML file with test
+results.
+json-stream: a stream of build/test events as JSON dictionaries,
+one per line (example
+output).
+json-compilation-database: outputs a JSON Compilation Database of build events which can be used by Clang Tooling based tools, e.g. OCLint.
+user-notifications: sends notification to Notification Center when action is completed (example notifications).
+teamcity: sends service messages to TeamCity Continuous Integration Server
+
+Implementing Your Own Reporters
+You can also implement your own reporters using whatever language you
+like.  Reporters in xctool are separate executables that read JSON
+objects from STDIN and write formatted results to STDOUT.
+You can invoke reporters by passing their full path via the -reporter
+option:
+path/to/xctool.sh \
+  -workspace YourWorkspace.xcworkspace \
+  -scheme YourScheme \
+  -reporter /path/to/your/reporter \
+  test
+For example, here's a simple reporter in Python that outputs a period
+for every passing test and an exclamation mark for every failing test:
+#!/usr/bin/python
+
+import fileinput
+import json
+import sys
+
+for line in fileinput.input():
+    obj = json.loads(line)
+
+    if obj['event'] == 'end-test':
+        if obj['succeeded']:
+            sys.stdout.write('.')
+        else:
+            sys.stdout.write('!')
+
+sys.stdout.write('\n')
+If you're writing a reporter in Objective-C, you'll find the
+Reporter class helpful - see Reporter.h.
+Configuration (.xctool-args)
+If you routinely need to pass many arguments to xctool on the
+command-line, you can use an .xctool-args file to speed up your workflow.
+If xctool finds an .xctool-args file in the current directory, it
+will automatically pre-populate its arguments from there.
+The format is just a JSON array of arguments:
+[
+  ""-workspace"", ""YourWorkspace.xcworkspace"",
+  ""-scheme"", ""YourScheme"",
+  ""-configuration"", ""Debug"",
+  ""-sdk"", ""iphonesimulator"",
+  ""-arch"", ""i386""
+]
+Any extra arguments you pass on the command-line will take precedence
+over those in the .xctool-args file.
+Contributing
+Bug fixes, improvements, and especially new
+Reporter
+implementations are welcome.  Before submitting a pull
+request, please
+be sure to sign the Facebook
+Contributor License
+Agreement.  We can't
+accept pull requests unless it's been signed.
+Workflow
+
+Fork.
+Make a feature branch: git checkout -b my-feature
+Make your feature.  Keep things tidy so you have one commit per self-contained change (squashing can help).
+Push your branch to your fork: git push -u origin my-feature
+Open GitHub, under ""Your recently pushed branches"", click Pull
+Request for my-feature.
+
+Be sure to use a separate feature branch and pull request for every
+self-contained feature.  If you need to make changes from feedback, make
+the changes in place rather than layering on commits (use interactive
+rebase to edit your earlier commits).  Then use git push --force
+origin my-feature to update your pull request.
+Workflow (for Facebook people, other committers)
+Mostly the same, but use branches in the main xctool repo if you prefer.
+It's a nice way to keep things together.
+
+Make a feature branch: git checkout -b myusername/my-feature
+Push your branch: git push -u origin myusername/my-feature
+Open GitHub to facebook/xctool,
+under ""Your recently pushed branches"", click Pull Request for
+myusername/my-feature.
+
+Known Issues & Tips
+
+
+Use shared schemes and disable the Autocreate Schemes feature.
+Xcode has two kinds of schemes: shared, and user.  User schemes are
+the default, and they're stored under a folder called USERNAME.xcuserdatad,
+which most people correctly add to their .gitignore.
+Use shared schemes instead, and commit them to your repo.  This way
+everyone on your team (and your build server) are working from the
+same information, and are building in the same way.
+
+
+
+Make sure simulators run in a GUI context.
+If you are running xctool in continuous integration, the user account
+calling xctool must have an active GUI context.
+If not, the simulator will fail to start with cryptic warnings like:
+Tried to install the test host app 'com.myapp.test' but failed.
+Preparing test environment failed.
+-[TEST_BUNDLE FAILED_TO_START] 
+There was a problem starting the test bundle: Simulator 'iPhone 6' was not prepared: Failed for unknown reason.
+Test did not run: Simulator 'iPhone 6' was not prepared: Failed for unknown reason.
+2015-01-21 12:02:19.296 xcodebuild[35135:875297]  iPhoneSimulator: Timed out waiting 120 seconds for simulator to boot, current state is 1.
+Testing failed:
+Test target MyProjectTests encountered an error (Timed out waiting 120 seconds for simulator to boot, current state is 1.  
+
+Note that the
+same holds true with xcodebuild...this is not xctool specific.
+For more information, see this post by Jason Jarrett.
+
+
+License
+Copyright 2014-present Facebook
+Licensed under the Apache License, Version 2.0 (the ""License""); you may
+not use this work except in compliance with the License. You may obtain
+a copy of the License in the LICENSE file, or at:
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an ""AS IS"" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
+
+
+
+
+
+
+About
+
+      An extension for Apple's xcodebuild that makes it easier to test iOS and macOS apps.
+    
+Resources
+
+
+
+      Readme
+ 
+License
+
+
+
+        Apache-2.0 License
+    
+
+
+
+
+
+
+
+    Releases
+      35
+
+
+
+
+
+0.3.7
+
+          Latest
+ 
+Dec 11, 2019
+
+ 
+
+        + 34 releases
+
+
+
+
+
+
+
+    Packages 0
+
+
+        No packages published 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Contributors 82
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      + 71 contributors
+
+
+
+
+
+Languages
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Objective-C
+95.0%
+
+
+
+
+
+Objective-C++
+1.6%
+
+
+
+
+
+Shell
+1.5%
+
+
+
+
+
+Python
+0.8%
+
+
+
+
+
+C++
+0.6%
+
+
+
+
+
+C
+0.3%
+
+
+
+
+
+Other
+0.2%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+
+
+
+
+
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+
+
+
+
+
+
+
+
+
+
+    You can’t perform that action at this time.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+
+
+
+
+
+
+
+",,"# xctool
 
 > Tool for building Xcode projects.
 > More information: <https://github.com/facebook/xctool>.
@@ -16516,7 +24375,7 @@ xctool,https://github.com/facebook/xctool,,"# xctool
 
 `xctool -workspace {{YourWorkspace.xcworkspace}} -scheme {{YourScheme}} clean build test`
 "
-pwgen,,,"# pwgen
+pwgen,,,,"# pwgen
 
 > Generate pronounceable passwords.
 
@@ -16532,7 +24391,7 @@ pwgen,,,"# pwgen
 
 `pwgen -c {{length}}`
 "
-w,,"
+w,,,"
 W(1)			  BSD General Commands Manual			  W(1)
 
 NAME
@@ -16617,7 +24476,98 @@ BSD				 June 6, 1993				   BSD
 
 `w -i`
 "
-tree,http://mama.indstate.edu/users/ice/tree/,"TREE(1) 							       TREE(1)
+tree,http://mama.indstate.edu/users/ice/tree/,"
+ The Tree Command for Linux Homepage 
+
+
+
+
+ The Tree Command for Linux Homepage 
+
+   E-mail me   
+
+ &nbsp < &nbsp 
+ Latest Version (1.8.0)
+ Changelog 
+ Thanks 
+ Tree Example 
+ Versions 
+
+ 1.8.0 
+ 1.7.0 
+ 1.6.0 
+ 1.5.3 
+ 1.5.2.2 
+ 1.5.2.1 
+ 1.5.2 
+ 1.5.1.2 
+ 1.5.1.1 
+ 1.5.0 
+ 1.4b3 
+ 1.4b2 
+ 1.4b1 
+ 1.3 
+ 1.2 
+ 1.1 
+
+
+
+
+
+ Description:
+Tree is a recursive directory listing command that produces a depth
+indented listing of files, which is colorized ala dircolors if the LS_COLORS
+environment variable is set and output is to tty.  Tree has been ported and
+reported to work under the following operating systems: Linux, FreeBSD, OS X,
+Solaris, HP/UX, Cygwin, HP Nonstop and OS/2.
+
+Here is an example of the output of tree:
+  
+~> tree -d /proc/self/
+/proc/self/
+|-- attr
+|-- cwd -> /proc
+|-- fd
+|   `-- 3 -> /proc/15589/fd
+|-- fdinfo
+|-- net
+|   |-- dev_snmp6
+|   |-- netfilter
+|   |-- rpc
+|   |   |-- auth.rpcsec.context
+|   |   |-- auth.rpcsec.init
+|   |   |-- auth.unix.gid
+|   |   |-- auth.unix.ip
+|   |   |-- nfs4.idtoname
+|   |   |-- nfs4.nametoid
+|   |   |-- nfsd.export
+|   |   `-- nfsd.fh
+|   `-- stat
+|-- root -> /
+`-- task
+    `-- 15589
+        |-- attr
+        |-- cwd -> /proc
+        |-- fd
+        | `-- 3 -> /proc/15589/task/15589/fd
+        |-- fdinfo
+        `-- root -> /
+
+27 directories
+
+
+  Download the latest version (tree-1.8.0.tgz) (FTP) .
+  Download the latest version (tree-1.8.0.tgz) (HTTP).
+  Online Man page for Tree 1.8.0 .
+  Review the changelog .
+  Contributors to Tree .
+  Tree view of my webpage .
+  Send a nice e-mail to the maintainer.
+  Send a nasty e-mail to the maintainer.
+
+
+
+","TREE(1) 							       TREE(1)
 
 
 
@@ -17003,7 +24953,7 @@ Tree 1.8.0							       TREE(1)
 
 `tree -I '{{directory_name1|directory_name2}}'`
 "
-yank,,,"# yank
+yank,,,,"# yank
 
 > Read input from `stdin` and display a selection interface that allows a field to be selected and copied to the clipboard.
 
@@ -17023,7 +24973,1198 @@ yank,,,"# yank
 
 `{{ps ux}} | yank -g {{""[0-9]+""}}`
 "
-istats,https://github.com/Chris911/iStats,,"# istats
+istats,https://github.com/Chris911/iStats,"
+
+
+
+
+
+
+
+
+
+
+
+
+
+GitHub - Chris911/iStats: Ruby gem for your mac stats
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Sign up
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Why GitHub?
+                    
+
+
+
+
+Features →
+
+Code review
+Project management
+Integrations
+Actions
+Packages
+Security
+Team management
+Hosting
+Mobile
+
+
+Customer stories →
+Security →
+
+
+
+
+
+Team
+
+
+Enterprise
+
+
+
+
+                    Explore
+                    
+
+
+
+
+
+Explore GitHub →
+
+Learn & contribute
+
+Topics
+Collections
+Trending
+Learning Lab
+Open source guides
+
+Connect with others
+
+Events
+Community forum
+GitHub Education
+GitHub Stars program
+
+
+
+
+
+Marketplace
+
+
+
+
+                    Pricing
+                    
+
+
+
+
+Plans →
+
+Compare plans
+Contact Sales
+
+
+Nonprofit →
+Education →
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+No suggested jump to results
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+ 
+
+
+
+          Sign in
+        
+
+              Sign up
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chris911
+
+/
+
+iStats
+
+
+
+
+
+
+
+    Watch
+ 
+      40
+    
+
+
+
+
+      Star
+
+
+      2.1k
+    
+
+
+
+
+          Fork
+
+
+        156
+      
+
+
+
+
+
+        Ruby gem for your mac stats
+      
+
+
+
+chris911.github.io/istats/
+
+
+
+
+
+            MIT License
+        
+
+
+
+
+2.1k
+        stars
+ 
+
+156
+        forks
+ 
+
+
+
+
+      Star
+
+
+
+
+
+    Watch
+
+
+
+
+
+
+
+
+
+Code
+
+ 
+
+
+
+Issues
+19
+ 
+
+
+
+Pull requests
+5
+ 
+
+
+
+Actions
+
+ 
+
+
+
+Projects
+0
+ 
+
+
+
+Security
+
+ 
+
+
+
+Insights
+
+ 
+ 
+
+
+
+
+More
+
+ 
+
+
+
+
+                    Code
+ 
+
+
+                    Issues
+ 
+
+
+                    Pull requests
+ 
+
+
+                    Actions
+ 
+
+
+                    Projects
+ 
+
+
+                    Security
+ 
+
+
+                    Insights
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+          Dismiss
+        
+Join GitHub today
+GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
+Sign up
+
+
+
+
+
+
+
+
+
+
+master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4
+branches
+
+
+
+0
+tags
+
+
+
+
+    Go to file
+
+
+
+
+
+
+      Code
+      
+ 
+
+
+
+
+
+
+
+
+  Clone
+
+
+
+
+
+
+            HTTPS
+ 
+            GitHub CLI
+ 
+
+
+
+
+
+
+
+
+
+      Use Git or checkout with SVN using the web URL.
+    
+
+
+
+
+
+
+
+
+
+      Work fast with our official CLI.
+      Learn more.
+    
+
+
+
+
+
+
+
+                Open with GitHub Desktop
+ 
+
+
+
+                Download ZIP
+ 
+
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching Xcode
+If nothing happens, download Xcode and try again.
+Go back
+
+
+Launching Visual Studio
+If nothing happens, download the GitHub extension for Visual Studio and try again.
+Go back
+
+
+
+
+
+
+
+
+
+Latest commit
+
+
+
+
+
+
+ 
+
+
+
+
+Chris911
+
+v1.6.1
+
+
+
+…
+
+
+
+0b86af3
+
+Jul 29, 2018
+
+
+
+
+
+v1.6.1
+
+Fix fahrenheit thresholds in extra module
+
+0b86af3
+
+
+
+Git stats
+
+
+
+
+
+167
+commits
+
+
+
+
+
+
+
+Files
+Permalink
+
+
+  
+    Failed to load latest commit information.
+
+ 
+
+
+Type
+Name
+Latest commit message
+Commit time
+
+
+
+
+
+
+bin
+
+
+
+Add --no-graphs option
+
+
+
+Oct 10, 2016
+
+
+
+
+
+
+
+ext/osx_stats
+
+
+
+Update SMC `GetFanSpeed` method with support for flt type (#67)
+
+
+
+Jul 29, 2018
+
+
+
+
+
+
+
+integrations
+
+
+
+Unified output for Zabbix or other machine-parsing integrations (#56)
+
+
+
+Aug 31, 2017
+
+
+
+
+
+
+
+lib
+
+
+
+v1.6.1
+
+
+
+Jul 29, 2018
+
+
+
+
+
+
+
+.gitignore
+
+
+
+Add compiled files to git ignore
+
+
+
+Oct 10, 2016
+
+
+
+
+
+
+
+Gemfile
+
+
+
+Gem structure
+
+
+
+Apr 13, 2014
+
+
+
+
+
+
+
+LICENSE
+
+
+
+Initial commit
+
+
+
+Apr 13, 2014
+
+
+
+
+
+
+
+README.md
+
+
+
+v1.5.1
+
+
+
+Nov 20, 2017
+
+
+
+
+
+
+
+Rakefile
+
+
+
+Version 0.0.2 - No pre-compiled extensions
+
+
+
+Apr 14, 2014
+
+
+
+
+
+
+
+iStats.gemspec
+
+
+
+v1.5.1
+
+
+
+Nov 20, 2017
+
+
+
+
+
+        View code
+      
+
+
+
+
+
+
+        README.md
+      
+
+
+
+
+
+
+
+
+iStats 
+iStats is a command-line tool that allows you to easily grab the CPU temperature, fan speeds and battery information on OS X. If you'd like to see more data available feel free to open an issue.
+Installation
+$ gem install iStats
+
+Note
+If you are running an older version of OS X and the install fails you might want to try running this command instead:
+sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future gem install iStats
+Screenshot
+All Stats
+
+Sparkline levels
+
+Usage
+  - iStats: help ---------------------------------------------------
+
+  istats --help                        This help text
+  istats --version                     Print current version
+
+  # Commands
+  istats all                           Print all stats
+  istats cpu                           Print all CPU stats
+  istats cpu [temp | temperature]      Print CPU temperature
+  istats fan                           Print all fan stats
+  istats fan [speed]                   Print fan speed
+  istats battery                       Print all battery stats
+  istats battery [health]              Print battery health
+  istats battery [time | remain]       Print battery time remaining
+  istats battery [cycle_count | cc]    Print battery cycle count info
+  istats battery [temp | temperature]  Print battery temperature
+  istats battery [charge]              Print battery charge
+  istats battery [capacity]            Print battery capacity info
+
+  istats scan                          Scans and print temperatures
+  istats scan [key]                    Print single SMC temperature key
+  istats scan [zabbix]                 JSON output for Zabbix discovery
+  istats enable [key | all]            Enables key
+  istats disable [key | all]           Disable key
+  istats list                          List available keys
+
+  # Arguments
+  --no-graphs                          Don't display sparklines graphs
+  --no-labels                          Don't display item names/labels
+  --no-scale                           Display just the stat value
+  --value-only                         No graph, label, or scale
+  -f, --fahrenheit                     Display temperatures in fahrenheit
+
+  for more help see: https://github.com/Chris911/iStats
+
+Advanced usage
+iStats now supports extra sensors for advanced users. Here's how to enable that functionality:
+
+Run istats scan to scan your computer for SMC sensors
+Enable extra sensors by running istats enable key or istats enable all
+Run istats or istats extra to see the extra sensors information.
+
+Contributing
+
+Fork it
+Create your feature branch (git checkout -b my-new-feature)
+Commit your changes (git commit -am 'Add some feature')
+Push to the branch (git push origin my-new-feature)
+Create new Pull Request
+
+Tested on
+
+Click to expand
+
+
+    MacBook Pro 2016    
+    macOS: 10.12.6    
+    Ruby: 2.4.1    
+    
+    MacBook Pro 2011    
+    OS X: 10.11.6    
+    Ruby: 2.0.0    
+    
+    MacBook Pro 2012    
+    OS X: 10.9.3    
+    Ruby: 1.9.3, 2.0.0, 2.1.1    
+    
+    MacBook Pro 2014    
+    OS X: 10.10.3, 10.10.4    
+    Ruby: 2.1.3    
+    
+    Mac Pro 2013    
+    OS X: 10.12.6    
+    Ruby: 2.0.0
+  
+
+Zabbix Integration
+iStats has a ""scan zabbix"" mode which will emit JSON suitable for use with
+Zabbix low-level discovery.  See the accompanying
+template and agent config in the integrations directory.
+
+
+
+
+
+
+
+
+About
+
+      Ruby gem for your mac stats
+    
+
+
+
+chris911.github.io/istats/
+
+
+Resources
+
+
+
+      Readme
+ 
+License
+
+
+
+        MIT License
+    
+
+
+
+
+
+
+
+    Releases
+
+No releases published
+
+
+
+
+
+
+    Packages 0
+
+
+        No packages published 
+
+
+
+
+
+
+
+        Used by 12
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            + 4
+          
+
+
+
+
+
+
+
+    Contributors 11
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+Languages
+
+
+
+
+
+
+
+
+
+Ruby
+64.7%
+
+
+
+
+
+C
+35.3%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+
+
+
+
+
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+
+
+
+
+
+
+
+
+
+
+    You can’t perform that action at this time.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+
+
+
+
+
+
+
+",,"# istats
 
 > CLI tool that shows statistics such as CPU temperature, fan speeds and battery status.
 > More information: <https://github.com/Chris911/iStats>.
@@ -17044,7 +26185,7 @@ istats,https://github.com/Chris911/iStats,,"# istats
 
 `istats scan`
 "
-shutdown,,"
+shutdown,,,"
 SHUTDOWN(8)		  BSD System Manager's Manual		   SHUTDOWN(8)
 
 NAME
@@ -17160,7 +26301,1760 @@ BSD			       December 11, 1998			   BSD
 
 `shutdown -r {{4205101130}}`
 "
-mas,https://github.com/mas-cli/mas,,"# mas
+mas,https://github.com/mas-cli/mas,"
+
+
+
+
+
+
+
+
+
+
+
+
+
+GitHub - mas-cli/mas: Mac App Store command line interface
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Sign up
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Why GitHub?
+                    
+
+
+
+
+Features →
+
+Code review
+Project management
+Integrations
+Actions
+Packages
+Security
+Team management
+Hosting
+Mobile
+
+
+Customer stories →
+Security →
+
+
+
+
+
+Team
+
+
+Enterprise
+
+
+
+
+                    Explore
+                    
+
+
+
+
+
+Explore GitHub →
+
+Learn & contribute
+
+Topics
+Collections
+Trending
+Learning Lab
+Open source guides
+
+Connect with others
+
+Events
+Community forum
+GitHub Education
+GitHub Stars program
+
+
+
+
+
+Marketplace
+
+
+
+
+                    Pricing
+                    
+
+
+
+
+Plans →
+
+Compare plans
+Contact Sales
+
+
+Nonprofit →
+Education →
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+No suggested jump to results
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+ 
+
+
+
+          Sign in
+        
+
+              Sign up
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mas-cli
+
+/
+
+mas
+
+
+
+
+
+
+
+    Watch
+ 
+      95
+    
+
+
+
+
+      Star
+
+
+      7.4k
+    
+
+
+
+
+          Fork
+
+
+        188
+      
+
+
+
+
+
+📦 Mac App Store command line interface
+      
+
+
+
+            MIT License
+        
+
+
+
+
+7.4k
+        stars
+ 
+
+188
+        forks
+ 
+
+
+
+
+      Star
+
+
+
+
+
+    Watch
+
+
+
+
+
+
+
+
+
+Code
+
+ 
+
+
+
+Issues
+52
+ 
+
+
+
+Pull requests
+3
+ 
+
+
+
+Actions
+
+ 
+
+
+
+Projects
+0
+ 
+
+
+
+Wiki
+
+ 
+
+
+
+Security
+
+ 
+
+
+
+Insights
+
+ 
+ 
+
+
+
+
+More
+
+ 
+
+
+
+
+                    Code
+ 
+
+
+                    Issues
+ 
+
+
+                    Pull requests
+ 
+
+
+                    Actions
+ 
+
+
+                    Projects
+ 
+
+
+                    Wiki
+ 
+
+
+                    Security
+ 
+
+
+                    Insights
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+          Dismiss
+        
+Join GitHub today
+GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
+Sign up
+
+
+
+
+
+
+
+
+
+
+master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6
+branches
+
+
+
+25
+tags
+
+
+
+
+    Go to file
+
+
+
+
+
+
+      Code
+      
+ 
+
+
+
+
+
+
+
+
+  Clone
+
+
+
+
+
+
+            HTTPS
+ 
+            GitHub CLI
+ 
+
+
+
+
+
+
+
+
+
+      Use Git or checkout with SVN using the web URL.
+    
+
+
+
+
+
+
+
+
+
+      Work fast with our official CLI.
+      Learn more.
+    
+
+
+
+
+
+
+
+                Open with GitHub Desktop
+ 
+
+
+
+                Download ZIP
+ 
+
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching Xcode
+If nothing happens, download Xcode and try again.
+Go back
+
+
+Launching Visual Studio
+If nothing happens, download the GitHub extension for Visual Studio and try again.
+Go back
+
+
+
+
+
+
+
+
+
+Latest commit
+
+
+
+
+
+
+ 
+
+
+
+
+phatblat
+
+Merge pull request #303 from mas-cli/v1.7-rebase
+
+
+
+…
+
+
+
+94eb4e5
+
+Sep 7, 2020
+
+
+
+
+
+Merge pull request #303 from mas-cli/v1.7-rebase
+
+🔀 Merge 1.7.1 hotfix into master
+
+94eb4e5
+
+
+
+Git stats
+
+
+
+
+
+849
+commits
+
+
+
+
+
+
+
+Files
+Permalink
+
+
+  
+    Failed to load latest commit information.
+
+ 
+
+
+Type
+Name
+Latest commit message
+Commit time
+
+
+
+
+
+
+.bundle
+
+
+
+💎 Configure bundler
+
+
+
+Jan 27, 2018
+
+
+
+
+
+
+
+.github
+
+
+
+📝 Revise bug report template
+
+
+
+Apr 6, 2019
+
+
+
+
+
+
+
+Carthage/Checkouts
+
+
+
+⬆️ Quick (3.0.0), Nimble (8.1.2)
+
+
+
+Sep 7, 2020
+
+
+
+
+
+
+
+Homebrew
+
+
+
+🍼 Update bottle hashes after BrewTestBot build
+
+
+
+Sep 7, 2020
+
+
+
+
+
+
+
+MasKit
+
+
+
+🐛 Fix list command after merge mistake
+
+
+
+Sep 7, 2020
+
+
+
+
+
+
+
+MasKitTests
+
+
+
+👽 Remove force try from tests
+
+
+
+Sep 7, 2020
+
+
+
+
+
+
+
+Package
+
+
+
+➖Remote Result from Components.plist
+
+
+
+Feb 10, 2020
+
+
+
+
+
+
+
+PrivateFrameworks
+
+
+
+🛸 Update macOS private headers from 10.14.4
+
+
+
+Mar 30, 2019
+
+
+
+
+
+
+
+contrib/completion
+
+
+
+Seriously more interactive fish completions
+
+
+
+May 23, 2019
+
+
+
+
+
+
+
+docs
+
+
+
+🎨 Apply swiftformat
+
+
+
+Jan 30, 2019
+
+
+
+
+
+
+
+mas-cli.xcodeproj
+
+
+
+🔖 Version 1.7.1
+
+
+
+Sep 7, 2020
+
+
+
+
+
+
+
+mas.xcworkspace
+
+
+
+🗃️ Add misc file refrences
+
+
+
+Jan 15, 2019
+
+
+
+
+
+
+
+mas
+
+
+
+Merge branch 'master' into feature/purchase-apps
+
+
+
+May 14, 2020
+
+
+
+
+
+
+
+script
+
+
+
+📜 Add brew_update script
+
+
+
+Sep 7, 2020
+
+
+
+
+
+
+
+.editorconfig
+
+
+
+🔧 Revise editorconfig globs
+
+
+
+Sep 7, 2020
+
+
+
+
+
+
+
+.gitignore
+
+
+
+🙈 Ignore default.profraw
+
+
+
+Sep 7, 2020
+
+
+
+
+
+
+
+.hound.yml
+
+
+
+🙅🏻‍♂️ Disable rubocop checks
+
+
+
+Jan 22, 2019
+
+
+
+
+
+
+
+.ruby-version
+
+
+
+⬆️ ruby (2.4.3)
+
+
+
+Dec 14, 2019
+
+
+
+
+
+
+
+.shellcheck.yml
+
+
+
+🚨📜 Add shellcheck
+
+
+
+Jan 16, 2019
+
+
+
+
+
+
+
+.swift-version
+
+
+
+📌 Swift (5.2.4)
+
+
+
+May 29, 2020
+
+
+
+
+
+
+
+.swiftformat
+
+
+
+🔧 Configure .swiftformat
+
+
+
+Jan 30, 2019
+
+
+
+
+
+
+
+.swiftlint.yml
+
+
+
+🔧 Enable linting tests, disable some rules
+
+
+
+May 15, 2020
+
+
+
+
+
+
+
+.travis.yml
+
+
+
+⬆️ Xcode (11.5)
+
+
+
+May 24, 2020
+
+
+
+
+
+
+
+Brewfile
+
+
+
+➕ make (4.3)
+
+
+
+May 29, 2020
+
+
+
+
+
+
+
+Brewfile.lock.json
+
+
+
+📦 Update brew lockfile
+
+
+
+Sep 7, 2020
+
+
+
+
+
+
+
+CHANGELOG.md
+
+
+
+📝 Update changelog
+
+
+
+Sep 7, 2020
+
+
+
+
+
+
+
+CODE_OF_CONDUCT.md
+
+
+
+📄 Add GitHub's template contributor covenant code of conduct
+
+
+
+Jan 12, 2019
+
+
+
+
+
+
+
+CONTRIBUTING.md
+
+
+
+📝 Add Contributing Guidelines (#126)
+
+
+
+Jan 29, 2018
+
+
+
+
+
+
+
+Cartfile
+
+
+
+➖ Result, ⬆️ Quick (2.2.0), Nimble (8.0.4), Commandant (0.17.0)
+
+
+
+Dec 14, 2019
+
+
+
+
+
+
+
+Cartfile.private
+
+
+
+Add dependency on Carthage
+
+
+
+Sep 4, 2018
+
+
+
+
+
+
+
+Cartfile.resolved
+
+
+
+⬆️ Quick (3.0.0), Nimble (8.1.1)
+
+
+
+Sep 7, 2020
+
+
+
+
+
+
+
+Dangerfile
+
+
+
+⚠️ Update app and test paths
+
+
+
+Jan 16, 2019
+
+
+
+
+
+
+
+Gemfile
+
+
+
+Remove CocoaPods from project
+
+
+
+Sep 4, 2018
+
+
+
+
+
+
+
+Gemfile.lock
+
+
+
+Bump kramdown from 2.2.1 to 2.3.0
+
+
+
+Aug 8, 2020
+
+
+
+
+
+
+
+Jenkinsfile
+
+
+
+⬆️ Xcode (11.5)
+
+
+
+May 24, 2020
+
+
+
+
+
+
+
+LICENSE
+
+
+
+Add the license
+
+
+
+Sep 20, 2015
+
+
+
+
+
+
+
+Makefile
+
+
+
+Makefile: Add support for PREFIX in make install
+
+
+
+Jul 30, 2020
+
+
+
+
+
+
+
+Mintfile
+
+
+
+⬆️ SwiftFormat (0.44.11)
+
+
+
+May 24, 2020
+
+
+
+
+
+
+
+README.md
+
+
+
+Update README.md
+
+
+
+Aug 11, 2020
+
+
+
+
+
+
+
+mas-cli.png
+
+
+
+Add logo to the readme
+
+
+
+Sep 25, 2016
+
+
+
+
+
+        View code
+      
+
+
+
+
+
+
+        README.md
+      
+
+
+
+
+
+
+
+
+
+mas-cli
+A simple command line interface for the Mac App Store. Designed for scripting and automation.
+
+
+
+
+
+📲 Install
+🍺 Homebrew
+Homebrew is the preferred way to install:
+brew install mas
+MacPorts
+MacPorts works as well:
+sudo port install mas
+⚠️ Note that macOS 10.14 (Mojave) is required to install mas from MacPorts or the core Homebrew formula.
+☎️ Older macOS Versions
+We provide a custom Homebrew tap with pre-built bottles
+for all macOS versions since 10.11.
+To install mas from our tap:
+brew install mas-cli/tap/mas
+Known Installation Issues On macOS Before 10.14.4
+Starting with mas 1.7.0, if you get
+an error similar to dyld: Symbol not found: _$s11SubSequenceSlTl when running mas,
+you'll need to install the Swift 5 Runtime Support for Command Line Tools.
+Alternatively, you can:
+
+Update to macOS 10.14.4 or later
+Install Xcode 10.2 or later at /Applications/Xcode.app
+Rebuild mas from source using Xcode 10.0 or later
+
+🐙 GitHub Releases
+Alternatively, binaries are available in the GitHub Releases
+🤳🏻 Usage
+Each application in the Mac App Store has a product identifier which is also
+used for mas-cli commands. Using mas list will show all installed
+applications and their product identifiers.
+$ mas list
+446107677 Screens
+407963104 Pixelmator
+497799835 Xcode
+It is possible to search for applications by name using mas search which
+will search the Mac App Store and return matching identifiers.
+Include the --price flag to include prices in the result.
+$ mas search Xcode
+497799835 Xcode
+688199928 Docs for Xcode
+449589707 Dash 3 - API Docs & Snippets. Integrates with Xcode, Alfred, TextWrangler and many more.
+[...]
+To install or update an application simply run mas install with an
+application identifier:
+$ mas install 808809998
+==> Downloading PaintCode 2
+==> Installed PaintCode 2
+If you want to install the first result that the search command returns, use the lucky command.
+$ mas lucky twitter
+==> Downloading Twitter
+==> Installed Twitter
+
+Please note that this command will not allow you to install (or even purchase) an app for the first time:
+use the purchase command in that case.
+
+$ mas purchase 768053424
+==> Downloading Gapplin
+==> Installed Gapplin
+
+Please note that you may have to re-authenticate yourself in the App Store to complete the purchase.
+This is the case if the application is not free or if you configured your account not to remember the credentials for free purchases.
+
+Use mas outdated to list all applications with pending updates.
+$ mas outdated
+497799835 Xcode (7.0)
+446107677 Screens VNC - Access Your Computer From Anywhere (3.6.7)
+
+mas is only able to install/update applications that are listed in the Mac App Store itself.
+Use softwareupdate(8) utility for downloading system updates (like iTunes, Xcode Command Line Tools, etc)
+
+To install all pending updates run mas upgrade.
+$ mas upgrade
+Upgrading 2 outdated applications:
+Xcode (7.0), Screens VNC - Access Your Computer From Anywhere (3.6.7)
+==> Downloading Xcode
+==> Installed Xcode
+==> Downloading iFlicks
+==> Installed iFlicks
+Updates can be performed selectively by providing the app identifier(s) to
+mas upgrade
+$ mas upgrade 715768417
+Upgrading 1 outdated application:
+Xcode (8.0)
+==> Downloading Xcode
+==> Installed Xcode
+🚏📥 Sign-in
+To sign into the Mac App Store for the first time run mas signin.
+$ mas signin mas@example.com
+==> Signing in to Apple ID: mas@example.com
+Password:
+
+⚠️ Due to breaking changes in the underlying API that mas uses to interact with the Mac App Store,
+the signin command has been temporarily disabled on macOS 10.13+ ⛔.
+For more information on this issue, see #164.
+
+If you experience issues signing in this way, you can ask to signin using a graphical dialog (provided by Mac App Store application):
+$ mas signin --dialog mas@example.com
+==> Signing in to Apple ID: mas@example.com
+You can also embed your password in the command.
+$ mas signin mas@example.com 'ZdkM4f$gzF;gX3ABXNLf8KcCt.x.np'
+==> Signing in to Apple ID: mas@example.com
+Use mas signout to sign out from the Mac App Store.
+🍺 Homebrew integration
+mas is integrated with homebrew-bundle. If mas is installed, and you run brew bundle dump,
+then your Mac App Store apps will be included in the Brewfile created. See the homebrew-bundle
+docs for more details.
+💥 When something doesn't work
+If you see the error ""This redownload is not available for this Apple ID either because it was bought by a different user of the item was refunded or cancelled."", it's probably because you haven't installed the app through the App Store yet. See #46.
+If mas doesn't work for you as expected (e.g. you can't update/download apps), run mas reset and try again. If the issue persists, please file a bug! All your feedback is much appreciated ✨
+📺 Using tmux
+mas operates via the same system services as the Mac App Store. These exist as
+separate processes with communication through XPC. As a result of this, mas
+experiences similar problems as the pasteboard when running inside tmux. A
+wrapper tool exists to
+fix pasteboard behaviour which also works for mas.
+You should consider configuring tmux to use the wrapper but if you do not wish
+to do this it can be used on a one-off basis as follows:
+brew install reattach-to-user-namespace
+reattach-to-user-namespace mas install
+ℹ️ Build from source
+You can now build from Xcode by opening mas-cli.xcodeproj, or from the Terminal:
+script/build
+Build output can be found in the build/ directory within the project.
+✅ Tests
+The tests in this project are a recent work-in-progress.
+Since Xcode does not officially support tests for command-line tool targets,
+all logic is part of the MasKit target with tests in MasKitTests.
+Tests are written using Quick.
+📄 License
+mas-cli was created by @argon.
+Code is under the MIT license.
+
+
+
+
+
+
+
+
+About
+
+📦 Mac App Store command line interface
+    
+Topics
+
+
+
+  mas
+
+
+  osx
+
+
+  macos
+
+
+  mac-app-store
+
+
+  homebrew
+
+
+  software-update
+
+
+
+Resources
+
+
+
+      Readme
+ 
+License
+
+
+
+        MIT License
+    
+
+
+
+
+
+
+
+    Releases
+      25
+
+
+
+
+
+v1.7.1: 🐛 Search JSON Fix
+
+          Latest
+ 
+Sep 7, 2020
+
+ 
+
+        + 24 releases
+
+
+
+
+
+
+
+    Packages 0
+
+
+        No packages published 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Contributors 31
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+      + 20 contributors
+
+
+
+
+
+Languages
+
+
+
+
+
+
+
+
+
+
+
+
+
+Swift
+58.4%
+
+
+
+
+
+Objective-C
+22.9%
+
+
+
+
+
+Shell
+11.3%
+
+
+
+
+
+Ruby
+3.3%
+
+
+
+
+
+Perl
+2.8%
+
+
+
+
+
+Makefile
+1.3%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+
+
+
+
+
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+
+
+
+
+
+
+
+
+
+
+    You can’t perform that action at this time.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+
+
+
+
+
+
+
+",,"# mas
 
 > Command line interface for the Mac App Store.
 > More information: <https://github.com/mas-cli/mas>.
@@ -17185,7 +28079,7 @@ mas,https://github.com/mas-cli/mas,,"# mas
 
 `mas upgrade`
 "
-pod,,,"# pod
+pod,,,,"# pod
 
 > Dependency manager for Swift and Objective-C Cocoa projects.
 
@@ -17217,7 +28111,7 @@ pod,,,"# pod
 
 `pod deintegrate {{xcode_project}}`
 "
-xcode-select,,"XCODE-SELECT(1) 	  BSD General Commands Manual	       XCODE-SELECT(1)
+xcode-select,,,"XCODE-SELECT(1) 	  BSD General Commands Manual	       XCODE-SELECT(1)
 
 
 
@@ -17391,7 +28285,7 @@ Mac OS X			March 08, 2016		       XCODE-SELECT(1)
 
 `sudo xcode-select -r`
 "
-screencapture,,"
+screencapture,,,"
 SCREENCAPTURE(1)	  BSD General Commands Manual	      SCREENCAPTURE(1)
 
 NAME
@@ -17525,7 +28419,7 @@ Mac OS				 June 16, 2004				Mac OS
 
 `screencapture -v {{path/to/file.mp4}}`
 "
-du,,"
+du,,,"
 DU(1)			  BSD General Commands Manual			 DU(1)
 
 NAME
@@ -17640,7 +28534,7 @@ BSD				 June 2, 2004				   BSD
 
 `du -ch */*.jpg`
 "
-networksetup,,"
+networksetup,,,"
 NETWORKSETUP(8) 	  BSD System Manager's Manual	       NETWORKSETUP(8)
 
 NAME
@@ -18305,7 +29199,7 @@ Mac OS X			April 16, 2002			      Mac OS X
 
 `networksetup -setairportnetwork {{en0}} {{""Airport Network SSID""}} {{password}}`
 "
-logger,,"
+logger,,,"
 LOGGER(1)		  BSD General Commands Manual		     LOGGER(1)
 
 NAME
@@ -18374,7 +29268,7 @@ STANDARDS
 
 `echo {{log_entry}} | logger -p {{user.warning}}`
 "
-top,,"
+top,,,"
 TOP(1)			  BSD General Commands Manual			TOP(1)
 
 NAME
@@ -18743,7 +29637,7 @@ Darwin				 13 March 2017				Darwin
 
 `?`
 "
-export,,"
+export,,,"
 BUILTIN(1)		  BSD General Commands Manual		    BUILTIN(1)
 
 NAME
@@ -18926,7 +29820,1009 @@ BSD			       February 23, 2005			   BSD
 
 `export PATH=$PATH:{{path/to/append}}`
 "
-csshX,https://github.com/brockgr/csshx,,"# csshX
+csshX,https://github.com/brockgr/csshx,"
+
+
+
+
+
+
+
+
+
+
+
+
+
+GitHub - brockgr/csshx: Automatically exported from code.google.com/p/csshx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Sign up
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Why GitHub?
+                    
+
+
+
+
+Features →
+
+Code review
+Project management
+Integrations
+Actions
+Packages
+Security
+Team management
+Hosting
+Mobile
+
+
+Customer stories →
+Security →
+
+
+
+
+
+Team
+
+
+Enterprise
+
+
+
+
+                    Explore
+                    
+
+
+
+
+
+Explore GitHub →
+
+Learn & contribute
+
+Topics
+Collections
+Trending
+Learning Lab
+Open source guides
+
+Connect with others
+
+Events
+Community forum
+GitHub Education
+GitHub Stars program
+
+
+
+
+
+Marketplace
+
+
+
+
+                    Pricing
+                    
+
+
+
+
+Plans →
+
+Compare plans
+Contact Sales
+
+
+Nonprofit →
+Education →
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+No suggested jump to results
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+ 
+
+
+
+          Sign in
+        
+
+              Sign up
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+brockgr
+
+/
+
+csshx
+
+
+
+
+
+
+
+    Watch
+ 
+      32
+    
+
+
+
+
+      Star
+
+
+      387
+    
+
+
+
+
+          Fork
+
+
+        69
+      
+
+
+
+
+
+        Automatically exported from code.google.com/p/csshx
+      
+
+
+
+387
+        stars
+ 
+
+69
+        forks
+ 
+
+
+
+
+      Star
+
+
+
+
+
+    Watch
+
+
+
+
+
+
+
+
+
+Code
+
+ 
+
+
+
+Issues
+46
+ 
+
+
+
+Pull requests
+6
+ 
+
+
+
+Actions
+
+ 
+
+
+
+Projects
+0
+ 
+
+
+
+Security
+
+ 
+
+
+
+Insights
+
+ 
+ 
+
+
+
+
+More
+
+ 
+
+
+
+
+                    Code
+ 
+
+
+                    Issues
+ 
+
+
+                    Pull requests
+ 
+
+
+                    Actions
+ 
+
+
+                    Projects
+ 
+
+
+                    Security
+ 
+
+
+                    Insights
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+          Dismiss
+        
+Join GitHub today
+GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
+Sign up
+
+
+
+
+
+
+
+
+
+
+master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3
+branches
+
+
+
+1
+tag
+
+
+
+
+    Go to file
+
+
+
+
+
+
+      Code
+      
+ 
+
+
+
+
+
+
+
+
+  Clone
+
+
+
+
+
+
+            HTTPS
+ 
+            GitHub CLI
+ 
+
+
+
+
+
+
+
+
+
+      Use Git or checkout with SVN using the web URL.
+    
+
+
+
+
+
+
+
+
+
+      Work fast with our official CLI.
+      Learn more.
+    
+
+
+
+
+
+
+
+                Open with GitHub Desktop
+ 
+
+
+
+                Download ZIP
+ 
+
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching Xcode
+If nothing happens, download Xcode and try again.
+Go back
+
+
+Launching Visual Studio
+If nothing happens, download the GitHub extension for Visual Studio and try again.
+Go back
+
+
+
+
+
+
+
+
+
+Latest commit
+
+
+
+
+
+
+ 
+
+
+
+
+brockgr
+
+Fix doc typos
+
+
+
+…
+
+
+
+533b262
+
+Oct 1, 2012
+
+
+
+
+
+Fix doc typos
+
+
+533b262
+
+
+
+Git stats
+
+
+
+
+
+147
+commits
+
+
+
+
+
+
+
+Files
+Permalink
+
+
+  
+    Failed to load latest commit information.
+
+ 
+
+
+Type
+Name
+Latest commit message
+Commit time
+
+
+
+
+
+
+rewrite
+
+
+
+Messing with 10.7 dock - still can't set space by index :-(
+
+
+
+Sep 20, 2011
+
+
+
+
+
+
+
+tools
+
+
+
+Many housekeeping scripts changed
+
+
+
+Sep 12, 2011
+
+
+
+
+
+
+
+.gitignore
+
+
+
+Many housekeeping scripts changed
+
+
+
+Sep 12, 2011
+
+
+
+
+
+
+
+MANIFEST
+
+
+
+Added tools to make a download
+
+
+
+Mar 4, 2009
+
+
+
+
+
+
+
+README.txt
+
+
+
+csshX with bash completion - inspired by
+
+
+
+Oct 1, 2012
+
+
+
+
+
+
+
+csshX
+
+
+
+Fix doc typos
+
+
+
+Oct 1, 2012
+
+
+
+
+
+
+
+csshX.iterm
+
+
+
+Add iterm support
+
+
+
+Nov 21, 2010
+
+
+
+
+
+        View code
+      
+
+
+
+
+
+
+        README.txt
+      
+
+
+            -------------------------------------------------
+            csshX - Cluster SSH tool for Mac OS X Termial.app
+            -------------------------------------------------
+            Copyright 2011 by Gavin Brock   <gbrock@cpan.org>
+            -------------------------------------------------
+
+
+INSTALLATION:
+
+As csshX is a command line tool, no special installation is needed. It may
+be copied into a directory in your path, (e.g. /usr/local/bin) for your 
+convenience.
+
+The software has been tested on Mac OS X 10.5, 10.6 and 10.7 with the default
+Perl installation - no additional Perl modules are required.
+
+
+DOCUMENTATION:
+
+The documentation for csshX is self contained. Please run:
+
+    ./csshX --man
+
+If that does not work, you can try the FAQ:
+
+    http://code.google.com/p/csshx/wiki/FAQ
+
+
+UPDATES:
+
+The latest version of the software is available here:
+
+    http://code.google.com/p/csshx/
+
+Important update information will be posted on:
+
+    http://gavcode.wordpress.com/tag/csshX/
+
+Information for enthusiasts will be posted on twitter:
+
+    http://twitter.com/csshx
+
+
+LICENSE:
+
+This program is free software; you may redistribute it and/or modify it 
+under the same terms as Perl itself. 
+
+Full details can be found by running:
+
+    perldoc perlartistic
+    perldoc perlgpl
+
+
+CREDITS:
+
+Thanks to everyone for the suggestions and bug reports. That's what makes
+coding fun. In addition, I would like to thank the following people for their
+patches and code: Eric Lubow, mtbeedee, Mitch Silverstein, Robin Stephenson, 
+Chris Yunker, Song Gao and Jean-Sebastien Morisset.
+
+
+
+
+
+
+
+
+About
+
+      Automatically exported from code.google.com/p/csshx
+    
+Resources
+
+
+
+      Readme
+ 
+
+
+
+
+
+
+    Releases
+
+
+
+1
+tags
+
+
+
+
+
+
+
+    Packages 0
+
+
+        No packages published 
+
+
+
+
+
+
+
+
+
+
+
+Languages
+
+
+
+
+
+
+
+
+
+
+Objective-C
+68.0%
+
+
+
+
+
+Perl
+31.5%
+
+
+
+
+
+Other
+0.5%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+
+
+
+
+
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+
+
+
+
+
+
+
+
+
+
+    You can’t perform that action at this time.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+
+
+
+
+
+
+
+",,"# csshX
 
 > Cluster SSH tool for MacOS.
 > More information: <https://github.com/brockgr/csshx>.
@@ -18943,7 +30839,7 @@ csshX,https://github.com/brockgr/csshx,,"# csshX
 
 `csshX cluster1`
 "
-asr,,"
+asr,,,"
 
 ASR(8)			  BSD System Manager's Manual			ASR(8)
 
@@ -19564,7 +31460,7 @@ Mac OS X			23 October 2012 		      Mac OS X
 
 `sudo asr restore --source {{path/to/volume}} --target {{path/to/cloned_volume}}`
 "
-mdutil,,"
+mdutil,,,"
 mdutil(1)		  BSD General Commands Manual		     mdutil(1)
 
 NAME
@@ -19619,7 +31515,7 @@ Mac OS X		       September 1, 2005		      Mac OS X
 
 `mdutil -E {{path/to/volume}}`
 "
-xcodebuild,,,"# xcodebuild
+xcodebuild,,,,"# xcodebuild
 
 > Build Xcode projects.
 
@@ -19635,7 +31531,7 @@ xcodebuild,,,"# xcodebuild
 
 `xcodebuild -showsdks`
 "
-fdesetup,,"
+fdesetup,,,"
 fdesetup(8)		  BSD System Manager's Manual		   fdesetup(8)
 
 NAME
@@ -20238,7 +32134,7 @@ macOS				 July 08, 2018				 macOS
 
 `sudo fdesetup disable`
 "
-airport,,"
+airport,,,"
 airport(8)		  BSD System Manager's Manual		    airport(8)
 
 NAME
@@ -20250,7 +32146,7 @@ SYNOPSIS
 DESCRIPTION
      airport manages 802.11 interfaces.  airport more information needed here.
 
-BSD			      September 23, 2020			   BSD
+BSD			      September 25, 2020			   BSD
 ","# airport
 
 > Wireless network configuration utility.
@@ -20271,7 +32167,1197 @@ BSD			      September 23, 2020			   BSD
 
 `sudo airport -z`
 "
-brew-bundle,https://github.com/Homebrew/homebrew-bundle,,"# brew bundle
+brew-bundle,https://github.com/Homebrew/homebrew-bundle,"
+
+
+
+
+
+
+
+
+
+
+
+
+
+GitHub - Homebrew/homebrew-bundle: 📦 Bundler for non-Ruby dependencies from Homebrew, Homebrew Cask and the Mac App Store.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Sign up
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Why GitHub?
+                    
+
+
+
+
+Features →
+
+Code review
+Project management
+Integrations
+Actions
+Packages
+Security
+Team management
+Hosting
+Mobile
+
+
+Customer stories →
+Security →
+
+
+
+
+
+Team
+
+
+Enterprise
+
+
+
+
+                    Explore
+                    
+
+
+
+
+
+Explore GitHub →
+
+Learn & contribute
+
+Topics
+Collections
+Trending
+Learning Lab
+Open source guides
+
+Connect with others
+
+Events
+Community forum
+GitHub Education
+GitHub Stars program
+
+
+
+
+
+Marketplace
+
+
+
+
+                    Pricing
+                    
+
+
+
+
+Plans →
+
+Compare plans
+Contact Sales
+
+
+Nonprofit →
+Education →
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+No suggested jump to results
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        In this repository
+      
+
+        All GitHub
+      
+↵
+
+
+      Jump to
+      ↵
+
+
+
+
+
+
+ 
+
+
+
+          Sign in
+        
+
+              Sign up
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Homebrew
+
+/
+
+homebrew-bundle
+
+
+
+
+
+
+
+
+          Sponsor
+        
+
+
+
+
+
+
+              Sponsor Homebrew/homebrew-bundle
+            
+
+
+
+
+
+
+
+
+
+
+
+
+    Watch
+ 
+      61
+    
+
+
+
+
+      Star
+
+
+      3.4k
+    
+
+
+
+
+          Fork
+
+
+        210
+      
+
+
+
+
+
+📦 Bundler for non-Ruby dependencies from Homebrew, Homebrew Cask and the Mac App Store.
+      
+
+
+
+            MIT License
+        
+
+
+
+
+3.4k
+        stars
+ 
+
+210
+        forks
+ 
+
+
+
+
+      Star
+
+
+
+
+
+    Watch
+
+
+
+
+
+
+
+
+
+Code
+
+ 
+
+
+
+Issues
+1
+ 
+
+
+
+Pull requests
+0
+ 
+
+
+
+Actions
+
+ 
+
+
+
+Security
+
+ 
+
+
+
+Insights
+
+ 
+ 
+
+
+
+
+More
+
+ 
+
+
+
+
+                    Code
+ 
+
+
+                    Issues
+ 
+
+
+                    Pull requests
+ 
+
+
+                    Actions
+ 
+
+
+                    Security
+ 
+
+
+                    Insights
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+          Dismiss
+        
+Join GitHub today
+GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
+Sign up
+
+
+
+
+
+
+
+
+
+
+master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2
+branches
+
+
+
+12
+tags
+
+
+
+
+    Go to file
+
+
+
+
+
+
+      Code
+      
+ 
+
+
+
+
+
+
+
+
+  Clone
+
+
+
+
+
+
+            HTTPS
+ 
+            GitHub CLI
+ 
+
+
+
+
+
+
+
+
+
+      Use Git or checkout with SVN using the web URL.
+    
+
+
+
+
+
+
+
+
+
+      Work fast with our official CLI.
+      Learn more.
+    
+
+
+
+
+
+
+
+                Open with GitHub Desktop
+ 
+
+
+
+                Download ZIP
+ 
+
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching GitHub Desktop
+If nothing happens, download GitHub Desktop and try again.
+Go back
+
+
+Launching Xcode
+If nothing happens, download Xcode and try again.
+Go back
+
+
+Launching Visual Studio
+If nothing happens, download the GitHub extension for Visual Studio and try again.
+Go back
+
+
+
+
+
+
+
+
+
+Latest commit
+
+
+
+
+
+
+ 
+
+
+
+
+jacobbednarz
+
+Merge pull request #794 from Homebrew/dependabot/bundler/simplecov-ht…
+
+
+
+…
+
+
+
+12702c2
+
+Sep 23, 2020
+
+
+
+
+
+Merge pull request #794 from Homebrew/dependabot/bundler/simplecov-ht…
+
+…ml-0.12.3
+
+build(deps): bump simplecov-html from 0.12.2 to 0.12.3
+
+12702c2
+
+
+
+Git stats
+
+
+
+
+
+1,298
+commits
+
+
+
+
+
+
+
+Files
+Permalink
+
+
+  
+    Failed to load latest commit information.
+
+ 
+
+
+Type
+Name
+Latest commit message
+Commit time
+
+
+
+
+
+
+.github/workflows
+
+
+
+GitHub Actions cleanup
+
+
+
+Aug 14, 2020
+
+
+
+
+
+
+
+cmd
+
+
+
+cmd/bundle: fix arg names.
+
+
+
+Aug 7, 2020
+
+
+
+
+
+
+
+lib
+
+
+
+Fix `brew cask upgrade` deprecations
+
+
+
+Sep 13, 2020
+
+
+
+
+
+
+
+spec
+
+
+
+Fix `brew cask upgrade` deprecations
+
+
+
+Sep 13, 2020
+
+
+
+
+
+
+
+.gitignore
+
+
+
+Write Brewfile.lock.json files
+
+
+
+Nov 12, 2019
+
+
+
+
+
+
+
+CONTRIBUTING.md
+
+
+
+Refer to default branch in links with HEAD
+
+
+
+Jun 25, 2020
+
+
+
+
+
+
+
+Gemfile
+
+
+
+Fix RuboCop violations.
+
+
+
+Aug 31, 2020
+
+
+
+
+
+
+
+Gemfile.lock
+
+
+
+build(deps): bump simplecov-html from 0.12.2 to 0.12.3
+
+
+
+Sep 23, 2020
+
+
+
+
+
+
+
+Guardfile
+
+
+
+Fix RuboCop violations.
+
+
+
+Aug 31, 2020
+
+
+
+
+
+
+
+LICENSE
+
+
+
+Update license and documentation.
+
+
+
+Mar 15, 2018
+
+
+
+
+
+
+
+README.md
+
+
+
+Refer to default branch in links with HEAD
+
+
+
+Jun 25, 2020
+
+
+
+
+
+        View code
+      
+
+
+
+
+
+
+        README.md
+      
+
+
+
+
+
+
+
+
+Homebrew Bundle
+Bundler for non-Ruby dependencies from Homebrew, Homebrew Cask, Mac App Store and Whalebrew.
+Requirements
+Homebrew (on macOS or Linux) for installing dependencies.
+Homebrew Cask is optional and used for installing Mac applications.
+mas-cli is optional and used for installing Mac App Store applications.
+whalebrew is optional and used for installing Whalebrew images.
+Installation
+brew bundle is automatically installed when first run.
+Usage
+See the brew bundle section of the brew man output or brew bundle --help.
+An example Brewfile:
+# 'brew tap'
+tap ""homebrew/cask""
+# 'brew tap' with custom Git URL
+tap ""user/tap-repo"", ""https://user@bitbucket.org/user/homebrew-tap-repo.git""
+# set arguments for all 'brew cask install' commands
+cask_args appdir: ""~/Applications""
+
+# 'brew install'
+brew ""imagemagick""
+# 'brew install --with-rmtp', 'brew services restart' on version changes
+brew ""denji/nginx/nginx-full"", args: [""with-rmtp""], restart_service: :changed
+# 'brew install', always 'brew services restart', 'brew link', 'brew unlink mysql' (if it is installed)
+brew ""mysql@5.6"", restart_service: true, link: true, conflicts_with: [""mysql""]
+
+# 'brew cask install'
+cask ""google-chrome""
+# 'brew cask install --appdir=~/my-apps/Applications'
+cask ""firefox"", args: { appdir: ""~/my-apps/Applications"" }
+# 'brew cask install' only if '/usr/libexec/java_home --failfast' fails
+cask ""java"" unless system ""/usr/libexec/java_home --failfast""
+
+# 'mas install'
+mas ""1Password"", id: 443987910
+
+# 'whalebrew install'
+whalebrew ""whalebrew/wget""
+Note
+Homebrew does not support installing specific versions of a library, only the most recent one, so there is no good mechanism for storing installed versions in a .lock file.
+If your software needs specific versions then perhaps you'll want to look at using Vagrant to better match your development and production environments.
+Tests
+Tests can be run with bundle install && bundle exec rspec.
+Copyright
+Copyright (c) Homebrew maintainers and Andrew Nesbitt. See LICENSE for details.
+
+
+
+
+
+
+
+
+About
+
+📦 Bundler for non-Ruby dependencies from Homebrew, Homebrew Cask and the Mac App Store.
+    
+Topics
+
+
+
+  ruby
+
+
+  homebrew
+
+
+  tap
+
+
+  cmd
+
+
+  bundle
+
+
+
+Resources
+
+
+
+      Readme
+ 
+License
+
+
+
+        MIT License
+    
+
+
+
+
+
+
+
+    Releases
+      12
+
+
+
+
+
+v1.1.0
+
+          Latest
+ 
+Dec 30, 2014
+
+ 
+
+        + 11 releases
+
+
+
+
+
+Sponsor this project
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+patreon.com/homebrew
+
+
+
+
+
+
+
+https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V6ZE57MJRYC8L
+
+
+
+
+
+
+
+https://github.com/homebrew/brew/#donations
+
+
+
+
+  Learn more about GitHub Sponsors
+
+
+
+
+
+
+
+    Packages 0
+
+
+        No packages published 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Contributors 68
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      + 57 contributors
+
+
+
+
+
+Languages
+
+
+
+
+
+
+
+
+Ruby
+100.0%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+
+
+
+
+
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+
+
+
+
+
+
+
+
+
+
+    You can’t perform that action at this time.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+
+
+
+
+
+
+
+",,"# brew bundle
 
 > Bundler for Homebrew, Homebrew Cask and the Mac App Store.
 > More information: <https://github.com/Homebrew/homebrew-bundle>.
@@ -20300,7 +33386,7 @@ brew-bundle,https://github.com/Homebrew/homebrew-bundle,,"# brew bundle
 
 `brew bundle list --all`
 "
-GetFileInfo,,"
+GetFileInfo,,,"
 GETFILEINFO(1)		  BSD General Commands Manual		GETFILEINFO(1)
 
 NAME
@@ -20421,7 +33507,7 @@ Mac OS X		      September 27, 2005		      Mac OS X
 
 `GetFileInfo -c {{path/to/filename}}`
 "
-cal,,"
+cal,,,"
 CAL(1)			  BSD General Commands Manual			CAL(1)
 
 NAME
@@ -20562,7 +33648,7 @@ BSD				March 14, 2009				   BSD
 
 `ncal -e {{year}}`
 "
-icalbuddy,https://hasseg.org/icalBuddy/,,"# icalBuddy
+icalbuddy,https://hasseg.org/icalBuddy/,Not Acceptable!Not Acceptable!An appropriate representation of the requested resource could not be found on this server. This error was generated by Mod_Security.,,"# icalBuddy
 
 > Command-line utility for printing events and tasks from the macOS calendar database.
 > More information: <https://hasseg.org/icalBuddy/>.
@@ -20587,7 +33673,7 @@ icalbuddy,https://hasseg.org/icalBuddy/,,"# icalBuddy
 
 `icalBuddy eventsFrom:'{{start date}}' to:'{{end date}}'`
 "
-shuf,,,"# shuf
+shuf,,,,"# shuf
 
 > Generate random permutations.
 
@@ -20607,7 +33693,7 @@ shuf,,,"# shuf
 
 `shuf -i {{1-10}}`
 "
-sed,,"
+sed,,,"
 SED(1)			  BSD General Commands Manual			SED(1)
 
 NAME
@@ -21000,7 +34086,641 @@ BSD				 May 10, 2005				   BSD
 
 `sed 's#{{find}}#{{replace}}#' {{filename}}`
 "
-valet,https://laravel.com/docs/5.8/valet,,"# valet
+valet,https://laravel.com/docs/5.8/valet,"
+
+
+Laravel Valet - Laravel - The PHP Framework For Web Artisans
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Prologue
+
+Release Notes
+Upgrade Guide
+Contribution Guide
+API Documentation
+
+
+
+Getting Started
+
+Installation
+Configuration
+Directory Structure
+Homestead
+Valet
+Deployment
+
+
+
+Architecture Concepts
+
+Request Lifecycle
+Service Container
+Service Providers
+Facades
+Contracts
+
+
+
+The Basics
+
+Routing
+Middleware
+CSRF Protection
+Controllers
+Requests
+Responses
+Views
+URL Generation
+Session
+Validation
+Error Handling
+Logging
+
+
+
+Frontend
+
+Blade Templates
+Localization
+Frontend Scaffolding
+Compiling Assets
+
+
+
+Security
+
+Authentication
+API Authentication
+Authorization
+Email Verification
+Encryption
+Hashing
+Password Reset
+
+
+
+Digging Deeper
+
+Artisan Console
+Broadcasting
+Cache
+Collections
+Events
+File Storage
+Helpers
+Mail
+Notifications
+Package Development
+Queues
+Task Scheduling
+
+
+
+Database
+
+Getting Started
+Query Builder
+Pagination
+Migrations
+Seeding
+Redis
+
+
+
+Eloquent ORM
+
+Getting Started
+Relationships
+Collections
+Mutators
+API Resources
+Serialization
+
+
+
+Testing
+
+Getting Started
+HTTP Tests
+Console Tests
+Browser Tests
+Database
+Mocking
+
+
+
+Official Packages
+
+Cashier
+Dusk
+Envoy
+Horizon
+Passport
+Scout
+Socialite
+Telescope
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Version
+
+
+Master
+8.x
+7.x
+6.x
+5.8
+5.7
+5.6
+5.5
+5.4
+5.3
+5.2
+5.1
+5.0
+4.2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+WARNING You're browsing the documentation for an old version of Laravel.
+                                            Consider upgrading your project to Laravel 8.x.
+                                        
+
+
+Laravel Valet
+
+Introduction
+
+Valet Or Homestead
+
+Installation
+
+Upgrading
+
+Serving Sites
+
+The ""Park"" Command
+The ""Link"" Command
+Securing Sites With TLS
+
+Sharing Sites
+Site Specific Environment Variables
+Custom Valet Drivers
+
+Local Drivers
+
+Other Valet Commands
+
+
+Introduction
+Valet is a Laravel development environment for Mac minimalists. No Vagrant, no /etc/hosts file. You can even share your sites publicly using local tunnels. Yeah, we like it too.
+Laravel Valet configures your Mac to always run Nginx in the background when your machine starts. Then, using DnsMasq, Valet proxies all requests on the *.test domain to point to sites installed on your local machine.
+In other words, a blazing fast Laravel development environment that uses roughly 7 MB of RAM. Valet isn't a complete replacement for Vagrant or Homestead, but provides a great alternative if you want flexible basics, prefer extreme speed, or are working on a machine with a limited amount of RAM.
+Out of the box, Valet support includes, but is not limited to:
+
+
+
+Laravel
+Lumen
+Bedrock
+CakePHP 3
+Concrete5
+Contao
+Craft
+Drupal
+Jigsaw
+Joomla
+Katana
+Kirby
+Magento
+OctoberCMS
+Sculpin
+Slim
+Statamic
+Static HTML
+Symfony
+WordPress
+Zend
+
+
+However, you may extend Valet with your own custom drivers.
+
+Valet Or Homestead
+As you may know, Laravel offers Homestead, another local Laravel development environment. Homestead and Valet differ in regards to their intended audience and their approach to local development. Homestead offers an entire Ubuntu virtual machine with automated Nginx configuration. Homestead is a wonderful choice if you want a fully virtualized Linux development environment or are on Windows / Linux.
+Valet only supports Mac, and requires you to install PHP and a database server directly onto your local machine. This is easily achieved by using Homebrew with commands like brew install php and brew install mysql. Valet provides a blazing fast local development environment with minimal resource consumption, so it's great for developers who only require PHP / MySQL and do not need a fully virtualized development environment.
+Both Valet and Homestead are great choices for configuring your Laravel development environment. Which one you choose will depend on your personal taste and your team's needs.
+
+Installation
+Valet requires macOS and Homebrew. Before installation, you should make sure that no other programs such as Apache or Nginx are binding to your local machine's port 80.
+
+
+Install or update Homebrew to the latest version using brew update.
+Install PHP 7.3 using Homebrew via brew install php.
+Install Composer.
+Install Valet with Composer via composer global require laravel/valet. Make sure the ~/.composer/vendor/bin directory is in your system's ""PATH"".
+Run the valet install command. This will configure and install Valet and DnsMasq, and register Valet's daemon to launch when your system starts.
+
+
+Once Valet is installed, try pinging any *.test domain on your terminal using a command such as ping foobar.test. If Valet is installed correctly you should see this domain responding on 127.0.0.1.
+Valet will automatically start its daemon each time your machine boots. There is no need to run valet start or valet install ever again once the initial Valet installation is complete.
+Using Another Domain
+By default, Valet serves your projects using the .test TLD. If you'd like to use another domain, you can do so using the valet tld tld-name command.
+For example, if you'd like to use .app instead of .test, run valet tld app and Valet will start serving your projects at *.app automatically.
+Database
+If you need a database, try MySQL by running brew install [email protected] on your command line. Once MySQL has been installed, you may start it using the brew services start [email protected] command. You can then connect to the database at 127.0.0.1 using the root username and an empty string for the password.
+PHP Versions
+Valet allows you to switch PHP versions using the valet use [email protected] command. Valet will install the specified PHP version via Brew if it is not already installed:
+valet use [email protected]
+
+valet use php
+
+Upgrading
+You may update your Valet installation using the composer global update command in your terminal. After upgrading, it is good practice to run the valet install command so Valet can make additional upgrades to your configuration files if necessary.
+Upgrading To Valet 2.0
+Valet 2.0 transitions Valet's underlying web server from Caddy to Nginx. Before upgrading to this version you should run the following commands to stop and uninstall the existing Caddy daemon:
+valet stop
+valet uninstall
+Next, you should upgrade to the latest version of Valet. Depending on how you installed Valet, this is typically done through Git or Composer. If you installed Valet via Composer, you should use the following command to update to the latest major version:
+composer global require laravel/valet
+Once the fresh Valet source code has been downloaded, you should run the install command:
+valet install
+valet restart
+After upgrading, it may be necessary to re-park or re-link your sites.
+
+Serving Sites
+Once Valet is installed, you're ready to start serving sites. Valet provides two commands to help you serve your Laravel sites: park and link.
+
+The park Command
+
+
+Create a new directory on your Mac by running something like mkdir ~/Sites. Next, cd ~/Sites and run valet park. This command will register your current working directory as a path that Valet should search for sites.
+Next, create a new Laravel site within this directory: laravel new blog.
+Open http://blog.test in your browser.
+
+
+That's all there is to it. Now, any Laravel project you create within your ""parked"" directory will automatically be served using the http://folder-name.test convention. To view a list of all of your parked directory's sites, you may execute the valet parked command.
+
+The link Command
+The link command may also be used to serve your Laravel sites. This command is useful if you want to serve a single site in a directory and not the entire directory.
+
+
+To use the command, navigate to one of your projects and run valet link app-name in your terminal. Valet will create a symbolic link in ~/.config/valet/Sites which points to your current working directory.
+After running the link command, you can access the site in your browser at http://app-name.test.
+
+
+To see a listing of all of your linked directories, run the valet links command. You may use valet unlink app-name to destroy the symbolic link.
+
+{tip} You can use valet link to serve the same project from multiple (sub)domains. To add a subdomain or another domain to your project run valet link subdomain.app-name from the project folder.
+
+
+Securing Sites With TLS
+By default, Valet serves sites over plain HTTP. However, if you would like to serve a site over encrypted TLS using HTTP/2, use the secure command. For example, if your site is being served by Valet on the laravel.test domain, you should run the following command to secure it:
+valet secure laravel
+To ""unsecure"" a site and revert back to serving its traffic over plain HTTP, use the unsecure command. Like the secure command, this command accepts the host name that you wish to unsecure:
+valet unsecure laravel
+
+Sharing Sites
+Valet even includes a command to share your local sites with the world. No additional software installation is required once Valet is installed.
+To share a site, navigate to the site's directory in your terminal and run the valet share command. A publicly accessible URL will be inserted into your clipboard and is ready to paste directly into your browser. That's it.
+To stop sharing your site, hit Control + C to cancel the process.
+
+Site Specific Environment Variables
+Some applications using other frameworks may depend on server environment variables but do not provide a way for those variables to be configured within your project. Valet allows you to configure site specific environment variables by adding a .valet-env.php file within the root of your project. These variables will be added to the $_SERVER global array:
+<?php
+
+return [
+    'WEBSITE_NAME' => 'My Blog',
+];
+
+Custom Valet Drivers
+You can write your own Valet ""driver"" to serve PHP applications running on another framework or CMS that is not natively supported by Valet. When you install Valet, a ~/.config/valet/Drivers directory is created which contains a SampleValetDriver.php file. This file contains a sample driver implementation to demonstrate how to write a custom driver. Writing a driver only requires you to implement three methods: serves, isStaticFile, and frontControllerPath.
+All three methods receive the $sitePath, $siteName, and $uri values as their arguments. The $sitePath is the fully qualified path to the site being served on your machine, such as /Users/Lisa/Sites/my-project. The $siteName is the ""host"" / ""site name"" portion of the domain (my-project). The $uri is the incoming request URI (/foo/bar).
+Once you have completed your custom Valet driver, place it in the ~/.config/valet/Drivers directory using the FrameworkValetDriver.php naming convention. For example, if you are writing a custom valet driver for WordPress, your file name should be WordPressValetDriver.php.
+Let's take a look at a sample implementation of each method your custom Valet driver should implement.
+The serves Method
+The serves method should return true if your driver should handle the incoming request. Otherwise, the method should return false. So, within this method you should attempt to determine if the given $sitePath contains a project of the type you are trying to serve.
+For example, let's pretend we are writing a WordPressValetDriver. Our serves method might look something like this:
+/**
+ * Determine if the driver serves the request.
+ *
+ * @param  string  $sitePath
+ * @param  string  $siteName
+ * @param  string  $uri
+ * @return bool
+ */
+public function serves($sitePath, $siteName, $uri)
+{
+    return is_dir($sitePath.'/wp-admin');
+}
+The isStaticFile Method
+The isStaticFile should determine if the incoming request is for a file that is ""static"", such as an image or a stylesheet. If the file is static, the method should return the fully qualified path to the static file on disk. If the incoming request is not for a static file, the method should return false:
+/**
+ * Determine if the incoming request is for a static file.
+ *
+ * @param  string  $sitePath
+ * @param  string  $siteName
+ * @param  string  $uri
+ * @return string|false
+ */
+public function isStaticFile($sitePath, $siteName, $uri)
+{
+    if (file_exists($staticFilePath = $sitePath.'/public/'.$uri)) {
+        return $staticFilePath;
+    }
+
+    return false;
+}
+
+{note} The isStaticFile method will only be called if the serves method returns true for the incoming request and the request URI is not /.
+
+The frontControllerPath Method
+The frontControllerPath method should return the fully qualified path to your application's ""front controller"", which is typically your ""index.php"" file or equivalent:
+/**
+ * Get the fully resolved path to the application's front controller.
+ *
+ * @param  string  $sitePath
+ * @param  string  $siteName
+ * @param  string  $uri
+ * @return string
+ */
+public function frontControllerPath($sitePath, $siteName, $uri)
+{
+    return $sitePath.'/public/index.php';
+}
+
+Local Drivers
+If you would like to define a custom Valet driver for a single application, create a LocalValetDriver.php in the application's root directory. Your custom driver may extend the base ValetDriver class or extend an existing application specific driver such as the LaravelValetDriver:
+class LocalValetDriver extends LaravelValetDriver
+{
+    /**
+     * Determine if the driver serves the request.
+     *
+     * @param  string  $sitePath
+     * @param  string  $siteName
+     * @param  string  $uri
+     * @return bool
+     */
+    public function serves($sitePath, $siteName, $uri)
+    {
+        return true;
+    }
+
+    /**
+     * Get the fully resolved path to the application's front controller.
+     *
+     * @param  string  $sitePath
+     * @param  string  $siteName
+     * @param  string  $uri
+     * @return string
+     */
+    public function frontControllerPath($sitePath, $siteName, $uri)
+    {
+        return $sitePath.'/public_html/index.php';
+    }
+}
+
+Other Valet Commands
+
+
+
+Command
+Description
+
+
+
+
+valet forget
+Run this command from a ""parked"" directory to remove it from the parked directory list.
+
+
+valet log
+View a list of logs which are written by Valet's services.
+
+
+valet paths
+View all of your ""parked"" paths.
+
+
+valet restart
+Restart the Valet daemon.
+
+
+valet start
+Start the Valet daemon.
+
+
+valet stop
+Stop the Valet daemon.
+
+
+valet trust
+Add sudoers files for Brew and Valet to allow Valet commands to be run without prompting for passwords.
+
+
+valet uninstall
+Uninstall the Valet daemon.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Become a Laravel Partner
+Laravel Partners are elite shops providing top-notch Laravel development and consulting. Each of our partners can help you craft a beautiful, well-architected project.
+
+Our Partners
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Highlights
+
+
+Release Notes
+Getting Started
+Routing
+Blade Templates
+Authentication
+Authorization
+Artisan Console
+Database
+Eloquent ORM
+Testing
+
+
+
+
+Resources
+
+
+Laracasts
+Laravel News
+Laracon
+Laracon EU
+Laracon AU
+Jobs
+Certification
+Forums
+
+
+
+
+
+
+
+
+Partners
+
+
+Vehikl
+Tighten Co.
+Kirschbaum
+Byte 5
+64 Robots
+Cubet
+DevSquad
+Ideil
+Cyber-Duck
+ABOUT YOU
+A2 Design
+Romega Software
+Jump24
+Become A Partner
+
+
+
+
+Ecosystem
+
+
+Vapor
+Forge
+Envoyer
+Horizon
+Lumen
+Nova
+Echo
+Valet
+Mix
+Spark
+Cashier
+Homestead
+Dusk
+Passport
+Scout
+Socialite
+Telescope
+
+
+
+
+
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in most web projects.
+Laravel is a Trademark of Taylor Otwell.Copyright © 2011-2020 Laravel LLC.
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+",,"# valet
 
 > A Laravel development environment that allows hosting sites via local tunnels on `http://<example>.test`.
 > More information: <https://laravel.com/docs/5.8/valet>.
@@ -21025,7 +34745,7 @@ valet,https://laravel.com/docs/5.8/valet,,"# valet
 
 `valet share`
 "
-look,,"
+look,,,"
 LOOK(1) 		  BSD General Commands Manual		       LOOK(1)
 
 NAME
@@ -21093,7 +34813,7 @@ BSD				 July 17, 2004				   BSD
 
 `look -f {{prefix}} {{file}}`
 "
-drutil,,"
+drutil,,,"
 
 DRUTIL(1)		  BSD General Commands Manual		     DRUTIL(1)
 
@@ -21392,7 +35112,7 @@ Mac OS X			 May 18, 2004			      Mac OS X
 
 `drutil burn -noverify -eject -iso9660`
 "
-codesign,,"
+codesign,,,"
 CODESIGN(1)		  BSD General Commands Manual		   CODESIGN(1)
 
 NAME
@@ -21988,7 +35708,7 @@ BSD				  May 7, 2011				   BSD
 
 `codesign -v {{/path/to/App.app}}`
 "
-route,,"
+route,,,"
 ROUTE(8)		  BSD System Manager's Manual		      ROUTE(8)
 
 NAME
@@ -22219,7 +35939,145 @@ BUGS
 
 `sudo route get {{destination}}`
 "
-xar,https://linux.die.net/man/1/xar,"XAR(1)				 User Commands				XAR(1)
+xar,https://linux.die.net/man/1/xar,"
+
+xar(1): eXtensible ARchiver - Linux man page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+xar(1) - Linux man page
+Name
+xar - eXtensible ARchiver
+Synopsis
+xar -[ctx][v] ...
+Description
+
+
+
+
+
+
+The XAR project aims to provide an easily extensible archive format. Important design decisions
+include an easily extensible XML table of contents (TOC) for random access to archived files, storing the TOC at the beginning of the archive to allow for
+efficient handling of streamed archives, the ability to handle files of arbitrarily large sizes, the ability to choose independent encodings for individual
+files in the archive, the ability to store checksums for individual files in both compressed and uncompressed form, and the ability to query the table of
+content's rich meta-data.
+Functions
+
+One of the following options must be used:
+-c
+Creates an archive
+-t
+Lists the contents of an archive
+-x
+Extracts an archive
+NOTE: all of the above require the use of the -f option (filename) as this release of xar doesn't correctly handle pipes or sockets.
+-f
+The filename to use for creation, listing or extraction. With extraction, this can be a POSIX regular expression.
+Options
+
+--compression
+Specifies the compression type to use. Valid values: none, gzip, bzip2. Default value: gzip
+--dump-toc=<filename>
+Has xar dump the xml header into the specified file. ""-"" can be specified to mean stdout.
+--dump-header
+Has xar print out the xar binary header information to stdout.
+--list-subdocs
+List the subdocuments in the xml header
+--toc-cksum
+Specifies the hashing algorithm to use for xml header verification. Valid values: none, sha1, and md5. Default value: sha1
+-l
+On archival, stay on the local device.
+-P
+On extract, set ownership based on uid/gid.
+-p
+On extract, set ownership based on symbolic names, if possible.
+-s <filename>
+On extract, specifies the file to extract subdocuments to. On archival, specifies an xml file to add as a subdocument.
+-v
+Verbose output
+--exclude
+Specifies a POSIX regular expression of files to exclude from adding to the archive during creation or from being extracted during extraction. This option
+can be specified multiple times.
+--rsize
+Specifies a size (in bytes) for the internal libxar read buffer while performing I/O.
+--coalesce-heap
+When multiple files in the archive are identical, only store one copy of the data in the heap. This creates smaller archives, but the archives created are
+not streamable.
+--link-same
+When the data section of multiple files are identical, hardlink them within the archive.
+--no-compress
+Specifies a POSIX regular expression of files to archive, but not compress. The archived files will be copied raw into the archive. This can be used to
+exclude already gzipped files from being gzipped during the archival process.
+Examples
+
+xar -cf sample.xar /home/uid
+Create a xar archive of all files in /home/uid
+xar -tf sample.xar
+List the contents of the xar archive sample.xar
+xar -xf sample.xar
+Extract the contents of sample.xar to the current working directory
+Bugs
+
+Doesn't currently work with pipes or streams. Might be fixed in a future release.
+Probably one or two more somewhere in there. If you find one please report it to http://code.google.com/p/xar/
+Authors
+Rob Braun <bbraun AT synack DOT net>
+Landon Fuller <landonf AT bikemonkey DOT org>
+David LeimbachKevin Van Vechten
+
+
+
+
+
+
+
+
+
+
+Site Search
+
+
+
+
+
+
+
+
+
+
+
+Library
+linux docs
+linux man pages
+page load time
+
+
+Toys
+world sunlight
+moon phase
+trace explorer
+
+
+
+
+
+
+
+","XAR(1)				 User Commands				XAR(1)
 
 
 
@@ -22419,7 +36277,7 @@ version 1.8			 June 4, 2015				XAR(1)
 
 `xar -xf {{archive.xar}}`
 "
-locate,,"
+locate,,,"
 LOCATE(1)		  BSD General Commands Manual		     LOCATE(1)
 
 NAME
@@ -22570,7 +36428,7 @@ BSD				August 17, 2006 			   BSD
 
 `sudo /usr/libexec/locate.updatedb`
 "
-duti,,,"# duti
+duti,,,,"# duti
 
 > Set default applications for document types and URL schemes on macOS.
 
@@ -22598,7 +36456,7 @@ duti,,,"# duti
 
 `duti -l {{uti}}`
 "
-osascript,,"
+osascript,,,"
 OSASCRIPT(1)		  BSD General Commands Manual		  OSASCRIPT(1)
 
 NAME
@@ -22728,7 +36586,7 @@ Mac OS X			April 24, 2014			      Mac OS X
 
 `osascript -l JavaScript {{path/to/script.js}}`
 "
-say,,"SAY(1)			   Speech Synthesis Manager			SAY(1)
+say,,,"SAY(1)			   Speech Synthesis Manager			SAY(1)
 
 
 

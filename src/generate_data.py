@@ -17,12 +17,12 @@ URL_PATTERN = r"(http|ftp|https)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-
 
 def parse_web_page(url: str, filter_tag: str = None) -> BeautifulSoup:
     """Given URL returns Beuatiful Soup object to scrap further"""
+    html = ""
     try:
         response = requests.get(url, timeout=(5, 6))
         html = response.text
     except Exception as e:
-        logging.debug(f"Request to page {url} failed with error: {e.args}")
-        html = ""
+        logging.error(f"Request to page {url} failed with error: {e.args}")
     return BeautifulSoup(html, "lxml", parse_only=SoupStrainer(filter_tag))
 
 
@@ -75,11 +75,11 @@ def parse_single_tldr(page: Path) -> dict:
     man_entry = get_man_entry(command)
     tldr_summary = page.read_text()
     doc_url = get_doc_url(tldr_summary)
-    # doc_text = parse_page(doc_url).text if doc_url else None
+    doc_text = parse_web_page(doc_url).text if doc_url else None
     return dict(
         command=command,
         doc_url=doc_url,
-        # doc_text=doc_text,
+        doc_text=doc_text,
         man_entry=man_entry,
         tldr_summary=tldr_summary,
     )
@@ -91,9 +91,8 @@ def generate_tech_summary_data(path: str = "tldr_repo/pages/") -> None:
     path = Path(path)
     for tldr_path in path.iterdir():
         tldr_pages = list(tldr_path.glob("*.md"))
-        # with ThreadPoolExecutor() as executor:
-        # summary_data = list(executor.map(parse_single_tldr, tldr_pages))
-        summary_data = [parse_single_tldr(tldr_page) for tldr_page in tldr_pages]
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            summary_data = list(executor.map(parse_single_tldr, tldr_pages))
         write_csv(f"data/summary/{tldr_path.name}.csv", summary_data)
 
 

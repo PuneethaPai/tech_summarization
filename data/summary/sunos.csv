@@ -1,5 +1,5 @@
-command,doc_url,man_entry,tldr_summary
-svccfg,,,"# svccfg
+command,doc_url,doc_text,man_entry,tldr_summary
+svccfg,,,,"# svccfg
 
 > Import, export, and modify service configurations.
 
@@ -15,7 +15,7 @@ svccfg,,,"# svccfg
 
 `svccfg import {{smf.xml}}`
 "
-runit,,,"# runit
+runit,,,,"# runit
 
 > 3-stage init system.
 
@@ -27,7 +27,7 @@ runit,,,"# runit
 
 `kill --CONT {{runit_pid}}`
 "
-runsvchdir,,,"# runsvchdir
+runsvchdir,,,,"# runsvchdir
 
 > Change the directory `runsvdir` uses by default.
 
@@ -35,7 +35,7 @@ runsvchdir,,,"# runsvchdir
 
 `sudo runsvchdir {{/path/to/directory}}`
 "
-prstat,,,"# prstat
+prstat,,,,"# prstat
 
 > Report active process statistics.
 
@@ -59,7 +59,7 @@ prstat,,,"# prstat
 
 `prstat -c -n 5 -s cpu 1`
 "
-runsv,,,"# runsv
+runsv,,,,"# runsv
 
 > Start and manage a runit service.
 
@@ -71,7 +71,7 @@ runsv,,,"# runsv
 
 `sudo runsv {{path/to/service}}`
 "
-svcs,,,"# svcs
+svcs,,,,"# svcs
 
 > List information about running services.
 
@@ -95,7 +95,7 @@ svcs,,,"# svcs
 
 `tail $(svcs -L apache)`
 "
-sv,,,"# sv
+sv,,,,"# sv
 
 > Control a running runsv service.
 
@@ -111,7 +111,7 @@ sv,,,"# sv
 
 `sudo sv status {{path/to/service}}`
 "
-runsvdir,,,"# runsvdir
+runsvdir,,,,"# runsvdir
 
 > Run an entire directory of services.
 
@@ -127,7 +127,7 @@ runsvdir,,,"# runsvdir
 
 `runsvdir -P {{path/to/services}}`
 "
-dmesg,,"
+dmesg,,,"
 DMESG(8)		  BSD System Manager's Manual		      DMESG(8)
 
 NAME
@@ -163,7 +163,7 @@ HISTORY
 
 `dmesg | less`
 "
-svcadm,,,"# svcadm
+svcadm,,,,"# svcadm
 
 > Manipulate service instances.
 
@@ -187,7 +187,7 @@ svcadm,,,"# svcadm
 
 `svcadm clear {{service_name}}`
 "
-snoop,,,"# snoop
+snoop,,,,"# snoop
 
 > Network packet sniffer.
 > SunOS equivalent of tcpdump.
@@ -212,7 +212,7 @@ snoop,,,"# snoop
 
 `snoop -x0 -p4 {{ip_address_1}} {{ip_address_2}}`
 "
-stty,,"
+stty,,,"
 STTY(1) 		  BSD General Commands Manual		       STTY(1)
 
 NAME
@@ -696,7 +696,7 @@ BSD				April 18, 1994				   BSD
 
 `stty sane`
 "
-prctl,,,"# prctl
+prctl,,,,"# prctl
 
 > Get or set the resource controls of running processes,.
 > Tasks, and projects.
@@ -713,7 +713,7 @@ prctl,,,"# prctl
 
 `prctl -n process.max-file-descriptor {{PID}}`
 "
-devfsadm,,,"# devfsadm
+devfsadm,,,,"# devfsadm
 
 > Administration command for `/dev`. Maintains the `/dev` namespace.
 
@@ -729,7 +729,7 @@ devfsadm,,,"# devfsadm
 
 `devfsadm -C -v -n`
 "
-truss,,,"# truss
+truss,,,,"# truss
 
 > Troubleshooting tool for tracing system calls.
 > SunOS equivalent of strace.
