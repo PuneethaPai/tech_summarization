@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  tech_summarization:
+    # build:
+    #   context: .
+    image: tech_summarization
+    container_name: TechSummarization
+    restart: always
+    # environment:
+    # - DOCKER_HOST=tcp://docker:2376
+    # - DOCKER_CERT_PATH=/certs/client
+    # - DOCKER_TLS_VERIFY=1
+    ports:
+      - "8888:8888"
+      - "8501:8501"
+    volumes:
+      - ./:/project
+    entrypoint: jupyter notebook --allow-root --ip=0.0.0.0 --port=8888 --notebook-dir=.
